@@ -337,7 +337,7 @@ const Afrique = () => (
             {[
               { icon: "🎓", title: "Formation locale", desc: "Chaque déploiement inclut la formation des villageois. Ils comprennent, ils maintiennent, ils transmettent." },
               { icon: "🔧", title: "Maintenance autonome", desc: "Les composants sont cultivables et réparables sur place. Pas de technicien extérieur nécessaire. Pas de pièce importée." },
-              { icon: "🤝", title: "1 acheté = 1 offert", desc: "Chaque kit vendu en Europe finance un déploiement adapté au territoire. Les algues se cultivent, les plantes poussent — les coûts le permettent." },
+              { icon: "🤝", title: "1 système = 1 territoire", desc: "Chaque système déployé en Europe finance un déploiement adapté aux ressources locales d'un territoire. 1=1." },
             ].map((c) => (
               <Card key={c.title}>
                 <CardContent className="p-6 text-center space-y-3">

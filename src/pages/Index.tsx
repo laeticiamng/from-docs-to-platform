@@ -410,12 +410,18 @@ const ImpactSection = () => (
           </Card>
         ))}
       </div>
-      <Card className="bg-primary text-primary-foreground max-w-3xl mx-auto">
-        <CardContent className="p-8 text-center space-y-3">
-          <h3 className="text-2xl md:text-3xl">1 acheté en Europe = 1 offert à un village</h3>
-          <p className="opacity-80">
-            Chaque Kit Découverte vendu finance un kit identique pour une communauté sans accès à l'électricité.
-          </p>
+      <Card className="bg-primary text-primary-foreground max-w-3xl mx-auto overflow-hidden">
+        <CardContent className="p-8 flex flex-col md:flex-row items-center gap-8">
+          <div className="flex-shrink-0 text-center">
+            <p className="text-6xl md:text-7xl font-bold font-mono leading-none">1=1</p>
+            <p className="text-xs opacity-70 mt-2 font-mono tracking-wider">SYSTÈME = TERRITOIRE</p>
+          </div>
+          <div className="space-y-2 text-center md:text-left">
+            <h3 className="text-2xl md:text-3xl">Un système déployé = un territoire connecté</h3>
+            <p className="opacity-80">
+              Chaque kit vendu en Europe finance un déploiement adapté aux ressources locales d'un territoire. On n'envoie pas des plantes — on connecte celles qui sont déjà là.
+            </p>
+          </div>
         </CardContent>
       </Card>
     </div>
@@ -426,7 +432,7 @@ const businessFlow = [
   { icon: "🧪", title: "R&D EmotionsCare", desc: "Conception, prototypage, brevets" },
   { icon: "🏭", title: "Bio-manufacture locale", desc: "Algues cultivées, PHA moulé, assemblage régional" },
   { icon: "📦", title: "Vente B2C", desc: "Site web, marketplaces, jardineries" },
-  { icon: "🌍", title: "Impact 1=1", desc: "1 vendu = 1 offert à un village" },
+  { icon: "🌍", title: "Impact 1=1", desc: "1 système déployé = 1 territoire connecté" },
 ];
 
 const BusinessSection = () => (

@@ -284,6 +284,15 @@ const PackAutonomie = () => (
                       </div>
                     ))}
                   </div>
+                  {howToGuides[t.title] && (
+                    <HowToGuide
+                      title={t.title}
+                      steps={howToGuides[t.title].steps}
+                      materials={howToGuides[t.title].materials}
+                      difficulty={howToGuides[t.title].difficulty}
+                      cost={howToGuides[t.title].cost}
+                    />
+                  )}
                 </CardContent>
               </Card>
             ))}

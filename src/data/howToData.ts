@@ -234,4 +234,50 @@ export const howToGuides: Record<string, HowToData> = {
       { step: "Chargez et déchargez", detail: "Appliquez 1.5V pour charger. Les quinones stockent l'énergie de manière réversible." },
     ],
   },
+
+  // ── Pack Autonomie modules ──
+  "Module Biogaz — Le cœur du système": {
+    difficulty: "Avancé",
+    cost: "Version mini : 100–200€",
+    materials: ["Bidon 60L hermétique", "Tuyau gaz + valve anti-retour", "Résidus végétaux (épluchures, algues)", "Brûleur de camping", "Thermomètre"],
+    steps: [
+      { step: "Construisez le digesteur", detail: "Percez le bidon pour y fixer le tuyau de sortie gaz. Ajoutez un mélange eau + matière organique (épluchures, herbe coupée)." },
+      { step: "Maintenez la température", detail: "Les bactéries travaillent entre 25-40°C. En intérieur ou dans un endroit ensoleillé. Brassez tous les 2 jours." },
+      { step: "Récoltez le biogaz", detail: "En 2-3 semaines, du méthane sort par le tuyau. Testez avec une flamme (précaution : en extérieur !)." },
+      { step: "Cuisinez au biogaz", detail: "Raccordez à un brûleur de camping. Un bidon de 60L = environ 1 semaine de cuisson légère." },
+    ],
+  },
+  "Module Hydrogène — Chauffage & Cuisson": {
+    difficulty: "Avancé",
+    cost: "Version démo : 50–100€",
+    materials: ["Panneau solaire petit (5W)", "Eau distillée", "2 électrodes inox", "Récipient en verre", "Tuyau de récupération gaz"],
+    steps: [
+      { step: "Montez l'électrolyseur", detail: "Plongez 2 plaques d'inox dans l'eau distillée. Connectez au panneau solaire. Des bulles apparaissent : c'est l'hydrogène." },
+      { step: "Récupérez le gaz", detail: "Retournez un entonnoir au-dessus d'une électrode et raccordez un tuyau. Le H₂ se collecte par déplacement d'eau." },
+      { step: "Observez la réaction", detail: "Le panneau solaire sépare l'eau en H₂ + O₂. C'est le principe exact des feuilles artificielles à grande échelle." },
+      { step: "Comprenez le potentiel", detail: "À l'échelle d'un balcon (5-10m²), des feuilles artificielles produiraient assez d'H₂ pour la cuisson quotidienne." },
+    ],
+  },
+  "Module Stockage — Batterie quinone + PMFC": {
+    difficulty: "Moyen",
+    cost: "60–120€",
+    materials: ["Rhubarbe ou carthame", "6 pots de menthe", "Électrodes zinc + cuivre (×6)", "Fil de cuivre", "LED basse conso", "Condensateur 1F (optionnel)"],
+    steps: [
+      { step: "Créez la batterie quinone", detail: "Extrait de rhubarbe + bocaux + membrane = batterie organique rechargeable (voir guide quinone)." },
+      { step: "Montez les 6 pots PMFC", detail: "Chaque pot : plante + 2 électrodes dans le sol humide. Connectez les 6 en série = ~3-4V." },
+      { step: "Connectez au condensateur", detail: "Le condensateur accumule l'énergie des pots et la restitue en pic pour alimenter un capteur ou une LED." },
+      { step: "Résultat", detail: "Vos plantes d'intérieur alimentent capteurs et veilleuses 24/7. Zéro pile, zéro facture, zéro déchet." },
+    ],
+  },
+  "Module Eau & Air — Économie 90%": {
+    difficulty: "Moyen",
+    cost: "80–180€",
+    materials: ["Pompe d'aquarium", "Filtre charbon actif", "Culture spiruline", "Bocal 5L", "Aquarium plat pour panneau mural", "Pompe à air"],
+    steps: [
+      { step: "Montez la douche cyclique", detail: "Circuit fermé : pomme → bac → filtre charbon → biofiltre spiruline → retour. 5L suffisent." },
+      { step: "Fabriquez le panneau à algues", detail: "Remplissez l'aquarium plat de chlorella + eau + nutriments. Fixez au mur près d'une fenêtre." },
+      { step: "Connectez la pompe à air", detail: "Les bulles brassent les algues dans le panneau = photosynthèse maximale = absorption CO₂." },
+      { step: "Boucle fermée", detail: "L'excédent d'algues du panneau alimente le digesteur biogaz. L'eau de la douche arrose les plantes PMFC. Tout est connecté." },
+    ],
+  },
 };

@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import Domaines from "./pages/Domaines.tsx";
 import PackAutonomie from "./pages/PackAutonomie.tsx";
 import Afrique from "./pages/Afrique.tsx";
+import APropos from "./pages/APropos.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/domaines" element={<Domaines />} />
           <Route path="/pack-autonomie" element={<PackAutonomie />} />
           <Route path="/afrique" element={<Afrique />} />
+          <Route path="/a-propos" element={<APropos />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

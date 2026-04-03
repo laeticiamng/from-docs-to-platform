@@ -5,10 +5,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const milestones = [
-  { year: "2023", title: "Naissance d'EmotionsCare", desc: "Création de la SASU à Amiens. L'idée : utiliser le vivant pour résoudre des problèmes que la tech classique ignore — l'eau, l'air, l'énergie locale." },
-  { year: "2024", title: "Recherche & Prototypage", desc: "Exploration des PMFC, des photobioréacteurs et des batteries quinone. Premier prototype de pot producteur d'électricité. Cartographie des 11 technologies." },
-  { year: "2025", title: "AquaMR Flow & Imagerie verte", desc: "Développement du cockpit vasculaire vert — agent de contraste IRM à base de betterave. Première application médicale concrète de l'écosystème PhytoTech." },
-  { year: "2026", title: "Lancement PhytoTech Home", desc: "Mise en marché de la gamme complète : Pot Vivant, Module Maison, Autonomie Village. Premiers déploiements pilotes en Afrique de l'Ouest." },
+  { year: "2025", title: "Création d'EmotionsCare SASU", desc: "Immatriculation le 6 mai 2025 à Amiens. Laeticia Motongane fonde la société avec une vision claire : utiliser le vivant pour résoudre les problèmes que la tech classique ignore." },
+  { year: "2025", title: "R&D PhytoTech & AquaMR", desc: "Exploration des PMFC, photobioréacteurs, batteries quinone. Développement du cockpit vasculaire vert AquaMR Flow — agent de contraste IRM à base de betterave." },
+  { year: "2026", title: "Lancement PhytoTech Home", desc: "Mise en marché de la gamme complète : Pot Vivant, Module Maison, Autonomie Village. Cartographie de 11 technologies et 60+ applications. Premiers déploiements pilotes." },
 ];
 
 const values = [

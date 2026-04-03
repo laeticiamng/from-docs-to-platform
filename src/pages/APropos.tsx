@@ -191,6 +191,7 @@ const APropos = () => (
           </div>
         </div>
       </section>
+      <CommentSection pageSlug="a-propos" />
     </main>
     <Footer />
   </div>

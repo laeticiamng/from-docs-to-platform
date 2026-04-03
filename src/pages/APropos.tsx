@@ -20,10 +20,10 @@ const values = [
 ];
 
 const team = [
-  { emoji: "🧬", role: "Fondateur & Directeur R&D", name: "Direction scientifique", desc: "Conception des technologies bio-intégrées, brevets, partenariats recherche avec les universités." },
+  { emoji: "👩‍💼", role: "Présidente & Fondatrice", name: "Laeticia Motongane", desc: "Vision stratégique, direction générale et pilotage de l'écosystème PhytoTech. À l'origine du projet EmotionsCare." },
+  { emoji: "🧬", role: "R&D & Sciences", name: "Direction scientifique", desc: "Conception des technologies bio-intégrées, brevets, partenariats recherche avec les universités." },
   { emoji: "🏭", role: "Bio-manufacture", name: "Production & Ingénierie", desc: "Cultiver les algues, mouler le PHA, assembler les kits. Fabrication locale et régionale." },
   { emoji: "🌍", role: "Déploiement terrain", name: "Impact & Partenariats", desc: "Coordination des déploiements en Afrique, formation des communautés, suivi des territoires pilotes." },
-  { emoji: "📱", role: "Produit & Design", name: "Expérience utilisateur", desc: "App mobile, monitoring, design des kits. Rendre la biotechnologie accessible et belle." },
 ];
 
 const APropos = () => (

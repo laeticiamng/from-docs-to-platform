@@ -339,8 +339,8 @@ const ProductsSection = () => (
                   </li>
                 ))}
               </ul>
-              <Button className="w-full rounded-full group-hover:shadow-md transition-shadow">
-                {p.cta}
+              <Button className="w-full rounded-full group-hover:shadow-md transition-shadow" asChild>
+                <Link to="/precommande">{p.cta}</Link>
               </Button>
             </CardContent>
           </Card>

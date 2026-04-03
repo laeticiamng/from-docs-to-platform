@@ -466,7 +466,7 @@ const PackAutonomie = () => (
           </div>
         </div>
       </section>
-      <CommentSection pageSlug="pack-autonomie" />
+      
     </main>
     <Footer />
   </div>

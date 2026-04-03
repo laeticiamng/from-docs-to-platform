@@ -575,7 +575,7 @@ const Index = () => (
       <BusinessSection />
       <ChannelsSection />
       <CTASection />
-      <CommentSection pageSlug="accueil" />
+      
     </main>
     <Footer />
   </div>

@@ -346,7 +346,7 @@ const Domaines = () => (
           </p>
         </div>
       </section>
-      <CommentSection pageSlug="domaines" />
+      
     </main>
     <Footer />
   </div>

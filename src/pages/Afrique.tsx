@@ -372,7 +372,7 @@ const Afrique = () => (
           </div>
         </div>
       </section>
-      <CommentSection pageSlug="afrique" />
+      
     </main>
     <Footer />
   </div>

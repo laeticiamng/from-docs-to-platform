@@ -241,6 +241,15 @@ const Afrique = () => (
                             </Badge>
                             <h4 className="text-sm font-semibold font-sans text-foreground">{a.title}</h4>
                             <p className="text-xs text-muted-foreground">{a.desc}</p>
+                            {howToGuides[a.title] && (
+                              <HowToGuide
+                                title={a.title}
+                                steps={howToGuides[a.title].steps}
+                                materials={howToGuides[a.title].materials}
+                                difficulty={howToGuides[a.title].difficulty}
+                                cost={howToGuides[a.title].cost}
+                              />
+                            )}
                           </CardContent>
                         </Card>
                       ))}

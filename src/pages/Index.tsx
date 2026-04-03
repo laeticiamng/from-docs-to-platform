@@ -432,7 +432,7 @@ const businessFlow = [
   { icon: "🧪", title: "R&D EmotionsCare", desc: "Conception, prototypage, brevets" },
   { icon: "🏭", title: "Bio-manufacture locale", desc: "Algues cultivées, PHA moulé, assemblage régional" },
   { icon: "📦", title: "Vente B2C", desc: "Site web, marketplaces, jardineries" },
-  { icon: "🌍", title: "Impact 1=1", desc: "1 vendu = 1 offert à un village" },
+  { icon: "🌍", title: "Impact 1=1", desc: "1 système déployé = 1 territoire connecté" },
 ];
 
 const BusinessSection = () => (

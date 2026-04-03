@@ -10,6 +10,7 @@ const Navbar = () => {
   const links = [
     { to: "/", label: "Accueil" },
     { to: "/pack-autonomie", label: "Autonomie Totale" },
+    { to: "/afrique", label: "Afrique & Territoires" },
     { to: "/domaines", label: "Domaines" },
   ];
 

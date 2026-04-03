@@ -1,47 +1,64 @@
 
-# PhytoTech — Plateforme Complète
+# Nouvelle page : PhytoTech Afrique & Territoires
 
-## Design System
-- Palette nature/organique : verts (#16a34a, #22c55e), fond clair (#fafdf7, #f0f5eb), texte sombre (#0f1a12)
-- Polices : Instrument Serif (titres), DM Sans (corps), JetBrains Mono (tags/labels)
-- Composants arrondis, animations subtiles au hover, style premium écologique
+## Philosophie
+Pas d'imposition d'un modèle unique — partir de l'existant : plantes locales, sols, climat, besoins réels.
 
-## Pages
+## Page `/afrique` — Structure
 
-### 1. Landing Page (`/`)
-Reproduction fidèle du document "Home" avec toutes les sections :
-- **Hero** plein écran avec grille 2 colonnes, CTA "Découvrir les kits" + visuel plante emoji
-- **Manifesto** (section sombre avec citation)
-- **Comparaison** : 3 cartes (EDF / Solaire / PhytoTech) avec la carte PhytoTech mise en avant
-- **Gamme Produits** : 3 kits (Pot Vivant 49-199€, Module Maison 690-2490€, Autonomie Village 4900-19000€) avec détails, features et CTA
-- **Comment ça marche** : 4 étapes (Plantez → Bactéries → Courant → Cycle) sur fond sombre
-- **Impact réel** : grille de 4 cartes + bannière "1 acheté = 1 offert"
-- **Modèle économique** : flow R&D → Bio-manufacture → Vente → Impact
-- **Projections revenus** : tableau avec les 4 lignes produit et total 2.2M€
-- **Canaux de distribution** : badges/chips
-- **CTA final** + Footer EmotionsCare
+### 1. Hero
+- Titre : "On n'envoie pas des plantes. On connecte celles qui sont déjà là."
+- Sous-titre reprenant le positionnement : valoriser les ressources végétales et naturelles existantes
 
-### 2. Domaines d'Application (`/domaines`)
-Reproduction du document "Cartographie" avec thème sombre :
-- **Hero** avec titre "11 technologies · Tous les domaines de la vie"
-- **11 sections domaines** accordéon/collapsibles : Habitat, Santé, Urbanisme, Agriculture, Éducation, Industrie, Pays en développement, Tourisme, Défense/Spatial, Gouvernance, Mode/Cosmétique
-- Chaque domaine contient ses cartes d'applications avec tags colorés (Énergie, Eau, Lumière, etc.)
-- **Axes émergents** : section spéciale avec 5 explorations futures
-- **Matrice Technologies × Domaines** : tableau interactif avec indicateurs ● et ◐
-- Footer
+### 2. Section "Le vrai problème"
+- Carte honnête : l'Afrique n'a pas un problème de végétation — elle a un problème de valorisation
+- Chiffres clés : surface agricole, diversité végétale, ressources hydriques sous-exploitées
 
-### 3. Navigation
-- Header sticky avec logo PhytoTech, liens vers les sections et les 2 pages
-- Navigation fluide avec scroll smooth entre sections
-- Responsive mobile (menu hamburger)
+### 3. Cartographie par zone climatique (4-5 écosystèmes)
+Chaque zone avec ses plantes locales, ses priorités et ses solutions PhytoTech adaptées :
 
-## Composants réutilisables
-- `Navbar` : navigation globale
-- `ProductCard` : carte produit avec tier, prix, features
-- `CompareCard` : carte comparaison
-- `DomainSection` : section domaine collapsible avec apps
-- `AppCard` : carte application avec tag coloré
-- `StepCard` : étape "comment ça marche"
-- `ImpactCard` : carte impact
-- `TechMatrix` : matrice interactive
-- `Footer` : pied de page
+- **Zone sahélienne** (Sahel, nord Sénégal, Mali, Niger, Tchad)
+  - Plantes : mil, sorgho, acacia, balanites
+  - Priorité : EAU (purification, récupération)
+  - Solutions : biofiltre algal sur puits, PMFC sur cultures de mil
+
+- **Zone tropicale humide** (Côte d'Ivoire, Cameroun, RDC, Ghana)
+  - Plantes : manioc, plantain, cacao, palmier
+  - Priorité : ÉNERGIE (forte biomasse disponible)
+  - Solutions : photobioréacteur sur biomasse abondante, biogaz, PMFC grande surface
+
+- **Zone de savane** (Burkina, Tanzanie, Mozambique, Kenya rural)
+  - Plantes : maïs, arachide, karité, graminées
+  - Priorité : ÉNERGIE + EAU
+  - Solutions : PMFC en champs, feuilles artificielles H₂, douche cyclique
+
+- **Zone côtière/insulaire** (Sénégal côte, Madagascar, Comores)
+  - Plantes : cocotier, mangrove, algues marines
+  - Priorité : EAU (dessalement, purification)
+  - Solutions : biofiltre algal marin, aquaculture + spiruline
+
+- **Zone d'altitude** (Éthiopie, Rwanda, Burundi)
+  - Plantes : café, teff, eucalyptus, bambou
+  - Priorité : ÉNERGIE (froid nocturne)
+  - Solutions : micro-CHP biogaz, batterie quinone, bioluminescence
+
+### 4. Section "L'écosystème complet"
+- Diagramme cycle : Plantes locales → Énergie (PMFC/biogaz) → Eau (biofiltre) → Nutriments → Retour aux plantes
+- Le cycle s'adapte aux ressources, pas l'inverse
+
+### 5. Section "Adapter, pas imposer"
+- Tableau : Pays × Priorité #1 × Plante locale clé × Solution PhytoTech
+- Ex: Niger → Eau → Mil + acacia → Biofiltre algal sur puits
+- Ex: RDC → Énergie → Manioc + palmier → Biogaz + PMFC grande surface
+
+### 6. Section "Partenariats terrain"
+- Modèle : formation locale, maintenance par les communautés
+- Principe 1=1 rappelé : chaque kit vendu en Europe finance un déploiement
+
+### 7. CTA
+- "Devenir partenaire déploiement" + "Proposer un territoire pilote"
+
+## Modifications existantes
+- Mise à jour de la section "Pays en développement" sur la landing page pour refléter ce positionnement
+- Lien vers `/afrique` depuis la landing et la page domaines
+- Ajout dans la navbar

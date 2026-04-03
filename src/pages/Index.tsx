@@ -134,14 +134,19 @@ const HonestySection = () => (
       </Card>
 
       {/* Developing countries note */}
-      <Card className="mt-8 bg-card">
+      <Card className="mt-8 bg-card border-primary/20">
         <CardContent className="p-8 space-y-3">
           <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
             🌍 Pour les pays en développement, c'est différent
           </h3>
           <p className="text-sm text-muted-foreground">
-            Là où il n'y a <strong className="text-foreground">pas de réseau du tout</strong>, les PMFC suffisent pour les besoins réels — une LED pour lire le soir, un capteur pour surveiller la qualité de l'eau, un téléphone à charger. Et les feuilles artificielles produisent l'hydrogène pour la cuisson.
+            Le problème n'est pas l'absence de végétation — c'est l'absence de connexion entre les ressources naturelles existantes et les technologies capables de les valoriser. On n'envoie pas des plantes. <strong className="text-foreground">On connecte celles qui sont déjà là.</strong>
           </p>
+          <Link to="/afrique">
+            <Button variant="outline" size="sm" className="rounded-full mt-2">
+              Découvrir l'approche Afrique & Territoires →
+            </Button>
+          </Link>
         </CardContent>
       </Card>
 

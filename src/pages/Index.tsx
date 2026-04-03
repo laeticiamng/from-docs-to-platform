@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import {
   Table,
   TableBody,
@@ -59,38 +60,139 @@ const ManifestoSection = () => (
   </section>
 );
 
+/* ─── Soyons honnêtes ─── */
+const HonestySection = () => (
+  <section className="py-24 bg-secondary/30">
+    <div className="container mx-auto px-4 max-w-4xl">
+      <div className="text-center mb-12 space-y-3">
+        <Badge variant="outline" className="font-mono text-xs tracking-widest border-destructive text-destructive">
+          ⚠️ TRANSPARENCE
+        </Badge>
+        <h2 className="text-3xl md:text-5xl text-foreground">Soyons honnêtes</h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto">
+          Un pot de fleurs ne peut pas faire tourner un appartement. Et il faut le dire clairement.
+        </p>
+      </div>
+
+      {/* The hard truth */}
+      <Card className="border-destructive/30 bg-destructive/5 mb-8">
+        <CardContent className="p-8 space-y-4">
+          <h3 className="text-xl font-semibold text-destructive flex items-center gap-2">
+            ⚠️ Le problème de puissance
+          </h3>
+          <div className="grid md:grid-cols-3 gap-6 text-center my-6">
+            <div className="space-y-1">
+              <p className="text-3xl font-bold text-foreground font-mono">500–900W</p>
+              <p className="text-xs text-muted-foreground">Consommation continue d'un appartement</p>
+            </div>
+            <div className="space-y-1">
+              <p className="text-3xl font-bold text-foreground font-mono">23 mW/m²</p>
+              <p className="text-xs text-muted-foreground">Production d'un pot PMFC</p>
+            </div>
+            <div className="space-y-1">
+              <p className="text-3xl font-bold text-foreground font-mono">21 700 m²</p>
+              <p className="text-xs text-muted-foreground">Surface PMFC pour 500W continus</p>
+            </div>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            Pour produire 500W continus avec des PMFC, il faudrait plus de <strong className="text-foreground">deux hectares</strong> de surface plantée. C'est impossible dans un appartement. Un panneau solaire produit ~200W/m² en pic — c'est un facteur ×1 000 de différence.
+          </p>
+          <p className="text-sm font-semibold text-foreground">
+            Quiconque prétendrait alimenter un lave-vaisselle avec un pot de menthe vous mentirait.
+          </p>
+        </CardContent>
+      </Card>
+
+      {/* The real positioning */}
+      <Card className="border-primary/30 bg-primary/5">
+        <CardContent className="p-8 space-y-4">
+          <h3 className="text-xl font-semibold text-primary flex items-center gap-2">
+            ✅ Maintenant, voici pourquoi ce n'est pas un problème
+          </h3>
+          <p className="text-sm text-muted-foreground">
+            <strong className="text-foreground">Le PhytoTech n'est pas une alternative aux panneaux solaires — c'est leur complément naturel.</strong> Vous gardez vos panneaux pour le frigo, la machine à laver, la télé. Et vous ajoutez le PhytoTech pour tout le reste.
+          </p>
+          <div className="grid md:grid-cols-2 gap-4 mt-4">
+            {[
+              { icon: "💧", title: "L'eau", desc: "Une douche cyclique économise 54 000 litres/an. Ni EDF ni un panneau solaire ne font ça. Valeur : 150–250€/an." },
+              { icon: "🌬️", title: "L'air", desc: "Un panneau à microalgues absorbe le CO₂ intérieur et rejette de l'O₂. Un panneau solaire ne purifie pas votre air." },
+              { icon: "📡", title: "L'IoT ultra-basse conso", desc: "Capteurs domotiques (température, humidité, mouvement) consomment des microwatts. Les PMFC suffisent — plus jamais de piles à changer." },
+              { icon: "💡", title: "L'éclairage d'ambiance", desc: "Capsules bioluminescentes et LED ultra-basse conso : veilleuses, balisage, jardin. Les PMFC couvrent ça parfaitement." },
+              { icon: "🧱", title: "Les matériaux", desc: "Bioplastiques, circuits biodégradables, agents de contraste végétaux — rien à voir avec la puissance électrique." },
+              { icon: "🔋", title: "Le stockage", desc: "Les batteries quinone stockent l'énergie de vos panneaux solaires existants — mais sans métaux rares. Elles complètent le solaire." },
+            ].map((item) => (
+              <div key={item.title} className="flex gap-3 p-3 rounded-lg bg-background/50">
+                <span className="text-2xl">{item.icon}</span>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">{item.title}</p>
+                  <p className="text-xs text-muted-foreground">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Developing countries note */}
+      <Card className="mt-8 bg-card">
+        <CardContent className="p-8 space-y-3">
+          <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
+            🌍 Pour les pays en développement, c'est différent
+          </h3>
+          <p className="text-sm text-muted-foreground">
+            Là où il n'y a <strong className="text-foreground">pas de réseau du tout</strong>, les PMFC suffisent pour les besoins réels — une LED pour lire le soir, un capteur pour surveiller la qualité de l'eau, un téléphone à charger. Et les feuilles artificielles produisent l'hydrogène pour la cuisson.
+          </p>
+        </CardContent>
+      </Card>
+
+      <div className="text-center mt-12">
+        <p className="text-sm text-muted-foreground italic max-w-xl mx-auto">
+          "On ne remplace pas votre compteur. On complète votre vie."
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+/* ─── Compare — updated honest version ─── */
 const compareData = [
   {
     icon: "⚡",
     title: "Réseau EDF",
     price: "~1 500€ /an",
+    role: "Gros appareils",
     points: [
       { bad: true, text: "Dépendance totale au réseau" },
       { bad: true, text: "Hausse des tarifs chaque année" },
       { bad: true, text: "Coupures possibles" },
       { bad: true, text: "Énergie nucléaire/fossile" },
+      { bad: false, text: "Couvre les gros appareils" },
     ],
   },
   {
     icon: "☀️",
     title: "Panneaux solaires",
     price: "12 000€ install.",
+    role: "Électricité pure",
     points: [
+      { bad: false, text: "200W/m² — haute densité" },
       { bad: true, text: "Silicium + terres rares" },
       { bad: true, text: "Ne fonctionne pas la nuit" },
-      { bad: true, text: "Recyclage problématique" },
+      { bad: true, text: "Ne purifie pas l'eau ni l'air" },
     ],
   },
   {
     icon: "🌿",
     title: "PhytoTech Home",
     price: "à partir de 49€",
+    role: "Complément naturel",
     highlight: true,
     points: [
-      { bad: false, text: "Zéro dépendance réseau" },
-      { bad: false, text: "Fonctionne jour ET nuit" },
+      { bad: false, text: "Économise 54 000L d'eau/an" },
+      { bad: false, text: "Purifie l'air intérieur" },
+      { bad: false, text: "IoT + éclairage sans piles" },
       { bad: false, text: "100% biodégradable" },
-      { bad: false, text: "Purifie l'air en bonus" },
+      { bad: false, text: "Complète solaire + réseau" },
     ],
   },
 ];
@@ -100,7 +202,10 @@ const CompareSection = () => (
     <div className="container mx-auto px-4">
       <div className="text-center mb-16 space-y-3">
         <p className="font-mono text-sm text-primary tracking-widest uppercase">Comparez honnêtement</p>
-        <h2 className="text-3xl md:text-5xl text-foreground">PhytoTech vs les solutions traditionnelles</h2>
+        <h2 className="text-3xl md:text-5xl text-foreground">Pas un remplacement — un complément</h2>
+        <p className="text-muted-foreground max-w-xl mx-auto text-sm">
+          Le PhytoTech ne remplace pas votre compteur. Il couvre tout ce que le réseau fait mal et tout ce que le solaire ne fait pas du tout.
+        </p>
       </div>
       <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {compareData.map((c) => (
@@ -119,6 +224,7 @@ const CompareSection = () => (
               <div className="text-4xl">{c.icon}</div>
               <h3 className="text-xl font-semibold text-foreground">{c.title}</h3>
               <p className="font-mono text-lg text-primary font-semibold">{c.price}</p>
+              <Badge variant="secondary" className="text-xs">{c.role}</Badge>
               <ul className="space-y-2">
                 {c.points.map((p) => (
                   <li key={p.text} className="flex items-start gap-2 text-sm">
@@ -222,6 +328,26 @@ const ProductsSection = () => (
           </Card>
         ))}
       </div>
+
+      {/* Pack Autonomie Totale teaser */}
+      <Card className="mt-12 border-primary/30 bg-primary/5 max-w-3xl mx-auto overflow-hidden">
+        <CardContent className="p-8 flex flex-col md:flex-row items-center gap-6">
+          <div className="text-6xl">⚡</div>
+          <div className="flex-1 space-y-2">
+            <Badge className="font-mono text-xs tracking-wider bg-primary/20 text-primary border-0">
+              NIVEAU 4 — AUTONOMIE TOTALE
+            </Badge>
+            <h3 className="text-2xl text-foreground">Pack Autonomie Totale Paris</h3>
+            <p className="font-mono text-xl text-primary font-bold">~9 000€ · ROI en 4,6 ans</p>
+            <p className="text-sm text-muted-foreground">
+              Peut-on vivre 100% sur le vivant dans un appartement ? Oui — mais pas avec des pots de fleurs seuls. Découvrez la stratégie complète.
+            </p>
+          </div>
+          <Link to="/pack-autonomie">
+            <Button className="rounded-full whitespace-nowrap">Voir le détail →</Button>
+          </Link>
+        </CardContent>
+      </Card>
     </div>
   </section>
 );
@@ -428,6 +554,7 @@ const Index = () => (
     <main>
       <HeroSection />
       <ManifestoSection />
+      <HonestySection />
       <CompareSection />
       <ProductsSection />
       <HowItWorksSection />

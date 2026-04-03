@@ -38,6 +38,7 @@ const Navbar = () => {
               {l.label}
             </Link>
           ))}
+          <AuthDialog />
           <Button size="sm" className="rounded-full">
             Précommander →
           </Button>

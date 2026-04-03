@@ -9,6 +9,7 @@ import Domaines from "./pages/Domaines.tsx";
 import PackAutonomie from "./pages/PackAutonomie.tsx";
 import Afrique from "./pages/Afrique.tsx";
 import APropos from "./pages/APropos.tsx";
+import Precommande from "./pages/Precommande.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();

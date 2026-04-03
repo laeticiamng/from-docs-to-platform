@@ -38,6 +38,33 @@ export type Database = {
         }
         Relationships: []
       }
+      preorders: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          message: string | null
+          name: string
+          pack: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          message?: string | null
+          name: string
+          pack: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string | null
+          name?: string
+          pack?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string

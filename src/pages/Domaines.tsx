@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CommentSection from "@/components/CommentSection";
+import HowToGuide from "@/components/HowToGuide";
+import { howToGuides } from "@/data/howToData";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import {

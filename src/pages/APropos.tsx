@@ -5,10 +5,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const milestones = [
-  { year: "2023", title: "Naissance d'EmotionsCare", desc: "Création de la SASU à Amiens. L'idée : utiliser le vivant pour résoudre des problèmes que la tech classique ignore — l'eau, l'air, l'énergie locale." },
-  { year: "2024", title: "Recherche & Prototypage", desc: "Exploration des PMFC, des photobioréacteurs et des batteries quinone. Premier prototype de pot producteur d'électricité. Cartographie des 11 technologies." },
-  { year: "2025", title: "AquaMR Flow & Imagerie verte", desc: "Développement du cockpit vasculaire vert — agent de contraste IRM à base de betterave. Première application médicale concrète de l'écosystème PhytoTech." },
-  { year: "2026", title: "Lancement PhytoTech Home", desc: "Mise en marché de la gamme complète : Pot Vivant, Module Maison, Autonomie Village. Premiers déploiements pilotes en Afrique de l'Ouest." },
+  { year: "2025", title: "Création d'EmotionsCare SASU", desc: "Immatriculation le 6 mai 2025 à Amiens. Laeticia Motongane fonde la société avec une vision claire : utiliser le vivant pour résoudre les problèmes que la tech classique ignore." },
+  { year: "2025", title: "R&D PhytoTech & AquaMR", desc: "Exploration des PMFC, photobioréacteurs, batteries quinone. Développement du cockpit vasculaire vert AquaMR Flow — agent de contraste IRM à base de betterave." },
+  { year: "2026", title: "Lancement PhytoTech Home", desc: "Mise en marché de la gamme complète : Pot Vivant, Module Maison, Autonomie Village. Cartographie de 11 technologies et 60+ applications. Premiers déploiements pilotes." },
 ];
 
 const values = [
@@ -21,10 +20,10 @@ const values = [
 ];
 
 const team = [
-  { emoji: "🧬", role: "Fondateur & Directeur R&D", name: "Direction scientifique", desc: "Conception des technologies bio-intégrées, brevets, partenariats recherche avec les universités." },
+  { emoji: "👩‍💼", role: "Présidente & Fondatrice", name: "Laeticia Motongane", desc: "Vision stratégique, direction générale et pilotage de l'écosystème PhytoTech. À l'origine du projet EmotionsCare." },
+  { emoji: "🧬", role: "R&D & Sciences", name: "Direction scientifique", desc: "Conception des technologies bio-intégrées, brevets, partenariats recherche avec les universités." },
   { emoji: "🏭", role: "Bio-manufacture", name: "Production & Ingénierie", desc: "Cultiver les algues, mouler le PHA, assembler les kits. Fabrication locale et régionale." },
   { emoji: "🌍", role: "Déploiement terrain", name: "Impact & Partenariats", desc: "Coordination des déploiements en Afrique, formation des communautés, suivi des territoires pilotes." },
-  { emoji: "📱", role: "Produit & Design", name: "Expérience utilisateur", desc: "App mobile, monitoring, design des kits. Rendre la biotechnologie accessible et belle." },
 ];
 
 const APropos = () => (
@@ -164,12 +163,22 @@ const APropos = () => (
 
       {/* Infos légales */}
       <section className="py-20">
-        <div className="container mx-auto px-4 max-w-2xl text-center space-y-4">
+        <div className="container mx-auto px-4 max-w-2xl text-center space-y-6">
           <h2 className="text-2xl text-foreground">EmotionsCare SASU</h2>
-          <div className="text-sm text-muted-foreground space-y-1">
-            <p>Société par Actions Simplifiée Unipersonnelle</p>
-            <p>Siège social : Amiens, France</p>
-            <p>Fondée en 2023</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+            {[
+              { l: "Forme juridique", v: "SASU" },
+              { l: "SIREN", v: "944 505 445" },
+              { l: "Siège social", v: "5 rue Caudron, 80000 Amiens" },
+              { l: "Présidente", v: "Laeticia Motongane" },
+              { l: "Date de création", v: "6 mai 2025" },
+              { l: "Activité", v: "Édition / Biotechnologie verte" },
+            ].map((info) => (
+              <div key={info.l} className="text-left p-3 rounded-lg bg-secondary/50">
+                <p className="text-[10px] font-mono text-muted-foreground uppercase tracking-wider">{info.l}</p>
+                <p className="text-sm font-medium text-foreground mt-1">{info.v}</p>
+              </div>
+            ))}
           </div>
           <div className="flex gap-4 justify-center pt-4">
             <Button className="rounded-full">

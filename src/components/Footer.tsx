@@ -10,7 +10,8 @@ const Footer = () => (
             <span className="font-mono text-lg font-semibold">PHYTOTECH</span>
           </div>
           <p className="text-sm opacity-70 max-w-xs">
-            Home par EmotionsCare SASU · Amiens, France · 2026
+            par EmotionsCare SASU · 5 rue Caudron, 80000 Amiens<br />
+            SIREN 944 505 445 · Fondée par Laeticia Motongane
           </p>
         </div>
         <div className="flex gap-12">

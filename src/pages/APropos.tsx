@@ -163,12 +163,22 @@ const APropos = () => (
 
       {/* Infos légales */}
       <section className="py-20">
-        <div className="container mx-auto px-4 max-w-2xl text-center space-y-4">
+        <div className="container mx-auto px-4 max-w-2xl text-center space-y-6">
           <h2 className="text-2xl text-foreground">EmotionsCare SASU</h2>
-          <div className="text-sm text-muted-foreground space-y-1">
-            <p>Société par Actions Simplifiée Unipersonnelle</p>
-            <p>Siège social : Amiens, France</p>
-            <p>Fondée en 2023</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+            {[
+              { l: "Forme juridique", v: "SASU" },
+              { l: "SIREN", v: "944 505 445" },
+              { l: "Siège social", v: "5 rue Caudron, 80000 Amiens" },
+              { l: "Présidente", v: "Laeticia Motongane" },
+              { l: "Date de création", v: "6 mai 2025" },
+              { l: "Activité", v: "Édition / Biotechnologie verte" },
+            ].map((info) => (
+              <div key={info.l} className="text-left p-3 rounded-lg bg-secondary/50">
+                <p className="text-[10px] font-mono text-muted-foreground uppercase tracking-wider">{info.l}</p>
+                <p className="text-sm font-medium text-foreground mt-1">{info.v}</p>
+              </div>
+            ))}
           </div>
           <div className="flex gap-4 justify-center pt-4">
             <Button className="rounded-full">

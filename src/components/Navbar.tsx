@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import AuthDialog from "@/components/AuthDialog";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);

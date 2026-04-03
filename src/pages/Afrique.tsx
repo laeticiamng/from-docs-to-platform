@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CommentSection from "@/components/CommentSection";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -370,6 +371,7 @@ const Afrique = () => (
           </div>
         </div>
       </section>
+      <CommentSection pageSlug="afrique" />
     </main>
     <Footer />
   </div>

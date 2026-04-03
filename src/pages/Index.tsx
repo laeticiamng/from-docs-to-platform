@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CommentSection from "@/components/CommentSection";
+import HowToGuide from "@/components/HowToGuide";
+import { howToGuides } from "@/data/howToData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -122,12 +123,23 @@ const HonestySection = () => (
               { icon: "🧱", title: "Les matériaux", desc: "Bioplastiques, circuits biodégradables, agents de contraste végétaux — rien à voir avec la puissance électrique." },
               { icon: "🔋", title: "Le stockage", desc: "Les batteries quinone stockent l'énergie de vos panneaux solaires existants — mais sans métaux rares. Elles complètent le solaire." },
             ].map((item) => (
-              <div key={item.title} className="flex gap-3 p-3 rounded-lg bg-background/50">
-                <span className="text-2xl">{item.icon}</span>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">{item.title}</p>
-                  <p className="text-xs text-muted-foreground">{item.desc}</p>
+              <div key={item.title} className="flex flex-col gap-1 p-3 rounded-lg bg-background/50">
+                <div className="flex gap-3">
+                  <span className="text-2xl">{item.icon}</span>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">{item.title}</p>
+                    <p className="text-xs text-muted-foreground">{item.desc}</p>
+                  </div>
                 </div>
+                {howToGuides[item.title] && (
+                  <HowToGuide
+                    title={item.title}
+                    steps={howToGuides[item.title].steps}
+                    materials={howToGuides[item.title].materials}
+                    difficulty={howToGuides[item.title].difficulty}
+                    cost={howToGuides[item.title].cost}
+                  />
+                )}
               </div>
             ))}
           </div>
@@ -574,7 +586,7 @@ const Index = () => (
       <BusinessSection />
       <ChannelsSection />
       <CTASection />
-      <CommentSection pageSlug="accueil" />
+      
     </main>
     <Footer />
   </div>

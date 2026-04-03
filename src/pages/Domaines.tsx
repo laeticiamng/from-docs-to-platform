@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CommentSection from "@/components/CommentSection";
+import HowToGuide from "@/components/HowToGuide";
+import { howToGuides } from "@/data/howToData";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -275,6 +276,15 @@ const Domaines = () => (
                           </Badge>
                           <h4 className="text-sm font-semibold font-sans">{a.title}</h4>
                           <p className="text-xs text-muted-foreground">{a.desc}</p>
+                          {howToGuides[a.title] && (
+                            <HowToGuide
+                              title={a.title}
+                              steps={howToGuides[a.title].steps}
+                              materials={howToGuides[a.title].materials}
+                              difficulty={howToGuides[a.title].difficulty}
+                              cost={howToGuides[a.title].cost}
+                            />
+                          )}
                         </CardContent>
                       </Card>
                     ))}
@@ -345,7 +355,7 @@ const Domaines = () => (
           </p>
         </div>
       </section>
-      <CommentSection pageSlug="domaines" />
+      
     </main>
     <Footer />
   </div>

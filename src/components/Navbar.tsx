@@ -9,6 +9,7 @@ const Navbar = () => {
 
   const links = [
     { to: "/", label: "Accueil" },
+    { to: "/pack-autonomie", label: "Autonomie Totale" },
     { to: "/domaines", label: "Domaines" },
   ];
 

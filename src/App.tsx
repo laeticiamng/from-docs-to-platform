@@ -27,6 +27,7 @@ const App = () => (
             <Route path="/pack-autonomie" element={<PackAutonomie />} />
             <Route path="/afrique" element={<Afrique />} />
             <Route path="/a-propos" element={<APropos />} />
+            <Route path="/precommande" element={<Precommande />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

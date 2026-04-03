@@ -39,8 +39,8 @@ const Navbar = () => {
             </Link>
           ))}
           <AuthDialog />
-          <Button size="sm" className="rounded-full">
-            Précommander →
+          <Button size="sm" className="rounded-full" asChild>
+            <Link to="/precommande">Précommander →</Link>
           </Button>
         </nav>
 

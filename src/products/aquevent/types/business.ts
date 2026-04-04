@@ -51,3 +51,18 @@ export interface FinancialInputs {
   growthRate: number;
   timeHorizon: number;
 }
+
+export interface FundraisingRound {
+  name: string;
+  amount: string;
+  timing: string;
+  purpose: string;
+  milestones: string[];
+}
+
+export interface ScenarioProjection {
+  name: string;
+  userGrowth: number[];
+  revenue: number[];
+  ebitda: number[];
+}

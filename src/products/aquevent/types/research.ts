@@ -10,6 +10,11 @@ export interface ResearchPaper {
   keyFindings: string[];
   tags: string[];
   pdfUrl?: string;
+  studyType?: 'safety' | 'efficacy' | 'toxicology';
+  duration?: string;
+  participants?: string;
+  dosage?: string;
+  relevance?: string;
 }
 
 export interface SafetyMetric {

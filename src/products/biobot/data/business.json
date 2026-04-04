@@ -1,0 +1,102 @@
+{
+  "revenueStreams": [
+    {
+      "name": "BaaS (BioBot-as-a-Service)",
+      "streams": [
+        { "bot": "HealthBot", "price": "10K/mois", "margin": "75%" },
+        { "bot": "AgroBot", "price": "15K/mois", "margin": "70%" },
+        { "bot": "OceanBot", "price": "20K/mois", "margin": "65%" },
+        { "bot": "CustomBot", "price": "25K/mois", "margin": "80%" }
+      ]
+    },
+    {
+      "name": "IP Licensing Platform",
+      "streams": [
+        { "category": "Bio-materials", "royalty": "5-15%" },
+        { "category": "Bio-energy", "royalty": "5-15%" },
+        { "category": "Bio-AI", "royalty": "5-15%" },
+        { "category": "Bio-manufacturing", "royalty": "5-15%" }
+      ]
+    },
+    {
+      "name": "Data & Intelligence",
+      "streams": [
+        { "category": "Environmental data", "model": "API + consulting" },
+        { "category": "Health insights", "model": "Subscription" },
+        { "category": "Agricultural optimization", "model": "Per-hectare" },
+        { "category": "Predictive models", "model": "Enterprise license" }
+      ]
+    },
+    {
+      "name": "Marketplace Ecosystem",
+      "streams": [
+        { "category": "Bio-apps", "fee": "30%" },
+        { "category": "Bio-modules upgrades", "fee": "20%" },
+        { "category": "Bio-services", "fee": "15%" },
+        { "category": "Developer tools", "fee": "10%" }
+      ]
+    }
+  ],
+  "projections": [
+    { "year": 3, "revenue": "500M", "description": "Early adoption premium" },
+    { "year": 5, "revenue": "5Md", "description": "Industrial deployment" },
+    { "year": 10, "revenue": "50Md", "description": "Mainstream standard" },
+    { "year": 15, "revenue": "200Md", "description": "Global transformation" }
+  ],
+  "fundraising": [
+    {
+      "phase": 1,
+      "name": "Proof of Concept",
+      "budget": "25M",
+      "timeline": "24 mois",
+      "team": "50 bio-engineers + researchers",
+      "deliverable": "HealthBot prototype fonctionnel",
+      "partnerships": "MIT + ETH + Stanford + INRAE",
+      "ip": "50+ brevets core technology"
+    },
+    {
+      "phase": 2,
+      "name": "Pilot Production",
+      "budget": "100M",
+      "timeline": "36 mois",
+      "team": "200-300 engineers + scientists",
+      "deliverable": "100 HealthBots deploiement pilote",
+      "revenue": "50M annual run rate",
+      "manufacturing": "Bio-factory premiere"
+    },
+    {
+      "phase": 3,
+      "name": "Scale Global",
+      "budget": "500M",
+      "timeline": "60 mois",
+      "team": "1000+",
+      "deliverable": "10K robots + 3 applications",
+      "geographic": "Europe + US + Asia",
+      "revenue": "2Md annual"
+    },
+    {
+      "phase": 4,
+      "name": "Ecosystem Dominance",
+      "budget": "1Md",
+      "timeline": "84 mois",
+      "deliverable": "100K+ robots deployes",
+      "applications": "20+ secteurs",
+      "presence": "50+ pays",
+      "revenue": "10Md+ annual"
+    }
+  ],
+  "valuation": {
+    "aquaventStandalone": "10Md",
+    "biobotStandalone": "500Md",
+    "synergieMultiplicateur": "5-10x",
+    "platformMonopoly": "2-5 trillion",
+    "exitStrategy": ["IPO valorisation 100-500Md", "Strategic acquisition tech giants", "Spin-offs applications sectorielles"]
+  },
+  "feasibility": [
+    { "technology": "Bio-Photovoltaiques", "trl": "6-7", "probability": "70%", "timeline": "2025-2027", "companies": ["Bioo Scientific", "Plant-e", "Algae Systems"], "status": "validated" },
+    { "technology": "Bio-Composites", "trl": "7-8", "probability": "85%", "timeline": "Commercial", "companies": ["Novoloop", "Ecovative", "Algix"], "status": "validated" },
+    { "technology": "Bio-Electronics", "trl": "5-6", "probability": "60%", "timeline": "5-10 ans", "companies": ["Spiber", "Bolt Threads", "Modern Meadow"], "status": "developing" },
+    { "technology": "Bio-Energy Storage", "trl": "4-5", "probability": "50%", "timeline": "2-5 ans breakthrough", "companies": ["Samsung", "Toyota", "UC Berkeley"], "status": "developing" },
+    { "technology": "Bio-Intelligence", "trl": "3-4", "probability": "40%", "timeline": "10-15 ans", "companies": ["Mycelia", "IntelGenx", "NeuroGrid"], "status": "research" }
+  ]
+}

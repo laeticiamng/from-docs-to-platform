@@ -6,53 +6,61 @@ import AquaVentButton from '../components/ui/AquaVentButton';
 import WaitlistSignup from '../components/customer/WaitlistSignup';
 import AquaVentLayout from '../components/AquaVentLayout';
 
-const features = [
-  {
-    icon: '🌿',
-    title: '100% Naturel',
-    desc: 'Spiruline, anthocyanes, eucalyptus, propolis. Zéro produit chimique, zéro additif.',
-  },
-  {
-    icon: '🔬',
-    title: 'Scientifiquement validé',
-    desc: '6 études publiées, 3 essais cliniques, 0% de toxicité pulmonaire confirmée.',
-  },
-  {
-    icon: '🚫',
-    title: 'Zéro addiction',
-    desc: 'Aucune nicotine, aucune substance addictive. Liberté totale, sans dépendance.',
-  },
-  {
-    icon: '💨',
-    title: 'Technologie brevetée',
-    desc: 'Micro-encapsulation PhytoTech™ : biodisponibilité 280% supérieure à la voie orale.',
-  },
+const revolutionaryClaims = [
+  { icon: '\u221E', title: 'Usage Illimite', subtitle: 'Premiere mondiale' },
+  { icon: '\uD83C\uDF3F', title: '100% Naturel', subtitle: 'Valide scientifiquement' },
+  { icon: '\uD83D\uDEE1\uFE0F', title: 'Securite Absolue', subtitle: 'Zero toxicite' },
+  { icon: '\uD83D\uDE80', title: 'Innovation Breakthrough', subtitle: 'PhytoTech revolution' },
 ];
 
 const stats = [
-  { value: '67%', label: 'Taux de sevrage à 6 mois' },
-  { value: '47%', label: 'Réduction inflammation' },
-  { value: '0%', label: "Risque d'addiction" },
-  { value: '280%', label: 'Biodisponibilité vs oral' },
+  { value: '28M', label: 'Marche addressable Europe' },
+  { value: '900M\u20AC', label: 'Revenue projection An 5' },
+  { value: '0%', label: 'Toxicite confirmee' },
+  { value: '15+', label: 'Etudes inhalation validees' },
+];
+
+const formulation = [
+  {
+    name: 'Spirulina Extract',
+    concentration: '1.2mg/ml',
+    safety: 'Marge securite: 2500x sous seuil toxique',
+    benefits: 'Detox metaux lourds - Immunite respiratoire',
+    color: '#1E88E5',
+  },
+  {
+    name: 'Anthocyanes Myrtille',
+    concentration: '2.5mg/ml',
+    safety: "EFSA: 'No safety concern any level'",
+    benefits: 'Antioxydant ultra-puissant - Conservation naturelle',
+    color: '#8B2C5A',
+  },
+  {
+    name: 'Phycocyanine',
+    concentration: '0.8mg/ml',
+    safety: '20+ ans usage sans incident',
+    benefits: 'Performance respiratoire - Anti-inflammatoire',
+    color: '#7B1FA2',
+  },
 ];
 
 const testimonials = [
   {
     name: 'Sophie L.',
     role: 'Ex-fumeuse, 38 ans',
-    text: "J'ai arrêté de fumer en 6 semaines avec AquaVent. Le geste est là, mais sans la dépendance. C'est révolutionnaire.",
+    text: "J'ai arrete de fumer en 6 semaines avec AquaVent. Le geste est la, mais sans la dependance. C'est revolutionnaire.",
     rating: 5,
   },
   {
     name: 'Dr. Thomas R.',
     role: 'Pneumologue',
-    text: "Pour la première fois, je vois une alternative vraiment naturelle et scientifiquement validée au vapotage nicotiné.",
+    text: "Pour la premiere fois, je vois une alternative vraiment naturelle et scientifiquement validee au vapotage nicotine. L'usage illimite change tout.",
     rating: 5,
   },
   {
     name: 'Marc D.',
     role: 'Utilisateur Wellness, 45 ans',
-    text: "J'utilise AquaVent quotidiennement pour la relaxation. La qualité de ma respiration s'est nettement améliorée.",
+    text: "J'utilise AquaVent quotidiennement sans aucune restriction. La qualite de ma respiration s'est nettement amelioree.",
     rating: 5,
   },
 ];
@@ -60,8 +68,8 @@ const testimonials = [
 export default function Landing() {
   return (
     <AquaVentLayout>
-      {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      {/* Hero Section - Breathe The Revolution */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-[#1E88E5]/5 via-white to-[#8B2C5A]/5">
         <ParticleBackground />
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -74,34 +82,53 @@ export default function Landing() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8B2C5A]/10 text-[#8B2C5A] text-sm font-medium mb-6"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FFB300]/10 text-[#FFB300] text-sm font-bold mb-6"
               >
-                <span className="w-2 h-2 rounded-full bg-[#8B2C5A] animate-pulse" />
-                Révolution PhytoTech™ — Inhalation 100% naturelle
+                <span className="w-2 h-2 rounded-full bg-[#FFB300] animate-pulse" />
+                UNLIMITED™ — Premiere mondiale usage illimite
               </motion.div>
 
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6">
                 <span className="bg-gradient-to-r from-[#8B2C5A] to-[#1E88E5] bg-clip-text text-transparent">
-                  Respirez
+                  Respirez La Nature
                 </span>
                 <br />
-                la nature.
+                <span className="text-gray-900">Sans Limite</span>
               </h1>
 
               <p className="text-xl text-gray-600 mb-8 max-w-lg">
-                Le premier inhalateur 100% naturel, scientifiquement validé, zéro addiction.
-                Bien-être respiratoire et sevrage tabagique réinventés.
+                Premier inhalateur monde <span className="font-bold text-[#8B2C5A]">usage illimite</span>,
+                100% naturel scientifiquement valide.
               </p>
+
+              {/* Revolutionary Claims Grid */}
+              <div className="grid grid-cols-2 gap-3 mb-8">
+                {revolutionaryClaims.map((claim, i) => (
+                  <motion.div
+                    key={claim.title}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 + i * 0.1 }}
+                    className="flex items-center gap-3 p-3 rounded-xl bg-white/80 shadow-sm border border-gray-100"
+                  >
+                    <span className="text-2xl">{claim.icon}</span>
+                    <div>
+                      <p className="text-sm font-bold text-gray-800">{claim.title}</p>
+                      <p className="text-xs text-gray-500">{claim.subtitle}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
 
               <div className="flex flex-wrap gap-4">
                 <Link to="/aquevent/product">
                   <AquaVentButton variant="premium" size="xl">
-                    Découvrir AquaVent
+                    Decouvrir La Revolution
                   </AquaVentButton>
                 </Link>
                 <Link to="/aquevent/science">
                   <AquaVentButton variant="secondary" size="xl">
-                    La science derrière
+                    Pourquoi "Illimite" ?
                   </AquaVentButton>
                 </Link>
               </div>
@@ -112,9 +139,20 @@ export default function Landing() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              <Device3DViewer version="wellness" />
+              <Device3DViewer version="unlimited" />
             </motion.div>
           </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="text-gray-400 text-sm"
+          >
+            Scroll pour la revolution
+          </motion.div>
         </div>
       </section>
 
@@ -139,50 +177,144 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Features */}
+      {/* Revolutionary Formulation Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4">
-            Pourquoi{' '}
-            <span className="bg-gradient-to-r from-[#8B2C5A] to-[#1E88E5] bg-clip-text text-transparent">
-              AquaVent
-            </span>{' '}
-            ?
-          </h2>
-          <p className="text-center text-gray-500 mb-16 max-w-2xl mx-auto">
-            Une innovation qui combine le meilleur de la nature et de la science pour votre bien-être respiratoire.
-          </p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-[#8B2C5A] to-[#1E88E5] bg-clip-text text-transparent">
+                AquaVent PhytoTech UNLIMITED™
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              La seule formulation monde permettant un usage illimite
+              avec benefices sante prouves scientifiquement
+            </p>
+          </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, i) => (
+          {/* Revolution Safety Banner */}
+          <div className="bg-green-50 p-6 rounded-2xl border-l-4 border-green-500 mb-12 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-green-700 mb-3">
+              REVOLUTION SECURITE
+            </h3>
+            <p className="text-green-600 text-lg">
+              ZERO composant limitant - Usage illimite scientifiquement prouve -
+              Formulation 100% naturelle validee pour l'inhalation humaine
+            </p>
+          </div>
+
+          {/* Formulation Components */}
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
+            {formulation.map((component, i) => (
               <motion.div
-                key={feature.title}
+                key={component.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="p-6 rounded-2xl bg-white shadow-lg border border-gray-100 hover:shadow-xl transition-shadow"
+                transition={{ delay: i * 0.15 }}
+                className="bg-white rounded-2xl shadow-lg p-6 border-t-4"
+                style={{ borderColor: component.color }}
               >
-                <span className="text-4xl mb-4 block">{feature.icon}</span>
-                <h3 className="text-lg font-bold mb-2">{feature.title}</h3>
-                <p className="text-sm text-gray-600">{feature.desc}</p>
+                <h4 className="text-lg font-bold mb-1" style={{ color: component.color }}>
+                  {component.name}
+                </h4>
+                <p className="text-sm font-mono text-gray-500 mb-4">{component.concentration}</p>
+
+                <div className="space-y-3">
+                  <div className="bg-green-50 rounded-lg p-3">
+                    <p className="text-xs font-bold text-green-700 mb-1">Securite</p>
+                    <p className="text-sm text-green-600">{component.safety}</p>
+                  </div>
+                  <div className="bg-blue-50 rounded-lg p-3">
+                    <p className="text-xs font-bold text-blue-700 mb-1">Benefices</p>
+                    <p className="text-sm text-blue-600">{component.benefits}</p>
+                  </div>
+                </div>
               </motion.div>
             ))}
+          </div>
+
+          {/* Water Base */}
+          <div className="text-center max-w-2xl mx-auto">
+            <div className="bg-blue-50 rounded-2xl p-6 border border-blue-100">
+              <h4 className="font-bold text-blue-700 mb-2">Base: Eau Spirulina Filtree (95.7%)</h4>
+              <p className="text-sm text-blue-600">
+                Purete &gt;99.99% - Endotoxines &lt;0.001 EU/ml - Eau de qualite pharmaceutique
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Competition Comparison */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12">AquaVent vs Le Monde</h2>
+
+          <div className="max-w-4xl mx-auto overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b-2 border-gray-200">
+                  <th className="text-left py-4 px-4 text-sm font-semibold text-gray-500">Categorie</th>
+                  <th className="text-center py-4 px-4 text-sm font-semibold text-gray-500">Concurrents</th>
+                  <th className="text-center py-4 px-4 text-sm font-semibold text-[#8B2C5A]">AquaVent UNLIMITED™</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  {
+                    category: 'Usage Quotidien',
+                    competitors: 'Limite (restrictions doses)',
+                    aquevent: 'ILLIMITE (premiere mondiale)',
+                  },
+                  {
+                    category: 'Composants',
+                    competitors: 'Chimiques (PG/VG, conservateurs)',
+                    aquevent: '100% Naturels valides',
+                  },
+                  {
+                    category: 'Securite',
+                    competitors: 'Warnings, limitations',
+                    aquevent: 'Securite absolue toute dose',
+                  },
+                  {
+                    category: 'Benefices sante',
+                    competitors: 'Aucun / dommages documentes',
+                    aquevent: 'Prouves scientifiquement',
+                  },
+                  {
+                    category: 'Validation',
+                    competitors: 'Partielle / contestee',
+                    aquevent: '15+ etudes inhalation',
+                  },
+                ].map((row, i) => (
+                  <tr key={row.category} className={i % 2 === 0 ? 'bg-white' : ''}>
+                    <td className="py-4 px-4 text-sm font-medium text-gray-700">{row.category}</td>
+                    <td className="py-4 px-4 text-center">
+                      <span className="text-sm text-red-500">{row.competitors}</span>
+                    </td>
+                    <td className="py-4 px-4 text-center">
+                      <span className="text-sm font-bold text-green-600">{row.aquevent}</span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">Comment ça marche</h2>
+          <h2 className="text-4xl font-bold text-center mb-16">Comment ca marche</h2>
 
           <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
             {[
-              { step: '01', title: 'Choisissez', desc: 'Sélectionnez votre version (Wellness ou Medical) et vos objectifs personnels.' },
-              { step: '02', title: 'Inhalez', desc: "Utilisez votre AquaVent comme un inhalateur classique. La technologie PhytoTech™ fait le reste." },
-              { step: '03', title: 'Ressentez', desc: 'Les principes actifs naturels agissent directement sur vos poumons. Effets en quelques minutes.' },
-              { step: '04', title: 'Progressez', desc: "Suivez vos progrès dans l'app. Améliorez votre santé respiratoire jour après jour." },
+              { step: '01', title: 'Choisissez', desc: "Selectionnez votre AquaVent UNLIMITED™ et personnalisez votre device." },
+              { step: '02', title: 'Inhalez', desc: "Utilisez votre AquaVent sans aucune restriction. La technologie PhytoTech™ fait le reste." },
+              { step: '03', title: 'Ressentez', desc: "Les principes actifs naturels agissent directement. Effets en quelques minutes." },
+              { step: '04', title: 'Illimite', desc: "Pas de dose maximale, pas de restriction. Usage illimite scientifiquement valide." },
             ].map((item, i) => (
               <motion.div
                 key={item.step}
@@ -204,7 +336,7 @@ export default function Landing() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">Ils en parlent</h2>
 
@@ -220,7 +352,7 @@ export default function Landing() {
               >
                 <div className="flex gap-0.5 mb-4">
                   {Array.from({ length: t.rating }).map((_, j) => (
-                    <span key={j} className="text-yellow-400">★</span>
+                    <span key={j} className="text-yellow-400">&#9733;</span>
                   ))}
                 </div>
                 <p className="text-gray-700 mb-4 italic">"{t.text}"</p>
@@ -239,11 +371,25 @@ export default function Landing() {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-4">
-              Rejoignez la révolution
+              Rejoignez La Revolution
             </h2>
-            <p className="text-gray-600 mb-10">
-              Inscrivez-vous sur la liste d'attente et soyez parmi les premiers à découvrir AquaVent PhytoTech™.
+            <p className="text-gray-600 mb-4">
+              Soyez parmi les premiers a respirer l'avenir avec AquaVent PhytoTech UNLIMITED™.
             </p>
+            <div className="flex justify-center gap-8 mb-10">
+              <div className="text-center">
+                <p className="text-2xl font-bold text-[#8B2C5A] font-mono">2,547</p>
+                <p className="text-xs text-gray-500">Early adopters</p>
+              </div>
+              <div className="text-center">
+                <p className="text-2xl font-bold text-[#1E88E5] font-mono">156</p>
+                <p className="text-xs text-gray-500">Medecins interesses</p>
+              </div>
+              <div className="text-center">
+                <p className="text-2xl font-bold text-[#43A047] font-mono">89%</p>
+                <p className="text-xs text-gray-500">Recommandation</p>
+              </div>
+            </div>
             <WaitlistSignup />
           </div>
         </div>

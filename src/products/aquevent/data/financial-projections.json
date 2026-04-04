@@ -1,5 +1,15 @@
 {
   "unitEconomics": {
+    "unlimitedDevice": {
+      "retailPrice": 199,
+      "cogs": 55,
+      "grossMargin": 72,
+      "cartridgePrice": 4.99,
+      "cartridgeCogs": 1.50,
+      "cartridgeMargin": 70,
+      "averageCartridgesPerMonth": 8,
+      "ltv12Months": 678
+    },
     "wellnessDevice": {
       "retailPrice": 79,
       "cogs": 22,
@@ -22,27 +32,39 @@
     }
   },
   "fundingNeeds": {
-    "seedRound": {
-      "amount": 2000000,
+    "serieA": {
+      "amount": 15000000,
       "use": {
         "rd": 40,
-        "manufacturing": 25,
-        "marketing": 20,
+        "clinical": 25,
+        "production": 20,
         "operations": 15
       },
-      "timeline": "Q2 2026"
+      "timeline": "Mois 6"
     },
-    "seriesA": {
-      "amount": 8000000,
+    "serieB": {
+      "amount": 50000000,
       "use": {
-        "scaleProduction": 35,
-        "marketExpansion": 30,
-        "teamGrowth": 20,
-        "regulatory": 15
+        "launch": 35,
+        "scaleProduction": 25,
+        "marketExpansion": 25,
+        "teamGrowth": 15
       },
-      "timeline": "Q1 2027"
+      "timeline": "Mois 24"
+    },
+    "serieC": {
+      "amount": 100000000,
+      "use": {
+        "global": 40,
+        "platform": 25,
+        "exitPrep": 20,
+        "reserve": 15
+      },
+      "timeline": "Mois 48"
     }
   },
+  "totalCapital": "165M",
+  "exitValuation": "8-12Md",
   "breakeven": {
     "monthlyFixedCosts": 180000,
     "averageMarginPerUnit": 57,
@@ -55,6 +77,8 @@
     "postSeed": 12000000,
     "projectedSeriesA": 45000000,
     "projectedSeriesB": 150000000,
+    "projectedSeriesC": 500000000,
+    "exitTarget": "8000000000-12000000000",
     "method": "Revenue Multiple + Comparable Analysis"
   }
 }

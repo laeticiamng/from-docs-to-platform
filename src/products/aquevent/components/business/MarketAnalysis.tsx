@@ -1,31 +1,30 @@
 import { motion } from 'framer-motion';
 import competitors from '../../data/competitor-analysis.json';
-import type { Competitor } from '../../types/business';
 
 const teamMembers = [
   {
     name: 'Dr. Marie Dupont',
     role: 'CEO & Co-fondatrice',
     expertise: 'Pharmacologie respiratoire, 15 ans R&D',
-    bio: 'Docteure en pharmacologie, ex-directrice R&D chez un leader mondial de la santé respiratoire. Inventrice de la technologie PhytoTech™.',
+    bio: "Docteure en pharmacologie, ex-directrice R&D chez un leader mondial de la sante respiratoire. Inventrice de la technologie PhytoTech™.",
   },
   {
     name: 'Prof. Jean-Luc Bernard',
     role: 'CSO (Chief Science Officer)',
-    expertise: 'Phytothérapie, Toxicologie',
-    bio: 'Professeur émérite de phytothérapie. 200+ publications scientifiques. Expert reconnu en sécurité des produits naturels.',
+    expertise: 'Phytotherapie, Toxicologie',
+    bio: 'Professeur emerite de phytotherapie. 200+ publications scientifiques. Expert reconnu en securite des produits naturels.',
   },
   {
     name: 'Alexandre Martin',
     role: 'CTO',
     expertise: 'Hardware, IoT, Production',
-    bio: 'Ex-ingénieur senior Apple. Expert en miniaturisation et systèmes de délivrance. 12 brevets déposés.',
+    bio: 'Ex-ingenieur senior Apple. Expert en miniaturisation et systemes de delivrance. 12 brevets deposes.',
   },
   {
     name: 'Laeticia Mng',
     role: 'COO & Co-fondatrice',
     expertise: 'Business Development, Innovation',
-    bio: 'Experte en développement de plateformes technologiques et stratégie business. Vision produit et go-to-market.',
+    bio: 'Experte en developpement de plateformes technologiques et strategie business. Vision produit et go-to-market.',
   },
 ];
 
@@ -33,33 +32,60 @@ export default function MarketAnalysis() {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
+        {/* Crisis + Solution */}
+        <h3 className="text-3xl font-bold text-center mb-12">Market Opportunity: La Revolution Necessaire</h3>
+
+        <div className="grid lg:grid-cols-2 gap-8 mb-16 max-w-5xl mx-auto">
+          {/* Problem Statement */}
+          <div className="bg-red-50 p-8 rounded-2xl border-l-4 border-red-500">
+            <h4 className="text-xl font-bold text-red-700 mb-4">Crisis Inhalation Mondiale</h4>
+            <div className="space-y-3 text-red-600">
+              <p><strong>3.2M vapoteurs France</strong> empoisonnes quotidiennement PG/VG</p>
+              <p><strong>15M fumeurs Europe</strong> cherchent alternative vraiment sure</p>
+              <p><strong>ZERO solution naturelle</strong> usage illimite existante</p>
+              <p><strong>Regulatory pressure</strong> croissante e-cigarettes</p>
+            </div>
+          </div>
+
+          {/* Solution */}
+          <div className="bg-green-50 p-8 rounded-2xl border-l-4 border-green-500">
+            <h4 className="text-xl font-bold text-green-700 mb-4">AquaVent UNLIMITED™ Solution</h4>
+            <div className="space-y-3 text-green-600">
+              <p><strong>Usage illimite valide</strong> scientifiquement — premiere mondiale</p>
+              <p><strong>100% naturel</strong> chaque composant prouve sur inhalation</p>
+              <p><strong>Benefices sante</strong> vs dommages (revolution paradigme)</p>
+              <p><strong>Premium experience</strong> Apple-level satisfaction</p>
+            </div>
+          </div>
+        </div>
+
         {/* Key Market Drivers */}
-        <h3 className="text-3xl font-bold text-center mb-12">Dynamique du marché</h3>
+        <h3 className="text-2xl font-bold text-center mb-8">Dynamique du marche</h3>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {[
             {
-              icon: '🚫',
-              title: 'Réglementation anti-tabac',
-              desc: '85 pays renforcent la législation. Interdictions croissantes du vapotage nicotiné.',
-              trend: '+23% de régulation/an',
+              icon: '\uD83D\uDEAB',
+              title: 'Reglementation anti-tabac',
+              desc: '85 pays renforcent la legislation. Interdictions croissantes du vapotage nicotine.',
+              trend: '+23% de regulation/an',
             },
             {
-              icon: '🌿',
+              icon: '\uD83C\uDF3F',
               title: 'Demande de naturel',
-              desc: '78% des consommateurs préfèrent les alternatives naturelles aux produits chimiques.',
+              desc: '78% des consommateurs preferent les alternatives naturelles aux produits chimiques.',
               trend: '+18.7% CAGR',
             },
             {
-              icon: '🏥',
-              title: 'Santé respiratoire',
-              desc: 'Post-COVID, la santé pulmonaire est devenue une priorité mondiale.',
-              trend: '3.4B personnes concernées',
+              icon: '\uD83C\uDFE5',
+              title: 'Sante respiratoire',
+              desc: 'Post-COVID, la sante pulmonaire est devenue une priorite mondiale.',
+              trend: '3.4B personnes concernees',
             },
             {
-              icon: '💡',
-              title: 'Innovation PhytoTech',
-              desc: 'Première technologie brevetée combinant micro-encapsulation et inhalation naturelle.',
-              trend: '3 brevets déposés',
+              icon: '\uD83D\uDCA1',
+              title: 'Innovation UNLIMITED',
+              desc: 'Premiere technologie brevetee usage illimite naturel. Blue ocean complet.',
+              trend: '25+ brevets possibles',
             },
           ].map((driver, i) => (
             <motion.div
@@ -78,27 +104,27 @@ export default function MarketAnalysis() {
         </div>
 
         {/* Competitive Matrix */}
-        <h3 className="text-3xl font-bold text-center mb-4">Matrice concurrentielle</h3>
+        <h3 className="text-2xl font-bold text-center mb-4">Competitive: Blue Ocean Confirme</h3>
         <p className="text-center text-gray-500 mb-10">
-          Positionnement unique dans l'espace naturel + scientifiquement validé
+          Positionnement unique: usage illimite + 100% naturel + valide scientifiquement
         </p>
 
-        <div className="relative h-96 max-w-3xl mx-auto mb-16 bg-white rounded-2xl shadow-md p-8">
+        <div className="relative h-96 max-w-3xl mx-auto mb-8 bg-white rounded-2xl shadow-md p-8">
           {/* Axes */}
           <div className="absolute bottom-8 left-8 right-8 h-0.5 bg-gray-200" />
           <div className="absolute bottom-8 left-8 top-8 w-0.5 bg-gray-200" />
           <span className="absolute bottom-2 right-8 text-xs text-gray-400">Innovation →</span>
-          <span className="absolute top-4 left-2 text-xs text-gray-400 -rotate-90 origin-center">Naturel →</span>
+          <span className="absolute top-4 left-2 text-xs text-gray-400 -rotate-90 origin-center">Securite →</span>
 
           {/* Competitor bubbles */}
-          {(competitors as Competitor[]).map((c, i) => {
+          {competitors.map((c, i) => {
             const isAquaVent = c.name.includes('AquaVent');
             const positions = [
-              { x: '70%', y: '75%' }, // JUUL
-              { x: '55%', y: '70%' }, // Nicorette
+              { x: '65%', y: '70%' }, // E-cig
+              { x: '50%', y: '50%' }, // Nicorette
               { x: '25%', y: '35%' }, // Aromatherapie
-              { x: '45%', y: '40%' }, // CBD
-              { x: '85%', y: '15%' }, // AquaVent
+              { x: '45%', y: '45%' }, // CBD
+              { x: '88%', y: '10%' }, // AquaVent UNLIMITED
             ];
             const pos = positions[i] || { x: '50%', y: '50%' };
 
@@ -119,7 +145,7 @@ export default function MarketAnalysis() {
               >
                 <div
                   className={`rounded-full flex items-center justify-center ${
-                    isAquaVent ? 'w-20 h-20 shadow-lg' : 'w-14 h-14'
+                    isAquaVent ? 'w-24 h-24 shadow-lg ring-2 ring-[#FFB300]/30' : 'w-14 h-14'
                   }`}
                   style={{
                     background: isAquaVent
@@ -128,7 +154,7 @@ export default function MarketAnalysis() {
                   }}
                 >
                   <span className={`text-center leading-tight ${isAquaVent ? 'text-white text-[8px] font-bold' : 'text-gray-600 text-[7px]'}`}>
-                    {c.name.split('/')[0].trim().substring(0, 12)}
+                    {isAquaVent ? 'AquaVent\nUNLIMITED™' : c.name.split('(')[0].trim().substring(0, 12)}
                   </span>
                 </div>
               </motion.div>
@@ -136,8 +162,22 @@ export default function MarketAnalysis() {
           })}
         </div>
 
+        {/* Competitive Insights */}
+        <div className="grid md:grid-cols-4 gap-4 mb-16 max-w-4xl mx-auto">
+          {[
+            "Aucun concurrent direct sur 'usage illimite'",
+            'Blue ocean complet - nouvelle categorie',
+            'First-mover 18-24 mois minimum',
+            'Defensive moat: IP + expertise + brand',
+          ].map((insight, i) => (
+            <div key={insight} className="bg-[#8B2C5A]/5 rounded-xl p-4 text-center">
+              <p className="text-sm text-[#8B2C5A] font-medium">{insight}</p>
+            </div>
+          ))}
+        </div>
+
         {/* Team */}
-        <h3 className="text-3xl font-bold text-center mb-4">L'équipe</h3>
+        <h3 className="text-3xl font-bold text-center mb-4">L'equipe</h3>
         <p className="text-center text-gray-500 mb-10">
           Des experts de classe mondiale en pharmacologie, technologie et business
         </p>

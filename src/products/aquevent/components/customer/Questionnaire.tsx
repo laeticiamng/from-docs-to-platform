@@ -3,47 +3,49 @@ import { motion, AnimatePresence } from 'framer-motion';
 import AquaVentButton from '../ui/AquaVentButton';
 import { usePersonalization } from '../../hooks/usePersonalization';
 
-interface StepProps {
-  onNext: (value: string) => void;
-  onBack?: () => void;
-}
-
 const steps = [
   {
     id: 'smoking',
-    question: 'Quel est votre rapport au tabac ?',
+    question: 'Votre Profil Respiration',
+    subtitle: 'Quelle est votre situation actuelle ?',
     options: [
-      { value: 'current', label: 'Fumeur actuel', emoji: '🚬', desc: 'Je fume régulièrement' },
-      { value: 'former', label: 'Ex-fumeur', emoji: '✅', desc: "J'ai arrêté mais je reste vigilant" },
-      { value: 'never', label: 'Non-fumeur', emoji: '🌱', desc: "Je n'ai jamais fumé" },
+      { value: 'current', label: 'Je fume encore', emoji: '\uD83D\uDEAC', desc: 'Fumeur actuel regulier' },
+      { value: 'vaper', label: 'Je vapote (e-cigarette)', emoji: '\uD83D\uDCA8', desc: 'Utilisateur e-cig' },
+      { value: 'former', label: 'Ex-fumeur sevre', emoji: '\uD83D\uDEAB', desc: "J'ai arrete mais je reste vigilant" },
+      { value: 'never', label: 'Jamais fume/vapote', emoji: '\u2728', desc: 'Interesse par le wellness' },
     ],
   },
   {
     id: 'goal',
-    question: 'Quel est votre objectif principal ?',
+    question: 'Votre Motivation Principale',
+    subtitle: 'Pourquoi AquaVent vous interesse ?',
     options: [
-      { value: 'cessation', label: 'Arrêter de fumer', emoji: '🎯', desc: 'Sevrage progressif et naturel' },
-      { value: 'wellness', label: 'Bien-être quotidien', emoji: '✨', desc: 'Améliorer ma vitalité' },
-      { value: 'relaxation', label: 'Relaxation', emoji: '🧘', desc: 'Gérer le stress naturellement' },
-      { value: 'respiratory', label: 'Santé respiratoire', emoji: '🫁', desc: 'Améliorer ma respiration' },
+      { value: 'cessation', label: 'Arreter de fumer/vapoter', emoji: '\uD83C\uDFAF', desc: 'Sevrage progressif et naturel' },
+      { value: 'replace', label: 'Remplacer par plus sain', emoji: '\uD83D\uDD04', desc: 'Alternative sans toxicite' },
+      { value: 'wellness', label: 'Wellness preventif', emoji: '\uD83C\uDF3F', desc: 'Bien-etre respiratoire quotidien' },
+      { value: 'pollution', label: 'Protection pollution', emoji: '\uD83C\uDFD9\uFE0F', desc: 'Defense urbaine naturelle' },
     ],
   },
   {
     id: 'lifestyle',
-    question: 'Quel est votre mode de vie ?',
+    question: 'Votre Mode de Vie',
+    subtitle: 'Combien de fois par jour utiliseriez-vous AquaVent ?',
     options: [
-      { value: 'urban', label: 'Urbain', emoji: '🏙️', desc: 'Vie en ville, pollution quotidienne' },
-      { value: 'suburban', label: 'Périurbain', emoji: '🏡', desc: 'Entre ville et campagne' },
-      { value: 'rural', label: 'Rural', emoji: '🌾', desc: 'Environnement naturel' },
+      { value: 'light', label: '1-5 fois/jour', emoji: '\uD83C\uDF1F', desc: 'Usage leger' },
+      { value: 'moderate', label: '5-15 fois/jour', emoji: '\uD83D\uDCAA', desc: 'Usage moderee' },
+      { value: 'heavy', label: '15-30 fois/jour', emoji: '\uD83D\uDD25', desc: 'Usage intensif' },
+      { value: 'unlimited', label: '30+ fois/jour', emoji: '\u267E\uFE0F', desc: 'Usage illimite - c\'est possible !' },
     ],
   },
   {
     id: 'budget',
-    question: 'Quel budget mensuel envisagez-vous ?',
+    question: 'Priorite Securite vs Performance',
+    subtitle: "Qu'est-ce qui compte le plus pour vous ?",
     options: [
-      { value: 'standard', label: 'Standard', emoji: '💚', desc: '~36€/mois • Wellness Edition' },
-      { value: 'premium', label: 'Premium', emoji: '💎', desc: '~54€/mois • Programme complet' },
-      { value: 'unlimited', label: 'Illimité', emoji: '👑', desc: '~72€/mois • Expérience maximale' },
+      { value: 'safety', label: 'Securite absolue', emoji: '\uD83D\uDEE1\uFE0F', desc: 'La securite avant tout' },
+      { value: 'efficacy', label: 'Efficacite maximale', emoji: '\u26A1', desc: 'Resultats rapides et puissants' },
+      { value: 'experience', label: 'Experience premium', emoji: '\u2728', desc: 'Design et sensation premium' },
+      { value: 'natural', label: '100% naturel', emoji: '\uD83C\uDF3F', desc: 'La purete avant tout' },
     ],
   },
 ];
@@ -63,10 +65,10 @@ export default function Questionnaire() {
       setCurrentStep((c) => c + 1);
     } else {
       updateProfile({
-        smokingStatus: newAnswers.smoking as 'current' | 'former' | 'never',
-        primaryGoal: newAnswers.goal as 'cessation' | 'wellness' | 'relaxation' | 'respiratory',
-        lifestyle: newAnswers.lifestyle as 'urban' | 'suburban' | 'rural',
-        budget: newAnswers.budget as 'standard' | 'premium' | 'unlimited',
+        smokingStatus: (newAnswers.smoking === 'vaper' ? 'current' : newAnswers.smoking) as 'current' | 'former' | 'never',
+        primaryGoal: (newAnswers.goal === 'replace' || newAnswers.goal === 'pollution' ? 'wellness' : newAnswers.goal) as 'cessation' | 'wellness' | 'relaxation' | 'respiratory',
+        lifestyle: 'urban',
+        budget: 'premium',
       });
       setShowResult(true);
     }
@@ -89,14 +91,14 @@ export default function Questionnaire() {
         animate={{ opacity: 1, y: 0 }}
         className="max-w-xl mx-auto text-center"
       >
-        <div className="text-5xl mb-4">🎯</div>
-        <h3 className="text-2xl font-bold mb-2">Votre programme personnalisé</h3>
+        <div className="text-5xl mb-4">\uD83C\uDFAF</div>
+        <h3 className="text-2xl font-bold mb-2">Votre Recommandation Personnalisee</h3>
 
         <div className="mt-8 p-8 rounded-2xl bg-gradient-to-br from-[#8B2C5A]/5 to-[#1E88E5]/5 text-left space-y-4">
           <div>
-            <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Version recommandée</span>
-            <p className="text-lg font-bold" style={{ color: recommendation.version === 'wellness' ? '#8B2C5A' : '#1E88E5' }}>
-              AquaVent {recommendation.version === 'wellness' ? 'Wellness' : 'Medical'} Edition
+            <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Version recommandee</span>
+            <p className="text-lg font-bold text-[#FFB300]">
+              AquaVent UNLIMITED™
             </p>
           </div>
           <div>
@@ -104,12 +106,17 @@ export default function Questionnaire() {
             <p className="text-lg font-bold text-gray-800">{recommendation.program}</p>
           </div>
           <div>
-            <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Durée</span>
+            <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Duree</span>
             <p className="text-gray-700">{recommendation.duration}</p>
           </div>
           <div>
-            <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Bénéfice attendu</span>
+            <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Benefice attendu</span>
             <p className="text-[#43A047] font-medium">{recommendation.estimatedBenefit}</p>
+          </div>
+          <div className="bg-green-50 rounded-lg p-3">
+            <p className="text-sm text-green-700 font-medium">
+              Rappel: Usage illimite scientifiquement valide — aucune restriction
+            </p>
           </div>
           <div>
             <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Budget mensuel</span>
@@ -119,7 +126,7 @@ export default function Questionnaire() {
 
         <div className="mt-8 flex gap-4 justify-center">
           <AquaVentButton variant="premium" size="lg">
-            Précommander maintenant
+            Rejoindre la liste d'attente
           </AquaVentButton>
           <AquaVentButton variant="ghost" size="lg" onClick={handleReset}>
             Recommencer
@@ -158,7 +165,8 @@ export default function Questionnaire() {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -20 }}
         >
-          <h3 className="text-2xl font-bold mb-8 text-center">{step.question}</h3>
+          <h3 className="text-2xl font-bold mb-2 text-center">{step.question}</h3>
+          <p className="text-gray-500 text-center mb-8">{step.subtitle}</p>
 
           <div className="grid gap-4">
             {step.options.map((option) => (
@@ -189,7 +197,7 @@ export default function Questionnaire() {
               onClick={handleBack}
               className="mt-6 text-sm text-gray-400 hover:text-gray-600 transition-colors"
             >
-              ← Retour
+              \u2190 Retour
             </button>
           )}
         </motion.div>

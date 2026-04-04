@@ -1,0 +1,60 @@
+{
+  "unitEconomics": {
+    "wellnessDevice": {
+      "retailPrice": 79,
+      "cogs": 22,
+      "grossMargin": 72,
+      "cartridgePrice": 12,
+      "cartridgeCogs": 3,
+      "cartridgeMargin": 75,
+      "averageCartridgesPerMonth": 3,
+      "ltv12Months": 511
+    },
+    "medicalDevice": {
+      "retailPrice": 149,
+      "cogs": 38,
+      "grossMargin": 74,
+      "cartridgePrice": 18,
+      "cartridgeCogs": 5,
+      "cartridgeMargin": 72,
+      "averageCartridgesPerMonth": 4,
+      "ltv12Months": 1013
+    }
+  },
+  "fundingNeeds": {
+    "seedRound": {
+      "amount": 2000000,
+      "use": {
+        "rd": 40,
+        "manufacturing": 25,
+        "marketing": 20,
+        "operations": 15
+      },
+      "timeline": "Q2 2026"
+    },
+    "seriesA": {
+      "amount": 8000000,
+      "use": {
+        "scaleProduction": 35,
+        "marketExpansion": 30,
+        "teamGrowth": 20,
+        "regulatory": 15
+      },
+      "timeline": "Q1 2027"
+    }
+  },
+  "breakeven": {
+    "monthlyFixedCosts": 180000,
+    "averageMarginPerUnit": 57,
+    "breakevenUnits": 3158,
+    "expectedMonth": "M18",
+    "expectedDate": "Q4 2027"
+  },
+  "valuation": {
+    "preMoney2026": 10000000,
+    "postSeed": 12000000,
+    "projectedSeriesA": 45000000,
+    "projectedSeriesB": 150000000,
+    "method": "Revenue Multiple + Comparable Analysis"
+  }
+}

@@ -104,3 +104,54 @@
 .font-mono {
   font-family: 'JetBrains Mono', monospace;
 }
+
+/* AquaVent PhytoTech™ Brand System */
+:root {
+  --aquevent-primary: #8B2C5A;
+  --aquevent-secondary: #1E88E5;
+  --aquevent-accent: #FFB300;
+  --aquevent-success: #43A047;
+  --aquevent-neutral: #424242;
+}
+
+/* AquaVent Typography */
+.aquevent-headline {
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.aquevent-body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.aquevent-data {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* AquaVent Gradient Text Helper */
+.aquevent-gradient-text {
+  background: linear-gradient(135deg, var(--aquevent-primary), var(--aquevent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* AquaVent Smooth Scrolling */
+.aquevent-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Touch-Optimized Controls */
+@media (pointer: coarse) {
+  .touch-controls {
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}

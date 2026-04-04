@@ -14,6 +14,7 @@ const Navbar = () => {
     { to: "/afrique", label: "Afrique & Territoires" },
     { to: "/domaines", label: "Domaines" },
     { to: "/a-propos", label: "À propos" },
+    { to: "/aquevent", label: "AquaVent™" },
   ];
 
   return (

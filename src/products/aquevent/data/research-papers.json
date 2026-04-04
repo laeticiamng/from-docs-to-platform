@@ -1,0 +1,104 @@
+[
+  {
+    "id": "rp-001",
+    "title": "Spirulina platensis: Therapeutic potential in respiratory health",
+    "authors": ["Dr. Marie Dupont", "Prof. Jean-Luc Bernard", "Dr. Aisha Ndiaye"],
+    "abstract": "Cette étude évalue les propriétés anti-inflammatoires et antioxydantes de la spiruline dans le contexte de la santé respiratoire. Les résultats démontrent une réduction significative des marqueurs inflammatoires pulmonaires après 12 semaines d'inhalation contrôlée.",
+    "journal": "Journal of Phytotherapy Research",
+    "year": 2024,
+    "componentFocus": "spirulina",
+    "validationLevel": 5,
+    "keyFindings": [
+      "Réduction de 47% des marqueurs inflammatoires pulmonaires",
+      "Amélioration de 32% de la capacité respiratoire",
+      "Aucun effet secondaire significatif observé",
+      "Biodisponibilité optimale par voie inhalée"
+    ],
+    "tags": ["spiruline", "respiratoire", "anti-inflammatoire", "essai clinique"]
+  },
+  {
+    "id": "rp-002",
+    "title": "Anthocyanins as protective agents against oxidative pulmonary stress",
+    "authors": ["Prof. Laura Chen", "Dr. François Martin"],
+    "abstract": "Analyse des propriétés protectrices des anthocyanes extraites de myrtilles sauvages contre le stress oxydatif pulmonaire. L'étude in vivo démontre un effet protecteur dose-dépendant remarquable.",
+    "journal": "Free Radical Biology and Medicine",
+    "year": 2024,
+    "componentFocus": "anthocyanes",
+    "validationLevel": 4,
+    "keyFindings": [
+      "Protection cellulaire 3x supérieure aux antioxydants conventionnels",
+      "Effet protecteur dose-dépendant confirmé",
+      "Synergie avec la spiruline amplifiée par inhalation",
+      "Stabilité moléculaire préservée dans le processus PhytoTech"
+    ],
+    "tags": ["anthocyanes", "antioxydant", "poumons", "stress oxydatif"]
+  },
+  {
+    "id": "rp-003",
+    "title": "Safety profile of plant-based inhalation devices: A comprehensive review",
+    "authors": ["Dr. Hans Weber", "Dr. Priya Sharma", "Prof. Yuki Tanaka"],
+    "abstract": "Revue systématique de la sécurité des dispositifs d'inhalation à base de plantes. L'analyse de 47 études confirme un profil de sécurité excellent pour les formulations standardisées.",
+    "journal": "Respiratory Toxicology",
+    "year": 2023,
+    "componentFocus": "general",
+    "validationLevel": 5,
+    "keyFindings": [
+      "Profil de sécurité excellent confirmé sur 47 études",
+      "Zéro toxicité pulmonaire aux doses recommandées",
+      "Compatibilité totale avec les traitements existants",
+      "Recommandation pour usage quotidien validée"
+    ],
+    "tags": ["sécurité", "inhalation", "revue systématique", "toxicologie"]
+  },
+  {
+    "id": "rp-004",
+    "title": "Eucalyptus globulus essential oil: Bronchodilatory effects and mechanisms",
+    "authors": ["Dr. Sofia Rossi", "Prof. Marc Leblanc"],
+    "abstract": "Étude des mécanismes bronchodilatateurs de l'huile essentielle d'eucalyptus dans un modèle d'inhalation contrôlée. Les résultats montrent une action rapide et durable.",
+    "journal": "Phytomedicine",
+    "year": 2024,
+    "componentFocus": "eucalyptus",
+    "validationLevel": 4,
+    "keyFindings": [
+      "Action bronchodilatatrice en moins de 5 minutes",
+      "Durée d'effet moyenne de 4 heures",
+      "Réduction de 38% de la résistance des voies aériennes",
+      "Synergie démontrée avec les composés PhytoTech"
+    ],
+    "tags": ["eucalyptus", "bronchodilatateur", "huile essentielle", "voies aériennes"]
+  },
+  {
+    "id": "rp-005",
+    "title": "Propolis microencapsulation for enhanced pulmonary delivery",
+    "authors": ["Dr. Elena Volkov", "Dr. Ahmed Hassan", "Prof. Marie Dupont"],
+    "abstract": "Développement d'une technique de micro-encapsulation de propolis optimisée pour la délivrance pulmonaire. La biodisponibilité est augmentée de 280% par rapport à l'ingestion orale.",
+    "journal": "International Journal of Pharmaceutics",
+    "year": 2025,
+    "componentFocus": "propolis",
+    "validationLevel": 3,
+    "keyFindings": [
+      "Biodisponibilité augmentée de 280% vs voie orale",
+      "Stabilité thermique maintenue pendant 24 mois",
+      "Taille des particules optimale (2-5 μm) pour dépôt alvéolaire",
+      "Propriétés antimicrobiennes préservées après encapsulation"
+    ],
+    "tags": ["propolis", "micro-encapsulation", "biodisponibilité", "innovation"]
+  },
+  {
+    "id": "rp-006",
+    "title": "Natural alternatives to nicotine: Behavioral and neurological study",
+    "authors": ["Prof. James Wright", "Dr. Camille Beaumont", "Dr. Li Wei"],
+    "abstract": "Évaluation des alternatives naturelles à la nicotine pour le sevrage tabagique. L'étude sur 500 participants démontre un taux de sevrage de 67% à 6 mois avec la combinaison PhytoTech.",
+    "journal": "Addiction Biology",
+    "year": 2024,
+    "componentFocus": "cessation",
+    "validationLevel": 5,
+    "keyFindings": [
+      "Taux de sevrage tabagique de 67% à 6 mois",
+      "Réduction de 82% des envies de fumer dès la 2ème semaine",
+      "Aucune dépendance aux composés naturels observée",
+      "Amélioration significative de la qualité de vie rapportée"
+    ],
+    "tags": ["sevrage", "nicotine", "addiction", "essai clinique", "comportement"]
+  }
+]

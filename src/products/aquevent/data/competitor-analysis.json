@@ -1,47 +1,57 @@
 [
   {
-    "name": "JUUL / Vape Traditionnelle",
+    "name": "E-cigarettes (JUUL etc.)",
     "category": "Vapotage Nicotine",
-    "strengths": ["Forte notoriété", "Distribution massive", "Communauté établie"],
-    "weaknesses": ["Contient nicotine", "Risques santé documentés", "Réglementation croissante", "Image négative"],
+    "strengths": ["Forte notoriete", "Distribution massive", "Communaute etablie"],
+    "weaknesses": ["PG/VG toxique", "Chauffage 200C", "Metaux lourds", "Usage limite par restrictions"],
     "marketShare": 35,
     "naturalIngredients": false,
-    "priceRange": "€20 - €50"
+    "priceRange": "20 - 50",
+    "usageLimit": "Limite (restrictions doses)",
+    "safety": "Warnings multiples"
   },
   {
-    "name": "Nicorette / Patches",
+    "name": "Nicorette Inhalateur",
     "category": "Sevrage Pharmaceutique",
-    "strengths": ["Prescription médicale", "Études cliniques", "Remboursement sécu"],
-    "weaknesses": ["Goût désagréable", "Effets secondaires", "Taux de rechute élevé", "Non naturel"],
+    "strengths": ["Prescription medicale", "Etudes cliniques", "Remboursement secu"],
+    "weaknesses": ["Experience frustrante", "Gout artificiel", "20min usage max", "Non naturel"],
     "marketShare": 25,
     "naturalIngredients": false,
-    "priceRange": "€15 - €45"
+    "priceRange": "15 - 45",
+    "usageLimit": "Limite (20min/session)",
+    "safety": "Effets secondaires documentes"
   },
   {
-    "name": "Diffuseurs Aromathérapie",
-    "category": "Bien-être Naturel",
-    "strengths": ["100% naturel", "Image positive", "Pas de réglementation stricte"],
-    "weaknesses": ["Efficacité limitée", "Pas portable", "Non ciblé respiratoire", "Pas innovant"],
+    "name": "Diffuseurs Aromatherapie",
+    "category": "Bien-etre Naturel",
+    "strengths": ["100% naturel", "Image positive", "Pas de reglementation stricte"],
+    "weaknesses": ["Efficacite limitee", "Pas portable", "Non cible respiratoire", "Pas innovant"],
     "marketShare": 10,
     "naturalIngredients": true,
-    "priceRange": "€25 - €80"
+    "priceRange": "25 - 80",
+    "usageLimit": "Non portable",
+    "safety": "Variable selon huiles"
   },
   {
     "name": "CBD Vaporizers",
-    "category": "Cannabis Thérapeutique",
-    "strengths": ["Tendance croissante", "Effet relaxant", "Communauté active"],
-    "weaknesses": ["Réglementation variable", "Stigma social", "Qualité inconsistante", "Légalité incertaine"],
+    "category": "Cannabis Therapeutique",
+    "strengths": ["Tendance croissante", "Effet relaxant", "Communaute active"],
+    "weaknesses": ["Reglementation variable", "Stigma social", "Qualite inconsistante", "Legalite incertaine"],
     "marketShare": 15,
     "naturalIngredients": true,
-    "priceRange": "€30 - €100"
+    "priceRange": "30 - 100",
+    "usageLimit": "Limite (dosage CBD)",
+    "safety": "Non standardise"
   },
   {
-    "name": "AquaVent PhytoTech™",
+    "name": "AquaVent UNLIMITED™",
     "category": "Innovation PhytoTech",
-    "strengths": ["100% naturel", "Validé scientifiquement", "Zéro addiction", "Design premium", "Multi-usage", "Breveté"],
-    "weaknesses": ["Nouveau sur le marché", "Notoriété à construire", "Prix premium"],
+    "strengths": ["Usage illimite valide", "100% naturel", "Zero toxicite", "Design premium", "Brevete", "Benefices sante"],
+    "weaknesses": ["Nouveau sur le marche", "Notoriete a construire"],
     "marketShare": 0,
     "naturalIngredients": true,
-    "priceRange": "€79 - €149"
+    "priceRange": "199 (device) + 4.99/cartouche",
+    "usageLimit": "ILLIMITE (premiere mondiale)",
+    "safety": "Securite absolue toute dose"
   }
 ]

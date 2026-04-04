@@ -14,9 +14,11 @@ export default function Device3DViewer({ version, onConfigure }: Device3DViewerP
   const colors = {
     wellness: { body: '#8B2C5A', accent: '#FFB300', label: 'Wellness Edition' },
     medical: { body: '#1E88E5', accent: '#43A047', label: 'Medical Edition' },
+    unlimited: { body: '#000000', accent: '#FFB300', label: 'UNLIMITED\u2122' },
   };
 
   const current = colors[version];
+  const isUnlimited = version === 'unlimited';
 
   return (
     <div className="relative w-full aspect-square max-w-md mx-auto">
@@ -30,22 +32,31 @@ export default function Device3DViewer({ version, onConfigure }: Device3DViewerP
         {/* Device Body */}
         <motion.div
           className="relative"
-          animate={{
-            scale: isExploded ? 0.8 : 1,
-          }}
+          animate={{ scale: isExploded ? 0.8 : 1 }}
         >
           {/* Main body */}
           <motion.div
             className="w-20 h-56 rounded-[2rem] shadow-2xl relative overflow-hidden"
             style={{
-              background: `linear-gradient(180deg, ${current.body}, ${current.body}dd)`,
-              boxShadow: `0 20px 60px ${current.body}40`,
+              background: isUnlimited
+                ? 'linear-gradient(180deg, #000000, #1a1a2e)'
+                : `linear-gradient(180deg, ${current.body}, ${current.body}dd)`,
+              boxShadow: isUnlimited
+                ? '0 20px 60px rgba(0,0,0,0.4), 0 0 30px rgba(255,179,0,0.2)'
+                : `0 20px 60px ${current.body}40`,
             }}
           >
+            {/* Gold trim for UNLIMITED */}
+            {isUnlimited && (
+              <div className="absolute inset-0 rounded-[2rem] border border-[#FFB300]/30" />
+            )}
+
             {/* Mouthpiece */}
             <motion.div
               className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-8 rounded-b-xl"
-              style={{ background: `${current.body}ee` }}
+              style={{
+                background: isUnlimited ? '#1a1a2e' : `${current.body}ee`,
+              }}
               animate={{ y: isExploded ? -20 : 0 }}
             />
 
@@ -59,20 +70,36 @@ export default function Device3DViewer({ version, onConfigure }: Device3DViewerP
 
             {/* PhytoTech logo area */}
             <div className="absolute top-20 left-1/2 -translate-x-1/2 text-center">
-              <span className="text-white/80 text-[8px] font-bold tracking-[0.2em]">
-                PHYTOTECH
-              </span>
+              {isUnlimited ? (
+                <>
+                  <span className="text-[#FFB300]/80 text-[7px] font-bold tracking-[0.15em] block">
+                    UNLIMITED
+                  </span>
+                  <span className="text-white/50 text-[6px] tracking-[0.2em] block mt-0.5">
+                    PHYTOTECH
+                  </span>
+                </>
+              ) : (
+                <span className="text-white/80 text-[8px] font-bold tracking-[0.2em]">
+                  PHYTOTECH
+                </span>
+              )}
             </div>
 
             {/* Cartridge window */}
             <motion.div
-              className="absolute bottom-16 left-1/2 -translate-x-1/2 w-8 h-12 rounded-lg border-2 border-white/20"
+              className="absolute bottom-16 left-1/2 -translate-x-1/2 w-8 h-12 rounded-lg border-2"
+              style={{
+                borderColor: isUnlimited ? 'rgba(255,179,0,0.3)' : 'rgba(255,255,255,0.2)',
+              }}
               animate={{ y: isExploded ? 30 : 0 }}
             >
               <div
                 className="w-full h-full rounded-md opacity-60"
                 style={{
-                  background: `linear-gradient(180deg, ${current.accent}80, ${current.accent}20)`,
+                  background: isUnlimited
+                    ? 'linear-gradient(180deg, #FFB30080, #8B2C5A40)'
+                    : `linear-gradient(180deg, ${current.accent}80, ${current.accent}20)`,
                 }}
               />
             </motion.div>
@@ -80,7 +107,13 @@ export default function Device3DViewer({ version, onConfigure }: Device3DViewerP
             {/* Airflow vents */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1">
               {[0, 1, 2].map((i) => (
-                <div key={i} className="w-1 h-4 bg-white/20 rounded-full" />
+                <div
+                  key={i}
+                  className="w-1 h-4 rounded-full"
+                  style={{
+                    background: isUnlimited ? 'rgba(255,179,0,0.3)' : 'rgba(255,255,255,0.2)',
+                  }}
+                />
               ))}
             </div>
           </motion.div>
@@ -88,7 +121,7 @@ export default function Device3DViewer({ version, onConfigure }: Device3DViewerP
           {/* Shadow */}
           <div
             className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 h-4 rounded-full blur-xl"
-            style={{ background: `${current.body}30` }}
+            style={{ background: isUnlimited ? 'rgba(255,179,0,0.2)' : `${current.body}30` }}
           />
         </motion.div>
       </motion.div>
@@ -101,10 +134,16 @@ export default function Device3DViewer({ version, onConfigure }: Device3DViewerP
       >
         <span
           className="text-xs font-mono font-semibold tracking-wider px-3 py-1 rounded-full"
-          style={{ color: current.body, background: `${current.body}15` }}
+          style={{
+            color: isUnlimited ? '#FFB300' : current.body,
+            background: isUnlimited ? 'rgba(255,179,0,0.1)' : `${current.body}15`,
+          }}
         >
           {current.label}
         </span>
+        {isUnlimited && (
+          <p className="text-[10px] text-gray-400 mt-1">199\u20AC - Premium Device</p>
+        )}
       </motion.div>
 
       {/* Controls */}
@@ -114,14 +153,14 @@ export default function Device3DViewer({ version, onConfigure }: Device3DViewerP
           className="w-8 h-8 rounded-full bg-white/80 shadow-md flex items-center justify-center text-xs hover:bg-white transition-colors"
           title="Rotation"
         >
-          ↻
+          &#8635;
         </button>
         <button
           onClick={() => setIsExploded(!isExploded)}
           className="w-8 h-8 rounded-full bg-white/80 shadow-md flex items-center justify-center text-xs hover:bg-white transition-colors"
-          title="Vue éclatée"
+          title="Vue eclatee"
         >
-          ⊕
+          &#8853;
         </button>
         {onConfigure && (
           <button
@@ -129,7 +168,7 @@ export default function Device3DViewer({ version, onConfigure }: Device3DViewerP
             className="w-8 h-8 rounded-full bg-white/80 shadow-md flex items-center justify-center text-xs hover:bg-white transition-colors"
             title="Configurer"
           >
-            ⚙
+            &#9881;
           </button>
         )}
       </div>

@@ -105,21 +105,59 @@
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* AquaVent PhytoTech™ Brand System */
+/* AquaVent PhytoTech UNLIMITED™ Brand System */
 :root {
+  /* Primary Revolutionary Colors */
   --aquevent-primary: #8B2C5A;
   --aquevent-secondary: #1E88E5;
   --aquevent-accent: #FFB300;
   --aquevent-success: #43A047;
   --aquevent-neutral: #424242;
+  --aquevent-error: #F44336;
+  --aquevent-warning: #FF9800;
+  --aquevent-info: #2196F3;
+
+  /* Gradients Revolutionary */
+  --aquevent-gradient-hero: linear-gradient(135deg, #1E88E5 0%, #8B2C5A 100%);
+  --aquevent-gradient-cta: linear-gradient(45deg, #8B2C5A 0%, #FFB300 100%);
+  --aquevent-gradient-bg: linear-gradient(180deg, #F8F9FA 0%, #E3F2FD 100%);
 }
 
 /* AquaVent Typography */
 .aquevent-headline {
-  font-family: 'Inter', 'DM Sans', sans-serif;
-  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 800;
   letter-spacing: -0.02em;
-  line-height: 1.2;
+  line-height: 1.1;
+}
+
+.aquevent-hero-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  background: var(--aquevent-gradient-hero);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.aquevent-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.125rem, 3vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--aquevent-neutral);
+}
+
+.aquevent-claim {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--aquevent-accent);
 }
 
 .aquevent-body {
@@ -139,6 +177,38 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* AquaVent Card System */
+.aquevent-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(139, 44, 90, 0.1);
+  border: 1px solid #EEEEEE;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.aquevent-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 40px rgba(139, 44, 90, 0.2);
+}
+
+/* AquaVent Button System */
+.aquevent-button-primary {
+  background: var(--aquevent-gradient-cta);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 10px rgba(139, 44, 90, 0.3);
+}
+
+.aquevent-button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(139, 44, 90, 0.4);
 }
 
 /* AquaVent Smooth Scrolling */

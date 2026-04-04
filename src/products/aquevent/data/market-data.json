@@ -4,44 +4,54 @@
     "sam": 12000000000,
     "som": 450000000,
     "currency": "EUR",
-    "year": 2026
+    "year": 2026,
+    "addressablePersons": "28M personnes Europe"
   },
   "segments": [
     {
-      "id": "wellness",
-      "name": "Bien-être & Relaxation",
-      "size": "€32B",
-      "growth": "+14.2% CAGR",
+      "id": "health-premium",
+      "name": "Health-Conscious Premium",
+      "size": "15M personnes Europe",
+      "growth": "+18.7% CAGR",
       "tam": 32000000000,
       "sam": 4800000000,
       "som": 180000000,
-      "color": "#8B2C5A"
+      "color": "#8B2C5A",
+      "revenue": "150M potentiel/an",
+      "willingness": "Prix non-factor",
+      "urgency": "Prevention pollution"
     },
     {
-      "id": "cessation",
-      "name": "Sevrage Tabagique",
-      "size": "€28B",
-      "growth": "+11.8% CAGR",
+      "id": "vapers-worried",
+      "name": "Vapoteurs Inquiets",
+      "size": "8M personnes Europe",
+      "growth": "+14.2% CAGR",
       "tam": 28000000000,
       "sam": 4200000000,
       "som": 160000000,
-      "color": "#1E88E5"
+      "color": "#1E88E5",
+      "revenue": "120M potentiel/an",
+      "willingness": "Premium pour securite",
+      "urgency": "Health anxiety croissante"
     },
     {
-      "id": "medical",
-      "name": "Thérapeutique Respiratoire",
-      "size": "€18B",
-      "growth": "+9.5% CAGR",
+      "id": "cessation-premium",
+      "name": "Sevrage Premium",
+      "size": "5M personnes Europe",
+      "growth": "+11.8% CAGR",
       "tam": 18000000000,
       "sam": 2700000000,
       "som": 85000000,
-      "color": "#43A047"
+      "color": "#43A047",
+      "revenue": "75M potentiel/an",
+      "willingness": "Investissement sante",
+      "urgency": "Echecs methodes classiques"
     },
     {
-      "id": "natural",
-      "name": "Produits Naturels Premium",
-      "size": "€7B",
-      "growth": "+18.7% CAGR",
+      "id": "natural-wellness",
+      "name": "Natural Wellness Premium",
+      "size": "7M personnes Europe",
+      "growth": "+22.3% CAGR",
       "tam": 7000000000,
       "sam": 300000000,
       "som": 25000000,
@@ -49,33 +59,76 @@
     }
   ],
   "projections": [
-    { "year": 2026, "revenue": 2500000, "costs": 3200000, "profit": -700000, "marketShare": 0.01, "customers": 15000 },
-    { "year": 2027, "revenue": 12000000, "costs": 8500000, "profit": 3500000, "marketShare": 0.05, "customers": 75000 },
-    { "year": 2028, "revenue": 38000000, "costs": 22000000, "profit": 16000000, "marketShare": 0.15, "customers": 250000 },
-    { "year": 2029, "revenue": 85000000, "costs": 45000000, "profit": 40000000, "marketShare": 0.35, "customers": 600000 },
-    { "year": 2030, "revenue": 150000000, "costs": 72000000, "profit": 78000000, "marketShare": 0.55, "customers": 1200000 }
+    { "year": 2026, "revenue": 11000000, "costs": 12600000, "profit": -1600000, "marketShare": 0.01, "customers": 5000 },
+    { "year": 2027, "revenue": 75000000, "costs": 60000000, "profit": 15000000, "marketShare": 0.08, "customers": 35000 },
+    { "year": 2028, "revenue": 250000000, "costs": 200000000, "profit": 50000000, "marketShare": 0.22, "customers": 100000 },
+    { "year": 2029, "revenue": 500000000, "costs": 350000000, "profit": 150000000, "marketShare": 0.42, "customers": 200000 },
+    { "year": 2030, "revenue": 900000000, "costs": 630000000, "profit": 270000000, "marketShare": 0.75, "customers": 400000 }
+  ],
+  "scenarioProjections": [
+    {
+      "name": "Conservative",
+      "userGrowth": [5000, 25000, 75000, 150000, 250000],
+      "revenue": [11, 62, 200, 419, 650],
+      "ebitda": [-1.6, 9.4, 40, 126, 195]
+    },
+    {
+      "name": "Realistic",
+      "userGrowth": [5000, 35000, 100000, 200000, 400000],
+      "revenue": [11, 75, 250, 500, 900],
+      "ebitda": [-1.6, 15, 50, 150, 270]
+    },
+    {
+      "name": "Optimistic",
+      "userGrowth": [8000, 50000, 150000, 300000, 600000],
+      "revenue": [15, 110, 375, 750, 1350],
+      "ebitda": [-1, 25, 75, 225, 405]
+    }
   ],
   "investmentTiers": [
     {
       "name": "Seed",
-      "amount": "€50K - €250K",
+      "amount": "50K - 250K",
       "equity": "0.5% - 2.5%",
-      "perks": ["Accès beta prioritaire", "Rapports trimestriels", "Invitation événements"],
+      "perks": ["Acces beta prioritaire", "Rapports trimestriels", "Invitation evenements"],
       "roi": "15-25x (5 ans)"
     },
     {
       "name": "Series A",
-      "amount": "€250K - €1M",
+      "amount": "250K - 1M",
       "equity": "2.5% - 8%",
-      "perks": ["Siège consultatif", "Accès données temps réel", "Co-branding opportunités"],
+      "perks": ["Siege consultatif", "Acces donnees temps reel", "Co-branding opportunites"],
       "roi": "10-18x (5 ans)"
     },
     {
       "name": "Series B",
-      "amount": "€1M - €5M",
+      "amount": "1M - 5M",
       "equity": "5% - 15%",
-      "perks": ["Siège au board", "Droits de distribution", "Licence technologique"],
+      "perks": ["Siege au board", "Droits de distribution", "Licence technologique"],
       "roi": "8-12x (5 ans)"
+    }
+  ],
+  "fundraisingRounds": [
+    {
+      "name": "Serie A",
+      "amount": "15M",
+      "timing": "Mois 6",
+      "purpose": "R&D + Clinical + Production",
+      "milestones": ["Formulation locked", "Clinical start", "Regulatory pathway"]
+    },
+    {
+      "name": "Serie B",
+      "amount": "50M",
+      "timing": "Mois 24",
+      "purpose": "Launch + Scale + International",
+      "milestones": ["Market approval", "Commercial launch", "EU expansion"]
+    },
+    {
+      "name": "Serie C",
+      "amount": "100M",
+      "timing": "Mois 48",
+      "purpose": "Global + Platform + Exit prep",
+      "milestones": ["Global presence", "Platform products", "IPO ready"]
     }
   ]
 }

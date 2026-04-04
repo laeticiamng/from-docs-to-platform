@@ -1,0 +1,84 @@
+[
+  {
+    "id": "healthbot",
+    "name": "HealthBot PhytoTech\u2122",
+    "icon": "\uD83C\uDFE5",
+    "mission": "Sante Globale - Extension AquaVent",
+    "color": "#E53935",
+    "capabilities": [
+      "Production medicaments in-situ temps reel",
+      "Formulations personnalisees adaptation patient",
+      "Analyse air: pollution + pathogenes + allergenes",
+      "Analyse eau: contamination + qualite",
+      "Biomarqueurs: breath analysis + skin + fluids",
+      "Cartouches AquaVent personnalisees genomique patient"
+    ],
+    "impact": [
+      "Soins immediats sans infrastructure",
+      "Telemedecine + intervention locale",
+      "Discovery nouveaux actifs therapeutiques",
+      "Monitoring + prevention vs traitement",
+      "Production pharmaceutique mobile globale"
+    ],
+    "revenue": "10K/mois par unite",
+    "caseStudy": {
+      "title": "Diabete - Revolution Traitement",
+      "steps": [
+        "Detection: glucose monitoring continu air exhale",
+        "Production: insuline bio-synthetique personnalisee",
+        "Delivery: inhalation optimisee vs injection",
+        "Monitoring: ajustement dosage temps reel",
+        "Prevention: lifestyle coaching + environmental"
+      ]
+    }
+  },
+  {
+    "id": "agrobot",
+    "name": "AgroBot PhytoTech\u2122",
+    "icon": "\uD83C\uDF3E",
+    "mission": "Agriculture Revolutionnaire 5.0 - Beyond Organic",
+    "color": "#43A047",
+    "capabilities": [
+      "Microbiome design: bacteria + fungi optimaux",
+      "Mycorrhize network: communication plantes",
+      "Carbon sequestration: captage CO2 massif",
+      "Plant communication: decodage signaux stress",
+      "Pest management: defenses biologiques",
+      "Harvest timing: maturite optimale"
+    ],
+    "impact": [
+      "Productivite 500-1000% vs agriculture conventionnelle",
+      "Qualite nutritionnelle vitamines + mineraux optimaux",
+      "Fin famine: production suffisante 15 milliards humains",
+      "Restauration sols degrades en fertiles",
+      "Agriculture = carbon sink vs emission",
+      "Cost/kg divise par 10"
+    ],
+    "revenue": "15K/mois par unite",
+    "integration": "Production AquaVent: spirulina + myrtilles cultives optimales"
+  },
+  {
+    "id": "oceanbot",
+    "name": "OceanBot PhytoTech\u2122",
+    "icon": "\uD83C\uDF0A",
+    "mission": "Regeneration Marine - Ocean Healing",
+    "color": "#1E88E5",
+    "capabilities": [
+      "Detection + mapping pollution 3D oceans",
+      "Collection systemes aspiration selective plastique",
+      "Degradation enzymes decomposition plastique",
+      "Nurseries culture coraux resistants",
+      "pH regulation buffering acidification",
+      "Oxygen production photosynthese algale"
+    ],
+    "impact": [
+      "Oceans restored: 70% planete regeneres",
+      "Climate stability: regulation temperature",
+      "Food security: protein oceanique abundant",
+      "Biodiversite: renaissance vie marine",
+      "Economy blue: trillion $ blue economy",
+      "Conversion plastique en biomasse utile"
+    ],
+    "revenue": "20K/mois par unite"
+  }
+]

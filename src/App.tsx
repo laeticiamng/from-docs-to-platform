@@ -18,13 +18,21 @@ import NotFound from "./pages/NotFound.tsx";
 // Platform Selector
 import PlatformSelector from "./pages/PlatformSelector.tsx";
 
-// AquaVent PhytoTech™ (lazy-loaded for code splitting)
+// AquaVent PhytoTech UNLIMITED™ (lazy-loaded for code splitting)
 const AquaVentLanding = lazy(() => import("./products/aquevent/pages/Landing.tsx"));
 const AquaVentProduct = lazy(() => import("./products/aquevent/pages/Product.tsx"));
 const AquaVentScience = lazy(() => import("./products/aquevent/pages/Science.tsx"));
 const AquaVentBusiness = lazy(() => import("./products/aquevent/pages/Business.tsx"));
 const AquaVentAcademy = lazy(() => import("./products/aquevent/pages/Academy.tsx"));
 const AquaVentCommunity = lazy(() => import("./products/aquevent/pages/Community.tsx"));
+
+// BioBot PhytoTech™ (lazy-loaded for code splitting)
+const BioBotLanding = lazy(() => import("./products/biobot/pages/Landing.tsx"));
+const BioBotTechnology = lazy(() => import("./products/biobot/pages/Technology.tsx"));
+const BioBotApplications = lazy(() => import("./products/biobot/pages/Applications.tsx"));
+const BioBotScience = lazy(() => import("./products/biobot/pages/Science.tsx"));
+const BioBotBusiness = lazy(() => import("./products/biobot/pages/Business.tsx"));
+const BioBotEcosystem = lazy(() => import("./products/biobot/pages/Ecosystem.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -49,13 +57,21 @@ const App = () => (
               {/* Platform Selector */}
               <Route path="/platform" element={<PlatformSelector />} />
 
-              {/* AquaVent PhytoTech™ Routes */}
+              {/* AquaVent PhytoTech UNLIMITED™ Routes */}
               <Route path="/aquevent" element={<AquaVentLanding />} />
               <Route path="/aquevent/product" element={<AquaVentProduct />} />
               <Route path="/aquevent/science" element={<AquaVentScience />} />
               <Route path="/aquevent/business" element={<AquaVentBusiness />} />
               <Route path="/aquevent/academy" element={<AquaVentAcademy />} />
               <Route path="/aquevent/community" element={<AquaVentCommunity />} />
+
+              {/* BioBot PhytoTech™ Routes */}
+              <Route path="/biobot" element={<BioBotLanding />} />
+              <Route path="/biobot/technology" element={<BioBotTechnology />} />
+              <Route path="/biobot/applications" element={<BioBotApplications />} />
+              <Route path="/biobot/science" element={<BioBotScience />} />
+              <Route path="/biobot/business" element={<BioBotBusiness />} />
+              <Route path="/biobot/ecosystem" element={<BioBotEcosystem />} />
 
               {/* Document Platform (existing functionality preserved) */}
               <Route path="/" element={<Index />} />

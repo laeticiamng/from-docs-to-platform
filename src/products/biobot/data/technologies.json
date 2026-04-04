@@ -1,0 +1,116 @@
+{
+  "bioEnergy": {
+    "photoSkin": {
+      "name": "Peau PhotoSynthetique Vivante",
+      "trademark": "PhotoSkin\u2122",
+      "specs": [
+        { "label": "Couche externe", "value": "Spirulina platensis modifiees" },
+        { "label": "Densite cellulaire", "value": "10^8 cellules/cm\u00b2" },
+        { "label": "Rendement conversion", "value": "12-15% solaire \u2192 biomasse" },
+        { "label": "Production", "value": "5-8W/100cm\u00b2 plein soleil" },
+        { "label": "Robot 1m\u00b2", "value": "50-80W continu jour" },
+        { "label": "Autonomie nuit", "value": "48-72h selon activite" }
+      ],
+      "advantages": [
+        "Vivant = auto-reparation vs degradation",
+        "Flexible = adaptation formes vs rigidite",
+        "Evolutif = amelioration continue vs fixe",
+        "Integre = structure + energie vs ajout",
+        "Symbiotique = benefique environnement"
+      ]
+    },
+    "bioBattery": {
+      "name": "Batteries Biologiques Vivantes",
+      "trademark": "BioCell\u2122",
+      "specs": [
+        { "label": "Base", "value": "Bio-batteries spirulina (Samsung Research 2023)" },
+        { "label": "Tension", "value": "0.7V par cellule spirulina" },
+        { "label": "Densite", "value": "150 Wh/kg (lithium = 250 Wh/kg)" },
+        { "label": "Stockage robot", "value": "2-3 kWh robot moyen" },
+        { "label": "Recharge", "value": "Soleil + dechets organiques" },
+        { "label": "Duree vie", "value": "Theoriquement infinie (vivant)" }
+      ],
+      "advantages": [
+        "Auto-regeneration vs degradation",
+        "Biodegradable + non-toxique",
+        "Production par division cellulaire",
+        "Distribution intelligente reseau",
+        "Cellules signalent leur etat"
+      ]
+    }
+  },
+  "bioMaterials": {
+    "algaComposite": {
+      "name": "Structure Vivante Auto-Assemblee",
+      "trademark": "AlgaComposite\u2122",
+      "specs": [
+        { "label": "Base", "value": "Recherche ETH Zurich bio-composites algaux 2024" },
+        { "label": "Resistance", "value": "180-220 MPa (aluminium = 210 MPa)" },
+        { "label": "Densite", "value": "1.2 g/cm\u00b3 (aluminium = 2.7 g/cm\u00b3)" },
+        { "label": "Avantage", "value": "2x plus leger a resistance egale" },
+        { "label": "Production", "value": "Croissance dirigee vs usinage" },
+        { "label": "Proprietes", "value": "Anisotropes selon contraintes" }
+      ],
+      "advantages": [
+        "Croissance programmee: forme finale directe",
+        "Gradient proprietes: dur/souple selon zones",
+        "Auto-reparation: cicatrisation fissures",
+        "Adaptation: renforcement zones stress",
+        "Recyclage: decomposition controlee fin vie"
+      ]
+    },
+    "myceliumNet": {
+      "name": "Systeme Nerveux Bio-Hybride",
+      "trademark": "MyceliumNet\u2122",
+      "specs": [
+        { "label": "Communication", "value": "Reseau electrique champignons 50mV" },
+        { "label": "Vitesse", "value": "4cm/h (lent mais parallele massif)" },
+        { "label": "Capacite", "value": "Millions connexions/cm\u00b3" },
+        { "label": "Memoire", "value": "Stockage moleculaire reversible" },
+        { "label": "Apprentissage", "value": "Plasticite connections" },
+        { "label": "Resistance", "value": "Survie conditions extremes" }
+      ],
+      "advantages": [
+        "Pattern recognition naturellement optimise",
+        "Adaptation evolution temps reel",
+        "Communication pheromones + electrique",
+        "Decision consensus distribue intelligent",
+        "Creativite exploration solutions inedites"
+      ]
+    }
+  },
+  "bioIntelligence": {
+    "phytoMind": {
+      "name": "Architecture Neuronale Distribuee",
+      "trademark": "PhytoMind\u2122",
+      "specs": [
+        { "label": "Base", "value": "Spirulina electro-active modifiee" },
+        { "label": "Signal", "value": "Potentiel action 70mV (comme neurone)" },
+        { "label": "Vitesse", "value": "1-5 m/s (massivement parallele)" },
+        { "label": "Energie", "value": "Glucose de photosynthese" },
+        { "label": "Plasticite", "value": "Connections evoluent avec apprentissage" },
+        { "label": "Resilience", "value": "Redondance massive vs pannes" }
+      ],
+      "advantages": [
+        "Perception 360: capteurs chimiques/tactiles/optiques",
+        "Prediction patterns environnementaux",
+        "Communication inter-robots swarm intelligence",
+        "Creativite solutions non-programmees",
+        "Conscience emergente systeme complexe"
+      ]
+    }
+  },
+  "bioRecycler": {
+    "name": "Metabolisme Robotique Auto-Sustentable",
+    "trademark": "BioRecycler\u2122",
+    "inputs": ["Dechets organiques", "CO2 atmospherique", "Eau", "Mineraux", "Lumiere solaire", "Polluants"],
+    "outputs": ["Energie (ATP + biocarburants)", "Materiaux (biopolymeres)", "Reparation (tissus)", "Environnement (O2 + eau pure)"],
+    "bilanEnergetique": {
+      "input": "100W solaire moyen",
+      "efficacite": "15-20%",
+      "utilisable": "15-20W",
+      "consommation": "10-15W",
+      "surplus": "5-10W stockage ou reproduction"
+    }
+  }
+}

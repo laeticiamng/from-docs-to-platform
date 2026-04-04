@@ -1,0 +1,47 @@
+[
+  {
+    "name": "JUUL / Vape Traditionnelle",
+    "category": "Vapotage Nicotine",
+    "strengths": ["Forte notoriété", "Distribution massive", "Communauté établie"],
+    "weaknesses": ["Contient nicotine", "Risques santé documentés", "Réglementation croissante", "Image négative"],
+    "marketShare": 35,
+    "naturalIngredients": false,
+    "priceRange": "€20 - €50"
+  },
+  {
+    "name": "Nicorette / Patches",
+    "category": "Sevrage Pharmaceutique",
+    "strengths": ["Prescription médicale", "Études cliniques", "Remboursement sécu"],
+    "weaknesses": ["Goût désagréable", "Effets secondaires", "Taux de rechute élevé", "Non naturel"],
+    "marketShare": 25,
+    "naturalIngredients": false,
+    "priceRange": "€15 - €45"
+  },
+  {
+    "name": "Diffuseurs Aromathérapie",
+    "category": "Bien-être Naturel",
+    "strengths": ["100% naturel", "Image positive", "Pas de réglementation stricte"],
+    "weaknesses": ["Efficacité limitée", "Pas portable", "Non ciblé respiratoire", "Pas innovant"],
+    "marketShare": 10,
+    "naturalIngredients": true,
+    "priceRange": "€25 - €80"
+  },
+  {
+    "name": "CBD Vaporizers",
+    "category": "Cannabis Thérapeutique",
+    "strengths": ["Tendance croissante", "Effet relaxant", "Communauté active"],
+    "weaknesses": ["Réglementation variable", "Stigma social", "Qualité inconsistante", "Légalité incertaine"],
+    "marketShare": 15,
+    "naturalIngredients": true,
+    "priceRange": "€30 - €100"
+  },
+  {
+    "name": "AquaVent PhytoTech™",
+    "category": "Innovation PhytoTech",
+    "strengths": ["100% naturel", "Validé scientifiquement", "Zéro addiction", "Design premium", "Multi-usage", "Breveté"],
+    "weaknesses": ["Nouveau sur le marché", "Notoriété à construire", "Prix premium"],
+    "marketShare": 0,
+    "naturalIngredients": true,
+    "priceRange": "€79 - €149"
+  }
+]

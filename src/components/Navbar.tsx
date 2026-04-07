@@ -15,6 +15,8 @@ const Navbar = () => {
     { to: "/domaines", label: "Domaines" },
     { to: "/a-propos", label: "À propos" },
     { to: "/aquevent", label: "AquaVent™" },
+    { to: "/biobot", label: "BioBot™" },
+    { to: "/contact", label: "Contact" },
   ];
 
   return (
@@ -27,7 +29,7 @@ const Navbar = () => {
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-5">
           {links.map((l) => (
             <Link
               key={l.to}
@@ -48,7 +50,7 @@ const Navbar = () => {
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden"
+          className="lg:hidden"
           onClick={() => setOpen(!open)}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -56,7 +58,7 @@ const Navbar = () => {
       </div>
 
       {open && (
-        <div className="md:hidden border-t bg-background px-4 pb-4 space-y-3">
+        <div className="lg:hidden border-t bg-background px-4 pb-4 space-y-3">
           {links.map((l) => (
             <Link
               key={l.to}

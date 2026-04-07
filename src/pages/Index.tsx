@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import SEOHead from "@/components/SEOHead";
+import CommentSection from "@/components/CommentSection";
 import Footer from "@/components/Footer";
 import HowToGuide from "@/components/HowToGuide";
 import { howToGuides } from "@/data/howToData";
@@ -588,7 +589,7 @@ const Index = () => (
       <BusinessSection />
       <ChannelsSection />
       <CTASection />
-      
+      <CommentSection pageSlug="index" />
     </main>
     <Footer />
   </div>

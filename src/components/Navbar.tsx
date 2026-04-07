@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AuthDialog from "@/components/AuthDialog";
 
@@ -23,7 +23,7 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <Link to="/" className="flex items-center gap-2">
-          <span className="text-2xl">🌿</span>
+          <Leaf className="w-6 h-6 text-primary" />
           <span className="font-mono text-lg font-semibold tracking-tight text-foreground">
             PHYTOTECH
           </span>

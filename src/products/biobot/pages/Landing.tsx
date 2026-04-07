@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import BioBotLayout from '../components/BioBotLayout';
+import SEOHead from '@/components/SEOHead';
 import {
   Sun, Layers, Brain, Recycle, Heart, Wheat, Waves, DollarSign,
 } from 'lucide-react';
@@ -26,7 +27,7 @@ const modules = [
 export default function Landing() {
   return (
     <BioBotLayout>
-      {/* Hero */}
+      <SEOHead title="BioBot PhytoTech™ — Robots Vivants Bio-Hybrides" description="De l'inhalation révolutionnaire à la robotique vivante. Architecture complète basée sur l'écosystème PhytoTech." path="/biobot" />
       <section className="relative min-h-[85vh] flex items-center bg-gradient-to-br from-[#2E7D32]/5 via-white to-[#00897B]/5">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">

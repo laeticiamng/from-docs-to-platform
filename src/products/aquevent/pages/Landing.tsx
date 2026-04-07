@@ -5,12 +5,14 @@ import Device3DViewer from '../components/3d/Device3DViewer';
 import AquaVentButton from '../components/ui/AquaVentButton';
 import WaitlistSignup from '../components/customer/WaitlistSignup';
 import AquaVentLayout from '../components/AquaVentLayout';
+import SEOHead from '@/components/SEOHead';
+import { Infinity as InfinityIcon, Leaf, Shield, Rocket } from 'lucide-react';
 
-const revolutionaryClaims = [
-  { icon: '\u221E', title: 'Usage Illimite', subtitle: 'Premiere mondiale' },
-  { icon: '\uD83C\uDF3F', title: '100% Naturel', subtitle: 'Valide scientifiquement' },
-  { icon: '\uD83D\uDEE1\uFE0F', title: 'Securite Absolue', subtitle: 'Zero toxicite' },
-  { icon: '\uD83D\uDE80', title: 'Innovation Breakthrough', subtitle: 'PhytoTech revolution' },
+const revolutionaryClaims: { icon: React.ReactNode; title: string; subtitle: string }[] = [
+  { icon: <InfinityIcon className="w-6 h-6" />, title: 'Usage Illimite', subtitle: 'Premiere mondiale' },
+  { icon: <Leaf className="w-6 h-6" />, title: '100% Naturel', subtitle: 'Valide scientifiquement' },
+  { icon: <Shield className="w-6 h-6" />, title: 'Securite Absolue', subtitle: 'Zero toxicite' },
+  { icon: <Rocket className="w-6 h-6" />, title: 'Innovation Breakthrough', subtitle: 'PhytoTech revolution' },
 ];
 
 const stats = [
@@ -68,6 +70,7 @@ const testimonials = [
 export default function Landing() {
   return (
     <AquaVentLayout>
+      <SEOHead title="AquaVent PhytoTech UNLIMITED™ — Respirez la nature" description="Premier inhalateur monde usage illimité, 100% naturel scientifiquement validé. Zéro toxicité." path="/aquevent" />
       {/* Hero Section - Breathe The Revolution */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-[#1E88E5]/5 via-white to-[#8B2C5A]/5">
         <ParticleBackground />
@@ -111,7 +114,7 @@ export default function Landing() {
                     transition={{ delay: 0.4 + i * 0.1 }}
                     className="flex items-center gap-3 p-3 rounded-xl bg-white/80 shadow-sm border border-gray-100"
                   >
-                    <span className="text-2xl">{claim.icon}</span>
+                    <span className="text-2xl flex items-center justify-center">{claim.icon}</span>
                     <div>
                       <p className="text-sm font-bold text-gray-800">{claim.title}</p>
                       <p className="text-xs text-gray-500">{claim.subtitle}</p>

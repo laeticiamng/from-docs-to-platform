@@ -181,7 +181,7 @@ const PackAutonomie = () => (
           <Card className="mt-8 border-destructive/30 bg-destructive/5">
             <CardContent className="p-6 space-y-2">
               <h3 className="text-lg font-semibold text-destructive flex items-center gap-2">
-                ⚠️ Soyons honnêtes — le problème de puissance
+                <AlertTriangle className="w-5 h-5 inline mr-1" /> Soyons honnêtes — le problème de puissance
               </h3>
               <p className="text-sm text-muted-foreground">
                 Un pot de fleurs PMFC produit ~23 mW/m². Pour produire les 6 600 kWh/an, il faudrait <strong className="text-foreground">32 000 m²</strong> — soit 3,2 hectares. Trois terrains de foot. Les pots seuls ne suffisent pas. Point.

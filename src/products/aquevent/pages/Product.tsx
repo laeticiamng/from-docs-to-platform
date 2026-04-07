@@ -5,6 +5,7 @@ import ProductShowcase from '../components/product/ProductShowcase';
 import ComparisonTable from '../components/product/ComparisonTable';
 import Device3DViewer from '../components/3d/Device3DViewer';
 import AquaVentButton from '../components/ui/AquaVentButton';
+import SEOHead from '@/components/SEOHead';
 import type { DeviceConfiguration } from '../types/product';
 
 const colorOptions = [
@@ -30,6 +31,7 @@ export default function Product() {
 
   return (
     <AquaVentLayout>
+      <SEOHead title="Produit AquaVent UNLIMITED™" description="Configurez votre AquaVent UNLIMITED™. Design premium personnalisable." path="/aquevent/product" />
       <div className="pt-8">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-2">
           <span className="bg-gradient-to-r from-[#8B2C5A] to-[#1E88E5] bg-clip-text text-transparent">

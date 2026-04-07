@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import BioBotLayout from '../components/BioBotLayout';
 import businessData from '../data/business.json';
+import SEOHead from '@/components/SEOHead';
 
 export default function Business() {
   return (
     <BioBotLayout>
+      <SEOHead title="Business Model — BioBot" description="Platform PhytoTech Ecosystem — secteur trillion €." path="/biobot/business" />
       <div className="pt-8">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-2">
           <span className="bg-gradient-to-r from-[#2E7D32] to-[#00897B] bg-clip-text text-transparent">

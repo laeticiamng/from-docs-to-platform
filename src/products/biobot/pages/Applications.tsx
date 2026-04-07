@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import BioBotLayout from '../components/BioBotLayout';
 import applications from '../data/applications.json';
+import SEOHead from '@/components/SEOHead';
 
 export default function Applications() {
   const [activeBot, setActiveBot] = useState('healthbot');
@@ -10,6 +11,7 @@ export default function Applications() {
 
   return (
     <BioBotLayout>
+      <SEOHead title="Applications — BioBot" description="HealthBot, AgroBot, OceanBot : applications transformatrices PhytoTech." path="/biobot/applications" />
       <div className="pt-8">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-2">
           <span className="bg-gradient-to-r from-[#2E7D32] to-[#00897B] bg-clip-text text-transparent">

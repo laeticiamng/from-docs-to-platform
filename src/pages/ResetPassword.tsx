@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "sonner";
 import SEOHead from "@/components/SEOHead";
+import { KeyRound } from "lucide-react";
 
 const ResetPassword = () => {
   const [password, setPassword] = useState("");
@@ -40,7 +41,7 @@ const ResetPassword = () => {
       <Card className="w-full max-w-md">
         <CardContent className="p-8 space-y-6">
           <div className="text-center space-y-2">
-            <span className="text-4xl">🔐</span>
+            <KeyRound className="w-10 h-10 text-primary mx-auto" />
             <h1 className="text-2xl font-bold text-foreground">Nouveau mot de passe</h1>
             <p className="text-sm text-muted-foreground">
               {ready ? "Choisissez votre nouveau mot de passe." : "Lien invalide ou expiré. Demandez un nouveau lien de réinitialisation."}

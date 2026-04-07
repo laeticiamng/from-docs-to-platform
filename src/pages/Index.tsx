@@ -19,7 +19,7 @@ import {
 import {
   Leaf, Sprout, Zap, Droplets, Wind, Radio, Lightbulb, Layers, Battery,
   Recycle, Globe, Home, FlaskConical, Factory, Package, ShoppingCart, School, Building,
-  Flower2, Bug,
+  Flower2, Bug, AlertTriangle,
 } from "lucide-react";
 
 const IconBox = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
@@ -84,7 +84,7 @@ const HonestySection = () => (
     <div className="container mx-auto px-4 max-w-4xl">
       <div className="text-center mb-12 space-y-3">
         <Badge variant="outline" className="font-mono text-xs tracking-widest border-destructive text-destructive">
-          ⚠️ TRANSPARENCE
+          TRANSPARENCE
         </Badge>
         <h2 className="text-3xl md:text-5xl text-foreground">Soyons honnêtes</h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -96,7 +96,7 @@ const HonestySection = () => (
       <Card className="border-destructive/30 bg-destructive/5 mb-8">
         <CardContent className="p-8 space-y-4">
           <h3 className="text-xl font-semibold text-destructive flex items-center gap-2">
-            ⚠️ Le problème de puissance
+            <AlertTriangle className="w-5 h-5 inline mr-1" /> Le problème de puissance
           </h3>
           <div className="grid md:grid-cols-3 gap-6 text-center my-6">
             <div className="space-y-1">

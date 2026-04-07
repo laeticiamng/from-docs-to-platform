@@ -5,6 +5,7 @@ import ProductShowcase from '../components/product/ProductShowcase';
 import ComparisonTable from '../components/product/ComparisonTable';
 import Device3DViewer from '../components/3d/Device3DViewer';
 import AquaVentButton from '../components/ui/AquaVentButton';
+import SEOHead from '@/components/SEOHead';
 import type { DeviceConfiguration } from '../types/product';
 
 const colorOptions = [

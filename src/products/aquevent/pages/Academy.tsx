@@ -2,6 +2,7 @@ import { useState } from 'react';
 import AquaVentLayout from '../components/AquaVentLayout';
 import CourseModule from '../components/education/CourseModule';
 import InteractiveQuiz from '../components/education/InteractiveQuiz';
+import SEOHead from '@/components/SEOHead';
 
 export default function Academy() {
   const [tab, setTab] = useState<'courses' | 'quiz'>('courses');

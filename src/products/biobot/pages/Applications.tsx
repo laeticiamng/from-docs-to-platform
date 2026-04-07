@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import BioBotLayout from '../components/BioBotLayout';
 import applications from '../data/applications.json';
+import SEOHead from '@/components/SEOHead';
 
 export default function Applications() {
   const [activeBot, setActiveBot] = useState('healthbot');

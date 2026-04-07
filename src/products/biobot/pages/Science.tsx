@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import BioBotLayout from '../components/BioBotLayout';
 import businessData from '../data/business.json';
+import SEOHead from '@/components/SEOHead';
 
 const statusColors = {
   validated: { bg: 'bg-green-100', text: 'text-green-700', label: 'Valide' },

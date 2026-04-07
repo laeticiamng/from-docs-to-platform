@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import BioBotLayout from '../components/BioBotLayout';
 import techData from '../data/technologies.json';
+import SEOHead from '@/components/SEOHead';
 
 type TechTab = 'energy' | 'materials' | 'intelligence' | 'lifecycle';
 

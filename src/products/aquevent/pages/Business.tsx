@@ -3,6 +3,7 @@ import AquaVentLayout from '../components/AquaVentLayout';
 import InvestmentDashboard from '../components/business/InvestmentDashboard';
 import FinancialCalculators from '../components/business/FinancialCalculators';
 import MarketAnalysis from '../components/business/MarketAnalysis';
+import SEOHead from '@/components/SEOHead';
 
 export default function Business() {
   return (

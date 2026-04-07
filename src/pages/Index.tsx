@@ -19,7 +19,7 @@ import {
 import {
   Leaf, Sprout, Zap, Droplets, Wind, Radio, Lightbulb, Layers, Battery,
   Recycle, Globe, Home, FlaskConical, Factory, Package, ShoppingCart, School, Building,
-  Flower2, Bug,
+  Flower2, Bug, AlertTriangle,
 } from "lucide-react";
 
 const IconBox = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (

@@ -4,6 +4,7 @@ import AquaVentLayout from '../components/AquaVentLayout';
 import Questionnaire from '../components/customer/Questionnaire';
 import WaitlistSignup from '../components/customer/WaitlistSignup';
 import AquaVentButton from '../components/ui/AquaVentButton';
+import SEOHead from '@/components/SEOHead';
 
 const communityStats = [
   { value: '2,547', label: 'Early adopters inscrits' },

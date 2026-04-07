@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import BioBotLayout from '../components/BioBotLayout';
 import businessData from '../data/business.json';
+import SEOHead from '@/components/SEOHead';
 
 export default function Business() {
   return (

@@ -2,6 +2,7 @@ import AquaVentLayout from '../components/AquaVentLayout';
 import ValidationDashboard from '../components/science/ValidationDashboard';
 import SafetyCalculator from '../components/science/SafetyCalculator';
 import ResearchLibrary from '../components/science/ResearchLibrary';
+import SEOHead from '@/components/SEOHead';
 
 export default function Science() {
   return (

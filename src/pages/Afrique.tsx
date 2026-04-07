@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import SEOHead from "@/components/SEOHead";
+import CommentSection from "@/components/CommentSection";
 import Footer from "@/components/Footer";
 import HowToGuide from "@/components/HowToGuide";
 import { howToGuides } from "@/data/howToData";

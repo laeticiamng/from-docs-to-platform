@@ -9,6 +9,7 @@ export default function Academy() {
 
   return (
     <AquaVentLayout>
+      <SEOHead title="PhytoTech Academy — Cours & Quiz" description="Apprenez l'inhalation naturelle avec la PhytoTech Academy." path="/aquevent/academy" />
       <div className="pt-8">
         <h1 className="text-4xl font-bold text-center mb-2">
           <span className="bg-gradient-to-r from-[#8B2C5A] to-[#1E88E5] bg-clip-text text-transparent">

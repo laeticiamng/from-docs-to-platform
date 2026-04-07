@@ -7,6 +7,7 @@ import SEOHead from '@/components/SEOHead';
 export default function Science() {
   return (
     <AquaVentLayout>
+      <SEOHead title="Validation Scientifique — AquaVent" description="Preuves scientifiques et validation sécurité AquaVent." path="/aquevent/science" />
       <div className="pt-8">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-2">
           <span className="bg-gradient-to-r from-[#8B2C5A] to-[#1E88E5] bg-clip-text text-transparent">

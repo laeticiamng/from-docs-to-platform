@@ -19,6 +19,8 @@ import MentionsLegales from "./pages/MentionsLegales.tsx";
 import CGV from "./pages/CGV.tsx";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import ResetPassword from "./pages/ResetPassword.tsx";
+import Profile from "./pages/Profile.tsx";
 
 // Platform Selector
 import PlatformSelector from "./pages/PlatformSelector.tsx";

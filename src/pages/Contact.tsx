@@ -10,6 +10,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { MapPin, Mail, Clock } from "lucide-react";
 
 const subjects = [
   "Question générale",
@@ -26,12 +27,18 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    const { error } = await supabase.from("contact_messages").insert({
-      name: form.name,
-      email: form.email,
-      subject: form.subject || "Question générale",
-      message: form.message,
-    });
+    const trimmed = {
+      name: form.name.trim().slice(0, 100),
+      email: form.email.trim().slice(0, 255),
+      subject: (form.subject || "Question générale").slice(0, 100),
+      message: form.message.trim().slice(0, 2000),
+    };
+    if (!trimmed.name || !trimmed.email || !trimmed.message) {
+      toast.error("Veuillez remplir tous les champs obligatoires.");
+      setLoading(false);
+      return;
+    }
+    const { error } = await supabase.from("contact_messages").insert(trimmed);
     if (error) {
       toast.error("Erreur lors de l'envoi. Réessayez.");
     } else {
@@ -87,19 +94,19 @@ const Contact = () => {
             <div className="md:col-span-2 space-y-6">
               <Card>
                 <CardContent className="p-6 space-y-3">
-                  <h3 className="font-semibold text-foreground">📍 Adresse</h3>
+                  <h3 className="font-semibold text-foreground flex items-center gap-2"><MapPin className="w-4 h-4 text-primary" /> Adresse</h3>
                   <p className="text-sm text-muted-foreground">EmotionsCare SASU<br />5 rue Caudron<br />80000 Amiens, France</p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6 space-y-3">
-                  <h3 className="font-semibold text-foreground">✉️ Email</h3>
+                  <h3 className="font-semibold text-foreground flex items-center gap-2"><Mail className="w-4 h-4 text-primary" /> Email</h3>
                   <a href="mailto:contact@emotionscare.fr" className="text-sm text-primary hover:underline">contact@emotionscare.fr</a>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6 space-y-3">
-                  <h3 className="font-semibold text-foreground">🕐 Réponse</h3>
+                  <h3 className="font-semibold text-foreground flex items-center gap-2"><Clock className="w-4 h-4 text-primary" /> Réponse</h3>
                   <p className="text-sm text-muted-foreground">Nous répondons sous 48h ouvrées.</p>
                 </CardContent>
               </Card>

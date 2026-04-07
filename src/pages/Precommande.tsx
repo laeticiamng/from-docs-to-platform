@@ -31,12 +31,18 @@ const Precommande = () => {
     e.preventDefault();
     setLoading(true);
 
-    const { error } = await supabase.from("preorders").insert({
-      name: form.name,
-      email: form.email,
+    const trimmed = {
+      name: form.name.trim().slice(0, 100),
+      email: form.email.trim().slice(0, 255),
       pack: form.pack,
-      message: form.message || null,
-    });
+      message: form.message.trim().slice(0, 2000) || null,
+    };
+    if (!trimmed.name || !trimmed.email || !trimmed.pack) {
+      toast.error("Veuillez remplir tous les champs obligatoires.");
+      setLoading(false);
+      return;
+    }
+    const { error } = await supabase.from("preorders").insert(trimmed);
 
     if (error) {
       toast.error("Erreur lors de l'envoi. Réessayez.");

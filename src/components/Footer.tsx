@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Leaf } from "lucide-react";
 
 const Footer = () => (
   <footer className="bg-foreground text-background py-16">
@@ -6,7 +7,7 @@ const Footer = () => (
       <div className="flex flex-col md:flex-row justify-between gap-8 mb-12">
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <span className="text-2xl">🌿</span>
+            <Leaf className="w-6 h-6 text-primary" />
             <span className="font-mono text-lg font-semibold">PHYTOTECH</span>
           </div>
           <p className="text-sm opacity-70 max-w-xs">

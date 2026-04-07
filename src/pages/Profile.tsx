@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -11,20 +11,19 @@ import { Badge } from "@/components/ui/badge";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
+import { Lock, UserRound } from "lucide-react";
 
 const Profile = () => {
   const { user, loading: authLoading, signOut } = useAuth();
   const [displayName, setDisplayName] = useState("");
   const [saving, setSaving] = useState(false);
-  const [loaded, setLoaded] = useState(false);
 
-  // Load profile
-  if (user && !loaded) {
+  useEffect(() => {
+    if (!user) return;
     supabase.from("profiles").select("display_name").eq("id", user.id).single().then(({ data }) => {
       if (data?.display_name) setDisplayName(data.display_name);
-      setLoaded(true);
     });
-  }
+  }, [user?.id]);
 
   if (authLoading) {
     return (
@@ -41,7 +40,7 @@ const Profile = () => {
         <main className="flex-1 flex items-center justify-center">
           <Card className="max-w-md w-full mx-4">
             <CardContent className="p-8 text-center space-y-4">
-              <span className="text-5xl block">🔒</span>
+              <Lock className="w-12 h-12 text-muted-foreground mx-auto" />
               <h1 className="text-2xl font-bold text-foreground">Accès réservé</h1>
               <p className="text-muted-foreground">Connectez-vous pour accéder à votre profil.</p>
             </CardContent>
@@ -55,7 +54,7 @@ const Profile = () => {
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
     setSaving(true);
-    const { error } = await supabase.from("profiles").update({ display_name: displayName }).eq("id", user.id);
+    const { error } = await supabase.from("profiles").update({ display_name: displayName.trim().slice(0, 100) }).eq("id", user.id);
     if (error) {
       toast.error("Erreur lors de la sauvegarde.");
     } else {
@@ -71,7 +70,7 @@ const Profile = () => {
       <main className="flex-1 py-20">
         <div className="container mx-auto px-4 max-w-lg space-y-8">
           <div className="text-center space-y-2">
-            <span className="text-5xl block">👤</span>
+            <UserRound className="w-12 h-12 text-primary mx-auto" />
             <h1 className="text-3xl font-bold text-foreground">Mon profil</h1>
           </div>
 
@@ -89,6 +88,7 @@ const Profile = () => {
                     value={displayName}
                     onChange={(e) => setDisplayName(e.target.value)}
                     placeholder="Votre nom"
+                    maxLength={100}
                   />
                 </div>
                 <Button type="submit" className="w-full rounded-full" disabled={saving}>

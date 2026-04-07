@@ -14,6 +14,7 @@ export default function Science() {
 
   return (
     <BioBotLayout>
+      <SEOHead title="Validation Faisabilité — BioBot" description="Technologies confirmées, évaluation honnête des risques BioBot." path="/biobot/science" />
       <div className="pt-8">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-2">
           <span className="bg-gradient-to-r from-[#2E7D32] to-[#00897B] bg-clip-text text-transparent">

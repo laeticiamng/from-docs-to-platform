@@ -11,6 +11,7 @@ export default function Applications() {
 
   return (
     <BioBotLayout>
+      <SEOHead title="Applications — BioBot" description="HealthBot, AgroBot, OceanBot : applications transformatrices PhytoTech." path="/biobot/applications" />
       <div className="pt-8">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-2">
           <span className="bg-gradient-to-r from-[#2E7D32] to-[#00897B] bg-clip-text text-transparent">

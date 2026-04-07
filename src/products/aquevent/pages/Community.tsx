@@ -60,6 +60,7 @@ export default function Community() {
 
   return (
     <AquaVentLayout>
+      <SEOHead title="Communauté AquaVent" description="Rejoignez les early adopters AquaVent. Programme beta et parrainage." path="/aquevent/community" />
       <div className="pt-8">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-2">
           <span className="bg-gradient-to-r from-[#8B2C5A] to-[#1E88E5] bg-clip-text text-transparent">

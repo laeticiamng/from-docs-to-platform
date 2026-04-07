@@ -6,6 +6,7 @@ import SEOHead from '@/components/SEOHead';
 export default function Ecosystem() {
   return (
     <BioBotLayout>
+      <SEOHead title="Écosystème Global — PhytoTech" description="Synergie AquaVent x BioBot — Platform PhytoTech complète." path="/biobot/ecosystem" />
       <div className="pt-8">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-2">
           <span className="bg-gradient-to-r from-[#8B2C5A] via-[#2E7D32] to-[#1E88E5] bg-clip-text text-transparent">

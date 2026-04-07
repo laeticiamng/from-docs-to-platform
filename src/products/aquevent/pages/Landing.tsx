@@ -6,10 +6,10 @@ import AquaVentButton from '../components/ui/AquaVentButton';
 import WaitlistSignup from '../components/customer/WaitlistSignup';
 import AquaVentLayout from '../components/AquaVentLayout';
 import SEOHead from '@/components/SEOHead';
-import { Infinity, Leaf, Shield, Rocket } from 'lucide-react';
+import { Infinity as InfinityIcon, Leaf, Shield, Rocket } from 'lucide-react';
 
 const revolutionaryClaims: { icon: React.ReactNode; title: string; subtitle: string }[] = [
-  { icon: <Infinity className="w-6 h-6" />, title: 'Usage Illimite', subtitle: 'Premiere mondiale' },
+  { icon: <InfinityIcon className="w-6 h-6" />, title: 'Usage Illimite', subtitle: 'Premiere mondiale' },
   { icon: <Leaf className="w-6 h-6" />, title: '100% Naturel', subtitle: 'Valide scientifiquement' },
   { icon: <Shield className="w-6 h-6" />, title: 'Securite Absolue', subtitle: 'Zero toxicite' },
   { icon: <Rocket className="w-6 h-6" />, title: 'Innovation Breakthrough', subtitle: 'PhytoTech revolution' },

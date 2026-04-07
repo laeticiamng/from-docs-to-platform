@@ -41,10 +41,10 @@ const BioBotEcosystem = lazy(() => import("./products/biobot/pages/Ecosystem.tsx
 const queryClient = new QueryClient();
 
 const LoadingFallback = () => (
-  <div className="min-h-screen flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center bg-background">
     <div className="flex flex-col items-center gap-4">
-      <div className="w-10 h-10 rounded-full border-3 border-[#8B2C5A] border-t-transparent animate-spin" />
-      <span className="text-sm text-gray-400">Chargement...</span>
+      <div className="w-10 h-10 rounded-full border-3 border-primary border-t-transparent animate-spin" />
+      <span className="text-sm text-muted-foreground">Chargement...</span>
     </div>
   </div>
 );

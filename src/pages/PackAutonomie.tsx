@@ -471,8 +471,8 @@ const PackAutonomie = () => (
                 ← Retour aux kits
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="rounded-full text-base px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
-              Rejoindre la liste d'attente →
+            <Button size="lg" variant="outline" className="rounded-full text-base px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10" asChild>
+              <Link to="/precommande">Rejoindre la liste d'attente →</Link>
             </Button>
           </div>
         </div>

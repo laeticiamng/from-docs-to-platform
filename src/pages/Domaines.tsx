@@ -1,4 +1,6 @@
 import Navbar from "@/components/Navbar";
+import SEOHead from "@/components/SEOHead";
+import CommentSection from "@/components/CommentSection";
 import Footer from "@/components/Footer";
 import HowToGuide from "@/components/HowToGuide";
 import { howToGuides } from "@/data/howToData";
@@ -236,6 +238,7 @@ const Domaines = () => (
   <div className="min-h-screen bg-background text-foreground">
     <Navbar />
     <main>
+      <SEOHead title="Domaines d'application — PhytoTech" description="11 technologies, 60+ applications : habitat, santé, urbanisme, agriculture, éducation, industrie, humanitaire et plus." path="/domaines" />
       {/* Hero */}
       <section className="py-24 text-center">
         <div className="container mx-auto px-4 space-y-6 max-w-3xl">
@@ -355,7 +358,7 @@ const Domaines = () => (
           </p>
         </div>
       </section>
-      
+      <CommentSection pageSlug="domaines" />
     </main>
     <Footer />
   </div>

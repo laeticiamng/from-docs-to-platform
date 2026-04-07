@@ -5,6 +5,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/hooks/useAuth";
+import ScrollToTop from "@/components/ScrollToTop";
 
 // Document Platform (existing functionality preserved)
 import Index from "./pages/Index.tsx";
@@ -18,6 +19,8 @@ import MentionsLegales from "./pages/MentionsLegales.tsx";
 import CGV from "./pages/CGV.tsx";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import ResetPassword from "./pages/ResetPassword.tsx";
+import Profile from "./pages/Profile.tsx";
 
 // Platform Selector
 import PlatformSelector from "./pages/PlatformSelector.tsx";
@@ -41,10 +44,10 @@ const BioBotEcosystem = lazy(() => import("./products/biobot/pages/Ecosystem.tsx
 const queryClient = new QueryClient();
 
 const LoadingFallback = () => (
-  <div className="min-h-screen flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center bg-background">
     <div className="flex flex-col items-center gap-4">
-      <div className="w-10 h-10 rounded-full border-3 border-[#8B2C5A] border-t-transparent animate-spin" />
-      <span className="text-sm text-gray-400">Chargement...</span>
+      <div className="w-10 h-10 rounded-full border-3 border-primary border-t-transparent animate-spin" />
+      <span className="text-sm text-muted-foreground">Chargement...</span>
     </div>
   </div>
 );
@@ -56,6 +59,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <Suspense fallback={<LoadingFallback />}>
             <Routes>
               {/* Platform Selector */}
@@ -88,6 +92,8 @@ const App = () => (
               <Route path="/mentions-legales" element={<MentionsLegales />} />
               <Route path="/cgv" element={<CGV />} />
               <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
+              <Route path="/reset-password" element={<ResetPassword />} />
+              <Route path="/profil" element={<Profile />} />
 
               <Route path="*" element={<NotFound />} />
             </Routes>

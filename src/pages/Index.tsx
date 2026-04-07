@@ -1,4 +1,6 @@
 import Navbar from "@/components/Navbar";
+import SEOHead from "@/components/SEOHead";
+import CommentSection from "@/components/CommentSection";
 import Footer from "@/components/Footer";
 import HowToGuide from "@/components/HowToGuide";
 import { howToGuides } from "@/data/howToData";
@@ -576,6 +578,7 @@ const Index = () => (
   <div className="min-h-screen">
     <Navbar />
     <main>
+      <SEOHead title="PhytoTech Home — L'énergie qui pousse" description="Des kits bio-énergie utilisant plantes, algues et eau pour produire votre électricité, purifier votre air et recycler votre eau. Sans réseau. Sans batteries toxiques." path="/" />
       <HeroSection />
       <ManifestoSection />
       <HonestySection />
@@ -586,7 +589,7 @@ const Index = () => (
       <BusinessSection />
       <ChannelsSection />
       <CTASection />
-      
+      <CommentSection pageSlug="index" />
     </main>
     <Footer />
   </div>

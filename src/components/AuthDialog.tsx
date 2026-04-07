@@ -5,9 +5,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { useAuth } from "@/hooks/useAuth";
+import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable/index";
 import { toast } from "sonner";
-import { LogIn } from "lucide-react";
+import { LogIn, User } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const AuthDialog = () => {
   const { user, signIn, signUp, signOut } = useAuth();
@@ -20,9 +22,14 @@ const AuthDialog = () => {
 
   if (user) {
     return (
-      <Button variant="ghost" size="sm" onClick={() => signOut()} className="text-xs font-mono">
-        Déconnexion
-      </Button>
+      <div className="flex items-center gap-2">
+        <Button variant="ghost" size="sm" className="text-xs font-mono gap-1.5" asChild>
+          <Link to="/profil"><User className="h-3.5 w-3.5" /> Profil</Link>
+        </Button>
+        <Button variant="ghost" size="sm" onClick={() => signOut()} className="text-xs font-mono">
+          Déconnexion
+        </Button>
+      </div>
     );
   }
 
@@ -122,6 +129,30 @@ const AuthDialog = () => {
           <Button type="submit" className="w-full rounded-full" disabled={loading}>
             {loading ? "..." : isSignUp ? "S'inscrire" : "Se connecter"}
           </Button>
+          {!isSignUp && (
+            <button
+              type="button"
+              className="block w-full text-center text-xs text-muted-foreground hover:text-primary underline"
+              onClick={async () => {
+                const email = (document.getElementById("email") as HTMLInputElement)?.value;
+                if (!email) {
+                  toast.error("Entrez votre email d'abord.");
+                  return;
+                }
+                const { error } = await supabase.auth.resetPasswordForEmail(email, {
+                  redirectTo: `${window.location.origin}/reset-password`,
+                });
+                if (error) {
+                  toast.error(error.message);
+                } else {
+                  toast.success("Email de réinitialisation envoyé !");
+                  setOpen(false);
+                }
+              }}
+            >
+              Mot de passe oublié ?
+            </button>
+          )}
           <p className="text-center text-xs text-muted-foreground">
             {isSignUp ? "Déjà un compte ?" : "Pas encore de compte ?"}{" "}
             <button

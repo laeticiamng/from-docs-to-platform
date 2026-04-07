@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import SEOHead from "@/components/SEOHead";
 import Footer from "@/components/Footer";
 
 import { Badge } from "@/components/ui/badge";
@@ -32,6 +33,7 @@ const APropos = () => (
   <div className="min-h-screen">
     <Navbar />
     <main>
+      <SEOHead title="À propos — EmotionsCare SASU" description="Fondée par Laeticia Motongane à Amiens. Soleil + Eau + Plantes = Autonomie. Découvrez notre histoire, nos valeurs et notre équipe." path="/a-propos" />
       {/* Hero */}
       <section className="bg-foreground text-background py-24">
         <div className="container mx-auto px-4 text-center space-y-6 max-w-3xl">

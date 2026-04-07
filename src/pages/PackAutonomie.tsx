@@ -1,4 +1,6 @@
 import Navbar from "@/components/Navbar";
+import SEOHead from "@/components/SEOHead";
+import CommentSection from "@/components/CommentSection";
 import Footer from "@/components/Footer";
 import HowToGuide from "@/components/HowToGuide";
 import { howToGuides } from "@/data/howToData";
@@ -108,6 +110,7 @@ const PackAutonomie = () => (
   <div className="min-h-screen">
     <Navbar />
     <main>
+      <SEOHead title="Pack Autonomie Totale — PhytoTech" description="Vivre 100% PhytoTech dans un appartement parisien. ~9 000€, ROI en 4,6 ans. Les vrais chiffres, la vraie stratégie." path="/pack-autonomie" />
       {/* Hero */}
       <section className="bg-foreground text-background py-20">
         <div className="container mx-auto px-4 text-center space-y-6 max-w-3xl">
@@ -469,13 +472,13 @@ const PackAutonomie = () => (
                 ← Retour aux kits
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="rounded-full text-base px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
-              Rejoindre la liste d'attente →
+            <Button size="lg" variant="outline" className="rounded-full text-base px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10" asChild>
+              <Link to="/precommande">Rejoindre la liste d'attente →</Link>
             </Button>
           </div>
         </div>
       </section>
-      
+      <CommentSection pageSlug="pack-autonomie" />
     </main>
     <Footer />
   </div>

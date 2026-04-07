@@ -129,6 +129,30 @@ const AuthDialog = () => {
           <Button type="submit" className="w-full rounded-full" disabled={loading}>
             {loading ? "..." : isSignUp ? "S'inscrire" : "Se connecter"}
           </Button>
+          {!isSignUp && (
+            <button
+              type="button"
+              className="block w-full text-center text-xs text-muted-foreground hover:text-primary underline"
+              onClick={async () => {
+                const email = (document.getElementById("email") as HTMLInputElement)?.value;
+                if (!email) {
+                  toast.error("Entrez votre email d'abord.");
+                  return;
+                }
+                const { error } = await supabase.auth.resetPasswordForEmail(email, {
+                  redirectTo: `${window.location.origin}/reset-password`,
+                });
+                if (error) {
+                  toast.error(error.message);
+                } else {
+                  toast.success("Email de réinitialisation envoyé !");
+                  setOpen(false);
+                }
+              }}
+            >
+              Mot de passe oublié ?
+            </button>
+          )}
           <p className="text-center text-xs text-muted-foreground">
             {isSignUp ? "Déjà un compte ?" : "Pas encore de compte ?"}{" "}
             <button

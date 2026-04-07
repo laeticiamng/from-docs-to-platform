@@ -13,6 +13,10 @@ import PackAutonomie from "./pages/PackAutonomie.tsx";
 import Afrique from "./pages/Afrique.tsx";
 import APropos from "./pages/APropos.tsx";
 import Precommande from "./pages/Precommande.tsx";
+import Contact from "./pages/Contact.tsx";
+import MentionsLegales from "./pages/MentionsLegales.tsx";
+import CGV from "./pages/CGV.tsx";
+import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 // Platform Selector
@@ -80,6 +84,10 @@ const App = () => (
               <Route path="/afrique" element={<Afrique />} />
               <Route path="/a-propos" element={<APropos />} />
               <Route path="/precommande" element={<Precommande />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/mentions-legales" element={<MentionsLegales />} />
+              <Route path="/cgv" element={<CGV />} />
+              <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
 
               <Route path="*" element={<NotFound />} />
             </Routes>

@@ -92,6 +92,8 @@ const App = () => (
               <Route path="/mentions-legales" element={<MentionsLegales />} />
               <Route path="/cgv" element={<CGV />} />
               <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
+              <Route path="/reset-password" element={<ResetPassword />} />
+              <Route path="/profil" element={<Profile />} />
 
               <Route path="*" element={<NotFound />} />
             </Routes>

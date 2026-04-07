@@ -5,6 +5,7 @@ import { howToGuides } from "@/data/howToData";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import {
   Table,
   TableBody,
@@ -372,11 +373,11 @@ const Afrique = () => (
             Il manque juste la connexion. C'est notre rôle.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Button size="lg" variant="secondary" className="rounded-full text-base px-8">
-              Devenir partenaire déploiement →
+            <Button size="lg" variant="secondary" className="rounded-full text-base px-8" asChild>
+              <Link to="/contact">Devenir partenaire déploiement →</Link>
             </Button>
-            <Button size="lg" variant="outline" className="rounded-full text-base px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
-              Proposer un territoire pilote
+            <Button size="lg" variant="outline" className="rounded-full text-base px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10" asChild>
+              <Link to="/contact">Proposer un territoire pilote</Link>
             </Button>
           </div>
         </div>

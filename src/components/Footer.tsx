@@ -14,15 +14,29 @@ const Footer = () => (
             SIREN 944 505 445 · Fondée par Laeticia Motongane
           </p>
         </div>
-        <div className="flex gap-12">
+        <div className="flex gap-12 flex-wrap">
           <div className="space-y-2">
             <h4 className="text-sm font-mono font-semibold mb-3">Navigation</h4>
             <Link to="/" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Accueil</Link>
+            <Link to="/pack-autonomie" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Autonomie Totale</Link>
+            <Link to="/afrique" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Afrique & Territoires</Link>
             <Link to="/domaines" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Domaines</Link>
+            <Link to="/a-propos" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">À propos</Link>
           </div>
           <div className="space-y-2">
-            <h4 className="text-sm font-mono font-semibold mb-3">Contact</h4>
-            <p className="text-sm opacity-70">contact@emotionscare.fr</p>
+            <h4 className="text-sm font-mono font-semibold mb-3">Produits</h4>
+            <Link to="/aquevent" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">AquaVent™</Link>
+            <Link to="/biobot" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">BioBot™</Link>
+            <Link to="/precommande" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Précommander</Link>
+            <Link to="/platform" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Toutes les plateformes</Link>
+          </div>
+          <div className="space-y-2">
+            <h4 className="text-sm font-mono font-semibold mb-3">Contact & Légal</h4>
+            <Link to="/contact" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Nous contacter</Link>
+            <a href="mailto:contact@emotionscare.fr" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">contact@emotionscare.fr</a>
+            <Link to="/mentions-legales" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Mentions légales</Link>
+            <Link to="/cgv" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">CGV</Link>
+            <Link to="/politique-confidentialite" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Confidentialité</Link>
           </div>
         </div>
       </div>

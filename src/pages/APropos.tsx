@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const milestones = [
   { year: "2025", title: "Création d'EmotionsCare SASU", desc: "Immatriculation le 6 mai 2025 à Amiens. Laeticia Motongane fonde la société avec une vision claire : utiliser le vivant pour résoudre les problèmes que la tech classique ignore." },
@@ -182,11 +183,11 @@ const APropos = () => (
             ))}
           </div>
           <div className="flex gap-4 justify-center pt-4">
-            <Button className="rounded-full">
-              Nous contacter →
+            <Button className="rounded-full" asChild>
+              <Link to="/contact">Nous contacter →</Link>
             </Button>
-            <Button variant="outline" className="rounded-full">
-              Devenir partenaire
+            <Button variant="outline" className="rounded-full" asChild>
+              <Link to="/contact">Devenir partenaire</Link>
             </Button>
           </div>
         </div>

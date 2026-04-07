@@ -9,11 +9,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { Rocket } from "lucide-react";
 
 const packs = [
-  { value: "decouverte", label: "🌱 Niveau 1 — Le Pot Vivant (49–149€)" },
-  { value: "habitat", label: "🏡 Niveau 2 — Le Module Maison (690–2 490€)" },
-  { value: "autonomie", label: "🏗️ Niveau 3 — Pack Autonomie Totale (4 900–14 900€)" },
+  { value: "decouverte", label: "Niveau 1 — Le Pot Vivant (49–149€)" },
+  { value: "habitat", label: "Niveau 2 — Le Module Maison (690–2 490€)" },
+  { value: "autonomie", label: "Niveau 3 — Pack Autonomie Totale (4 900–14 900€)" },
   { value: "autre", label: "Autre / Je ne sais pas encore" },
 ];
 
@@ -54,7 +55,7 @@ const Precommande = () => {
         {/* Hero */}
         <section className="py-20 bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4 text-center max-w-2xl">
-            <span className="text-5xl mb-4 block">🚀</span>
+            <Rocket className="w-12 h-12 text-primary mx-auto mb-4" strokeWidth={1.5} />
             <h1 className="text-4xl md:text-5xl font-bold font-mono tracking-tight mb-4">
               Précommander
             </h1>

@@ -6,6 +6,10 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import {
+  Microscope, Sprout, Handshake, Globe, Recycle, Zap,
+  UserRound, Dna, Factory,
+} from "lucide-react";
 
 const milestones = [
   { year: "2025", title: "Création d'EmotionsCare SASU", desc: "Immatriculation le 6 mai 2025 à Amiens. Laeticia Motongane fonde la société avec une vision claire : utiliser le vivant pour résoudre les problèmes que la tech classique ignore." },
@@ -14,19 +18,19 @@ const milestones = [
 ];
 
 const values = [
-  { icon: "🔬", title: "Rigueur scientifique", desc: "Chaque affirmation repose sur des données publiées. On dit ce qui marche, ce qui ne marche pas encore, et ce qu'on explore." },
-  { icon: "🌱", title: "Partir du vivant", desc: "Pas de minerais, pas de terres rares, pas de dépendance géopolitique. Nos matières premières se cultivent, se compostent, se renouvellent." },
-  { icon: "🤝", title: "Transparence radicale", desc: "Un pot de menthe ne fait pas tourner un appartement — et on le dit clairement. La confiance se construit sur l'honnêteté, pas sur le marketing." },
-  { icon: "🌍", title: "Adapter, pas imposer", desc: "Chaque territoire a ses plantes, ses contraintes, ses besoins. On ne parachute pas un modèle unique — on connecte ce qui existe déjà." },
-  { icon: "♻️", title: "Cycle fermé", desc: "Tout ce qu'on fabrique retourne à la terre en fin de vie. Zéro déchet toxique, zéro obsolescence programmée." },
-  { icon: "⚡", title: "Autonomie progressive", desc: "Du premier pot qui allume une LED au système complet qui vous libère du réseau. Chaque module fonctionne seul et prépare le suivant." },
+  { icon: <Microscope className="w-8 h-8" />, title: "Rigueur scientifique", desc: "Chaque affirmation repose sur des données publiées. On dit ce qui marche, ce qui ne marche pas encore, et ce qu'on explore." },
+  { icon: <Sprout className="w-8 h-8" />, title: "Partir du vivant", desc: "Pas de minerais, pas de terres rares, pas de dépendance géopolitique. Nos matières premières se cultivent, se compostent, se renouvellent." },
+  { icon: <Handshake className="w-8 h-8" />, title: "Transparence radicale", desc: "Un pot de menthe ne fait pas tourner un appartement — et on le dit clairement. La confiance se construit sur l'honnêteté, pas sur le marketing." },
+  { icon: <Globe className="w-8 h-8" />, title: "Adapter, pas imposer", desc: "Chaque territoire a ses plantes, ses contraintes, ses besoins. On ne parachute pas un modèle unique — on connecte ce qui existe déjà." },
+  { icon: <Recycle className="w-8 h-8" />, title: "Cycle fermé", desc: "Tout ce qu'on fabrique retourne à la terre en fin de vie. Zéro déchet toxique, zéro obsolescence programmée." },
+  { icon: <Zap className="w-8 h-8" />, title: "Autonomie progressive", desc: "Du premier pot qui allume une LED au système complet qui vous libère du réseau. Chaque module fonctionne seul et prépare le suivant." },
 ];
 
 const team = [
-  { emoji: "👩‍💼", role: "Présidente & Fondatrice", name: "Laeticia Motongane", desc: "Vision stratégique, direction générale et pilotage de l'écosystème PhytoTech. À l'origine du projet EmotionsCare." },
-  { emoji: "🧬", role: "R&D & Sciences", name: "Direction scientifique", desc: "Conception des technologies bio-intégrées, brevets, partenariats recherche avec les universités." },
-  { emoji: "🏭", role: "Bio-manufacture", name: "Production & Ingénierie", desc: "Cultiver les algues, mouler le PHA, assembler les kits. Fabrication locale et régionale." },
-  { emoji: "🌍", role: "Déploiement terrain", name: "Impact & Partenariats", desc: "Coordination des déploiements en Afrique, formation des communautés, suivi des territoires pilotes." },
+  { icon: <UserRound className="w-10 h-10" />, role: "Présidente & Fondatrice", name: "Laeticia Motongane", desc: "Vision stratégique, direction générale et pilotage de l'écosystème PhytoTech. À l'origine du projet EmotionsCare." },
+  { icon: <Dna className="w-10 h-10" />, role: "R&D & Sciences", name: "Direction scientifique", desc: "Conception des technologies bio-intégrées, brevets, partenariats recherche avec les universités." },
+  { icon: <Factory className="w-10 h-10" />, role: "Bio-manufacture", name: "Production & Ingénierie", desc: "Cultiver les algues, mouler le PHA, assembler les kits. Fabrication locale et régionale." },
+  { icon: <Globe className="w-10 h-10" />, role: "Déploiement terrain", name: "Impact & Partenariats", desc: "Coordination des déploiements en Afrique, formation des communautés, suivi des territoires pilotes." },
 ];
 
 const APropos = () => (
@@ -103,7 +107,7 @@ const APropos = () => (
             {values.map((v) => (
               <Card key={v.title} className="hover:shadow-lg transition-all">
                 <CardContent className="p-6 space-y-3">
-                  <div className="text-3xl">{v.icon}</div>
+                  <div className="text-primary">{v.icon}</div>
                   <h3 className="text-lg font-semibold text-foreground">{v.title}</h3>
                   <p className="text-sm text-muted-foreground">{v.desc}</p>
                 </CardContent>
@@ -127,7 +131,7 @@ const APropos = () => (
             {team.map((t) => (
               <Card key={t.role} className="hover:shadow-lg transition-all">
                 <CardContent className="p-6 flex gap-4 items-start">
-                  <div className="text-4xl flex-shrink-0">{t.emoji}</div>
+                  <div className="text-primary flex-shrink-0">{t.icon}</div>
                   <div className="space-y-1">
                     <Badge variant="secondary" className="font-mono text-[10px] tracking-wider">{t.role}</Badge>
                     <h3 className="text-lg font-semibold text-foreground">{t.name}</h3>

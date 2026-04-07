@@ -20,6 +20,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  Home, Heart, Building2, Wheat, BookOpen, Factory, Globe, Hotel, Rocket, Landmark, Palette,
+} from "lucide-react";
 
 interface AppItem {
   tag: string;
@@ -28,7 +31,7 @@ interface AppItem {
 }
 
 interface Domain {
-  emoji: string;
+  icon: React.ReactNode;
   title: string;
   subtitle: string;
   apps: AppItem[];
@@ -77,7 +80,7 @@ const tagColors: Record<string, string> = {
 
 const domains: Domain[] = [
   {
-    emoji: "🏠",
+    icon: <Home className="w-6 h-6 text-primary" />,
     title: "Habitat & Vie domestique",
     subtitle: "Le foyer autonome du futur — la maison devient un organisme vivant.",
     apps: [
@@ -90,7 +93,7 @@ const domains: Domain[] = [
     ],
   },
   {
-    emoji: "🏥",
+    icon: <Heart className="w-6 h-6 text-primary" />,
     title: "Santé & Médecine",
     subtitle: "Imagerie verte, dispositifs biodégradables, capteurs autonomes.",
     apps: [
@@ -103,7 +106,7 @@ const domains: Domain[] = [
     ],
   },
   {
-    emoji: "🏙",
+    icon: <Building2 className="w-6 h-6 text-primary" />,
     title: "Urbanisme & Smart City",
     subtitle: "La ville qui respire, qui s'éclaire et qui se nourrit d'elle-même.",
     apps: [
@@ -116,7 +119,7 @@ const domains: Domain[] = [
     ],
   },
   {
-    emoji: "🌾",
+    icon: <Wheat className="w-6 h-6 text-primary" />,
     title: "Agriculture & Alimentation",
     subtitle: "Du champ à l'assiette, alimenté par le vivant.",
     apps: [
@@ -128,7 +131,7 @@ const domains: Domain[] = [
     ],
   },
   {
-    emoji: "📚",
+    icon: <BookOpen className="w-6 h-6 text-primary" />,
     title: "Éducation & Recherche",
     subtitle: "Apprendre en cultivant, enseigner en créant.",
     apps: [
@@ -139,7 +142,7 @@ const domains: Domain[] = [
     ],
   },
   {
-    emoji: "🏭",
+    icon: <Factory className="w-6 h-6 text-primary" />,
     title: "Industrie & Fabrication",
     subtitle: "De la pétrochimie à la bio-manufacture.",
     apps: [
@@ -151,7 +154,7 @@ const domains: Domain[] = [
     ],
   },
   {
-    emoji: "🌍",
+    icon: <Globe className="w-6 h-6 text-primary" />,
     title: "Pays en développement & Humanitaire",
     subtitle: "La première révolution tech dont les ingrédients sont gratuits et partout.",
     apps: [
@@ -164,7 +167,7 @@ const domains: Domain[] = [
     ],
   },
   {
-    emoji: "🏨",
+    icon: <Hotel className="w-6 h-6 text-primary" />,
     title: "Tourisme & Hôtellerie",
     subtitle: "L'éco-luxe vivant.",
     apps: [
@@ -175,7 +178,7 @@ const domains: Domain[] = [
     ],
   },
   {
-    emoji: "🚀",
+    icon: <Rocket className="w-6 h-6 text-primary" />,
     title: "Défense, Spatial & Expéditions",
     subtitle: "Autonomie totale en milieu extrême.",
     apps: [
@@ -186,7 +189,7 @@ const domains: Domain[] = [
     ],
   },
   {
-    emoji: "🏛",
+    icon: <Landmark className="w-6 h-6 text-primary" />,
     title: "Gouvernance & Politiques publiques",
     subtitle: "La transition pilotée par le vivant.",
     apps: [
@@ -199,7 +202,7 @@ const domains: Domain[] = [
     ],
   },
   {
-    emoji: "💄",
+    icon: <Palette className="w-6 h-6 text-primary" />,
     title: "Mode, Cosmétique & Lifestyle",
     subtitle: "Le luxe biodégradable.",
     apps: [
@@ -262,7 +265,9 @@ const Domaines = () => (
               <AccordionItem key={i} value={`domain-${i}`} className="border rounded-lg bg-card/50 px-2">
                 <AccordionTrigger className="hover:no-underline py-5">
                   <div className="flex items-center gap-3 text-left">
-                    <span className="text-2xl">{d.emoji}</span>
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      {d.icon}
+                    </div>
                     <div>
                       <h3 className="text-xl font-semibold">{d.title}</h3>
                       <p className="text-sm text-muted-foreground font-sans">{d.subtitle}</p>
@@ -299,19 +304,17 @@ const Domaines = () => (
         </div>
       </section>
 
-      {/* Emerging Axes */}
-      <section className="py-24 bg-card/50">
+      {/* Emerging */}
+      <section className="py-20 bg-secondary/30">
         <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl md:text-4xl text-center mb-12">Axes émergents à explorer</h2>
+          <h2 className="text-3xl md:text-4xl text-center mb-12">Axes émergents & exploratoires</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {emergingAxes.map((a, i) => (
-              <Card key={i} className="bg-secondary/30 border-0 hover:shadow-lg transition-all">
-                <CardContent className="p-5 space-y-2">
-                  <Badge className="font-mono text-[10px] tracking-widest border-0 bg-accent/20 text-accent">
-                    {a.tag}
-                  </Badge>
-                  <h4 className="text-sm font-semibold font-sans">{a.title}</h4>
-                  <p className="text-xs text-muted-foreground">{a.desc}</p>
+            {emergingAxes.map((e) => (
+              <Card key={e.title} className="bg-card/80">
+                <CardContent className="p-4 space-y-2">
+                  <Badge variant={e.tag === "NOUVEAU" ? "default" : "secondary"} className="font-mono text-[10px] tracking-widest">{e.tag}</Badge>
+                  <h4 className="text-sm font-semibold">{e.title}</h4>
+                  <p className="text-xs text-muted-foreground">{e.desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -319,32 +322,28 @@ const Domaines = () => (
         </div>
       </section>
 
-      {/* Tech Matrix */}
-      <section className="py-24">
+      {/* Matrix */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl text-center mb-4">Matrice Technologies × Domaines</h2>
-          <div className="flex justify-center gap-6 mb-8 text-sm text-muted-foreground">
-            <span><span className="text-primary">●</span> application directe</span>
-            <span><span className="text-muted-foreground">◐</span> émergente</span>
-          </div>
+          <h2 className="text-3xl md:text-4xl text-center mb-12">Matrice technologie × domaine</h2>
           <div className="overflow-x-auto">
-            <Table className="min-w-[800px]">
+            <Table className="min-w-[900px]">
               <TableHeader>
                 <TableRow>
-                  <TableHead className="font-mono text-xs">Domaine</TableHead>
+                  <TableHead className="font-mono text-xs sticky left-0 bg-background">Domaine</TableHead>
                   {matrixTechs.map((t) => (
-                    <TableHead key={t} className="font-mono text-[10px] text-center whitespace-nowrap">{t}</TableHead>
+                    <TableHead key={t} className="font-mono text-[10px] text-center whitespace-nowrap px-2">{t}</TableHead>
                   ))}
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {matrixDomains.map((d) => (
                   <TableRow key={d.name}>
-                    <TableCell className="font-mono text-xs whitespace-nowrap">{d.name}</TableCell>
+                    <TableCell className="text-xs font-semibold sticky left-0 bg-background whitespace-nowrap">{d.name}</TableCell>
                     {d.vals.map((v, i) => (
-                      <TableCell key={i} className="text-center">
-                        <span className={v === "●" ? "text-primary text-lg" : v === "◐" ? "text-muted-foreground" : ""}>
-                          {v}
+                      <TableCell key={i} className="text-center text-sm">
+                        <span className={v === "●" ? "text-primary" : v === "◐" ? "text-muted-foreground" : "opacity-20"}>
+                          {v || "·"}
                         </span>
                       </TableCell>
                     ))}
@@ -353,8 +352,8 @@ const Domaines = () => (
               </TableBody>
             </Table>
           </div>
-          <p className="text-center text-xs text-muted-foreground mt-6 font-mono">
-            11 technologies · 11 domaines · 60+ applications identifiées
+          <p className="text-center text-xs text-muted-foreground mt-4">
+            ● = Application directe identifiée &nbsp; ◐ = Applicable avec adaptation &nbsp; · = Pas d'application identifiée
           </p>
         </div>
       </section>

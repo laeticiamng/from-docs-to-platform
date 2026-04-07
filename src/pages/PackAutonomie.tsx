@@ -16,11 +16,14 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  FlaskConical, Droplets, Zap, Waves, Sprout, Home, Globe, CheckCircle, AlertTriangle,
+} from "lucide-react";
 
 const tiers = [
   {
     color: "border-primary/40",
-    icon: "🧪",
+    icon: <FlaskConical className="w-6 h-6" />,
     title: "Module Biogaz — Le cœur du système",
     subtitle: "Produit l'électricité pour le frigo, la TV, le lave-linge",
     price: "~3 500€",
@@ -35,7 +38,7 @@ const tiers = [
   },
   {
     color: "border-blue-400/40",
-    icon: "💧",
+    icon: <Droplets className="w-6 h-6" />,
     title: "Module Hydrogène — Chauffage & Cuisson",
     subtitle: "Remplace le chauffage électrique et les plaques",
     price: "~2 800€",
@@ -50,7 +53,7 @@ const tiers = [
   },
   {
     color: "border-yellow-400/40",
-    icon: "⚡",
+    icon: <Zap className="w-6 h-6" />,
     title: "Module Stockage — Batterie quinone + PMFC",
     subtitle: "Stocke le surplus et couvre les micro-besoins",
     price: "~1 200€",
@@ -65,7 +68,7 @@ const tiers = [
   },
   {
     color: "border-purple-400/40",
-    icon: "🌊",
+    icon: <Waves className="w-6 h-6" />,
     title: "Module Eau & Air — Économie 90%",
     subtitle: "Recirculation douche + purification air intérieur",
     price: "~1 500€",
@@ -80,10 +83,10 @@ const tiers = [
   },
 ];
 
-const statusColors: Record<string, string> = {
-  "✅": "text-primary",
-  "🔶": "text-yellow-600",
-  "❌": "text-destructive",
+const statusIcons: Record<string, React.ReactNode> = {
+  "✅": <CheckCircle className="w-4 h-4 text-primary inline" />,
+  "🔶": <AlertTriangle className="w-4 h-4 text-yellow-600 inline" />,
+  "❌": <span className="text-destructive font-bold">✗</span>,
 };
 
 const readiness = [
@@ -100,10 +103,10 @@ const readiness = [
 ];
 
 const profiles = [
-  { icon: "🌱", title: "Le Curieux", desc: "Veut comprendre et commencer. Achète Le Pot Vivant (49€). Alimente une LED et un capteur.", price: "49€" },
-  { icon: "🏡", title: "L'Éco-Conscient", desc: "Veut réduire sa facture et son impact. Achète le Module Maison (1 490€). Économise l'eau, purifie l'air.", price: "1 490€" },
-  { icon: "⚡", title: "L'Autonomiste", desc: "Veut quitter EDF. Achète le Pack Autonomie Totale (9 000€). ROI en 4,6 ans. Zéro facture ensuite.", price: "9 000€" },
-  { icon: "🌍", title: "Le Bâtisseur", desc: "Veut équiper un village. Achète l'Autonomie Village (12 000€). Éclairage, eau, nourriture pour 50 personnes.", price: "12 000€" },
+  { icon: <Sprout className="w-10 h-10" />, title: "Le Curieux", desc: "Veut comprendre et commencer. Achète Le Pot Vivant (49€). Alimente une LED et un capteur.", price: "49€" },
+  { icon: <Home className="w-10 h-10" />, title: "L'Éco-Conscient", desc: "Veut réduire sa facture et son impact. Achète le Module Maison (1 490€). Économise l'eau, purifie l'air.", price: "1 490€" },
+  { icon: <Zap className="w-10 h-10" />, title: "L'Autonomiste", desc: "Veut quitter EDF. Achète le Pack Autonomie Totale (9 000€). ROI en 4,6 ans. Zéro facture ensuite.", price: "9 000€" },
+  { icon: <Globe className="w-10 h-10" />, title: "Le Bâtisseur", desc: "Veut équiper un village. Achète l'Autonomie Village (12 000€). Éclairage, eau, nourriture pour 50 personnes.", price: "12 000€" },
 ];
 
 const PackAutonomie = () => (
@@ -190,7 +193,7 @@ const PackAutonomie = () => (
           <Card className="mt-4 border-primary/30 bg-primary/5">
             <CardContent className="p-6 space-y-2">
               <h3 className="text-lg font-semibold text-primary flex items-center gap-2">
-                ✅ Mais le 100% PhytoTech est possible — avec une autre approche
+                <CheckCircle className="w-5 h-5" /> Mais le 100% PhytoTech est possible — avec une autre approche
               </h3>
               <p className="text-sm text-muted-foreground">
                 La clé : ne pas remplacer watt pour watt, mais <strong className="text-foreground">changer la source d'énergie par poste</strong>. Chauffage et cuisson sur l'hydrogène biologique. Eau chaude via solaire thermique + H₂. Le reste via algues-biogaz + batteries quinone.
@@ -273,7 +276,7 @@ const PackAutonomie = () => (
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <div>
                       <h3 className="text-xl font-semibold text-foreground flex items-center gap-2">
-                        {t.icon} {t.title}
+                        <span className="text-primary">{t.icon}</span> {t.title}
                       </h3>
                       <p className="text-sm text-muted-foreground">{t.subtitle}</p>
                     </div>
@@ -409,7 +412,7 @@ const PackAutonomie = () => (
                     <TableRow key={r.name}>
                       <TableCell className="text-sm">{r.name}</TableCell>
                       <TableCell className="text-sm">
-                        <span className={statusColors[r.status]}>{r.status}</span>{" "}
+                        {statusIcons[r.status]}{" "}
                         <span className="text-muted-foreground">{r.detail}</span>
                       </TableCell>
                       <TableCell className="text-sm font-mono whitespace-nowrap">{r.horizon}</TableCell>
@@ -423,7 +426,9 @@ const PackAutonomie = () => (
           {/* Positioning */}
           <Card className="mt-8 border-primary/30 bg-primary/5">
             <CardContent className="p-6 space-y-3">
-              <h3 className="text-lg font-semibold text-primary">✅ Le positionnement clair</h3>
+              <h3 className="text-lg font-semibold text-primary flex items-center gap-2">
+                <CheckCircle className="w-5 h-5" /> Le positionnement clair
+              </h3>
               <div className="space-y-3 text-sm text-muted-foreground">
                 <p>
                   <strong className="text-foreground">Aujourd'hui :</strong> les Modules Découverte et Habitat sont réalisables immédiatement. Ils ne remplacent pas EDF, ils le complètent.
@@ -447,7 +452,7 @@ const PackAutonomie = () => (
           <div className="grid md:grid-cols-4 gap-6">
             {profiles.map((p) => (
               <div key={p.title} className="text-center space-y-3 p-4 rounded-xl bg-background/5">
-                <div className="text-4xl">{p.icon}</div>
+                <div className="flex justify-center text-primary">{p.icon}</div>
                 <h3 className="text-lg">{p.title}</h3>
                 <p className="text-sm opacity-70">{p.desc}</p>
                 <p className="font-mono text-primary font-bold">{p.price}</p>

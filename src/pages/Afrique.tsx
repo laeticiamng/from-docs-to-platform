@@ -22,6 +22,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Globe, Leaf, Droplets, Sprout, Zap, Wheat, Recycle,
+  GraduationCap, Wrench, Handshake, Sun, TreePalm, Mountain, Waves, Thermometer,
+} from "lucide-react";
 
 interface ZoneApp {
   tag: string;
@@ -30,7 +34,7 @@ interface ZoneApp {
 }
 
 interface EcoZone {
-  emoji: string;
+  icon: React.ReactNode;
   name: string;
   regions: string;
   plants: string[];
@@ -42,7 +46,7 @@ interface EcoZone {
 
 const zones: EcoZone[] = [
   {
-    emoji: "🏜️",
+    icon: <Thermometer className="w-8 h-8 text-amber-600" />,
     name: "Zone sahélienne",
     regions: "Sahel, nord Sénégal, Mali, Niger, Tchad",
     plants: ["Mil", "Sorgho", "Acacia", "Balanites", "Moringa"],
@@ -57,7 +61,7 @@ const zones: EcoZone[] = [
     ],
   },
   {
-    emoji: "🌴",
+    icon: <TreePalm className="w-8 h-8 text-green-600" />,
     name: "Zone tropicale humide",
     regions: "Côte d'Ivoire, Cameroun, RDC, Ghana, Guinée",
     plants: ["Manioc", "Plantain", "Cacao", "Palmier à huile", "Bambou"],
@@ -72,7 +76,7 @@ const zones: EcoZone[] = [
     ],
   },
   {
-    emoji: "🌿",
+    icon: <Leaf className="w-8 h-8 text-emerald-600" />,
     name: "Zone de savane",
     regions: "Burkina Faso, Tanzanie, Mozambique, Kenya rural, Ouganda",
     plants: ["Maïs", "Arachide", "Karité", "Graminées", "Sésame"],
@@ -87,7 +91,7 @@ const zones: EcoZone[] = [
     ],
   },
   {
-    emoji: "🌊",
+    icon: <Waves className="w-8 h-8 text-blue-600" />,
     name: "Zone côtière & insulaire",
     regions: "Sénégal côte, Madagascar, Comores, Tanzanie côte, Cap-Vert",
     plants: ["Cocotier", "Mangrove", "Algues marines", "Palétuviers", "Riz de mangrove"],
@@ -102,7 +106,7 @@ const zones: EcoZone[] = [
     ],
   },
   {
-    emoji: "⛰️",
+    icon: <Mountain className="w-8 h-8 text-stone-600" />,
     name: "Zone d'altitude",
     regions: "Éthiopie, Rwanda, Burundi, hauts plateaux du Kenya",
     plants: ["Café", "Teff", "Eucalyptus", "Bambou", "Enset (faux bananier)"],
@@ -172,13 +176,13 @@ const Afrique = () => (
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {[
-              { n: "60%", l: "des terres arables non cultivées de la planète", icon: "🌍" },
-              { n: "8×", l: "la biodiversité végétale vs l'Europe", icon: "🌿" },
-              { n: "~17", l: "grands bassins fluviaux sous-exploités", icon: "💧" },
+              { n: "60%", l: "des terres arables non cultivées de la planète", icon: <Globe className="w-8 h-8" /> },
+              { n: "8×", l: "la biodiversité végétale vs l'Europe", icon: <Leaf className="w-8 h-8" /> },
+              { n: "~17", l: "grands bassins fluviaux sous-exploités", icon: <Droplets className="w-8 h-8" /> },
             ].map((s) => (
               <Card key={s.l}>
                 <CardContent className="p-6 text-center space-y-2">
-                  <div className="text-3xl">{s.icon}</div>
+                  <div className="flex justify-center text-primary">{s.icon}</div>
                   <p className="text-3xl font-bold text-primary font-mono">{s.n}</p>
                   <p className="text-xs text-muted-foreground">{s.l}</p>
                 </CardContent>
@@ -213,7 +217,7 @@ const Afrique = () => (
               <AccordionItem key={i} value={`zone-${i}`} className="border rounded-lg bg-card/80 px-2">
                 <AccordionTrigger className="hover:no-underline py-5">
                   <div className="flex items-center gap-3 text-left">
-                    <span className="text-3xl">{z.emoji}</span>
+                    <div className="flex-shrink-0">{z.icon}</div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 flex-wrap">
                         <h3 className="text-xl font-semibold text-foreground">{z.name}</h3>
@@ -276,13 +280,13 @@ const Afrique = () => (
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
             {[
-              { icon: "🌱", title: "Plantes locales", desc: "Mil, manioc, mangrove, café… déjà sur place", arrow: true },
-              { icon: "⚡", title: "Énergie", desc: "PMFC, biogaz, H₂ — adaptés à la biomasse disponible", arrow: true },
-              { icon: "💧", title: "Eau", desc: "Biofiltre, douche cyclique — selon les contraintes hydriques", arrow: true },
-              { icon: "🌾", title: "Nutriments", desc: "Biomasse algale → fertilisant → retour aux plantes", arrow: false },
+              { icon: <Sprout className="w-10 h-10" />, title: "Plantes locales", desc: "Mil, manioc, mangrove, café… déjà sur place", arrow: true },
+              { icon: <Zap className="w-10 h-10" />, title: "Énergie", desc: "PMFC, biogaz, H₂ — adaptés à la biomasse disponible", arrow: true },
+              { icon: <Droplets className="w-10 h-10" />, title: "Eau", desc: "Biofiltre, douche cyclique — selon les contraintes hydriques", arrow: true },
+              { icon: <Wheat className="w-10 h-10" />, title: "Nutriments", desc: "Biomasse algale → fertilisant → retour aux plantes", arrow: false },
             ].map((s) => (
               <div key={s.title} className="text-center space-y-3 relative">
-                <div className="text-4xl">{s.icon}</div>
+                <div className="flex justify-center text-primary">{s.icon}</div>
                 <h3 className="text-base font-semibold">{s.title}</h3>
                 <p className="text-xs opacity-70">{s.desc}</p>
                 {s.arrow && (
@@ -293,7 +297,7 @@ const Afrique = () => (
           </div>
           <div className="text-center mt-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary text-sm font-mono">
-              ♻️ Boucle fermée — le cycle se reproduit indéfiniment
+              <Recycle className="w-4 h-4" /> Boucle fermée — le cycle se reproduit indéfiniment
             </div>
           </div>
         </div>
@@ -350,13 +354,13 @@ const Afrique = () => (
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { icon: "🎓", title: "Formation locale", desc: "Chaque déploiement inclut la formation des villageois. Ils comprennent, ils maintiennent, ils transmettent." },
-              { icon: "🔧", title: "Maintenance autonome", desc: "Les composants sont cultivables et réparables sur place. Pas de technicien extérieur nécessaire. Pas de pièce importée." },
-              { icon: "🤝", title: "1 système = 1 territoire", desc: "Chaque système déployé en Europe finance un déploiement adapté aux ressources locales d'un territoire. 1=1." },
+              { icon: <GraduationCap className="w-10 h-10" />, title: "Formation locale", desc: "Chaque déploiement inclut la formation des villageois. Ils comprennent, ils maintiennent, ils transmettent." },
+              { icon: <Wrench className="w-10 h-10" />, title: "Maintenance autonome", desc: "Les composants sont cultivables et réparables sur place. Pas de technicien extérieur nécessaire. Pas de pièce importée." },
+              { icon: <Handshake className="w-10 h-10" />, title: "1 système = 1 territoire", desc: "Chaque système déployé en Europe finance un déploiement adapté aux ressources locales d'un territoire. 1=1." },
             ].map((c) => (
               <Card key={c.title}>
                 <CardContent className="p-6 text-center space-y-3">
-                  <div className="text-4xl">{c.icon}</div>
+                  <div className="flex justify-center text-primary">{c.icon}</div>
                   <h3 className="text-lg font-semibold text-foreground">{c.title}</h3>
                   <p className="text-sm text-muted-foreground">{c.desc}</p>
                 </CardContent>

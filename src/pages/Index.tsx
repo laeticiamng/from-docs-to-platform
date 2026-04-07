@@ -16,6 +16,17 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  Leaf, Sprout, Zap, Droplets, Wind, Radio, Lightbulb, Layers, Battery,
+  Recycle, Globe, Home, FlaskConical, Factory, Package, ShoppingCart, School, Building,
+  Flower2, Bug,
+} from "lucide-react";
+
+const IconBox = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
+  <div className={`w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary ${className}`}>
+    {children}
+  </div>
+);
 
 const HeroSection = () => (
   <section className="min-h-[85vh] flex items-center relative overflow-hidden">
@@ -23,7 +34,7 @@ const HeroSection = () => (
     <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
       <div className="space-y-6">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-mono">
-          <span>🌿</span> PhytoTech Home par EmotionsCare
+          <Leaf className="w-4 h-4" /> PhytoTech Home par EmotionsCare
         </div>
         <h1 className="text-4xl md:text-6xl lg:text-7xl leading-tight text-foreground">
           L'énergie qui pousse.<br />
@@ -43,8 +54,11 @@ const HeroSection = () => (
         </div>
       </div>
       <div className="flex items-center justify-center">
-        <div className="text-[12rem] md:text-[16rem] leading-none select-none animate-pulse">
-          🌱
+        <div className="relative w-48 h-48 md:w-64 md:h-64">
+          <div className="absolute inset-0 rounded-full bg-primary/10 animate-pulse" />
+          <div className="absolute inset-4 rounded-full bg-primary/5 flex items-center justify-center">
+            <Sprout className="w-24 h-24 md:w-32 md:h-32 text-primary" strokeWidth={1.5} />
+          </div>
         </div>
       </div>
     </div>
@@ -111,23 +125,23 @@ const HonestySection = () => (
       <Card className="border-primary/30 bg-primary/5">
         <CardContent className="p-8 space-y-4">
           <h3 className="text-xl font-semibold text-primary flex items-center gap-2">
-            ✅ Maintenant, voici pourquoi ce n'est pas un problème
+            Maintenant, voici pourquoi ce n'est pas un problème
           </h3>
           <p className="text-sm text-muted-foreground">
             <strong className="text-foreground">Le PhytoTech n'est pas une alternative aux panneaux solaires — c'est leur complément naturel.</strong> Vous gardez vos panneaux pour le frigo, la machine à laver, la télé. Et vous ajoutez le PhytoTech pour tout le reste.
           </p>
           <div className="grid md:grid-cols-2 gap-4 mt-4">
             {[
-              { icon: "💧", title: "L'eau", desc: "Une douche cyclique économise 54 000 litres/an. Ni EDF ni un panneau solaire ne font ça. Valeur : 150–250€/an." },
-              { icon: "🌬️", title: "L'air", desc: "Un panneau à microalgues absorbe le CO₂ intérieur et rejette de l'O₂. Un panneau solaire ne purifie pas votre air." },
-              { icon: "📡", title: "L'IoT ultra-basse conso", desc: "Capteurs domotiques (température, humidité, mouvement) consomment des microwatts. Les PMFC suffisent — plus jamais de piles à changer." },
-              { icon: "💡", title: "L'éclairage d'ambiance", desc: "Capsules bioluminescentes et LED ultra-basse conso : veilleuses, balisage, jardin. Les PMFC couvrent ça parfaitement." },
-              { icon: "🧱", title: "Les matériaux", desc: "Bioplastiques, circuits biodégradables, agents de contraste végétaux — rien à voir avec la puissance électrique." },
-              { icon: "🔋", title: "Le stockage", desc: "Les batteries quinone stockent l'énergie de vos panneaux solaires existants — mais sans métaux rares. Elles complètent le solaire." },
+              { icon: <Droplets className="w-6 h-6" />, title: "L'eau", desc: "Une douche cyclique économise 54 000 litres/an. Ni EDF ni un panneau solaire ne font ça. Valeur : 150–250€/an." },
+              { icon: <Wind className="w-6 h-6" />, title: "L'air", desc: "Un panneau à microalgues absorbe le CO₂ intérieur et rejette de l'O₂. Un panneau solaire ne purifie pas votre air." },
+              { icon: <Radio className="w-6 h-6" />, title: "L'IoT ultra-basse conso", desc: "Capteurs domotiques (température, humidité, mouvement) consomment des microwatts. Les PMFC suffisent — plus jamais de piles à changer." },
+              { icon: <Lightbulb className="w-6 h-6" />, title: "L'éclairage d'ambiance", desc: "Capsules bioluminescentes et LED ultra-basse conso : veilleuses, balisage, jardin. Les PMFC couvrent ça parfaitement." },
+              { icon: <Layers className="w-6 h-6" />, title: "Les matériaux", desc: "Bioplastiques, circuits biodégradables, agents de contraste végétaux — rien à voir avec la puissance électrique." },
+              { icon: <Battery className="w-6 h-6" />, title: "Le stockage", desc: "Les batteries quinone stockent l'énergie de vos panneaux solaires existants — mais sans métaux rares. Elles complètent le solaire." },
             ].map((item) => (
               <div key={item.title} className="flex flex-col gap-1 p-3 rounded-lg bg-background/50">
                 <div className="flex gap-3">
-                  <span className="text-2xl">{item.icon}</span>
+                  <span className="text-primary flex-shrink-0 mt-0.5">{item.icon}</span>
                   <div>
                     <p className="text-sm font-semibold text-foreground">{item.title}</p>
                     <p className="text-xs text-muted-foreground">{item.desc}</p>
@@ -152,7 +166,7 @@ const HonestySection = () => (
       <Card className="mt-8 bg-card border-primary/20">
         <CardContent className="p-8 space-y-3">
           <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
-            🌍 Pour les pays en développement, c'est différent
+            <Globe className="w-5 h-5 text-primary" /> Pour les pays en développement, c'est différent
           </h3>
           <p className="text-sm text-muted-foreground">
             Le problème n'est pas l'absence de végétation — c'est l'absence de connexion entre les ressources naturelles existantes et les technologies capables de les valoriser. On n'envoie pas des plantes. <strong className="text-foreground">On connecte celles qui sont déjà là.</strong>
@@ -177,7 +191,7 @@ const HonestySection = () => (
 /* ─── Compare — updated honest version ─── */
 const compareData = [
   {
-    icon: "⚡",
+    icon: <Zap className="w-10 h-10" />,
     title: "Réseau EDF",
     price: "~1 500€ /an",
     role: "Gros appareils",
@@ -190,7 +204,7 @@ const compareData = [
     ],
   },
   {
-    icon: "☀️",
+    icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-10 h-10"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>,
     title: "Panneaux solaires",
     price: "12 000€ install.",
     role: "Électricité pure",
@@ -202,7 +216,7 @@ const compareData = [
     ],
   },
   {
-    icon: "🌿",
+    icon: <Leaf className="w-10 h-10" />,
     title: "PhytoTech Home",
     price: "à partir de 49€",
     role: "Complément naturel",
@@ -241,7 +255,7 @@ const CompareSection = () => (
               <div className="absolute top-0 left-0 right-0 h-1 bg-primary" />
             )}
             <CardContent className="p-6 space-y-4">
-              <div className="text-4xl">{c.icon}</div>
+              <div className="text-muted-foreground">{c.icon}</div>
               <h3 className="text-xl font-semibold text-foreground">{c.title}</h3>
               <p className="font-mono text-lg text-primary font-semibold">{c.price}</p>
               <Badge variant="secondary" className="text-xs">{c.role}</Badge>
@@ -268,7 +282,7 @@ const products = [
     level: "NIVEAU 1 — DÉCOUVERTE",
     title: "Le Pot Vivant",
     price: "49 — 199€",
-    emoji: "🪴",
+    icon: <Flower2 className="w-10 h-10 text-primary" />,
     desc: "Un pot de fleurs qui produit de l'électricité. Branchez une LED, un capteur de température ou un petit écran e-ink — alimenté par les racines de votre plante.",
     features: [
       "Pot avec électrodes PMFC intégrées",
@@ -283,7 +297,7 @@ const products = [
     level: "NIVEAU 2 — HABITAT",
     title: "Le Module Maison",
     price: "690 — 2 490€",
-    emoji: "🏡",
+    icon: <Home className="w-10 h-10 text-primary" />,
     desc: "Le pack complet pour un foyer qui veut réduire sa dépendance. Électricité, air, eau — trois systèmes bio-intégrés.",
     features: [
       "Jardinière PMFC multi-pots (capteurs domotiques)",
@@ -299,7 +313,7 @@ const products = [
     level: "NIVEAU 3 — COMMUNAUTÉ",
     title: "L'Autonomie Village",
     price: "4 900 — 19 000€",
-    emoji: "🌍",
+    icon: <Globe className="w-10 h-10 text-primary" />,
     desc: "Un système modulaire pour équiper un village entier. Électricité, eau potable, alimentation protéinée, éclairage — tout fonctionne avec le soleil et l'eau locale.",
     features: [
       "Réseau PMFC en série (éclairage collectif continu)",
@@ -328,7 +342,7 @@ const ProductsSection = () => (
                 <Badge variant="secondary" className="font-mono text-xs tracking-wider">
                   {p.level}
                 </Badge>
-                <span className="text-4xl">{p.emoji}</span>
+                {p.icon}
               </div>
               <h3 className="text-2xl md:text-3xl text-foreground">{p.title}</h3>
               <p className="font-mono text-2xl text-primary font-bold">{p.price}</p>
@@ -352,7 +366,7 @@ const ProductsSection = () => (
       {/* Pack Autonomie Totale teaser */}
       <Card className="mt-12 border-primary/30 bg-primary/5 max-w-3xl mx-auto overflow-hidden">
         <CardContent className="p-8 flex flex-col md:flex-row items-center gap-6">
-          <div className="text-6xl">⚡</div>
+          <Zap className="w-16 h-16 text-primary flex-shrink-0" strokeWidth={1.5} />
           <div className="flex-1 space-y-2">
             <Badge className="font-mono text-xs tracking-wider bg-primary/20 text-primary border-0">
               NIVEAU 4 — AUTONOMIE TOTALE
@@ -373,10 +387,10 @@ const ProductsSection = () => (
 );
 
 const steps = [
-  { num: "01", title: "Plantez", desc: "Installez la plante dans le pot.", emoji: "🌱" },
-  { num: "02", title: "Les bactéries travaillent", desc: "Des bactéries électroactives oxydent les composés et libèrent des électrons captés par les électrodes.", emoji: "🦠" },
-  { num: "03", title: "Le courant circule", desc: "Un flux d'électrons continu alimente vos appareils ultra-basse consommation : LED, capteurs, écrans e-ink.", emoji: "⚡" },
-  { num: "04", title: "Le cycle continue", desc: "La plante pousse, les bactéries se multiplient, l'énergie se renouvelle. Pas de batterie à changer. Jamais.", emoji: "♻️" },
+  { num: "01", title: "Plantez", desc: "Installez la plante dans le pot.", icon: <Sprout className="w-12 h-12" /> },
+  { num: "02", title: "Les bactéries travaillent", desc: "Des bactéries électroactives oxydent les composés et libèrent des électrons captés par les électrodes.", icon: <Bug className="w-12 h-12" /> },
+  { num: "03", title: "Le courant circule", desc: "Un flux d'électrons continu alimente vos appareils ultra-basse consommation : LED, capteurs, écrans e-ink.", icon: <Zap className="w-12 h-12" /> },
+  { num: "04", title: "Le cycle continue", desc: "La plante pousse, les bactéries se multiplient, l'énergie se renouvelle. Pas de batterie à changer. Jamais.", icon: <Recycle className="w-12 h-12" /> },
 ];
 
 const HowItWorksSection = () => (
@@ -389,7 +403,7 @@ const HowItWorksSection = () => (
       <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
         {steps.map((s) => (
           <div key={s.num} className="text-center space-y-4">
-            <div className="text-5xl mb-2">{s.emoji}</div>
+            <div className="flex justify-center text-primary mb-2">{s.icon}</div>
             <div className="font-mono text-primary text-sm">{s.num}</div>
             <h3 className="text-xl">{s.title}</h3>
             <p className="text-sm opacity-70">{s.desc}</p>
@@ -401,10 +415,10 @@ const HowItWorksSection = () => (
 );
 
 const impacts = [
-  { icon: "💧", title: "54 000 litres d'eau économisés /an", desc: "La douche cyclique à biofiltre utilise 5L par douche au lieu de 80L." },
-  { icon: "🌿", title: "12 kg de CO₂ absorbés /an", desc: "Le panneau mural à microalgues capture le CO₂ et rejette de l'oxygène." },
-  { icon: "⚡", title: "Zéro batterie toxique", desc: "Batteries quinone à base de molécules végétales, biodégradables. Pas de lithium." },
-  { icon: "♻️", title: "100% compostable en fin de vie", desc: "Chaque composant est bio-sourcé. En fin de vie, tout retourne à la terre." },
+  { icon: <Droplets className="w-10 h-10" />, title: "54 000 litres d'eau économisés /an", desc: "La douche cyclique à biofiltre utilise 5L par douche au lieu de 80L." },
+  { icon: <Leaf className="w-10 h-10" />, title: "12 kg de CO₂ absorbés /an", desc: "Le panneau mural à microalgues capture le CO₂ et rejette de l'oxygène." },
+  { icon: <Zap className="w-10 h-10" />, title: "Zéro batterie toxique", desc: "Batteries quinone à base de molécules végétales, biodégradables. Pas de lithium." },
+  { icon: <Recycle className="w-10 h-10" />, title: "100% compostable en fin de vie", desc: "Chaque composant est bio-sourcé. En fin de vie, tout retourne à la terre." },
 ];
 
 const ImpactSection = () => (
@@ -418,7 +432,7 @@ const ImpactSection = () => (
         {impacts.map((i) => (
           <Card key={i.title} className="hover:shadow-lg transition-all">
             <CardContent className="p-6 text-center space-y-3">
-              <div className="text-4xl">{i.icon}</div>
+              <div className="flex justify-center text-primary">{i.icon}</div>
               <h3 className="text-lg font-semibold text-foreground">{i.title}</h3>
               <p className="text-sm text-muted-foreground">{i.desc}</p>
             </CardContent>
@@ -444,10 +458,10 @@ const ImpactSection = () => (
 );
 
 const businessFlow = [
-  { icon: "🧪", title: "R&D EmotionsCare", desc: "Conception, prototypage, brevets" },
-  { icon: "🏭", title: "Bio-manufacture locale", desc: "Algues cultivées, PHA moulé, assemblage régional" },
-  { icon: "📦", title: "Vente B2C", desc: "Site web, marketplaces, jardineries" },
-  { icon: "🌍", title: "Impact 1=1", desc: "1 système déployé = 1 territoire connecté" },
+  { icon: <FlaskConical className="w-8 h-8" />, title: "R&D EmotionsCare", desc: "Conception, prototypage, brevets" },
+  { icon: <Factory className="w-8 h-8" />, title: "Bio-manufacture locale", desc: "Algues cultivées, PHA moulé, assemblage régional" },
+  { icon: <Package className="w-8 h-8" />, title: "Vente B2C", desc: "Site web, marketplaces, jardineries" },
+  { icon: <Globe className="w-8 h-8" />, title: "Impact 1=1", desc: "1 système déployé = 1 territoire connecté" },
 ];
 
 const BusinessSection = () => (
@@ -465,7 +479,7 @@ const BusinessSection = () => (
           <div key={b.title} className="flex items-center gap-4">
             <Card className="hover:shadow-lg transition-all">
               <CardContent className="p-6 text-center space-y-2 min-w-[180px]">
-                <div className="text-3xl">{b.icon}</div>
+                <div className="flex justify-center text-primary">{b.icon}</div>
                 <h3 className="text-sm font-semibold text-foreground">{b.title}</h3>
                 <p className="text-xs text-muted-foreground">{b.desc}</p>
               </CardContent>
@@ -529,12 +543,12 @@ const BusinessSection = () => (
 );
 
 const channels = [
-  "🌿 Jardineries (Truffaut, Botanic)",
-  "🛒 E-commerce (site propre)",
-  "📦 Marketplaces (Amazon, Cdiscount)",
-  "🏢 B2B Hôtellerie & Collectivités",
-  "🌍 ONG & Programmes humanitaires",
-  "🏫 Kits pédagogiques pour écoles",
+  { icon: <Leaf className="w-4 h-4" />, label: "Jardineries (Truffaut, Botanic)" },
+  { icon: <ShoppingCart className="w-4 h-4" />, label: "E-commerce (site propre)" },
+  { icon: <Package className="w-4 h-4" />, label: "Marketplaces (Amazon, Cdiscount)" },
+  { icon: <Building className="w-4 h-4" />, label: "B2B Hôtellerie & Collectivités" },
+  { icon: <Globe className="w-4 h-4" />, label: "ONG & Programmes humanitaires" },
+  { icon: <School className="w-4 h-4" />, label: "Kits pédagogiques pour écoles" },
 ];
 
 const ChannelsSection = () => (
@@ -544,8 +558,8 @@ const ChannelsSection = () => (
       <p className="text-muted-foreground">Le PhytoTech se vend là où les gens achètent déjà du vivant et de la tech verte.</p>
       <div className="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto">
         {channels.map((c) => (
-          <Badge key={c} variant="secondary" className="text-sm px-4 py-2 rounded-full">
-            {c}
+          <Badge key={c.label} variant="secondary" className="text-sm px-4 py-2 rounded-full inline-flex items-center gap-2">
+            {c.icon} {c.label}
           </Badge>
         ))}
       </div>

@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import BioBotLayout from '../components/BioBotLayout';
+import {
+  Sun, Layers, Brain, Recycle, Heart, Wheat, Waves, DollarSign,
+} from 'lucide-react';
 
 const foundations = [
   { name: 'Spirulina platensis', role: 'Base Technologique', aquevent: 'Eau biofiltree + extraits 1.2mg/ml', biobot: 'Bioreacteurs vivants integres structure', color: '#1E88E5' },
@@ -10,14 +13,14 @@ const foundations = [
 ];
 
 const modules = [
-  { icon: '\u2600\uFE0F', title: 'Bio-Energie', desc: 'Peau photosynthetique vivante + batteries biologiques', link: '/biobot/technology', color: '#FFB300' },
-  { icon: '\uD83E\uDDF1', title: 'Bio-Materiaux', desc: 'AlgaComposite\u2122 + MyceliumNet\u2122 auto-assemblage', link: '/biobot/technology', color: '#2E7D32' },
-  { icon: '\uD83E\uDDE0', title: 'Bio-Intelligence', desc: 'PhytoMind\u2122 neurones algaux + swarm intelligence', link: '/biobot/technology', color: '#7B1FA2' },
-  { icon: '\u267B\uFE0F', title: 'Cycle Ferme', desc: 'BioRecycler\u2122 zero dechet + reproduction autonome', link: '/biobot/technology', color: '#00897B' },
-  { icon: '\uD83C\uDFE5', title: 'HealthBot', desc: 'Production medicaments in-situ + extension AquaVent', link: '/biobot/applications', color: '#E53935' },
-  { icon: '\uD83C\uDF3E', title: 'AgroBot', desc: 'Agriculture 5.0 revolutionnaire Beyond Organic', link: '/biobot/applications', color: '#43A047' },
-  { icon: '\uD83C\uDF0A', title: 'OceanBot', desc: 'Regeneration marine + nettoyage pollution', link: '/biobot/applications', color: '#1E88E5' },
-  { icon: '\uD83D\uDCB0', title: 'Business Model', desc: 'Platform ecosystem 500Md\u20AC+ valorisation', link: '/biobot/business', color: '#FF6F00' },
+  { icon: <Sun className="w-10 h-10" />, title: 'Bio-Energie', desc: 'Peau photosynthetique vivante + batteries biologiques', link: '/biobot/technology', color: '#FFB300' },
+  { icon: <Layers className="w-10 h-10" />, title: 'Bio-Materiaux', desc: 'AlgaComposite™ + MyceliumNet™ auto-assemblage', link: '/biobot/technology', color: '#2E7D32' },
+  { icon: <Brain className="w-10 h-10" />, title: 'Bio-Intelligence', desc: 'PhytoMind™ neurones algaux + swarm intelligence', link: '/biobot/technology', color: '#7B1FA2' },
+  { icon: <Recycle className="w-10 h-10" />, title: 'Cycle Ferme', desc: 'BioRecycler™ zero dechet + reproduction autonome', link: '/biobot/technology', color: '#00897B' },
+  { icon: <Heart className="w-10 h-10" />, title: 'HealthBot', desc: 'Production medicaments in-situ + extension AquaVent', link: '/biobot/applications', color: '#E53935' },
+  { icon: <Wheat className="w-10 h-10" />, title: 'AgroBot', desc: 'Agriculture 5.0 revolutionnaire Beyond Organic', link: '/biobot/applications', color: '#43A047' },
+  { icon: <Waves className="w-10 h-10" />, title: 'OceanBot', desc: 'Regeneration marine + nettoyage pollution', link: '/biobot/applications', color: '#1E88E5' },
+  { icon: <DollarSign className="w-10 h-10" />, title: 'Business Model', desc: 'Platform ecosystem 500Md€+ valorisation', link: '/biobot/business', color: '#FF6F00' },
 ];
 
 export default function Landing() {
@@ -62,10 +65,10 @@ export default function Landing() {
               {/* Key Numbers */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
                 {[
-                  { value: '500Md\u20AC', label: 'Valorisation potentielle' },
+                  { value: '500Md€', label: 'Valorisation potentielle' },
                   { value: '70%', label: 'Probabilite technique' },
                   { value: '25+', label: 'Technologies validees' },
-                  { value: '\u221E', label: 'Duree vie (vivant)' },
+                  { value: '∞', label: 'Duree vie (vivant)' },
                 ].map((stat, i) => (
                   <motion.div
                     key={stat.label}
@@ -144,7 +147,7 @@ export default function Landing() {
                   to={m.link}
                   className="block p-6 rounded-2xl bg-white shadow-md border border-gray-100 hover:shadow-xl transition-all hover:-translate-y-1 h-full"
                 >
-                  <span className="text-4xl mb-4 block">{m.icon}</span>
+                  <div className="mb-4" style={{ color: m.color }}>{m.icon}</div>
                   <h3 className="text-lg font-bold mb-2" style={{ color: m.color }}>{m.title}</h3>
                   <p className="text-sm text-gray-600">{m.desc}</p>
                 </Link>
@@ -162,9 +165,9 @@ export default function Landing() {
 
             <div className="space-y-4 text-left">
               {[
-                { label: 'AquaVent UNLIMITED\u2122', desc: 'Premier inhalateur usage illimite (2026)', value: '10Md\u20AC', color: '#8B2C5A' },
-                { label: 'BioBot PhytoTech\u2122', desc: 'Robots vivants bio-hybrides (2028+)', value: '500Md\u20AC', color: '#2E7D32' },
-                { label: 'Platform PhytoTech', desc: 'Ecosysteme integre global', value: '2-5T\u20AC', color: '#FFB300' },
+                { label: 'AquaVent UNLIMITED™', desc: 'Premier inhalateur usage illimite (2026)', value: '10Md€', color: '#8B2C5A' },
+                { label: 'BioBot PhytoTech™', desc: 'Robots vivants bio-hybrides (2028+)', value: '500Md€', color: '#2E7D32' },
+                { label: 'Platform PhytoTech', desc: 'Ecosysteme integre global', value: '2-5T€', color: '#FFB300' },
               ].map((item, i) => (
                 <motion.div
                   key={item.label}

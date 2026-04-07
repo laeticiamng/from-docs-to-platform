@@ -32,11 +32,11 @@ const HeroSection = () => (
           Des kits prêts à installer qui utilisent les plantes, les algues et l'eau pour produire votre électricité, purifier votre air et recycler votre eau. Sans réseau. Sans batteries toxiques. Sans abonnement.
         </p>
         <div className="flex gap-4 flex-wrap">
-          <Button size="lg" className="rounded-full text-base px-8">
-            Découvrir les kits →
+          <Button size="lg" className="rounded-full text-base px-8" asChild>
+            <Link to="/precommande">Découvrir les kits →</Link>
           </Button>
-          <Button size="lg" variant="outline" className="rounded-full text-base px-8">
-            Comment ça marche
+          <Button size="lg" variant="outline" className="rounded-full text-base px-8" asChild>
+            <a href="#comment-ca-marche">Comment ça marche</a>
           </Button>
         </div>
       </div>
@@ -378,7 +378,7 @@ const steps = [
 ];
 
 const HowItWorksSection = () => (
-  <section className="py-24 bg-foreground text-background">
+  <section id="comment-ca-marche" className="py-24 bg-foreground text-background">
     <div className="container mx-auto px-4">
       <div className="text-center mb-16 space-y-3">
         <p className="font-mono text-sm text-primary tracking-widest uppercase">Simple et naturel</p>
@@ -561,11 +561,11 @@ const CTASection = () => (
         Soleil, eau, plantes. Trois ingrédients. Zéro abonnement. Autonomie totale.
       </p>
       <div className="flex gap-4 justify-center flex-wrap">
-        <Button size="lg" variant="secondary" className="rounded-full text-base px-8">
-          Rejoindre la liste d'attente →
+        <Button size="lg" variant="secondary" className="rounded-full text-base px-8" asChild>
+          <Link to="/precommande">Rejoindre la liste d'attente →</Link>
         </Button>
-        <Button size="lg" variant="outline" className="rounded-full text-base px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
-          Devenir partenaire
+        <Button size="lg" variant="outline" className="rounded-full text-base px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10" asChild>
+          <Link to="/contact">Devenir partenaire</Link>
         </Button>
       </div>
     </div>

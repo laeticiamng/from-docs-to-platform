@@ -50,6 +50,7 @@ const Precommande = () => {
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       <Navbar />
       <main className="flex-1">
+        <SEOHead title="Précommander — PhytoTech" description="Réservez votre pack PhytoTech et faites partie des premiers à adopter la biotechnologie végétale chez vous." path="/precommande" />
         {/* Hero */}
         <section className="py-20 bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4 text-center max-w-2xl">

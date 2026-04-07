@@ -144,6 +144,7 @@ const Afrique = () => (
   <div className="min-h-screen">
     <Navbar />
     <main>
+      <SEOHead title="Afrique & Territoires — PhytoTech" description="On n'envoie pas des plantes. On connecte celles qui sont déjà là. 5 zones climatiques, 5 approches adaptées aux ressources locales." path="/afrique" />
       {/* Hero */}
       <section className="bg-foreground text-background py-24">
         <div className="container mx-auto px-4 text-center space-y-6 max-w-3xl">

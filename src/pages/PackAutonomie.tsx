@@ -109,6 +109,7 @@ const PackAutonomie = () => (
   <div className="min-h-screen">
     <Navbar />
     <main>
+      <SEOHead title="Pack Autonomie Totale — PhytoTech" description="Vivre 100% PhytoTech dans un appartement parisien. ~9 000€, ROI en 4,6 ans. Les vrais chiffres, la vraie stratégie." path="/pack-autonomie" />
       {/* Hero */}
       <section className="bg-foreground text-background py-20">
         <div className="container mx-auto px-4 text-center space-y-6 max-w-3xl">

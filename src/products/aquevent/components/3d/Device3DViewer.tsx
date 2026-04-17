@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, forwardRef } from 'react';
 import { motion } from 'framer-motion';
 import type { ProductVersion } from '../../types/product';
 
@@ -7,7 +7,7 @@ interface Device3DViewerProps {
   onConfigure?: () => void;
 }
 
-export default function Device3DViewer({ version, onConfigure }: Device3DViewerProps) {
+const Device3DViewer = forwardRef<HTMLDivElement, Device3DViewerProps>(({ version, onConfigure }, _ref) => {
   const [rotation, setRotation] = useState(0);
   const [isExploded, setIsExploded] = useState(false);
 
@@ -174,4 +174,8 @@ export default function Device3DViewer({ version, onConfigure }: Device3DViewerP
       </div>
     </div>
   );
-}
+});
+
+Device3DViewer.displayName = "Device3DViewer";
+
+export default Device3DViewer;

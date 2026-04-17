@@ -44,13 +44,11 @@ const AquaVentBusiness = lazy(() => import("./products/aquevent/pages/Business.t
 const AquaVentAcademy = lazy(() => import("./products/aquevent/pages/Academy.tsx"));
 const AquaVentCommunity = lazy(() => import("./products/aquevent/pages/Community.tsx"));
 
-// BioBot PhytoTech™ (lazy-loaded for code splitting)
-const BioBotLanding = lazy(() => import("./products/biobot/pages/Landing.tsx"));
-const BioBotTechnology = lazy(() => import("./products/biobot/pages/Technology.tsx"));
-const BioBotApplications = lazy(() => import("./products/biobot/pages/Applications.tsx"));
-const BioBotScience = lazy(() => import("./products/biobot/pages/Science.tsx"));
-const BioBotBusiness = lazy(() => import("./products/biobot/pages/Business.tsx"));
-const BioBotEcosystem = lazy(() => import("./products/biobot/pages/Ecosystem.tsx"));
+// BioBot — concept en exploration interne, contenu public mis hors-ligne
+// (chiffres financiers, produits "validés" et trademarks non sourcés).
+// Voir audit interne 2026-04-17. Les fichiers Landing/Technology/Applications/
+// Science/Business/Ecosystem restent dans le repo mais ne sont plus routés.
+const BioBotPlaceholder = lazy(() => import("./products/biobot/pages/Placeholder.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -86,13 +84,9 @@ const App = () => (
               <Route path="/aquevent/academy" element={<AquaVentAcademy />} />
               <Route path="/aquevent/community" element={<AquaVentCommunity />} />
 
-              {/* BioBot PhytoTech™ Routes */}
-              <Route path="/biobot" element={<BioBotLanding />} />
-              <Route path="/biobot/technology" element={<BioBotTechnology />} />
-              <Route path="/biobot/applications" element={<BioBotApplications />} />
-              <Route path="/biobot/science" element={<BioBotScience />} />
-              <Route path="/biobot/business" element={<BioBotBusiness />} />
-              <Route path="/biobot/ecosystem" element={<BioBotEcosystem />} />
+              {/* BioBot — toutes les sous-routes pointent vers le placeholder honnête */}
+              <Route path="/biobot" element={<BioBotPlaceholder />} />
+              <Route path="/biobot/*" element={<BioBotPlaceholder />} />
 
               {/* Document Platform (existing functionality preserved) */}
               <Route path="/" element={<Index />} />

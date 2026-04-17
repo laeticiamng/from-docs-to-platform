@@ -17,7 +17,7 @@ export default function BioBotPlaceholder() {
         title="BioBot — Concept exploratoire (hors-ligne)"
         description="Le concept BioBot est en phase d'exploration interne. Aucune information publique n'est disponible à ce stade."
         path="/biobot"
-        noindex
+        noIndex
       />
       <main className="min-h-screen flex items-center justify-center bg-background px-4">
         <div className="max-w-lg text-center space-y-6">

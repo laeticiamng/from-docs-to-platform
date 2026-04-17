@@ -33,6 +33,7 @@ import AdminAudit from "./pages/AdminAudit.tsx";
 import Preferences from "./pages/Preferences.tsx";
 import Unsubscribe from "./pages/Unsubscribe.tsx";
 import Methodologie from "./pages/Methodologie.tsx";
+import Investisseurs from "./pages/Investisseurs.tsx";
 
 // Platform Selector
 import PlatformSelector from "./pages/PlatformSelector.tsx";
@@ -112,6 +113,7 @@ const App = () => (
               <Route path="/admin/audit" element={<RequireAdmin><AdminAudit /></RequireAdmin>} />
               <Route path="/unsubscribe" element={<Unsubscribe />} />
               <Route path="/methodologie" element={<Methodologie />} />
+              <Route path="/investisseurs" element={<Investisseurs />} />
 
               <Route path="*" element={<NotFound />} />
             </Routes>

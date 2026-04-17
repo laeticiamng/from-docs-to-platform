@@ -22,15 +22,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-/**
- * Page /methodologie — référentiel central des estimations chiffrées
- * publiées sur le site (Pack Autonomie, AquaVent, Domaines…).
- *
- * Objectif : donner à un visiteur, un partenaire ou un investisseur
- * un seul endroit où retrouver les sources, hypothèses, limites et
- * niveaux de maturité technologique (TRL) qui sous-tendent chaque chiffre.
- */
-
 const trlLevels = [
   { level: "TRL 1-3", label: "Recherche fondamentale", desc: "Concept formulé, principes vérifiés en laboratoire." },
   { level: "TRL 4-5", label: "Validation laboratoire", desc: "Composants validés en environnement contrôlé puis pertinent." },
@@ -121,13 +112,10 @@ export default function Methodologie() {
         path="/methodologie"
       />
       <main className="flex-1">
-        {/* Hero */}
         <section className="py-16 bg-gradient-to-b from-primary/5 to-background border-b">
           <div className="container mx-auto px-4 max-w-3xl text-center space-y-4">
             <Beaker className="w-10 h-10 text-primary mx-auto" strokeWidth={1.5} />
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
-              Méthodologie
-            </h1>
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight">Méthodologie</h1>
             <p className="text-muted-foreground">
               Comment nous calculons et présentons les estimations publiées sur ce
               site. Sources, hypothèses, limites et niveau de maturité
@@ -136,7 +124,6 @@ export default function Methodologie() {
           </div>
         </section>
 
-        {/* Avertissement */}
         <section className="py-8">
           <div className="container mx-auto px-4 max-w-3xl">
             <div className="rounded-2xl border-l-4 border-warning bg-warning/10 p-5">
@@ -158,7 +145,6 @@ export default function Methodologie() {
           </div>
         </section>
 
-        {/* Principes */}
         <section className="py-12">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="flex items-center gap-2 mb-6">
@@ -178,7 +164,6 @@ export default function Methodologie() {
           </div>
         </section>
 
-        {/* Échelle TRL */}
         <section className="py-12 bg-secondary/30">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="flex items-center gap-2 mb-6">
@@ -191,7 +176,7 @@ export default function Methodologie() {
               NASA et la Commission européenne.
             </p>
             <Card>
-              <CardContent className="p-0">
+              <CardContent className="p-0 overflow-x-auto">
                 <Table>
                   <TableHeader>
                     <TableRow>
@@ -215,7 +200,6 @@ export default function Methodologie() {
           </div>
         </section>
 
-        {/* Tableau des estimations */}
         <section className="py-12">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="flex items-center gap-2 mb-6">
@@ -255,7 +239,6 @@ export default function Methodologie() {
           </div>
         </section>
 
-        {/* CTA contact */}
         <section className="py-16 bg-secondary/30 border-t">
           <div className="container mx-auto px-4 max-w-2xl text-center space-y-4">
             <h2 className="text-2xl font-bold">Une question sur un chiffre ?</h2>

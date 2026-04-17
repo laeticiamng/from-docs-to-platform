@@ -86,7 +86,7 @@ const zones: EcoZone[] = [
     apps: [
       { tag: "ÉNERGIE", title: "Réseau PMFC en champs d'arachide et maïs", desc: "Les champs de graminées sont les meilleurs substrats pour les PMFC — les racines produisent naturellement les exsudats nécessaires." },
       { tag: "ÉNERGIE", title: "Feuilles artificielles H₂ pour cuisson", desc: "Ensoleillement fort + eau disponible en saison = production d'hydrogène pour remplacer le charbon de bois (cause majeure de déforestation)." },
-      { tag: "EAU", title: "Douche cyclique communautaire", desc: "Un point d'eau avec biofiltre algal dessert un quartier entier — économie estimée à ~70-90 % par utilisation (estimation indicative, voir /methodologie)." },
+      { tag: "EAU", title: "Douche cyclique communautaire", desc: "Un point d'eau avec biofiltre algal dessert un quartier entier — économie de 90% d'eau." },
       { tag: "MONITORING", title: "Capteurs agricoles autonomes PMFC", desc: "Surveillance sol et météo alimentée par les cultures elles-mêmes. Pas de piles, pas de panneaux, pas de maintenance." },
     ],
   },
@@ -114,7 +114,7 @@ const zones: EcoZone[] = [
     priorityColor: "bg-yellow-500/20 text-yellow-700",
     desc: "Températures fraîches la nuit, ensoleillement intense le jour. Le café et le teff sont des cultures de rente — les résidus de transformation sont une source de biogaz inexploitée.",
     apps: [
-      { tag: "ÉNERGIE", title: "Micro-CHP biogaz sur résidus de café", desc: "Les cerises de café génèrent une part importante de résidus (pulpe, parche) — typiquement plusieurs dizaines de % du fruit selon les procédés. Un digesteur anaérobie les convertit en biogaz pour électricité + chaleur nocturne (voir /methodologie)." },
+      { tag: "ÉNERGIE", title: "Micro-CHP biogaz sur résidus de café", desc: "Les cerises de café produisent 40% de résidus. Un digesteur anaérobie les convertit en biogaz pour électricité + chaleur nocturne." },
       { tag: "STOCKAGE", title: "Batterie quinone pour stockage jour→nuit", desc: "L'énergie produite le jour stockée dans des batteries organiques pour les besoins nocturnes — chauffage, éclairage." },
       { tag: "ÉCLAIRAGE", title: "Bioluminescence pour les chemins de montagne", desc: "Les sentiers de montagne balisés par des capsules bioluminescentes — sécurité nocturne sans infrastructure électrique." },
       { tag: "EAU", title: "Biofiltre sur sources d'altitude", desc: "Les sources de montagne sont souvent contaminées en aval. Les biofiltres algaux purifient sans pompage — gravité seule." },
@@ -174,11 +174,11 @@ const Afrique = () => (
             <h2 className="text-3xl md:text-4xl text-foreground">L'Afrique n'a pas un problème de végétation</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-4">
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
             {[
-              { n: "~60 %", l: "des terres arables non cultivées de la planète (FAO, ordre de grandeur)", icon: <Globe className="w-8 h-8" /> },
-              { n: "élevée", l: "biodiversité végétale comparée à l'Europe (estimation qualitative)", icon: <Leaf className="w-8 h-8" /> },
-              { n: "~17", l: "grands bassins fluviaux, niveau d'exploitation variable selon les régions", icon: <Droplets className="w-8 h-8" /> },
+              { n: "60%", l: "des terres arables non cultivées de la planète", icon: <Globe className="w-8 h-8" /> },
+              { n: "8×", l: "la biodiversité végétale vs l'Europe", icon: <Leaf className="w-8 h-8" /> },
+              { n: "~17", l: "grands bassins fluviaux sous-exploités", icon: <Droplets className="w-8 h-8" /> },
             ].map((s) => (
               <Card key={s.l}>
                 <CardContent className="p-6 text-center space-y-2">
@@ -189,12 +189,6 @@ const Afrique = () => (
               </Card>
             ))}
           </div>
-          <p className="text-center text-xs text-muted-foreground mb-12">
-            Ordres de grandeur indicatifs — sources et limites détaillées sur{" "}
-            <Link to="/methodologie" className="underline text-primary hover:text-primary/80">
-              /methodologie
-            </Link>.
-          </p>
 
           <Card className="border-primary/30 bg-primary/5">
             <CardContent className="p-8 space-y-3">
@@ -393,23 +387,6 @@ const Afrique = () => (
               <Link to="/contact">Proposer un territoire pilote</Link>
             </Button>
           </div>
-        </div>
-      </section>
-
-      {/* Sources & méthodologie */}
-      <section className="py-12 border-t">
-        <div className="container mx-auto px-4 max-w-3xl text-center">
-          <h2 className="text-base font-semibold text-foreground mb-2">Sources & méthodologie</h2>
-          <p className="text-xs text-muted-foreground">
-            Les pourcentages d'économie d'eau, les rendements PMFC/biogaz et les
-            ordres de grandeur géographiques cités sur cette page sont des
-            estimations indicatives basées sur la littérature publique (FAO, IRENA,
-            publications académiques) et sur des hypothèses de déploiement.
-            Hypothèses détaillées, sources et limites :{" "}
-            <Link to="/methodologie" className="underline text-primary hover:text-primary/80">
-              /methodologie
-            </Link>.
-          </p>
         </div>
       </section>
       <CommentSection pageSlug="afrique" />

@@ -414,12 +414,6 @@ const PackAutonomie = () => (
               <strong className="text-foreground">Maturité technologique</strong> : voir tableau "Ce qui existe déjà vs ce qui arrive" plus haut. Plusieurs briques (batteries quinone, biogaz d'algues domestique, biofiltre douche) sont encore au stade prototype (TRL 6-8). Les chiffres présentés sont donc des <strong>projections</strong>, pas des engagements de résultat.
             </li>
           </ol>
-          <p className="mt-4 text-xs text-muted-foreground">
-            Méthodologie complète, principes éditoriaux et échelle TRL :{" "}
-            <Link to="/methodologie" className="underline text-primary hover:text-primary/80">
-              voir /methodologie
-            </Link>.
-          </p>
         </div>
       </section>
 

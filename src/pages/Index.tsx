@@ -371,7 +371,7 @@ const ProductsSection = () => (
               NIVEAU 4 — AUTONOMIE TOTALE
             </Badge>
             <h3 className="text-2xl text-foreground">Pack Autonomie Totale Paris</h3>
-            <p className="font-mono text-xl text-primary font-bold">~9 000€ · ROI en 4,6 ans</p>
+            <p className="font-mono text-xl text-primary font-bold">~9 000€ · ROI projeté ~4-6 ans</p>
             <p className="text-sm text-muted-foreground">
               Peut-on vivre 100% sur le vivant dans un appartement ? Oui — mais pas avec des pots de fleurs seuls. Découvrez la stratégie complète.
             </p>

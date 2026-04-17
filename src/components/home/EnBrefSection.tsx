@@ -16,7 +16,7 @@ const items = [
   {
     icon: <Sparkles className="w-6 h-6" />,
     title: "Ce que ça permet",
-    desc: "Alimenter capteurs IoT et veilleuses sans piles, réduire la consommation d'eau (jusqu'à 54 000 L/an avec la douche cyclique), absorber du CO₂ intérieur.",
+    desc: "Alimenter capteurs IoT et veilleuses sans piles, réduire la consommation d'eau (~35-45 000 L/an estimés avec la douche cyclique), absorber du CO₂ intérieur.",
   },
   {
     icon: <AlertTriangle className="w-6 h-6" />,

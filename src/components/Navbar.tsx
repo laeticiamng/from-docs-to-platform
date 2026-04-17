@@ -54,7 +54,7 @@ const Navbar = () => {
             </Link>
           )}
           <Button size="sm" className="rounded-full" asChild>
-            <Link to="/precommande">Précommander →</Link>
+            <Link to="/precommande">Liste d'attente →</Link>
           </Button>
         </nav>
 
@@ -91,7 +91,7 @@ const Navbar = () => {
             </Link>
           )}
           <Button size="sm" className="rounded-full w-full" asChild>
-            <Link to="/precommande" onClick={() => setOpen(false)}>Précommander →</Link>
+            <Link to="/precommande" onClick={() => setOpen(false)}>Liste d'attente →</Link>
           </Button>
         </div>
       )}

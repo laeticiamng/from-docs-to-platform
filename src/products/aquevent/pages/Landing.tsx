@@ -338,33 +338,20 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Validation scientifique en cours */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">Ils en parlent</h2>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {testimonials.map((t, i) => (
-              <motion.div
-                key={t.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="p-6 rounded-2xl bg-white shadow-md border border-gray-100"
-              >
-                <div className="flex gap-0.5 mb-4">
-                  {Array.from({ length: t.rating }).map((_, j) => (
-                    <span key={j} className="text-yellow-400">&#9733;</span>
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-4 italic">"{t.text}"</p>
-                <div>
-                  <p className="font-bold text-sm">{t.name}</p>
-                  <p className="text-xs text-gray-400">{t.role}</p>
-                </div>
-              </motion.div>
-            ))}
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-6">Validation en cours</h2>
+            <p className="text-lg text-gray-600 mb-4">
+              AquaVent UNLIMITED™ est actuellement en phase de validation pré-commerciale.
+              Nous publierons les retours utilisateurs et les avis cliniques au fur et à mesure
+              de leur obtention.
+            </p>
+            <p className="text-sm text-gray-500">
+              Les inscriptions sur la liste d'attente nous permettent d'identifier
+              les premiers beta-testeurs et professionnels de santé partenaires.
+            </p>
           </div>
         </div>
       </section>

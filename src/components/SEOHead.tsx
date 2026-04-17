@@ -4,9 +4,10 @@ interface SEOHeadProps {
   title: string;
   description: string;
   path?: string;
+  noIndex?: boolean;
 }
 
-const SEOHead = ({ title, description, path = "" }: SEOHeadProps) => {
+const SEOHead = ({ title, description, path = "", noIndex = false }: SEOHeadProps) => {
   useEffect(() => {
     document.title = title;
 
@@ -21,6 +22,7 @@ const SEOHead = ({ title, description, path = "" }: SEOHeadProps) => {
     };
 
     setMeta("description", description);
+    setMeta("robots", noIndex ? "noindex, nofollow" : "index, follow");
     setMeta("og:title", title, "property");
     setMeta("og:description", description, "property");
     setMeta("og:type", "website", "property");
@@ -56,7 +58,7 @@ const SEOHead = ({ title, description, path = "" }: SEOHeadProps) => {
     return () => {
       document.title = "PhytoTech Home — EmotionsCare";
     };
-  }, [title, description, path]);
+  }, [title, description, path, noIndex]);
 
   return null;
 };

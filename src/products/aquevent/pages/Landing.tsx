@@ -309,10 +309,10 @@ export default function Landing() {
 
           <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
             {[
-              { step: '01', title: 'Choisissez', desc: "Selectionnez votre AquaVent UNLIMITED™ et personnalisez votre device." },
-              { step: '02', title: 'Inhalez', desc: "Utilisez votre AquaVent sans aucune restriction. La technologie PhytoTech™ fait le reste." },
-              { step: '03', title: 'Ressentez', desc: "Les principes actifs naturels agissent directement. Effets en quelques minutes." },
-              { step: '04', title: 'Illimite', desc: "Pas de dose maximale, pas de restriction. Usage illimite scientifiquement valide." },
+              { step: '01', title: 'Choisissez', desc: "Sélectionnez la version d'AquaVent qui correspond à votre usage." },
+              { step: '02', title: 'Préparez', desc: "Insérez la cartouche d'extraits végétaux dans le device." },
+              { step: '03', title: 'Inhalez', desc: "Aspirez doucement, comme avec un inhalateur classique." },
+              { step: '04', title: 'Entretenez', desc: "Rechargez la cartouche et nettoyez le device selon le manuel." },
             ].map((item, i) => (
               <motion.div
                 key={item.step}

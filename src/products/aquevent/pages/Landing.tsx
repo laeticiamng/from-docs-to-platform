@@ -176,19 +176,20 @@ export default function Landing() {
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              La seule formulation monde permettant un usage illimite
-              avec benefices sante prouves scientifiquement
+              Une formulation à base d'extraits végétaux étudiés
+              (spiruline, anthocyanes, phycocyanine), sans nicotine ni propylène glycol.
             </p>
           </div>
 
-          {/* Revolution Safety Banner */}
-          <div className="bg-green-50 p-6 rounded-2xl border-l-4 border-green-500 mb-12 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-green-700 mb-3">
-              REVOLUTION SECURITE
+          {/* Bandeau "approche sécurité" — formulation prudente */}
+          <div className="bg-amber-50 p-6 rounded-2xl border-l-4 border-amber-500 mb-12 max-w-4xl mx-auto">
+            <h3 className="text-xl font-bold text-amber-800 mb-3">
+              À savoir sur la sécurité
             </h3>
-            <p className="text-green-600 text-lg">
-              ZERO composant limitant - Usage illimite scientifiquement prouve -
-              Formulation 100% naturelle validee pour l'inhalation humaine
+            <p className="text-amber-700">
+              Les ingrédients utilisés sont reconnus dans l'alimentation. Leur tolérance par voie inhalée
+              fait l'objet de tests internes en cours. Aucune allégation thérapeutique n'est faite à ce stade.
+              Le produit n'est pas destiné aux mineurs, femmes enceintes ou personnes allergiques aux algues.
             </p>
           </div>
 

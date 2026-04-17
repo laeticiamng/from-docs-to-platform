@@ -154,7 +154,7 @@
   font-weight: 500;
   font-size: clamp(1.125rem, 3vw, 1.25rem);
   line-height: 1.6;
-  color: var(--aquevent-neutral);
+  color: hsl(var(--aquevent-neutral));
 }
 
 .aquevent-claim {
@@ -163,7 +163,7 @@
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--aquevent-accent);
+  color: hsl(var(--aquevent-accent));
 }
 
 .aquevent-body {
@@ -179,7 +179,7 @@
 
 /* AquaVent Gradient Text Helper */
 .aquevent-gradient-text {
-  background: linear-gradient(135deg, var(--aquevent-primary), var(--aquevent-secondary));
+  background: linear-gradient(135deg, hsl(var(--aquevent-primary)), hsl(var(--aquevent-secondary)));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -187,34 +187,34 @@
 
 /* AquaVent Card System */
 .aquevent-card {
-  background: white;
+  background: hsl(var(--background));
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(139, 44, 90, 0.1);
-  border: 1px solid #EEEEEE;
+  box-shadow: 0 4px 20px hsl(var(--aquevent-primary) / 0.1);
+  border: 1px solid hsl(var(--border));
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .aquevent-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 40px rgba(139, 44, 90, 0.2);
+  box-shadow: 0 8px 40px hsl(var(--aquevent-primary) / 0.2);
 }
 
 /* AquaVent Button System */
 .aquevent-button-primary {
   background: var(--aquevent-gradient-cta);
-  color: white;
+  color: hsl(0 0% 100%);
   border: none;
   border-radius: 8px;
   padding: 12px 24px;
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 10px rgba(139, 44, 90, 0.3);
+  box-shadow: 0 2px 10px hsl(var(--aquevent-primary) / 0.3);
 }
 
 .aquevent-button-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(139, 44, 90, 0.4);
+  box-shadow: 0 4px 20px hsl(var(--aquevent-primary) / 0.4);
 }
 
 /* AquaVent Smooth Scrolling */

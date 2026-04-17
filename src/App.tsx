@@ -9,6 +9,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import CookieConsent from "@/components/CookieConsent";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import RequireAdmin from "@/components/RequireAdmin";
+import TrackingProvider from "@/components/TrackingProvider";
 
 // Document Platform (existing functionality preserved)
 import Index from "./pages/Index.tsx";
@@ -66,6 +67,7 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
           <ScrollToTop />
+          <TrackingProvider />
           <Suspense fallback={<LoadingFallback />}>
             <Routes>
               {/* Platform Selector */}

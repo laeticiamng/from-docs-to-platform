@@ -105,22 +105,28 @@
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* AquaVent PhytoTech UNLIMITED™ Brand System */
+/* Product Brand Tokens — HSL design system */
 :root {
-  /* Primary Revolutionary Colors */
-  --aquevent-primary: #8B2C5A;
-  --aquevent-secondary: #1E88E5;
-  --aquevent-accent: #FFB300;
-  --aquevent-success: #43A047;
-  --aquevent-neutral: #424242;
-  --aquevent-error: #F44336;
-  --aquevent-warning: #FF9800;
-  --aquevent-info: #2196F3;
+  /* AquaVent PhytoTech UNLIMITED™ */
+  --aquevent-primary: 331 53% 36%;        /* #8B2C5A */
+  --aquevent-secondary: 207 82% 51%;      /* #1E88E5 */
+  --aquevent-accent: 41 100% 50%;         /* #FFB300 */
+  --aquevent-success: 122 39% 46%;        /* #43A047 */
+  --aquevent-neutral: 0 0% 26%;           /* #424242 */
+  --aquevent-error: 4 90% 58%;            /* #F44336 */
+  --aquevent-warning: 33 100% 50%;        /* #FF9800 */
+  --aquevent-info: 207 90% 54%;           /* #2196F3 */
 
-  /* Gradients Revolutionary */
-  --aquevent-gradient-hero: linear-gradient(135deg, #1E88E5 0%, #8B2C5A 100%);
-  --aquevent-gradient-cta: linear-gradient(45deg, #8B2C5A 0%, #FFB300 100%);
-  --aquevent-gradient-bg: linear-gradient(180deg, #F8F9FA 0%, #E3F2FD 100%);
+  --aquevent-gradient-hero: linear-gradient(135deg, hsl(var(--aquevent-secondary)) 0%, hsl(var(--aquevent-primary)) 100%);
+  --aquevent-gradient-cta: linear-gradient(45deg, hsl(var(--aquevent-primary)) 0%, hsl(var(--aquevent-accent)) 100%);
+  --aquevent-gradient-bg: linear-gradient(180deg, hsl(210 17% 98%) 0%, hsl(207 89% 94%) 100%);
+
+  /* BioBot PhytoTech™ */
+  --biobot-primary: 122 61% 34%;          /* #2E7D32 */
+  --biobot-secondary: 174 100% 27%;       /* #00897B */
+  --biobot-accent: 41 100% 50%;           /* #FFB300 */
+
+  --biobot-gradient-hero: linear-gradient(135deg, hsl(var(--biobot-primary)) 0%, hsl(var(--biobot-secondary)) 100%);
 }
 
 /* AquaVent Typography */

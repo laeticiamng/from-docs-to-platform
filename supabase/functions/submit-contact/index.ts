@@ -50,8 +50,26 @@ Deno.serve(async (req) => {
       });
     }
 
-    const { error } = await supabase.from("contact_messages").insert({ name, email, subject, message });
+    const { data: inserted, error } = await supabase
+      .from("contact_messages")
+      .insert({ name, email, subject, message })
+      .select("id")
+      .single();
     if (error) throw error;
+
+    const ADMIN_EMAIL = "m.laeticia@hotmail.fr";
+    const sendEmail = (templateName: string, recipientEmail: string, idempotencyKey: string, templateData: Record<string, unknown>) =>
+      supabase.functions.invoke("send-transactional-email", {
+        body: { templateName, recipientEmail, idempotencyKey, templateData },
+      }).catch((err) => console.error(`[email:${templateName}]`, err));
+
+    void sendEmail("contact-ack", email, `contact-ack-${inserted.id}`, { name, subject });
+    void sendEmail("admin-alert", ADMIN_EMAIL, `admin-contact-${inserted.id}`, {
+      alertType: "Nouveau message contact",
+      fromName: name,
+      fromEmail: email,
+      details: `${subject} — ${message.slice(0, 200)}`,
+    });
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" },

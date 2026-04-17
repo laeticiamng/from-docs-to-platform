@@ -56,8 +56,34 @@ Deno.serve(async (req) => {
       });
     }
 
-    const { error } = await supabase.from("preorders").insert({ name, email, pack, message });
+    const { data: inserted, error } = await supabase
+      .from("preorders")
+      .insert({ name, email, pack, message })
+      .select("id")
+      .single();
     if (error) throw error;
+
+    const ADMIN_EMAIL = "m.laeticia@hotmail.fr";
+    const PACK_LABELS: Record<string, string> = {
+      decouverte: "Pack Découverte",
+      habitat: "Pack Habitat",
+      autonomie: "Pack Autonomie",
+      autre: "Configuration sur mesure",
+    };
+    const packLabel = PACK_LABELS[pack] ?? pack;
+
+    const sendEmail = (templateName: string, recipientEmail: string, idempotencyKey: string, templateData: Record<string, unknown>) =>
+      supabase.functions.invoke("send-transactional-email", {
+        body: { templateName, recipientEmail, idempotencyKey, templateData },
+      }).catch((err) => console.error(`[email:${templateName}]`, err));
+
+    void sendEmail("preorder-confirm", email, `preorder-confirm-${inserted.id}`, { name, pack: packLabel });
+    void sendEmail("admin-alert", ADMIN_EMAIL, `admin-preorder-${inserted.id}`, {
+      alertType: "Nouvelle précommande",
+      fromName: name,
+      fromEmail: email,
+      details: `${packLabel}${message ? ` — ${message.slice(0, 200)}` : ""}`,
+    });
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" },

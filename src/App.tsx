@@ -43,6 +43,7 @@ const AquaVentScience = lazy(() => import("./products/aquevent/pages/Science.tsx
 const AquaVentBusiness = lazy(() => import("./products/aquevent/pages/Business.tsx"));
 const AquaVentAcademy = lazy(() => import("./products/aquevent/pages/Academy.tsx"));
 const AquaVentCommunity = lazy(() => import("./products/aquevent/pages/Community.tsx"));
+const AquaVentMentions = lazy(() => import("./products/aquevent/pages/Mentions.tsx"));
 
 // BioBot — concept en exploration interne, contenu public mis hors-ligne
 // (chiffres financiers, produits "validés" et trademarks non sourcés).
@@ -83,6 +84,7 @@ const App = () => (
               <Route path="/aquevent/business" element={<AquaVentBusiness />} />
               <Route path="/aquevent/academy" element={<AquaVentAcademy />} />
               <Route path="/aquevent/community" element={<AquaVentCommunity />} />
+              <Route path="/aquevent/mentions" element={<AquaVentMentions />} />
 
               {/* BioBot — toutes les sous-routes pointent vers le placeholder honnête */}
               <Route path="/biobot" element={<BioBotPlaceholder />} />

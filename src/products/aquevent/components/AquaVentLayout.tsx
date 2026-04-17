@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import ProductBreadcrumb from '@/components/ProductBreadcrumb';
 
 const navLinks = [
   { to: '/aquevent', label: 'Accueil', exact: true },
@@ -105,6 +106,14 @@ export default function AquaVentLayout({ children }: { children: React.ReactNode
           </div>
         )}
       </header>
+
+      {/* Breadcrumb */}
+      {location.pathname !== '/aquevent' && (
+        <ProductBreadcrumb
+          product="aquevent"
+          current={navLinks.find((l) => l.to === location.pathname)?.label ?? 'Page'}
+        />
+      )}
 
       {/* Content */}
       <main>{children}</main>

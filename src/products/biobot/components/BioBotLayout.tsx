@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import ProductBreadcrumb from '@/components/ProductBreadcrumb';
 
 const navLinks = [
   { to: '/biobot', label: 'Vision', exact: true },
@@ -87,6 +88,14 @@ export default function BioBotLayout({ children }: { children: React.ReactNode }
           </div>
         )}
       </header>
+
+      {/* Breadcrumb */}
+      {location.pathname !== '/biobot' && (
+        <ProductBreadcrumb
+          product="biobot"
+          current={navLinks.find((l) => l.to === location.pathname)?.label ?? 'Page'}
+        />
+      )}
 
       <main>{children}</main>
 

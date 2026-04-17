@@ -9,6 +9,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import CookieConsent from "@/components/CookieConsent";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import RequireAdmin from "@/components/RequireAdmin";
+import TrackingProvider from "@/components/TrackingProvider";
 
 // Document Platform (existing functionality preserved)
 import Index from "./pages/Index.tsx";
@@ -25,6 +26,7 @@ import NotFound from "./pages/NotFound.tsx";
 import ResetPassword from "./pages/ResetPassword.tsx";
 import Profile from "./pages/Profile.tsx";
 import Admin from "./pages/Admin.tsx";
+import Preferences from "./pages/Preferences.tsx";
 
 // Platform Selector
 import PlatformSelector from "./pages/PlatformSelector.tsx";
@@ -65,6 +67,7 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
           <ScrollToTop />
+          <TrackingProvider />
           <Suspense fallback={<LoadingFallback />}>
             <Routes>
               {/* Platform Selector */}
@@ -99,6 +102,7 @@ const App = () => (
               <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
               <Route path="/reset-password" element={<ResetPassword />} />
               <Route path="/profil" element={<Profile />} />
+              <Route path="/preferences" element={<Preferences />} />
               <Route path="/admin" element={<RequireAdmin><Admin /></RequireAdmin>} />
 
               <Route path="*" element={<NotFound />} />

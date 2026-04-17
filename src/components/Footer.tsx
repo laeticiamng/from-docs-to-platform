@@ -38,6 +38,7 @@ const Footer = () => (
             <Link to="/mentions-legales" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Mentions légales</Link>
             <Link to="/cgv" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">CGV</Link>
             <Link to="/politique-confidentialite" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Confidentialité</Link>
+            <Link to="/preferences" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Préférences cookies</Link>
           </div>
         </div>
       </div>

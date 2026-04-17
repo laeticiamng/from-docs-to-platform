@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import { hasConsent } from '@/lib/consent';
 
 const getSessionId = (): string => {
   if (typeof window === 'undefined') return 'ssr';
@@ -59,6 +60,7 @@ export function useAnalytics() {
     if (import.meta.env.DEV) {
       console.log(`[Analytics] ${event}`, properties);
     }
+    if (!hasConsent('analytics')) return;
     try {
       const { data: { user } } = await supabase.auth.getUser();
       await supabase.from('analytics_events').insert({

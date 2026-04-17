@@ -178,10 +178,10 @@ export default function Investisseurs() {
                 </Table>
               </CardContent>
             </Card>
-            <div className="mt-4 rounded-xl border-l-4 border-amber-500 bg-amber-50 dark:bg-amber-950/20 p-4">
+            <div className="mt-4 rounded-xl border-l-4 border-warning bg-warning/10 p-4">
               <div className="flex gap-2">
-                <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
-                <p className="text-xs text-amber-900 dark:text-amber-200">
+                <AlertTriangle className="w-4 h-4 text-warning shrink-0 mt-0.5" />
+                <p className="text-xs text-foreground/90">
                   <strong>Hypothèses, méthodologie et limites</strong> : les volumes,
                   prix et taux d'attrition retenus sont détaillés dans le memo
                   confidentiel partagé sur demande sous NDA. Voir aussi notre page{" "}

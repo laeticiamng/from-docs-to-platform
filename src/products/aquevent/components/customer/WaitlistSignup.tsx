@@ -47,13 +47,13 @@ export default function WaitlistSignup({ variant = 'full' }: WaitlistSignupProps
         <div className="text-5xl mb-4">🎉</div>
         <h3 className="text-2xl font-bold mb-2">Bienvenue dans l'aventure !</h3>
         <p className="text-gray-600 mb-4">
-          Vous êtes en position <span className="font-bold font-mono text-[#8B2C5A]">#{queuePosition}</span> sur la liste d'attente.
+          Vous êtes en position <span className="font-bold font-mono text-aquevent-primary">#{queuePosition}</span> sur la liste d'attente.
         </p>
         <p className="text-sm text-gray-400">
           Nous vous contacterons dès que votre AquaVent sera prêt.
         </p>
-        <div className="mt-6 p-4 bg-[#8B2C5A]/5 rounded-xl max-w-md mx-auto">
-          <p className="text-sm text-[#8B2C5A] font-medium">
+        <div className="mt-6 p-4 bg-aquevent-primary/5 rounded-xl max-w-md mx-auto">
+          <p className="text-sm text-aquevent-primary font-medium">
             Parrainez un ami et remontez de 10 places dans la file !
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function WaitlistSignup({ variant = 'full' }: WaitlistSignupProps
             <input
               {...register('firstName')}
               placeholder="Prénom"
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#8B2C5A] focus:ring-2 focus:ring-[#8B2C5A]/20 outline-none transition-all"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-aquevent-primary focus:ring-2 focus:ring-aquevent-primary/20 outline-none transition-all"
             />
             {errors.firstName && (
               <p className="text-xs text-red-500 mt-1">{errors.firstName.message}</p>
@@ -79,7 +79,7 @@ export default function WaitlistSignup({ variant = 'full' }: WaitlistSignupProps
             <input
               {...register('lastName')}
               placeholder="Nom"
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#8B2C5A] focus:ring-2 focus:ring-[#8B2C5A]/20 outline-none transition-all"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-aquevent-primary focus:ring-2 focus:ring-aquevent-primary/20 outline-none transition-all"
             />
             {errors.lastName && (
               <p className="text-xs text-red-500 mt-1">{errors.lastName.message}</p>
@@ -92,7 +92,7 @@ export default function WaitlistSignup({ variant = 'full' }: WaitlistSignupProps
             {...register('email')}
             type="email"
             placeholder="votre@email.com"
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#8B2C5A] focus:ring-2 focus:ring-[#8B2C5A]/20 outline-none transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-aquevent-primary focus:ring-2 focus:ring-aquevent-primary/20 outline-none transition-all"
           />
           {errors.email && (
             <p className="text-xs text-red-500 mt-1">{errors.email.message}</p>
@@ -102,7 +102,7 @@ export default function WaitlistSignup({ variant = 'full' }: WaitlistSignupProps
         <div>
           <select
             {...register('interest')}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#8B2C5A] focus:ring-2 focus:ring-[#8B2C5A]/20 outline-none transition-all text-gray-600"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-aquevent-primary focus:ring-2 focus:ring-aquevent-primary/20 outline-none transition-all text-gray-600"
           >
             <option value="">Votre intérêt principal</option>
             <option value="wellness">Bien-être & Relaxation</option>
@@ -119,7 +119,7 @@ export default function WaitlistSignup({ variant = 'full' }: WaitlistSignupProps
           <input
             {...register('newsletter')}
             type="checkbox"
-            className="w-4 h-4 rounded border-gray-300 text-[#8B2C5A] focus:ring-[#8B2C5A]"
+            className="w-4 h-4 rounded border-gray-300 text-aquevent-primary focus:ring-aquevent-primary"
           />
           <span className="text-sm text-gray-600">
             Recevoir les actualités et offres exclusives

@@ -98,7 +98,7 @@ export default function MarketAnalysis() {
               <span className="text-3xl mb-4 block">{driver.icon}</span>
               <h4 className="font-bold text-lg mb-2">{driver.title}</h4>
               <p className="text-sm text-gray-600 mb-3">{driver.desc}</p>
-              <span className="text-xs font-mono font-bold text-[#8B2C5A]">{driver.trend}</span>
+              <span className="text-xs font-mono font-bold text-aquevent-primary">{driver.trend}</span>
             </motion.div>
           ))}
         </div>
@@ -145,7 +145,7 @@ export default function MarketAnalysis() {
               >
                 <div
                   className={`rounded-full flex items-center justify-center ${
-                    isAquaVent ? 'w-24 h-24 shadow-lg ring-2 ring-[#FFB300]/30' : 'w-14 h-14'
+                    isAquaVent ? 'w-24 h-24 shadow-lg ring-2 ring-aquevent-accent/30' : 'w-14 h-14'
                   }`}
                   style={{
                     background: isAquaVent
@@ -170,8 +170,8 @@ export default function MarketAnalysis() {
             'First-mover 18-24 mois minimum',
             'Defensive moat: IP + expertise + brand',
           ].map((insight, i) => (
-            <div key={insight} className="bg-[#8B2C5A]/5 rounded-xl p-4 text-center">
-              <p className="text-sm text-[#8B2C5A] font-medium">{insight}</p>
+            <div key={insight} className="bg-aquevent-primary/5 rounded-xl p-4 text-center">
+              <p className="text-sm text-aquevent-primary font-medium">{insight}</p>
             </div>
           ))}
         </div>
@@ -191,11 +191,11 @@ export default function MarketAnalysis() {
               transition={{ delay: i * 0.1 }}
               className="p-6 rounded-2xl bg-white shadow-md border border-gray-100 hover:shadow-lg transition-shadow"
             >
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#8B2C5A] to-[#1E88E5] flex items-center justify-center text-white text-xl font-bold mb-4">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-aquevent-primary to-aquevent-secondary flex items-center justify-center text-white text-xl font-bold mb-4">
                 {member.name.split(' ').map((n) => n[0]).join('')}
               </div>
               <h4 className="font-bold text-lg">{member.name}</h4>
-              <p className="text-sm font-medium text-[#8B2C5A] mb-2">{member.role}</p>
+              <p className="text-sm font-medium text-aquevent-primary mb-2">{member.role}</p>
               <p className="text-xs text-gray-400 mb-3">{member.expertise}</p>
               <p className="text-sm text-gray-600">{member.bio}</p>
             </motion.div>

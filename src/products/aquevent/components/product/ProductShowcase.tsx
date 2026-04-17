@@ -54,7 +54,7 @@ export default function ProductShowcase() {
 
           {/* Product Info */}
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFB300]/10 text-[#FFB300] text-xs font-bold mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aquevent-accent/10 text-aquevent-accent text-xs font-bold mb-4">
               PREMIERE MONDIALE
             </div>
             <h2 className="text-4xl font-bold mb-4 text-gray-900">
@@ -105,11 +105,11 @@ export default function ProductShowcase() {
 
           {/* Water Base Bar */}
           <div className="mb-8">
-            <div className="h-8 rounded-full bg-gradient-to-r from-[#1E88E5]/20 via-[#8B2C5A]/20 to-[#7B1FA2]/20 relative overflow-hidden">
+            <div className="h-8 rounded-full bg-gradient-to-r from-aquevent-secondary/20 via-aquevent-primary/20 to-[#7B1FA2]/20 relative overflow-hidden">
               <div className="absolute left-0 top-0 h-full rounded-full" style={{ width: '95.7%', background: 'linear-gradient(90deg, #E3F2FD, #E8EAF6)' }} />
               <div className="absolute right-0 top-0 h-full flex items-center gap-0.5 pr-2">
-                <div className="h-full w-3 rounded-full bg-[#1E88E5]/60" />
-                <div className="h-full w-4 rounded-full bg-[#8B2C5A]/60" />
+                <div className="h-full w-3 rounded-full bg-aquevent-secondary/60" />
+                <div className="h-full w-4 rounded-full bg-aquevent-primary/60" />
                 <div className="h-full w-2 rounded-full bg-[#7B1FA2]/60" />
               </div>
             </div>

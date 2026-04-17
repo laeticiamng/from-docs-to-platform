@@ -56,7 +56,7 @@ export default function ResearchLibrary() {
             placeholder="Rechercher par titre, sujet ou mot-cle..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full px-6 py-3 rounded-full border border-gray-200 focus:border-[#8B2C5A] focus:ring-2 focus:ring-[#8B2C5A]/20 outline-none transition-all"
+            className="w-full px-6 py-3 rounded-full border border-gray-200 focus:border-aquevent-primary focus:ring-2 focus:ring-aquevent-primary/20 outline-none transition-all"
           />
 
           {/* Component Filters */}

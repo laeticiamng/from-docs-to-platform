@@ -17,7 +17,7 @@ export default function Science() {
       <SEOHead title="Validation Faisabilité — BioBot" description="Technologies confirmées, évaluation honnête des risques BioBot." path="/biobot/science" />
       <div className="pt-8">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-2">
-          <span className="bg-gradient-to-r from-[#2E7D32] to-[#00897B] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-biobot-primary to-biobot-secondary bg-clip-text text-transparent">
             Validation Faisabilite Technique
           </span>
         </h1>
@@ -53,7 +53,7 @@ export default function Science() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-2xl font-bold font-mono text-[#2E7D32]">{tech.probability}</p>
+                      <p className="text-2xl font-bold font-mono text-biobot-primary">{tech.probability}</p>
                       <p className="text-xs text-gray-400">probabilite succes</p>
                     </div>
                   </div>
@@ -150,7 +150,7 @@ export default function Science() {
                   className="flex gap-4"
                 >
                   <div className="flex flex-col items-center">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#2E7D32] to-[#00897B] flex items-center justify-center text-white font-bold">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-biobot-primary to-biobot-secondary flex items-center justify-center text-white font-bold">
                       {phase.phase}
                     </div>
                     {i < roadmap.length - 1 && <div className="w-0.5 flex-1 bg-gray-200 mt-2" />}
@@ -159,11 +159,11 @@ export default function Science() {
                     <div className="bg-white rounded-2xl shadow-md p-6 border border-gray-100">
                       <div className="flex items-start justify-between mb-3">
                         <div>
-                          <h4 className="font-bold text-lg text-[#2E7D32]">{phase.name}</h4>
+                          <h4 className="font-bold text-lg text-biobot-primary">{phase.name}</h4>
                           <span className="text-xs text-gray-400 font-mono">{phase.timeline}</span>
                         </div>
                         <div className="text-right">
-                          <p className="text-xl font-bold font-mono text-[#2E7D32]">{phase.budget}&#8364;</p>
+                          <p className="text-xl font-bold font-mono text-biobot-primary">{phase.budget}&#8364;</p>
                           <p className="text-xs text-gray-400">budget</p>
                         </div>
                       </div>
@@ -191,7 +191,7 @@ export default function Science() {
                   { scenario: 'Moonshot', time: '5-7 ans', desc: 'breakthrough' },
                 ].map((t) => (
                   <div key={t.scenario} className="p-3 bg-white/10 rounded-lg">
-                    <p className="font-bold text-[#FFB300]">{t.scenario}</p>
+                    <p className="font-bold text-aquevent-accent">{t.scenario}</p>
                     <p className="font-mono text-lg">{t.time}</p>
                     <p className="text-xs text-white/60">{t.desc}</p>
                   </div>

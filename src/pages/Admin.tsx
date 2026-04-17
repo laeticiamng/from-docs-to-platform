@@ -166,9 +166,14 @@ const Admin = () => {
             <h1 className="text-3xl font-semibold tracking-tight">Tableau de bord</h1>
             <p className="text-sm text-muted-foreground">Lecture seule — données sensibles</p>
           </div>
-          <Badge variant="secondary" className="gap-1">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" /> Live
-          </Badge>
+          <div className="flex items-center gap-2">
+            <Button variant="outline" size="sm" asChild>
+              <Link to="/admin/audit">Audit & Gouvernance</Link>
+            </Button>
+            <Badge variant="secondary" className="gap-1">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" /> Live
+            </Badge>
+          </div>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

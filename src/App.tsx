@@ -26,6 +26,7 @@ import NotFound from "./pages/NotFound.tsx";
 import ResetPassword from "./pages/ResetPassword.tsx";
 import Profile from "./pages/Profile.tsx";
 import Admin from "./pages/Admin.tsx";
+import AdminAudit from "./pages/AdminAudit.tsx";
 import Preferences from "./pages/Preferences.tsx";
 
 // Platform Selector
@@ -104,6 +105,7 @@ const App = () => (
               <Route path="/profil" element={<Profile />} />
               <Route path="/preferences" element={<Preferences />} />
               <Route path="/admin" element={<RequireAdmin><Admin /></RequireAdmin>} />
+              <Route path="/admin/audit" element={<RequireAdmin><AdminAudit /></RequireAdmin>} />
 
               <Route path="*" element={<NotFound />} />
             </Routes>

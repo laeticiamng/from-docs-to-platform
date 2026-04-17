@@ -112,12 +112,12 @@ export default function Landing() {
               <div className="flex flex-wrap gap-4">
                 <Link to="/aquevent/product">
                   <AquaVentButton variant="premium" size="xl">
-                    Decouvrir La Revolution
+                    Découvrir le projet
                   </AquaVentButton>
                 </Link>
                 <Link to="/aquevent/science">
                   <AquaVentButton variant="secondary" size="xl">
-                    Pourquoi "Illimite" ?
+                    Approche scientifique
                   </AquaVentButton>
                 </Link>
               </div>

@@ -1,4 +1,15 @@
 import { useCallback } from 'react';
+import { supabase } from '@/integrations/supabase/client';
+
+const getSessionId = (): string => {
+  if (typeof window === 'undefined') return 'ssr';
+  let sid = sessionStorage.getItem('analytics_session_id');
+  if (!sid) {
+    sid = `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+    sessionStorage.setItem('analytics_session_id', sid);
+  }
+  return sid;
+};
 
 export const AquaVentEvents = {
   // Product Interest
@@ -44,9 +55,24 @@ export const AquaVentEvents = {
 type EventName = (typeof AquaVentEvents)[keyof typeof AquaVentEvents];
 
 export function useAnalytics() {
-  const trackEvent = useCallback((event: EventName, properties?: Record<string, unknown>) => {
+  const trackEvent = useCallback(async (event: EventName | string, properties?: Record<string, unknown>) => {
     if (import.meta.env.DEV) {
-      console.log(`[AquaVent Analytics] ${event}`, properties);
+      console.log(`[Analytics] ${event}`, properties);
+    }
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      await supabase.from('analytics_events').insert({
+        event_name: event,
+        event_category: 'aquevent',
+        user_id: user?.id ?? null,
+        session_id: getSessionId(),
+        properties: (properties ?? {}) as never,
+        page_path: typeof window !== 'undefined' ? window.location.pathname : null,
+        user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
+      });
+    } catch (err) {
+      // Fail silently — analytics ne doit jamais casser l'UX
+      if (import.meta.env.DEV) console.warn('[Analytics] insert failed', err);
     }
   }, []);
 

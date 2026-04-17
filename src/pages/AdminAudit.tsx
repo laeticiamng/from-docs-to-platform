@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Shield, Inbox, ShoppingCart, AlertTriangle, Mail, FileText } from "lucide-react";
+import { ArrowLeft, Shield, Inbox, ShoppingCart, AlertTriangle, Mail, FileText, ExternalLink, BarChart3 } from "lucide-react";
 import EmailDeliveryPanel from "@/components/admin/EmailDeliveryPanel";
 import ChangelogTimeline from "@/components/admin/ChangelogTimeline";
+import { isPostHogConfigured } from "@/lib/posthog";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";

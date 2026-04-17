@@ -87,7 +87,7 @@ const Contact = () => {
                   <Label htmlFor="c-message">Message</Label>
                   <Textarea id="c-message" required rows={5} placeholder="Votre message..." value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
                 </div>
-                <Button type="submit" className="w-full rounded-full" disabled={loading}>
+                <Button type="submit" className="w-full rounded-full" disabled={loading} data-testid="contact-submit">
                   {loading ? "Envoi..." : "Envoyer le message →"}
                 </Button>
               </form>

@@ -130,7 +130,7 @@ const Precommande = () => {
                 />
               </div>
 
-              <Button type="submit" className="w-full rounded-full" disabled={loading}>
+              <Button type="submit" className="w-full rounded-full" disabled={loading} data-testid="preorder-submit">
                 {loading ? "Envoi en cours..." : "Confirmer ma précommande →"}
               </Button>
 

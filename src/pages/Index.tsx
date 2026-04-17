@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import HowToGuide from "@/components/HowToGuide";
 import EnBrefSection from "@/components/home/EnBrefSection";
 import FaqSection, { homeFaqItems } from "@/components/home/FaqSection";
+import UseCasesSection from "@/components/home/UseCasesSection";
+import TrustLinksSection from "@/components/home/TrustLinksSection";
 import { howToGuides } from "@/data/howToData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -39,19 +41,17 @@ const HeroSection = () => (
           <Leaf className="w-4 h-4" /> PhytoTech Home par EmotionsCare
         </div>
         <h1 className="text-4xl md:text-6xl lg:text-7xl leading-tight text-foreground">
-          L'énergie qui pousse.<br />
-          <span className="text-primary">L'eau qui revient.</span><br />
-          La lumière qui vit.
+          Des kits domestiques <span className="text-primary">inspirés du vivant</span> pour eau, air et énergie
         </h1>
-        <p className="text-lg text-muted-foreground max-w-lg">
-          Des kits prêts à installer qui utilisent les plantes, les algues et l'eau pour produire votre électricité, purifier votre air et recycler votre eau. Sans réseau. Sans batteries toxiques. Sans abonnement.
+        <p className="text-lg text-muted-foreground max-w-xl">
+          PhytoTech Home présente des kits prêts à installer qui utilisent plantes, algues et eau pour aider à produire de l'électricité, purifier l'air et recycler l'eau à petite échelle. Complément du solaire et du réseau, jamais leur remplaçant.
         </p>
         <div className="flex gap-4 flex-wrap">
           <Button size="lg" className="rounded-full text-base px-8" asChild>
-            <Link to="/precommande">Découvrir les kits →</Link>
+            <a href="#comment-ca-marche">Comprendre le fonctionnement</a>
           </Button>
           <Button size="lg" variant="outline" className="rounded-full text-base px-8" asChild>
-            <a href="#comment-ca-marche">Comment ça marche</a>
+            <Link to="/precommande">Découvrir les kits →</Link>
           </Button>
         </div>
       </div>
@@ -608,10 +608,12 @@ const Index = () => (
       <ProductsSection />
       <HowItWorksSection />
       <ImpactSection />
+      <UseCasesSection />
       <FaqSection />
       <BusinessSection />
       <ChannelsSection />
       <CTASection />
+      <TrustLinksSection />
       <CommentSection pageSlug="index" />
     </main>
     <Footer />

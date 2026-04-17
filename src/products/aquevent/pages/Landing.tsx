@@ -376,23 +376,10 @@ export default function Landing() {
             <h2 className="text-4xl font-bold mb-4">
               Rejoignez La Revolution
             </h2>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 mb-10">
               Soyez parmi les premiers a respirer l'avenir avec AquaVent PhytoTech UNLIMITED™.
+              Inscription gratuite, sans engagement.
             </p>
-            <div className="flex justify-center gap-8 mb-10">
-              <div className="text-center">
-                <p className="text-2xl font-bold text-[#8B2C5A] font-mono">2,547</p>
-                <p className="text-xs text-gray-500">Early adopters</p>
-              </div>
-              <div className="text-center">
-                <p className="text-2xl font-bold text-[#1E88E5] font-mono">156</p>
-                <p className="text-xs text-gray-500">Medecins interesses</p>
-              </div>
-              <div className="text-center">
-                <p className="text-2xl font-bold text-[#43A047] font-mono">89%</p>
-                <p className="text-xs text-gray-500">Recommandation</p>
-              </div>
-            </div>
             <WaitlistSignup />
           </div>
         </div>

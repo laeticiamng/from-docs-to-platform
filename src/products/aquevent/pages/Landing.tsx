@@ -172,7 +172,7 @@ export default function Landing() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-[#8B2C5A] to-[#1E88E5] bg-clip-text text-transparent">
-                AquaVent PhytoTech UNLIMITED™
+                Formulation à l'étude
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -339,9 +339,9 @@ export default function Landing() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">Validation en cours</h2>
             <p className="text-lg text-gray-600 mb-4">
-              AquaVent UNLIMITED™ est actuellement en phase de validation pré-commerciale.
-              Nous publierons les retours utilisateurs et les avis cliniques au fur et à mesure
-              de leur obtention.
+              AquaVent est actuellement en phase de validation pré-commerciale.
+              Nous publierons les retours utilisateurs et les avis de professionnels
+              de santé au fur et à mesure de leur obtention.
             </p>
             <p className="text-sm text-gray-500">
               Les inscriptions sur la liste d'attente nous permettent d'identifier

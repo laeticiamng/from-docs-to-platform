@@ -9,7 +9,7 @@ const navLinks = [
   { to: '/aquevent/science', label: 'Science' },
   { to: '/aquevent/business', label: 'Investisseurs' },
   { to: '/aquevent/academy', label: 'Academy' },
-  { to: '/aquevent/community', label: 'Communaute' },
+  { to: '/aquevent/community', label: 'Communauté' },
 ];
 
 export default function AquaVentLayout({ children }: { children: React.ReactNode }) {
@@ -35,8 +35,8 @@ export default function AquaVentLayout({ children }: { children: React.ReactNode
                 <span className="text-aquevent-primary">Aqua</span>
                 <span className="text-aquevent-secondary">Vent</span>
               </span>
-              <span className="text-[8px] text-aquevent-accent font-bold tracking-wider leading-none">
-                UNLIMITED™
+              <span className="text-[8px] text-muted-foreground font-medium tracking-wider leading-none">
+                Pré-série
               </span>
             </div>
           </Link>
@@ -70,6 +70,7 @@ export default function AquaVentLayout({ children }: { children: React.ReactNode
           <button
             className="md:hidden p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Menu"
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -101,7 +102,7 @@ export default function AquaVentLayout({ children }: { children: React.ReactNode
               onClick={() => setMobileOpen(false)}
               className="block w-full text-center px-4 py-2 rounded-full bg-gradient-to-r from-aquevent-primary to-aquevent-secondary text-white text-sm font-semibold"
             >
-              Rejoindre La Revolution
+              Rejoindre la liste d'attente
             </Link>
           </div>
         )}
@@ -132,24 +133,26 @@ export default function AquaVentLayout({ children }: { children: React.ReactNode
                     <span className="text-aquevent-primary">Aqua</span>
                     <span className="text-aquevent-secondary">Vent</span>
                   </span>
-                  <span className="text-[7px] text-aquevent-accent font-bold tracking-wider">UNLIMITED™</span>
+                  <span className="text-[7px] text-muted-foreground font-medium tracking-wider">
+                    Pré-série
+                  </span>
                 </div>
               </div>
               <p className="text-sm text-muted-foreground">
-                Premier inhalateur monde usage illimite, 100% naturel, scientifiquement valide.
+                Projet d'inhalateur à base d'extraits végétaux, sans nicotine. Phase pré-commerciale.
               </p>
               <p className="text-xs text-muted-foreground/80 mt-2">
-                PhytoTech™ & UNLIMITED™ sont des marques deposees.
+                Aucune allégation thérapeutique. Validation en cours.
               </p>
             </div>
 
             <div>
               <h4 className="font-bold text-sm mb-3">Produit</h4>
               <div className="space-y-2">
-                <Link to="/aquevent/product" className="block text-sm text-muted-foreground hover:text-aquevent-primary">UNLIMITED™ Edition</Link>
-                <Link to="/aquevent/product" className="block text-sm text-muted-foreground hover:text-aquevent-primary">Configurateur 3D</Link>
+                <Link to="/aquevent/product" className="block text-sm text-muted-foreground hover:text-aquevent-primary">Présentation</Link>
+                <Link to="/aquevent/product" className="block text-sm text-muted-foreground hover:text-aquevent-primary">Configurateur</Link>
                 <Link to="/aquevent/science" className="block text-sm text-muted-foreground hover:text-aquevent-primary">Formulation</Link>
-                <Link to="/aquevent/science" className="block text-sm text-muted-foreground hover:text-aquevent-primary">Calculateur Securite</Link>
+                <Link to="/aquevent/science" className="block text-sm text-muted-foreground hover:text-aquevent-primary">Sécurité</Link>
               </div>
             </div>
 
@@ -166,7 +169,7 @@ export default function AquaVentLayout({ children }: { children: React.ReactNode
             <div>
               <h4 className="font-bold text-sm mb-3">Contact</h4>
               <div className="space-y-2 text-sm text-muted-foreground">
-                <p>contact@aquevent-phytotech.com</p>
+                <p>contact@emotionscare.fr</p>
                 <p>EmotionsCare SASU</p>
                 <p>Amiens, France</p>
                 <p className="text-xs text-muted-foreground/80">SIREN 944 505 445</p>
@@ -175,7 +178,7 @@ export default function AquaVentLayout({ children }: { children: React.ReactNode
           </div>
 
           <div className="border-t mt-8 pt-8 text-center text-xs text-muted-foreground/80">
-            &copy; {new Date().getFullYear()} AquaVent PhytoTech UNLIMITED™ — EmotionsCare SASU. Tous droits reserves.
+            &copy; {new Date().getFullYear()} AquaVent — EmotionsCare SASU. Tous droits réservés.
           </div>
         </div>
       </footer>

@@ -1,168 +1,121 @@
-import { motion } from 'framer-motion';
 import AquaVentLayout from '../components/AquaVentLayout';
-import InvestmentDashboard from '../components/business/InvestmentDashboard';
-import FinancialCalculators from '../components/business/FinancialCalculators';
-import MarketAnalysis from '../components/business/MarketAnalysis';
 import SEOHead from '@/components/SEOHead';
+import { AlertTriangle, Mail } from 'lucide-react';
+import AquaVentButton from '../components/ui/AquaVentButton';
+import { Link } from 'react-router-dom';
 
+/**
+ * Page Investisseurs — version assainie.
+ *
+ * Les chiffres marché (28M, 900M€, 8-12Md€, 165M€), la valorisation, la
+ * timeline Série A/B/C et le positionnement "Licorne / Blue Ocean" précédents
+ * n'étaient pas sourcés et constituaient un risque de publicité trompeuse vis-à-vis
+ * d'investisseurs potentiels (AMF). Ils sont retirés tant qu'aucun document
+ * (memo de levée, business plan validé, étude de marché tierce) ne les confirme.
+ */
 export default function Business() {
   return (
     <AquaVentLayout>
-      <SEOHead title="Investissement — AquaVent" description="Opportunité d'investissement AquaVent PhytoTech UNLIMITED™." path="/aquevent/business" />
-      <div className="pt-8">
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-2">
-          <span className="bg-gradient-to-r from-[#8B2C5A] to-[#1E88E5] bg-clip-text text-transparent">
-            Investment Opportunity
-          </span>
-        </h1>
-        <p className="text-center text-gray-500 mb-8 max-w-2xl mx-auto">
-          AquaVent PhytoTech UNLIMITED™ — La revolution de l'inhalation naturelle
-        </p>
+      <SEOHead
+        title="Investisseurs — AquaVent"
+        description="Information aux investisseurs intéressés par le projet AquaVent. Phase pré-commerciale, aucune levée publique en cours."
+        path="/aquevent/business"
+        noIndex
+      />
+      <div className="pt-12 pb-8">
+        <div className="container mx-auto px-4 max-w-3xl text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="bg-gradient-to-r from-[#8B2C5A] to-[#1E88E5] bg-clip-text text-transparent">
+              Investisseurs
+            </span>
+          </h1>
+          <p className="text-lg text-gray-600">
+            AquaVent est un projet en phase pré-commerciale porté par EmotionsCare SASU.
+          </p>
+        </div>
       </div>
 
-      {/* Executive Summary */}
-      <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="bg-gradient-to-r from-[#8B2C5A] to-[#1E88E5] p-8 rounded-2xl text-white max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">Investment Opportunity: La Revolution</h2>
-            <div className="grid md:grid-cols-4 gap-6">
-              {[
-                { title: 'Market Size', value: '28M personnes', subtitle: 'Europe addressable' },
-                { title: 'Revenue Projection', value: '900M\u20AC', subtitle: 'Annee 5' },
-                { title: 'Exit Valuation', value: '8-12Md\u20AC', subtitle: 'Licorne confirmee' },
-                { title: 'Competitive', value: 'Blue Ocean', subtitle: 'Aucun concurrent direct' },
-              ].map((metric, i) => (
-                <motion.div
-                  key={metric.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  className="text-center p-4 bg-white/10 rounded-xl"
-                >
-                  <p className="text-xs text-white/70 mb-1">{metric.title}</p>
-                  <p className="text-2xl font-bold font-mono">{metric.value}</p>
-                  <p className="text-xs text-white/60">{metric.subtitle}</p>
-                </motion.div>
-              ))}
+      {/* Avertissement */}
+      <section className="pb-8">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="rounded-2xl border-l-4 border-amber-500 bg-amber-50 p-6">
+            <div className="flex gap-3">
+              <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+              <div className="space-y-2 text-sm text-amber-900">
+                <p className="font-semibold">Aucune levée publique n'est ouverte à ce jour.</p>
+                <p>
+                  Cette page n'est pas un document d'offre, ne constitue pas un appel public
+                  à l'épargne et ne doit pas être interprétée comme une sollicitation à
+                  investir. Aucune projection financière, valorisation ou timeline de levée
+                  n'est communiquée publiquement à ce stade.
+                </p>
+                <p>
+                  Les business plans, hypothèses de marché et éléments financiers sont
+                  partagés sur demande, sous accord de confidentialité, exclusivement avec
+                  des investisseurs professionnels qualifiés.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Revolutionary */}
+      {/* Statut projet — éléments factuels uniquement */}
       <section className="py-12">
-        <div className="container mx-auto px-4">
-          <h3 className="text-2xl font-bold text-center mb-8">Pourquoi Revolutionnaire ?</h3>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-2xl font-bold text-center mb-8">Où en est le projet ?</h2>
+          <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                title: 'Worldwide First',
-                subtitle: 'Unlimited Use Claim',
-                description: "Aucun produit inhalation monde ne peut dire 'usage illimite'. Nous sommes les premiers.",
-                competitive: 'Tous concurrents ont restrictions doses',
+                title: 'Concept produit',
+                body: "Inhalateur à base d'extraits végétaux (spiruline, anthocyanes, phycocyanine), sans nicotine, sans propylène glycol ni glycérine.",
               },
               {
-                title: 'Science Breakthrough',
-                subtitle: 'PhytoTech Platform',
-                description: 'Technologie algues vivantes comme plateforme. Applications infinies futures.',
-                competitive: 'Chimie traditionnelle obsolete',
+                title: 'Phase actuelle',
+                body: "Pré-commerciale. Validation interne de la formulation et tests de tolérance par voie inhalée en cours.",
               },
               {
-                title: 'Business Model Premium',
-                subtitle: 'Razor + Blade Optimise',
-                description: 'Device premium + cartouches recurrentes = revenus previsibles, marges elevees.',
-                competitive: 'E-cig commodity, pharma one-shot',
+                title: 'Marché ciblé',
+                body: "Europe, segments bien-être et accompagnement comportemental. Ne se positionne pas comme dispositif médical ni substitut nicotinique.",
               },
-            ].map((card, i) => (
-              <motion.div
+              {
+                title: 'Statut réglementaire',
+                body: "En cours de qualification. Le cadre applicable (TPD, dispositif, alimentaire) sera précisé après finalisation de la formulation.",
+              },
+            ].map((card) => (
+              <div
                 key={card.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.15 }}
-                className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100"
+                className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6"
               >
-                <h4 className="text-lg font-bold text-[#8B2C5A] mb-1">{card.title}</h4>
-                <p className="text-sm text-[#FFB300] font-bold mb-3">{card.subtitle}</p>
-                <p className="text-sm text-gray-600 mb-3">{card.description}</p>
-                <p className="text-xs text-gray-400 bg-gray-50 rounded-lg p-2">
-                  vs. {card.competitive}
-                </p>
-              </motion.div>
+                <h3 className="font-bold text-base mb-2 text-[#8B2C5A]">{card.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{card.body}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Fundraising Timeline */}
+      {/* Contact investisseurs */}
       <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h3 className="text-2xl font-bold text-center mb-4">Strategie de Financement</h3>
-          <p className="text-center text-gray-500 mb-10">
-            Capital total: 165M&#8364; — Exit valuation: 8-12Md&#8364;
+        <div className="container mx-auto px-4 max-w-2xl text-center">
+          <Mail className="w-10 h-10 text-[#8B2C5A] mx-auto mb-4" strokeWidth={1.5} />
+          <h2 className="text-2xl font-bold mb-3">Investisseur professionnel ?</h2>
+          <p className="text-gray-600 mb-6">
+            Pour discuter du projet, demander le memo confidentiel ou rencontrer
+            l'équipe, contactez-nous directement. Nous répondons sous 5 jours ouvrés
+            aux demandes qualifiées.
           </p>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  name: 'Serie A',
-                  amount: '15M\u20AC',
-                  timing: 'Mois 6',
-                  purpose: 'R&D + Clinical + Production',
-                  milestones: ['Formulation locked', 'Clinical start', 'Regulatory pathway'],
-                  color: '#8B2C5A',
-                },
-                {
-                  name: 'Serie B',
-                  amount: '50M\u20AC',
-                  timing: 'Mois 24',
-                  purpose: 'Launch + Scale + International',
-                  milestones: ['Market approval', 'Commercial launch', 'EU expansion'],
-                  color: '#1E88E5',
-                },
-                {
-                  name: 'Serie C',
-                  amount: '100M\u20AC',
-                  timing: 'Mois 48',
-                  purpose: 'Global + Platform + Exit prep',
-                  milestones: ['Global presence', 'Platform products', 'IPO ready'],
-                  color: '#43A047',
-                },
-              ].map((round, i) => (
-                <motion.div
-                  key={round.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.15 }}
-                  className="bg-white rounded-2xl shadow-md p-6 border-t-4"
-                  style={{ borderColor: round.color }}
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="font-bold text-lg" style={{ color: round.color }}>{round.name}</h4>
-                    <span className="text-xs text-gray-400 font-mono">{round.timing}</span>
-                  </div>
-                  <p className="text-3xl font-bold font-mono mb-2" style={{ color: round.color }}>
-                    {round.amount}
-                  </p>
-                  <p className="text-sm text-gray-600 mb-4">{round.purpose}</p>
-                  <div className="space-y-2">
-                    {round.milestones.map((m) => (
-                      <div key={m} className="flex items-center gap-2 text-sm text-gray-500">
-                        <span className="text-green-500">&#10003;</span>
-                        {m}
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+          <Link to="/contact">
+            <AquaVentButton variant="premium" size="lg">
+              Contacter l'équipe
+            </AquaVentButton>
+          </Link>
+          <p className="text-xs text-gray-400 mt-6">
+            Réservé aux investisseurs professionnels au sens de l'article L. 533-16
+            du Code monétaire et financier.
+          </p>
         </div>
       </section>
-
-      <InvestmentDashboard />
-      <FinancialCalculators />
-      <MarketAnalysis />
     </AquaVentLayout>
   );
 }

@@ -29,7 +29,7 @@ const Footer = () => (
           <div className="space-y-2">
             <h4 className="text-sm font-mono font-semibold mb-3">Produits</h4>
             <Link to="/aquevent" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">AquaVent™</Link>
-            <Link to="/biobot" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">BioBot™</Link>
+            
             <Link to="/precommande" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Précommander</Link>
             <Link to="/platform" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Toutes les plateformes</Link>
           </div>

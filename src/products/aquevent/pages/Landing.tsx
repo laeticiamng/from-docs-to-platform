@@ -227,9 +227,10 @@ export default function Landing() {
           {/* Water Base */}
           <div className="text-center max-w-2xl mx-auto">
             <div className="bg-blue-50 rounded-2xl p-6 border border-blue-100">
-              <h4 className="font-bold text-blue-700 mb-2">Base: Eau Spirulina Filtree (95.7%)</h4>
+              <h4 className="font-bold text-blue-700 mb-2">Base : eau filtrée enrichie en spiruline</h4>
               <p className="text-sm text-blue-600">
-                Purete &gt;99.99% - Endotoxines &lt;0.001 EU/ml - Eau de qualite pharmaceutique
+                Le solvant principal est de l'eau purifiée. Les spécifications pharmaceutiques précises
+                (pureté, charge endotoxinique, stérilité) seront publiées avec la fiche technique finale.
               </p>
             </div>
           </div>

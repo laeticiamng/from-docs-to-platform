@@ -114,6 +114,12 @@ export default function Business() {
             Réservé aux investisseurs professionnels au sens de l'article L. 533-16
             du Code monétaire et financier.
           </p>
+          <p className="text-xs text-gray-500 mt-3">
+            Méthodologie des estimations PhytoTech / AquaVent :{" "}
+            <Link to="/methodologie" className="underline hover:text-[#8B2C5A]">
+              voir /methodologie
+            </Link>.
+          </p>
         </div>
       </section>
     </AquaVentLayout>

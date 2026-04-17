@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Leaf } from "lucide-react";
+import { Menu, X, Leaf, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AuthDialog from "@/components/AuthDialog";
+import { useUserRole } from "@/hooks/useUserRole";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const { isAdmin } = useUserRole();
 
   const links = [
     { to: "/", label: "Accueil" },
@@ -42,6 +44,15 @@ const Navbar = () => {
             </Link>
           ))}
           <AuthDialog />
+          {isAdmin && (
+            <Link
+              to="/admin"
+              className="flex items-center gap-1 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+              title="Espace administrateur"
+            >
+              <ShieldCheck className="w-4 h-4" /> Admin
+            </Link>
+          )}
           <Button size="sm" className="rounded-full" asChild>
             <Link to="/precommande">Précommander →</Link>
           </Button>
@@ -70,6 +81,15 @@ const Navbar = () => {
             </Link>
           ))}
           <AuthDialog />
+          {isAdmin && (
+            <Link
+              to="/admin"
+              onClick={() => setOpen(false)}
+              className="flex items-center gap-1 py-2 text-sm font-medium text-primary"
+            >
+              <ShieldCheck className="w-4 h-4" /> Admin
+            </Link>
+          )}
           <Button size="sm" className="rounded-full w-full" asChild>
             <Link to="/precommande" onClick={() => setOpen(false)}>Précommander →</Link>
           </Button>

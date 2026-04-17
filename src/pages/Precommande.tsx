@@ -59,18 +59,31 @@ const Precommande = () => {
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       <Navbar />
       <main className="flex-1">
-        <SEOHead title="Précommander — PhytoTech" description="Réservez votre pack PhytoTech et faites partie des premiers à adopter la biotechnologie végétale chez vous." path="/precommande" />
+        <SEOHead title="Liste d'attente — PhytoTech" description="Réservez votre pack PhytoTech sans paiement. Vous serez recontacté avant la commercialisation." path="/precommande" />
         {/* Hero */}
-        <section className="py-20 bg-gradient-to-b from-primary/5 to-background">
-          <div className="container mx-auto px-4 text-center max-w-2xl">
-            <Rocket className="w-12 h-12 text-primary mx-auto mb-4" strokeWidth={1.5} />
-            <h1 className="text-4xl md:text-5xl font-bold font-mono tracking-tight mb-4">
-              Précommander
+        <section className="py-16 bg-gradient-to-b from-primary/5 to-background">
+          <div className="container mx-auto px-4 text-center max-w-2xl space-y-4">
+            <Rocket className="w-10 h-10 text-primary mx-auto" strokeWidth={1.5} />
+            <h1 className="text-3xl md:text-5xl font-bold font-mono tracking-tight">
+              Rejoindre la liste d'attente
             </h1>
-            <p className="text-lg text-muted-foreground">
-              Réservez votre pack PhytoTech et faites partie des premiers à adopter
-              la biotechnologie végétale chez vous.
+            <p className="text-muted-foreground">
+              Soyez parmi les premiers informés du lancement PhytoTech.
             </p>
+            <div className="grid sm:grid-cols-3 gap-3 pt-4 max-w-xl mx-auto text-xs">
+              <div className="rounded-lg border bg-card p-3">
+                <p className="font-semibold text-foreground">Aucun paiement</p>
+                <p className="text-muted-foreground mt-0.5">requis aujourd'hui</p>
+              </div>
+              <div className="rounded-lg border bg-card p-3">
+                <p className="font-semibold text-foreground">Sans engagement</p>
+                <p className="text-muted-foreground mt-0.5">vous restez libre</p>
+              </div>
+              <div className="rounded-lg border bg-card p-3">
+                <p className="font-semibold text-foreground">Livraison estimée</p>
+                <p className="text-muted-foreground mt-0.5">fin 2026</p>
+              </div>
+            </div>
           </div>
         </section>
 

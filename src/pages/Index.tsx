@@ -131,7 +131,7 @@ const HonestySection = () => (
           </p>
           <div className="grid md:grid-cols-2 gap-4 mt-4">
             {[
-              { icon: <Droplets className="w-6 h-6" />, title: "L'eau", desc: "Une douche cyclique économise 54 000 litres/an. Ni EDF ni un panneau solaire ne font ça. Valeur : 150–250€/an." },
+              { icon: <Droplets className="w-6 h-6" />, title: "L'eau", desc: "Une douche cyclique permet d'économiser ~35-45 000 L/an (estimation indicative). Ni EDF ni un panneau solaire ne font ça. Valeur : ~150-250€/an." },
               { icon: <Wind className="w-6 h-6" />, title: "L'air", desc: "Un panneau à microalgues absorbe le CO₂ intérieur et rejette de l'O₂. Un panneau solaire ne purifie pas votre air." },
               { icon: <Radio className="w-6 h-6" />, title: "L'IoT ultra-basse conso", desc: "Capteurs domotiques (température, humidité, mouvement) consomment des microwatts. Les PMFC suffisent — plus jamais de piles à changer." },
               { icon: <Lightbulb className="w-6 h-6" />, title: "L'éclairage d'ambiance", desc: "Capsules bioluminescentes et LED ultra-basse conso : veilleuses, balisage, jardin. Les PMFC couvrent ça parfaitement." },
@@ -221,7 +221,7 @@ const compareData = [
     role: "Complément naturel",
     highlight: true,
     points: [
-      { bad: false, text: "Économise 54 000L d'eau/an" },
+      { bad: false, text: "Économise ~35-45 000 L d'eau/an" },
       { bad: false, text: "Purifie l'air intérieur" },
       { bad: false, text: "IoT + éclairage sans piles" },
       { bad: false, text: "100% biodégradable" },
@@ -414,8 +414,8 @@ const HowItWorksSection = () => (
 );
 
 const impacts = [
-  { icon: <Droplets className="w-10 h-10" />, title: "54 000 litres d'eau économisés /an", desc: "La douche cyclique à biofiltre utilise 5L par douche au lieu de 80L." },
-  { icon: <Leaf className="w-10 h-10" />, title: "12 kg de CO₂ absorbés /an", desc: "Le panneau mural à microalgues capture le CO₂ et rejette de l'oxygène." },
+  { icon: <Droplets className="w-10 h-10" />, title: "~35-45 000 L d'eau économisés/an", desc: "Estimation indicative pour un couple avec une douche cyclique à biofiltre (~5L par douche au lieu de ~80L). Voir méthodologie sur /pack-autonomie." },
+  { icon: <Leaf className="w-10 h-10" />, title: "~12 kg de CO₂ absorbés/an", desc: "Estimation indicative — un panneau mural à microalgues capte le CO₂ et rejette de l'oxygène." },
   { icon: <Zap className="w-10 h-10" />, title: "Zéro batterie toxique", desc: "Batteries quinone à base de molécules végétales, biodégradables. Pas de lithium." },
   { icon: <Recycle className="w-10 h-10" />, title: "100% compostable en fin de vie", desc: "Chaque composant est bio-sourcé. En fin de vie, tout retourne à la terre." },
 ];

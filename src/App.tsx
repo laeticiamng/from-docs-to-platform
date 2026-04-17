@@ -7,6 +7,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/hooks/useAuth";
 import ScrollToTop from "@/components/ScrollToTop";
 import CookieConsent from "@/components/CookieConsent";
+import ErrorBoundary from "@/components/ErrorBoundary";
+import RequireAdmin from "@/components/RequireAdmin";
 
 // Document Platform (existing functionality preserved)
 import Index from "./pages/Index.tsx";
@@ -22,6 +24,7 @@ import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ResetPassword from "./pages/ResetPassword.tsx";
 import Profile from "./pages/Profile.tsx";
+import Admin from "./pages/Admin.tsx";
 
 // Platform Selector
 import PlatformSelector from "./pages/PlatformSelector.tsx";
@@ -54,12 +57,13 @@ const LoadingFallback = () => (
 );
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <AuthProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
+  <ErrorBoundary>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
           <ScrollToTop />
           <Suspense fallback={<LoadingFallback />}>
             <Routes>
@@ -95,15 +99,17 @@ const App = () => (
               <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
               <Route path="/reset-password" element={<ResetPassword />} />
               <Route path="/profil" element={<Profile />} />
+              <Route path="/admin" element={<RequireAdmin><Admin /></RequireAdmin>} />
 
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
           <CookieConsent />
         </BrowserRouter>
-      </TooltipProvider>
-    </AuthProvider>
-  </QueryClientProvider>
+        </TooltipProvider>
+      </AuthProvider>
+    </QueryClientProvider>
+  </ErrorBoundary>
 );
 
 export default App;

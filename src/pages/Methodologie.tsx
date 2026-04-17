@@ -139,10 +139,10 @@ export default function Methodologie() {
         {/* Avertissement */}
         <section className="py-8">
           <div className="container mx-auto px-4 max-w-3xl">
-            <div className="rounded-2xl border-l-4 border-amber-500 bg-amber-50 dark:bg-amber-950/20 p-5">
+            <div className="rounded-2xl border-l-4 border-warning bg-warning/10 p-5">
               <div className="flex gap-3">
-                <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-                <div className="space-y-2 text-sm text-amber-900 dark:text-amber-200">
+                <AlertTriangle className="w-5 h-5 text-warning shrink-0 mt-0.5" />
+                <div className="space-y-2 text-sm text-foreground/90">
                   <p className="font-semibold">
                     Les chiffres publiés sont des projections, pas des engagements.
                   </p>

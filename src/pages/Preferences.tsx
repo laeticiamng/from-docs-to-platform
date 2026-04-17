@@ -82,14 +82,15 @@ const Preferences = () => {
     if (!user) return;
     setDeleting(true);
     try {
-      // Anonymise les données identifiantes en respectant les RLS user-side
-      await supabase.from("profiles").update({ display_name: "Utilisateur supprimé" }).eq("id", user.id);
-      await supabase.from("comments").delete().eq("user_id", user.id);
+      const { data, error } = await supabase.functions.invoke("delete-account");
+      if (error || (data as { error?: string })?.error) {
+        throw new Error((data as { error?: string })?.error ?? error?.message ?? "Erreur");
+      }
       await signOut();
-      toast.success("Vos données ont été supprimées. Pour effacer définitivement votre compte d'authentification, contactez-nous.");
+      toast.success("Votre compte et vos données ont été supprimés définitivement.");
       navigate("/");
     } catch (e) {
-      toast.error("Erreur lors de la suppression");
+      toast.error((e as Error).message || "Erreur lors de la suppression");
     } finally {
       setDeleting(false);
     }
@@ -174,8 +175,8 @@ const Preferences = () => {
                     <Trash2 className="w-5 h-5" /> Supprimer mes données
                   </CardTitle>
                   <CardDescription>
-                    Anonymise votre profil et supprime vos commentaires (Art. 17 RGPD — droit à l'oubli).
-                    Pour la suppression complète du compte d'authentification, contactez-nous.
+                    Supprime définitivement votre compte, votre profil et vos commentaires
+                    (Art. 17 RGPD — droit à l'oubli). Action irréversible.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -189,8 +190,8 @@ const Preferences = () => {
                       <AlertDialogHeader>
                         <AlertDialogTitle>Confirmer la suppression ?</AlertDialogTitle>
                         <AlertDialogDescription>
-                          Cette action est <strong>irréversible</strong>. Votre profil sera anonymisé,
-                          vos commentaires seront effacés, et vous serez déconnecté.
+                          Cette action est <strong>irréversible</strong>. Votre compte d'authentification,
+                          votre profil et vos commentaires seront définitivement supprimés.
                         </AlertDialogDescription>
                       </AlertDialogHeader>
                       <AlertDialogFooter>

@@ -42,10 +42,11 @@ const Precommande = () => {
       setLoading(false);
       return;
     }
-    const { error } = await supabase.from("preorders").insert(trimmed);
+    const { data, error } = await supabase.functions.invoke("submit-preorder", { body: trimmed });
 
-    if (error) {
-      toast.error("Erreur lors de l'envoi. Réessayez.");
+    if (error || (data as { error?: string })?.error) {
+      const msg = (data as { error?: string })?.error ?? "Erreur lors de l'envoi. Réessayez.";
+      toast.error(msg);
     } else {
       toast.success("Merci ! Votre précommande a bien été enregistrée. Nous vous contacterons bientôt.");
       setForm({ name: "", email: "", pack: "", message: "" });

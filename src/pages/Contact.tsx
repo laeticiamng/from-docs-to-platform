@@ -38,9 +38,10 @@ const Contact = () => {
       setLoading(false);
       return;
     }
-    const { error } = await supabase.from("contact_messages").insert(trimmed);
-    if (error) {
-      toast.error("Erreur lors de l'envoi. Réessayez.");
+    const { data, error } = await supabase.functions.invoke("submit-contact", { body: trimmed });
+    if (error || (data as { error?: string })?.error) {
+      const msg = (data as { error?: string })?.error ?? "Erreur lors de l'envoi. Réessayez.";
+      toast.error(msg);
     } else {
       toast.success("Message envoyé ! Nous vous répondrons rapidement.");
       setForm({ name: "", email: "", subject: "", message: "" });

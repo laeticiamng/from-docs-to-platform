@@ -46,26 +46,6 @@ const formulation = [
   },
 ];
 
-const testimonials = [
-  {
-    name: 'Sophie L.',
-    role: 'Ex-fumeuse, 38 ans',
-    text: "J'ai arrete de fumer en 6 semaines avec AquaVent. Le geste est la, mais sans la dependance. C'est revolutionnaire.",
-    rating: 5,
-  },
-  {
-    name: 'Dr. Thomas R.',
-    role: 'Pneumologue',
-    text: "Pour la premiere fois, je vois une alternative vraiment naturelle et scientifiquement validee au vapotage nicotine. L'usage illimite change tout.",
-    rating: 5,
-  },
-  {
-    name: 'Marc D.',
-    role: 'Utilisateur Wellness, 45 ans',
-    text: "J'utilise AquaVent quotidiennement sans aucune restriction. La qualite de ma respiration s'est nettement amelioree.",
-    rating: 5,
-  },
-];
 
 export default function Landing() {
   return (

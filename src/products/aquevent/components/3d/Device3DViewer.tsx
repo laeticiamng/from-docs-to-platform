@@ -12,9 +12,9 @@ const Device3DViewer = forwardRef<HTMLDivElement, Device3DViewerProps>(({ versio
   const [isExploded, setIsExploded] = useState(false);
 
   const colors = {
-    wellness: { body: '#8B2C5A', accent: '#FFB300', label: 'Wellness Edition' },
-    medical: { body: '#1E88E5', accent: '#43A047', label: 'Medical Edition' },
-    unlimited: { body: '#000000', accent: '#FFB300', label: 'UNLIMITED\u2122' },
+    wellness: { body: '#8B2C5A', accent: '#FFB300', label: 'Bien-être' },
+    medical: { body: '#1E88E5', accent: '#43A047', label: 'Accompagnement' },
+    unlimited: { body: '#000000', accent: '#FFB300', label: 'AquaVent' },
   };
 
   const current = colors[version];
@@ -68,22 +68,11 @@ const Device3DViewer = forwardRef<HTMLDivElement, Device3DViewerProps>(({ versio
               transition={{ duration: 2, repeat: Infinity }}
             />
 
-            {/* PhytoTech logo area */}
+            {/* Logo area */}
             <div className="absolute top-20 left-1/2 -translate-x-1/2 text-center">
-              {isUnlimited ? (
-                <>
-                  <span className="text-aquevent-accent/80 text-[7px] font-bold tracking-[0.15em] block">
-                    UNLIMITED
-                  </span>
-                  <span className="text-white/50 text-[6px] tracking-[0.2em] block mt-0.5">
-                    PHYTOTECH
-                  </span>
-                </>
-              ) : (
-                <span className="text-white/80 text-[8px] font-bold tracking-[0.2em]">
-                  PHYTOTECH
-                </span>
-              )}
+              <span className="text-white/80 text-[8px] font-bold tracking-[0.2em]">
+                PHYTOTECH
+              </span>
             </div>
 
             {/* Cartridge window */}

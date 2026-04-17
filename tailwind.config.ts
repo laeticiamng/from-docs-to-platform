@@ -20,11 +20,16 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         aquevent: {
-          primary: "#8B2C5A",
-          secondary: "#1E88E5",
-          accent: "#FFB300",
-          success: "#43A047",
-          neutral: "#424242",
+          primary: "hsl(var(--aquevent-primary))",
+          secondary: "hsl(var(--aquevent-secondary))",
+          accent: "hsl(var(--aquevent-accent))",
+          success: "hsl(var(--aquevent-success))",
+          neutral: "hsl(var(--aquevent-neutral))",
+        },
+        biobot: {
+          primary: "hsl(var(--biobot-primary))",
+          secondary: "hsl(var(--biobot-secondary))",
+          accent: "hsl(var(--biobot-accent))",
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",

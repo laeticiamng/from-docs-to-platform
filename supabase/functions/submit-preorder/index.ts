@@ -73,6 +73,11 @@ Deno.serve(async (req) => {
       habitat: "Pack Habitat",
       autonomie: "Pack Autonomie",
       autre: "Configuration sur mesure",
+      "aquevent-wellness": "AquaVent — Bien-être & Relaxation",
+      "aquevent-medical": "AquaVent — Sevrage Tabagique",
+      "aquevent-investor": "AquaVent — Investisseur",
+      "aquevent-beta": "AquaVent — Beta Testeur",
+      "aquevent-autre": "AquaVent — Autre intérêt",
     };
     const packLabel = PACK_LABELS[pack] ?? pack;
 

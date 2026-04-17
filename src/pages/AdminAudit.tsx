@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Shield, Inbox, ShoppingCart, AlertTriangle } from "lucide-react";
+import { ArrowLeft, Shield, Inbox, ShoppingCart, AlertTriangle, Mail } from "lucide-react";
+import EmailDeliveryPanel from "@/components/admin/EmailDeliveryPanel";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -123,6 +124,9 @@ const AdminAudit = () => {
             <TabsTrigger value="preorders" className="gap-2">
               <ShoppingCart className="w-4 h-4" /> Précommandes ({preorders.length})
             </TabsTrigger>
+            <TabsTrigger value="emails" className="gap-2">
+              <Mail className="w-4 h-4" /> Email Delivery
+            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="ratelimits" className="mt-4">
@@ -233,6 +237,10 @@ const AdminAudit = () => {
                 </div>
               </CardContent>
             </Card>
+          </TabsContent>
+
+          <TabsContent value="emails" className="mt-4">
+            <EmailDeliveryPanel />
           </TabsContent>
         </Tabs>
       </div>

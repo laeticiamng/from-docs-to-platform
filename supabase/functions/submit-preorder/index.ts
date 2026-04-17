@@ -18,6 +18,16 @@ Deno.serve(async (req) => {
 
   try {
     const body = await req.json();
+
+    // Honeypot anti-bot : champ caché "website" qui doit rester vide.
+    // Si rempli, on renvoie un faux succès pour ne pas signaler au bot que sa soumission a échoué.
+    if (typeof body.website === "string" && body.website.trim() !== "") {
+      console.warn("[submit-preorder] honeypot triggered", { ip: req.headers.get("x-forwarded-for") });
+      return new Response(JSON.stringify({ success: true }), {
+        status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     const name = String(body.name ?? "").trim().slice(0, 100);
     const email = String(body.email ?? "").trim().slice(0, 255);
     const pack = String(body.pack ?? "").trim();

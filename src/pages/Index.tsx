@@ -33,34 +33,31 @@ const IconBox = ({ children, className = "" }: { children: React.ReactNode; clas
 );
 
 const HeroSection = () => (
-  <section className="min-h-[85vh] flex items-center relative overflow-hidden">
+  <section className="min-h-[80vh] flex items-center relative overflow-hidden py-16">
     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
-    <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
+    <div className="container mx-auto px-4 relative z-10 max-w-4xl">
       <div className="space-y-6">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-mono">
-          <Leaf className="w-4 h-4" /> PhytoTech Home par EmotionsCare
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-mono">
+          <Leaf className="w-4 h-4" /> Pré-série · Liste d'attente ouverte
         </div>
         <h1 className="text-4xl md:text-6xl lg:text-7xl leading-tight text-foreground">
-          Des kits domestiques <span className="text-primary">inspirés du vivant</span> pour eau, air et énergie
+          Le pot de fleurs qui alimente vos capteurs <span className="text-primary">— sans piles</span>.
         </h1>
-        <p className="text-lg text-muted-foreground max-w-xl">
-          PhytoTech Home présente des kits prêts à installer qui utilisent plantes, algues et eau pour aider à produire de l'électricité, purifier l'air et recycler l'eau à petite échelle. Complément du solaire et du réseau, jamais leur remplaçant.
+        <p className="text-lg text-muted-foreground max-w-2xl">
+          PhytoTech conçoit des kits domestiques bio-inspirés (piles à plante, microalgues, biofiltres) qui complètent votre installation existante. Premier kit à partir de <strong className="text-foreground">49 €</strong>. Livraisons estimées fin 2026.
         </p>
-        <div className="flex gap-4 flex-wrap">
+        <div className="flex gap-3 flex-wrap">
           <Button size="lg" className="rounded-full text-base px-8" asChild>
-            <a href="#comment-ca-marche">Comprendre le fonctionnement</a>
+            <Link to="/pricing">Voir les kits → 49 € — 2 490 €</Link>
           </Button>
           <Button size="lg" variant="outline" className="rounded-full text-base px-8" asChild>
-            <Link to="/precommande">Découvrir les kits →</Link>
+            <a href="#comment-ca-marche">Comment ça marche</a>
           </Button>
         </div>
-      </div>
-      <div className="flex items-center justify-center">
-        <div className="relative w-48 h-48 md:w-64 md:h-64">
-          <div className="absolute inset-0 rounded-full bg-primary/10 animate-pulse" />
-          <div className="absolute inset-4 rounded-full bg-primary/5 flex items-center justify-center">
-            <Sprout className="w-24 h-24 md:w-32 md:h-32 text-primary" strokeWidth={1.5} />
-          </div>
+        <div className="flex flex-wrap gap-x-6 gap-y-2 pt-4 text-sm text-muted-foreground">
+          <span className="inline-flex items-center gap-2"><Zap className="w-4 h-4 text-primary" /> IoT & veilleuses sans piles</span>
+          <span className="inline-flex items-center gap-2"><Droplets className="w-4 h-4 text-primary" /> Jusqu'à ~35-45 000 L d'eau/an économisés</span>
+          <span className="inline-flex items-center gap-2"><Recycle className="w-4 h-4 text-primary" /> 100 % biodégradable</span>
         </div>
       </div>
     </div>
@@ -134,7 +131,7 @@ const HonestySection = () => (
           </p>
           <div className="grid md:grid-cols-2 gap-4 mt-4">
             {[
-              { icon: <Droplets className="w-6 h-6" />, title: "L'eau", desc: "Une douche cyclique économise 54 000 litres/an. Ni EDF ni un panneau solaire ne font ça. Valeur : 150–250€/an." },
+              { icon: <Droplets className="w-6 h-6" />, title: "L'eau", desc: "Une douche cyclique permet d'économiser ~35-45 000 L/an (estimation indicative). Ni EDF ni un panneau solaire ne font ça. Valeur : ~150-250€/an." },
               { icon: <Wind className="w-6 h-6" />, title: "L'air", desc: "Un panneau à microalgues absorbe le CO₂ intérieur et rejette de l'O₂. Un panneau solaire ne purifie pas votre air." },
               { icon: <Radio className="w-6 h-6" />, title: "L'IoT ultra-basse conso", desc: "Capteurs domotiques (température, humidité, mouvement) consomment des microwatts. Les PMFC suffisent — plus jamais de piles à changer." },
               { icon: <Lightbulb className="w-6 h-6" />, title: "L'éclairage d'ambiance", desc: "Capsules bioluminescentes et LED ultra-basse conso : veilleuses, balisage, jardin. Les PMFC couvrent ça parfaitement." },
@@ -224,7 +221,7 @@ const compareData = [
     role: "Complément naturel",
     highlight: true,
     points: [
-      { bad: false, text: "Économise 54 000L d'eau/an" },
+      { bad: false, text: "Économise ~35-45 000 L d'eau/an" },
       { bad: false, text: "Purifie l'air intérieur" },
       { bad: false, text: "IoT + éclairage sans piles" },
       { bad: false, text: "100% biodégradable" },
@@ -374,7 +371,7 @@ const ProductsSection = () => (
               NIVEAU 4 — AUTONOMIE TOTALE
             </Badge>
             <h3 className="text-2xl text-foreground">Pack Autonomie Totale Paris</h3>
-            <p className="font-mono text-xl text-primary font-bold">~9 000€ · ROI en 4,6 ans</p>
+            <p className="font-mono text-xl text-primary font-bold">~9 000€ · ROI projeté ~4-6 ans</p>
             <p className="text-sm text-muted-foreground">
               Peut-on vivre 100% sur le vivant dans un appartement ? Oui — mais pas avec des pots de fleurs seuls. Découvrez la stratégie complète.
             </p>
@@ -417,8 +414,8 @@ const HowItWorksSection = () => (
 );
 
 const impacts = [
-  { icon: <Droplets className="w-10 h-10" />, title: "54 000 litres d'eau économisés /an", desc: "La douche cyclique à biofiltre utilise 5L par douche au lieu de 80L." },
-  { icon: <Leaf className="w-10 h-10" />, title: "12 kg de CO₂ absorbés /an", desc: "Le panneau mural à microalgues capture le CO₂ et rejette de l'oxygène." },
+  { icon: <Droplets className="w-10 h-10" />, title: "~35-45 000 L d'eau économisés/an", desc: "Estimation indicative pour un couple avec une douche cyclique à biofiltre (~5L par douche au lieu de ~80L). Voir méthodologie sur /pack-autonomie." },
+  { icon: <Leaf className="w-10 h-10" />, title: "~12 kg de CO₂ absorbés/an", desc: "Estimation indicative — un panneau mural à microalgues capte le CO₂ et rejette de l'oxygène." },
   { icon: <Zap className="w-10 h-10" />, title: "Zéro batterie toxique", desc: "Batteries quinone à base de molécules végétales, biodégradables. Pas de lithium." },
   { icon: <Recycle className="w-10 h-10" />, title: "100% compostable en fin de vie", desc: "Chaque composant est bio-sourcé. En fin de vie, tout retourne à la terre." },
 ];

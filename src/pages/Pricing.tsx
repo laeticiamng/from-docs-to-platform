@@ -186,7 +186,7 @@ const Pricing = () => (
                 <p className="text-sm text-muted-foreground">
                   Combinaison complète vivant + solaire + stockage pour viser une
                   autonomie réelle en appartement parisien. Détail des composants, ROI
-                  estimé à 4,6 ans.
+                  projeté ~4-6 ans (estimation indicative).
                 </p>
               </div>
               <Button className="rounded-full whitespace-nowrap" asChild>

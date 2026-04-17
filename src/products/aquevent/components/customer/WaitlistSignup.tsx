@@ -1,18 +1,19 @@
-import { useState } from 'react';
+import { useState, forwardRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { waitlistSchema, type WaitlistFormData } from '../../utils/validations';
 import AquaVentButton from '../ui/AquaVentButton';
 import { useAnalytics, AquaVentEvents } from '../../hooks/useAnalytics';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 
 interface WaitlistSignupProps {
   variant?: 'inline' | 'full';
 }
 
-export default function WaitlistSignup({ variant = 'full' }: WaitlistSignupProps) {
+const WaitlistSignup = forwardRef<HTMLDivElement, WaitlistSignupProps>(({ variant = 'full' }, _ref) => {
   const [submitted, setSubmitted] = useState(false);
-  const [queuePosition, setQueuePosition] = useState(0);
   const { trackEvent } = useAnalytics();
 
   const {
@@ -25,12 +26,22 @@ export default function WaitlistSignup({ variant = 'full' }: WaitlistSignupProps
   });
 
   const onSubmit = async (data: WaitlistFormData) => {
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    const position = Math.floor(Math.random() * 500) + 100;
-    setQueuePosition(position);
-    setSubmitted(true);
+    const { data: res, error } = await supabase.functions.invoke('submit-preorder', {
+      body: {
+        name: `${data.firstName} ${data.lastName}`.trim().slice(0, 100),
+        email: data.email.trim().slice(0, 255),
+        pack: `aquevent-${data.interest || 'autre'}`,
+        message: data.newsletter ? 'Newsletter: oui' : 'Newsletter: non',
+      },
+    });
 
+    if (error || (res as { error?: string })?.error) {
+      const msg = (res as { error?: string })?.error ?? "Erreur lors de l'inscription. Réessayez.";
+      toast.error(msg);
+      return;
+    }
+
+    setSubmitted(true);
     trackEvent(AquaVentEvents.WAITLIST_JOIN, {
       interest: data.interest,
       newsletter: data.newsletter,
@@ -44,19 +55,13 @@ export default function WaitlistSignup({ variant = 'full' }: WaitlistSignupProps
         animate={{ opacity: 1, scale: 1 }}
         className="text-center py-12 px-6"
       >
-        <div className="text-5xl mb-4">🎉</div>
-        <h3 className="text-2xl font-bold mb-2">Bienvenue dans l'aventure !</h3>
+        <h3 className="text-2xl font-bold mb-2">Inscription enregistrée</h3>
         <p className="text-gray-600 mb-4">
-          Vous êtes en position <span className="font-bold font-mono text-aquevent-primary">#{queuePosition}</span> sur la liste d'attente.
+          Merci ! Votre demande a bien été reçue. Notre équipe vous recontactera par email.
         </p>
         <p className="text-sm text-gray-400">
-          Nous vous contacterons dès que votre AquaVent sera prêt.
+          Aucun paiement requis pour l'instant.
         </p>
-        <div className="mt-6 p-4 bg-aquevent-primary/5 rounded-xl max-w-md mx-auto">
-          <p className="text-sm text-aquevent-primary font-medium">
-            Parrainez un ami et remontez de 10 places dans la file !
-          </p>
-        </div>
       </motion.div>
     );
   }
@@ -137,9 +142,13 @@ export default function WaitlistSignup({ variant = 'full' }: WaitlistSignupProps
         </AquaVentButton>
 
         <p className="text-xs text-center text-gray-400">
-          Déjà 847 inscrits. Pas de spam, désinscription à tout moment.
+          Pas de spam, désinscription à tout moment.
         </p>
       </form>
     </div>
   );
-}
+});
+
+WaitlistSignup.displayName = "WaitlistSignup";
+
+export default WaitlistSignup;

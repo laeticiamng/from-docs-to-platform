@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, forwardRef } from 'react';
 
 interface Particle {
   x: number;
@@ -10,7 +10,7 @@ interface Particle {
   color: string;
 }
 
-export default function ParticleBackground() {
+const ParticleBackground = forwardRef<HTMLCanvasElement>((_, _ref) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>(0);
 
@@ -104,4 +104,8 @@ export default function ParticleBackground() {
       style={{ opacity: 0.6 }}
     />
   );
-}
+});
+
+ParticleBackground.displayName = "ParticleBackground";
+
+export default ParticleBackground;

@@ -51,7 +51,11 @@ const formulation = [
 export default function Landing() {
   return (
     <AquaVentLayout>
-      <SEOHead title="AquaVent PhytoTech UNLIMITED™ — Respirez la nature" description="Premier inhalateur monde usage illimité, 100% naturel scientifiquement validé. Zéro toxicité." path="/aquevent" />
+      <SEOHead
+        title="AquaVent PhytoTech™ — Inhalateur végétal en développement"
+        description="AquaVent est un projet d'inhalateur à base d'extraits végétaux (spiruline, anthocyanes, phycocyanine), sans nicotine. Phase pré-commerciale, inscription à la liste d'attente."
+        path="/aquevent"
+      />
       {/* Hero Section - Breathe The Revolution */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-[#1E88E5]/5 via-white to-[#8B2C5A]/5">
         <ParticleBackground />

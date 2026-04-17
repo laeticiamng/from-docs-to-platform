@@ -1,78 +1,52 @@
 
 
-# Audit complet & Plan d'intégration — Ce qu'il manque
+## Audit gouvernance — État actuel & prochaines briques
 
-## Problemes identifies
+### Ce qui est déjà en place (v1 → v3)
+- **Identité & rôles** : `user_roles` + `has_role()` security definer, `RequireAdmin` ✓
+- **RGPD** : Bandeau cookies granulaire, `/preferences` (export JSON Art.20, suppression compte Art.17 via edge function) ✓
+- **Sécurité serveur** : Edge functions `submit-contact`, `submit-preorder`, `delete-account` avec rate-limiting (5 req/h/IP) ✓
+- **Observabilité** : `analytics_events` + `useTracking` respectant le consentement ✓
+- **Dashboard admin** : KPIs Recharts ✓
+- **Design tokens HSL** : AquaVent + BioBot tokenisés ✓
 
-### 1. Emojis restants (pas remplacés par Lucide)
-Les fichiers suivants contiennent encore des emojis au lieu d'icones Lucide :
-- **Navbar.tsx** : 🌿 dans le logo
-- **Footer.tsx** : 🌿 dans le logo
-- **Contact.tsx** : 📍, ✉️, 🕐
-- **Profile.tsx** : 🔒, 👤
-- **ResetPassword.tsx** : 🔐
-- **Index.tsx** : ⚠️ (×2 dans les badges/titres)
-- **PackAutonomie.tsx** : ⚠️
-- **AquaVent Landing.tsx** : 🌿, 🛡️, 🚀 dans les données
+### Ce qui manque pour fermer la boucle de gouvernance
 
-### 2. SEO manquant sur les pages produits
-Aucune page AquaVent (6 pages) ni BioBot (6 pages) n'utilise le composant `SEOHead`. Pas de balises title/description/OG sur 12 pages.
+**A. Sécurité Auth (critique, 2 min)**
+- Activer **Leaked Password Protection** (HIBP) via `configure_auth` — bloque les mots de passe compromis lors signup/changement.
 
-### 3. Twitter meta incorrecte
-`index.html` reference `@Lovable` au lieu de `@EmotionsCare` dans les balises Twitter Card.
+**B. Audit & monitoring admin (gouvernance opérationnelle)**
+- Nouvelle page `/admin/audit` accessible aux admins :
+  - Tableau des `rate_limits` récents (IP, action, timestamp) — détecter spam/abus
+  - Tableau des `contact_messages` reçus (lecture seule, déjà en RLS admin)
+  - Tableau des `preorders` reçus (lecture seule)
+- Onglet de navigation dans `/admin` pour basculer Dashboard ↔ Audit.
 
-### 4. Anti-pattern dans Profile.tsx
-Le chargement des donnees se fait dans le corps du render au lieu d'un `useEffect`, ce qui provoque des appels multiples.
+**C. Notifications transactionnelles (boucle de feedback)**
+- Edge function `send-transactional-email` via **Resend** :
+  - Confirmation précommande → utilisateur
+  - Accusé contact → utilisateur  
+  - Alerte admin → `m.laeticia@hotmail.fr` sur nouveau contact/précommande
+- Branchement dans `submit-contact` et `submit-preorder` (non-bloquant).
+- Requiert secret `RESEND_API_KEY` — sera demandé après approbation.
 
-### 5. Pas de bandeau cookies/RGPD
-Aucun mecanisme de consentement aux cookies — requis par la loi pour un site francais.
+**D. Cohérence design (dette technique restante)**
+- Pages internes AquaVent (`FinancialCalculators`, `InvestmentDashboard`, `MarketAnalysis`, `Questionnaire`, `WaitlistSignup`, `ParticleBackground`) utilisent encore des hex codes → migration vers classes `aquevent-*`.
+- Idem pour pages internes BioBot.
 
-### 6. Pas de validation d'entree sur les formulaires
-Les formulaires Contact et Precommande n'ont aucune validation de longueur ni de format cote client. Risque d'injection et de donnees corrompues.
+### Ordre d'exécution proposé
+```text
+1. HIBP (instant, gain sécurité majeur)
+2. Page /admin/audit (gouvernance opérationnelle)
+3. Notifications email Resend (boucle feedback) — nécessite secret
+4. Refactor design tokens pages internes (dette propre)
+```
 
-### 7. Pas de JSON-LD (donnees structurees)
-Aucun markup Schema.org pour l'organisation EmotionsCare — nuit au referencement.
+### Détails techniques
+- **HIBP** : `configure_auth({password_hibp_enabled: true})`
+- **Audit page** : nouvelle route `/admin/audit` protégée par `RequireAdmin`, queries `rate_limits` / `contact_messages` / `preorders` via Supabase client (RLS déjà admin-only). Composants `Table` shadcn + filtres date.
+- **Resend** : edge function unique `send-transactional-email` avec types `preorder_confirm | contact_ack | admin_alert`, appelée en fire-and-forget depuis les edge functions existantes.
+- **Refactor tokens** : remplacement mécanique des `#xxxxxx` par classes `text-aquevent-*` / `bg-biobot-*`.
 
----
-
-## Plan d'implementation
-
-### Etape 1 — Remplacer les derniers emojis
-- **Navbar.tsx** & **Footer.tsx** : remplacer 🌿 par `<Leaf className="w-5 h-5 text-primary" />`
-- **Contact.tsx** : remplacer 📍 par `MapPin`, ✉️ par `Mail`, 🕐 par `Clock`
-- **Profile.tsx** : remplacer 🔒 par `Lock`, 👤 par `UserRound`
-- **ResetPassword.tsx** : remplacer 🔐 par `KeyRound`
-- **Index.tsx** & **PackAutonomie.tsx** : remplacer ⚠️ par `AlertTriangle`
-- **AquaVent Landing.tsx** : remplacer les emoji strings par des icones Lucide
-
-### Etape 2 — Corriger Profile.tsx (anti-pattern)
-Deplacer le fetch du profil dans un `useEffect` avec dependance sur `user?.id` au lieu du corps du composant.
-
-### Etape 3 — Ajouter SEOHead sur les 12 pages produits
-Importer et ajouter `<SEOHead>` sur chaque page AquaVent (Landing, Product, Science, Business, Academy, Community) et BioBot (Landing, Technology, Applications, Science, Business, Ecosystem).
-
-### Etape 4 — Corriger les meta Twitter
-Dans `index.html`, changer `@Lovable` en `@EmotionsCare` dans la balise `twitter:site`.
-
-### Etape 5 — Ajouter JSON-LD Organisation
-Dans `SEOHead.tsx`, injecter un script JSON-LD `Organization` avec les infos EmotionsCare (nom, adresse, SIREN, site web).
-
-### Etape 6 — Validation des formulaires
-Ajouter une validation client-side sur les formulaires Contact et Precommande :
-- Longueur max sur nom (100 chars), email (255), message (2000)
-- Trim des espaces
-- Feedback d'erreur visuel
-
-### Etape 7 — Bandeau de consentement RGPD
-Creer un composant `CookieConsent.tsx` :
-- Affiche un bandeau en bas de page au premier chargement
-- Stocke le consentement dans `localStorage`
-- Boutons "Accepter" / "Refuser"
-- Integre dans `App.tsx`
-
-### Details techniques
-- **Fichiers modifies** : ~20 fichiers (Navbar, Footer, Contact, Profile, ResetPassword, Index, PackAutonomie, AquaVent Landing + 12 pages produits, SEOHead, index.html, App.tsx)
-- **Fichiers crees** : 1 (CookieConsent.tsx)
-- **Aucune migration de base de donnees requise**
-- **Aucune dependance supplementaire**
+### Aucune migration DB requise pour A, C, D. B utilise les tables existantes.
 

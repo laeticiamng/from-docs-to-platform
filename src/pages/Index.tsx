@@ -3,6 +3,8 @@ import SEOHead from "@/components/SEOHead";
 import CommentSection from "@/components/CommentSection";
 import Footer from "@/components/Footer";
 import HowToGuide from "@/components/HowToGuide";
+import EnBrefSection from "@/components/home/EnBrefSection";
+import FaqSection, { homeFaqItems } from "@/components/home/FaqSection";
 import { howToGuides } from "@/data/howToData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -592,14 +594,21 @@ const Index = () => (
   <div className="min-h-screen">
     <Navbar />
     <main>
-      <SEOHead title="PhytoTech Home — L'énergie qui pousse" description="Des kits bio-énergie utilisant plantes, algues et eau pour produire votre électricité, purifier votre air et recycler votre eau. Sans réseau. Sans batteries toxiques." path="/" />
+      <SEOHead
+        title="PhytoTech Home — Kits domestiques bio-inspirés pour eau, air et énergie"
+        description="PhytoTech Home conçoit des kits prêts à installer qui utilisent plantes, algues et eau pour aider à produire de l'électricité, purifier l'air intérieur et recycler l'eau à petite échelle. Complément du solaire et du réseau, jamais leur remplaçant."
+        path="/"
+        faqItems={homeFaqItems}
+      />
       <HeroSection />
+      <EnBrefSection />
       <ManifestoSection />
       <HonestySection />
       <CompareSection />
       <ProductsSection />
       <HowItWorksSection />
       <ImpactSection />
+      <FaqSection />
       <BusinessSection />
       <ChannelsSection />
       <CTASection />

@@ -32,6 +32,8 @@ import Admin from "./pages/Admin.tsx";
 import AdminAudit from "./pages/AdminAudit.tsx";
 import Preferences from "./pages/Preferences.tsx";
 import Unsubscribe from "./pages/Unsubscribe.tsx";
+import Methodologie from "./pages/Methodologie.tsx";
+import Investisseurs from "./pages/Investisseurs.tsx";
 
 // Platform Selector
 import PlatformSelector from "./pages/PlatformSelector.tsx";

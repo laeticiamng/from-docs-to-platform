@@ -74,7 +74,7 @@ export default function FinancialCalculators() {
                 onClick={() => handleTabChange(tab.key)}
                 className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-all ${
                   activeTab === tab.key
-                    ? 'bg-[#8B2C5A] text-white shadow-md'
+                    ? 'bg-aquevent-primary text-white shadow-md'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -104,7 +104,7 @@ export default function FinancialCalculators() {
                     step={10000}
                     value={investmentAmount}
                     onChange={(e) => setInvestmentAmount(Number(e.target.value))}
-                    className="w-full accent-[#8B2C5A]"
+                    className="w-full accent-aquevent-primary"
                   />
                 </div>
                 <div>
@@ -117,7 +117,7 @@ export default function FinancialCalculators() {
                     max={10}
                     value={years}
                     onChange={(e) => setYears(Number(e.target.value))}
-                    className="w-full accent-[#8B2C5A]"
+                    className="w-full accent-aquevent-primary"
                   />
                 </div>
                 <div>
@@ -130,35 +130,35 @@ export default function FinancialCalculators() {
                     max={100}
                     value={annualReturn}
                     onChange={(e) => setAnnualReturn(Number(e.target.value))}
-                    className="w-full accent-[#8B2C5A]"
+                    className="w-full accent-aquevent-primary"
                   />
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-[#8B2C5A]/5 to-[#1E88E5]/5 rounded-2xl p-8">
+              <div className="bg-gradient-to-br from-aquevent-primary/5 to-aquevent-secondary/5 rounded-2xl p-8">
                 <h4 className="text-lg font-bold text-gray-700 mb-6">Résultats</h4>
                 <div className="space-y-4">
                   <div>
                     <p className="text-sm text-gray-500">Retour total</p>
-                    <p className="text-3xl font-bold font-mono text-[#8B2C5A]">
+                    <p className="text-3xl font-bold font-mono text-aquevent-primary">
                       {formatCurrency(roiResult.totalReturn)}
                     </p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">ROI</p>
-                    <p className="text-2xl font-bold font-mono text-[#43A047]">
+                    <p className="text-2xl font-bold font-mono text-aquevent-success">
                       +{roiResult.roi.toFixed(0)}%
                     </p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Rendement annualisé</p>
-                    <p className="text-2xl font-bold font-mono text-[#1E88E5]">
+                    <p className="text-2xl font-bold font-mono text-aquevent-secondary">
                       {roiResult.annualized.toFixed(1)}%
                     </p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Multiple</p>
-                    <p className="text-2xl font-bold font-mono text-[#FFB300]">
+                    <p className="text-2xl font-bold font-mono text-aquevent-accent">
                       {(roiResult.totalReturn / investmentAmount).toFixed(1)}x
                     </p>
                   </div>
@@ -186,7 +186,7 @@ export default function FinancialCalculators() {
                     step={10000}
                     value={fixedCosts}
                     onChange={(e) => setFixedCosts(Number(e.target.value))}
-                    className="w-full accent-[#1E88E5]"
+                    className="w-full accent-aquevent-secondary"
                   />
                 </div>
                 <div>
@@ -199,7 +199,7 @@ export default function FinancialCalculators() {
                     max={199}
                     value={pricePerUnit}
                     onChange={(e) => setPricePerUnit(Number(e.target.value))}
-                    className="w-full accent-[#1E88E5]"
+                    className="w-full accent-aquevent-secondary"
                   />
                 </div>
                 <div>
@@ -212,35 +212,35 @@ export default function FinancialCalculators() {
                     max={80}
                     value={variableCost}
                     onChange={(e) => setVariableCost(Number(e.target.value))}
-                    className="w-full accent-[#1E88E5]"
+                    className="w-full accent-aquevent-secondary"
                   />
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-[#1E88E5]/5 to-[#43A047]/5 rounded-2xl p-8">
+              <div className="bg-gradient-to-br from-aquevent-secondary/5 to-aquevent-success/5 rounded-2xl p-8">
                 <h4 className="text-lg font-bold text-gray-700 mb-6">Seuil de rentabilité</h4>
                 <div className="space-y-4">
                   <div>
                     <p className="text-sm text-gray-500">Unités nécessaires/mois</p>
-                    <p className="text-3xl font-bold font-mono text-[#1E88E5]">
+                    <p className="text-3xl font-bold font-mono text-aquevent-secondary">
                       {breakevenResult === Infinity ? '∞' : breakevenResult.toLocaleString('fr-FR')}
                     </p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Marge par unité</p>
-                    <p className="text-2xl font-bold font-mono text-[#43A047]">
+                    <p className="text-2xl font-bold font-mono text-aquevent-success">
                       €{pricePerUnit - variableCost}
                     </p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Marge brute</p>
-                    <p className="text-2xl font-bold font-mono text-[#8B2C5A]">
+                    <p className="text-2xl font-bold font-mono text-aquevent-primary">
                       {(((pricePerUnit - variableCost) / pricePerUnit) * 100).toFixed(1)}%
                     </p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">CA mensuel requis</p>
-                    <p className="text-2xl font-bold font-mono text-[#FFB300]">
+                    <p className="text-2xl font-bold font-mono text-aquevent-accent">
                       {formatCurrency(breakevenResult === Infinity ? 0 : breakevenResult * pricePerUnit)}
                     </p>
                   </div>
@@ -263,7 +263,7 @@ export default function FinancialCalculators() {
                     max={300}
                     value={growthRate}
                     onChange={(e) => setGrowthRate(Number(e.target.value))}
-                    className="w-full accent-[#43A047]"
+                    className="w-full accent-aquevent-success"
                   />
                 </div>
                 <div>
@@ -276,7 +276,7 @@ export default function FinancialCalculators() {
                     max={199}
                     value={pricePoint}
                     onChange={(e) => setPricePoint(Number(e.target.value))}
-                    className="w-full accent-[#43A047]"
+                    className="w-full accent-aquevent-success"
                   />
                 </div>
                 <div>
@@ -289,7 +289,7 @@ export default function FinancialCalculators() {
                     max={10}
                     value={years}
                     onChange={(e) => setYears(Number(e.target.value))}
-                    className="w-full accent-[#43A047]"
+                    className="w-full accent-aquevent-success"
                   />
                 </div>
               </div>

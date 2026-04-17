@@ -48,7 +48,7 @@ export default function Device3DViewer({ version, onConfigure }: Device3DViewerP
           >
             {/* Gold trim for UNLIMITED */}
             {isUnlimited && (
-              <div className="absolute inset-0 rounded-[2rem] border border-[#FFB300]/30" />
+              <div className="absolute inset-0 rounded-[2rem] border border-aquevent-accent/30" />
             )}
 
             {/* Mouthpiece */}
@@ -72,7 +72,7 @@ export default function Device3DViewer({ version, onConfigure }: Device3DViewerP
             <div className="absolute top-20 left-1/2 -translate-x-1/2 text-center">
               {isUnlimited ? (
                 <>
-                  <span className="text-[#FFB300]/80 text-[7px] font-bold tracking-[0.15em] block">
+                  <span className="text-aquevent-accent/80 text-[7px] font-bold tracking-[0.15em] block">
                     UNLIMITED
                   </span>
                   <span className="text-white/50 text-[6px] tracking-[0.2em] block mt-0.5">

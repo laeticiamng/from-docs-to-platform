@@ -20,7 +20,7 @@ export default function ComparisonTable() {
           ].map((insight) => (
             <span
               key={insight}
-              className="text-xs px-3 py-1.5 rounded-full bg-[#8B2C5A]/5 text-[#8B2C5A] font-medium"
+              className="text-xs px-3 py-1.5 rounded-full bg-aquevent-primary/5 text-aquevent-primary font-medium"
             >
               {insight}
             </span>
@@ -52,14 +52,14 @@ export default function ComparisonTable() {
                     transition={{ delay: i * 0.1 }}
                     className={`border-b ${
                       isAquaVent
-                        ? 'bg-gradient-to-r from-[#8B2C5A]/5 to-[#1E88E5]/5 font-medium'
+                        ? 'bg-gradient-to-r from-aquevent-primary/5 to-aquevent-secondary/5 font-medium'
                         : i % 2 === 0
                         ? 'bg-gray-50/50'
                         : ''
                     }`}
                   >
                     <td className="py-4 px-4">
-                      <span className={isAquaVent ? 'text-[#8B2C5A] font-bold' : ''}>
+                      <span className={isAquaVent ? 'text-aquevent-primary font-bold' : ''}>
                         {c.name}
                       </span>
                     </td>

@@ -17,7 +17,7 @@ function TechCard({ name, trademark, specs, advantages }: { name: string; tradem
   return (
     <div className="bg-white rounded-2xl shadow-md p-6 border border-gray-100">
       <h4 className="text-xl font-bold mb-1">{name}</h4>
-      <p className="text-sm text-[#FFB300] font-bold mb-4">{trademark}</p>
+      <p className="text-sm text-aquevent-accent font-bold mb-4">{trademark}</p>
       <div className="space-y-2 mb-6">
         {specs.map((s) => (
           <div key={s.label} className="flex justify-between items-start gap-4 text-sm">
@@ -47,7 +47,7 @@ export default function Technology() {
       <SEOHead title="Architecture Technologique — BioBot" description="Technologies bio-hybrides révolutionnaires." path="/biobot/technology" />
       <div className="pt-8">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-2">
-          <span className="bg-gradient-to-r from-[#2E7D32] to-[#00897B] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-biobot-primary to-biobot-secondary bg-clip-text text-transparent">
             Architecture Technologique
           </span>
         </h1>
@@ -130,7 +130,7 @@ export default function Technology() {
                   { part: 'Circuits', material: 'Bio-plastiques conducteurs' },
                 ].map((item) => (
                   <div key={item.part} className="p-4 bg-white rounded-xl shadow-sm border border-gray-100">
-                    <p className="font-bold text-[#2E7D32] text-sm">{item.part}</p>
+                    <p className="font-bold text-biobot-primary text-sm">{item.part}</p>
                     <p className="text-sm text-gray-600">{item.material}</p>
                   </div>
                 ))}
@@ -189,8 +189,8 @@ export default function Technology() {
             <div className="max-w-4xl mx-auto">
               {/* BioRecycler */}
               <div className="bg-white rounded-2xl shadow-md p-8 mb-8">
-                <h3 className="text-2xl font-bold text-[#00897B] mb-2">{techData.bioRecycler.name}</h3>
-                <p className="text-[#FFB300] font-bold text-sm mb-6">{techData.bioRecycler.trademark}</p>
+                <h3 className="text-2xl font-bold text-biobot-secondary mb-2">{techData.bioRecycler.name}</h3>
+                <p className="text-aquevent-accent font-bold text-sm mb-6">{techData.bioRecycler.trademark}</p>
 
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
@@ -232,7 +232,7 @@ export default function Technology() {
               </div>
 
               {/* Reproduction */}
-              <div className="bg-gradient-to-r from-[#00897B] to-[#2E7D32] rounded-2xl p-8 text-white">
+              <div className="bg-gradient-to-r from-biobot-secondary to-biobot-primary rounded-2xl p-8 text-white">
                 <h3 className="text-2xl font-bold mb-6">Reproduction & Evolution Autonome</h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
@@ -253,7 +253,7 @@ export default function Technology() {
                         { gen: 'Gen 10', count: '1K-65K', label: 'explosion' },
                       ].map((g) => (
                         <div key={g.gen} className="flex items-center gap-3 text-sm">
-                          <span className="font-mono font-bold text-[#FFB300] w-12">{g.gen}</span>
+                          <span className="font-mono font-bold text-aquevent-accent w-12">{g.gen}</span>
                           <span className="font-bold text-white">{g.count}</span>
                           <span className="text-white/60">{g.label}</span>
                         </div>

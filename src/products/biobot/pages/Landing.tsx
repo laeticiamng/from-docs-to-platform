@@ -28,7 +28,7 @@ export default function Landing() {
   return (
     <BioBotLayout>
       <SEOHead title="BioBot PhytoTech™ — Robots Vivants Bio-Hybrides" description="De l'inhalation révolutionnaire à la robotique vivante. Architecture complète basée sur l'écosystème PhytoTech." path="/biobot" />
-      <section className="relative min-h-[85vh] flex items-center bg-gradient-to-br from-[#2E7D32]/5 via-white to-[#00897B]/5">
+      <section className="relative min-h-[85vh] flex items-center bg-gradient-to-br from-biobot-primary/5 via-white to-biobot-secondary/5">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -36,13 +36,13 @@ export default function Landing() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2E7D32]/10 text-[#2E7D32] text-sm font-bold mb-6">
-                <span className="w-2 h-2 rounded-full bg-[#2E7D32] animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-biobot-primary/10 text-biobot-primary text-sm font-bold mb-6">
+                <span className="w-2 h-2 rounded-full bg-biobot-primary animate-pulse" />
                 Extension PhytoTech Platform — Robotique Vivante
               </div>
 
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6">
-                <span className="bg-gradient-to-r from-[#2E7D32] to-[#00897B] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-biobot-primary to-biobot-secondary bg-clip-text text-transparent">
                   BioBot PhytoTech&#8482;
                 </span>
                 <br />
@@ -55,10 +55,10 @@ export default function Landing() {
               </p>
 
               <div className="flex flex-wrap justify-center gap-4 mb-12">
-                <Link to="/biobot/technology" className="px-8 py-4 rounded-full bg-gradient-to-r from-[#2E7D32] to-[#00897B] text-white font-semibold shadow-lg hover:shadow-xl transition-shadow">
+                <Link to="/biobot/technology" className="px-8 py-4 rounded-full bg-gradient-to-r from-biobot-primary to-biobot-secondary text-white font-semibold shadow-lg hover:shadow-xl transition-shadow">
                   Explorer La Technologie
                 </Link>
-                <Link to="/biobot/business" className="px-8 py-4 rounded-full border-2 border-[#2E7D32] text-[#2E7D32] font-semibold hover:bg-[#2E7D32]/5 transition-colors">
+                <Link to="/biobot/business" className="px-8 py-4 rounded-full border-2 border-biobot-primary text-biobot-primary font-semibold hover:bg-biobot-primary/5 transition-colors">
                   Opportunite Business
                 </Link>
               </div>
@@ -78,7 +78,7 @@ export default function Landing() {
                     transition={{ delay: 0.5 + i * 0.1 }}
                     className="p-4 bg-white rounded-xl shadow-sm"
                   >
-                    <p className="text-2xl font-bold font-mono text-[#2E7D32]">{stat.value}</p>
+                    <p className="text-2xl font-bold font-mono text-biobot-primary">{stat.value}</p>
                     <p className="text-xs text-gray-500">{stat.label}</p>
                   </motion.div>
                 ))}
@@ -89,7 +89,7 @@ export default function Landing() {
       </section>
 
       {/* PhytoTech Foundation - AquaVent Bridge */}
-      <section className="py-20 bg-gradient-to-r from-[#2E7D32] to-[#00897B]">
+      <section className="py-20 bg-gradient-to-r from-biobot-primary to-biobot-secondary">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-white text-center mb-4">Fondations: Modele PhytoTech Eprouve</h2>
           <p className="text-white/80 text-center mb-12 max-w-2xl mx-auto">
@@ -191,7 +191,7 @@ export default function Landing() {
               ))}
             </div>
 
-            <div className="mt-12 p-8 bg-gradient-to-r from-[#2E7D32] to-[#00897B] rounded-2xl text-white">
+            <div className="mt-12 p-8 bg-gradient-to-r from-biobot-primary to-biobot-secondary rounded-2xl text-white">
               <p className="text-lg font-bold mb-2">
                 BioBot PhytoTech&#8482; n'est pas science-fiction
               </p>

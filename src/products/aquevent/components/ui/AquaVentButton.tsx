@@ -15,10 +15,10 @@ const sizeClasses = {
 };
 
 const variantClasses = {
-  primary: 'bg-[#8B2C5A] hover:bg-[#8B2C5A]/90 text-white shadow-lg hover:shadow-xl',
-  secondary: 'border-2 border-[#1E88E5] text-[#1E88E5] hover:bg-[#1E88E5]/10',
-  premium: 'bg-gradient-to-r from-[#8B2C5A] to-[#1E88E5] text-white shadow-lg hover:shadow-xl hover:opacity-90',
-  ghost: 'text-[#8B2C5A] hover:bg-[#8B2C5A]/10',
+  primary: 'bg-aquevent-primary hover:bg-aquevent-primary/90 text-white shadow-lg hover:shadow-xl',
+  secondary: 'border-2 border-aquevent-secondary text-aquevent-secondary hover:bg-aquevent-secondary/10',
+  premium: 'bg-gradient-to-r from-aquevent-primary to-aquevent-secondary text-white shadow-lg hover:shadow-xl hover:opacity-90',
+  ghost: 'text-aquevent-primary hover:bg-aquevent-primary/10',
 };
 
 const AquaVentButton = forwardRef<HTMLButtonElement, AquaVentButtonProps>(
@@ -27,7 +27,7 @@ const AquaVentButton = forwardRef<HTMLButtonElement, AquaVentButtonProps>(
       <button
         ref={ref}
         className={cn(
-          'inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8B2C5A] focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none',
+          'inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aquevent-primary focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none',
           sizeClasses[size],
           variantClasses[variant],
           className

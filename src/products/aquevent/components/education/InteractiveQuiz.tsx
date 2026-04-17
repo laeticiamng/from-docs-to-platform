@@ -123,7 +123,7 @@ export default function InteractiveQuiz() {
       {/* Progress */}
       <div className="h-1.5 bg-gray-200 rounded-full mb-8 overflow-hidden">
         <motion.div
-          className="h-full rounded-full bg-gradient-to-r from-[#8B2C5A] to-[#1E88E5]"
+          className="h-full rounded-full bg-gradient-to-r from-aquevent-primary to-aquevent-secondary"
           animate={{ width: `${((currentQuestion + 1) / quizQuestions.length) * 100}%` }}
         />
       </div>
@@ -139,7 +139,7 @@ export default function InteractiveQuiz() {
 
           <div className="space-y-3">
             {question.options.map((option, i) => {
-              let classes = 'border-gray-200 hover:border-[#8B2C5A]/30';
+              let classes = 'border-gray-200 hover:border-aquevent-primary/30';
               if (showExplanation) {
                 if (i === question.correct) {
                   classes = 'border-green-500 bg-green-50';
@@ -149,7 +149,7 @@ export default function InteractiveQuiz() {
                   classes = 'border-gray-200 opacity-50';
                 }
               } else if (selectedAnswer === i) {
-                classes = 'border-[#8B2C5A] bg-[#8B2C5A]/5';
+                classes = 'border-aquevent-primary bg-aquevent-primary/5';
               }
 
               return (

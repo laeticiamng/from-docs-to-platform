@@ -9,7 +9,7 @@ export default function Ecosystem() {
       <SEOHead title="Écosystème Global — PhytoTech" description="Synergie AquaVent x BioBot — Platform PhytoTech complète." path="/biobot/ecosystem" />
       <div className="pt-8">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-2">
-          <span className="bg-gradient-to-r from-[#8B2C5A] via-[#2E7D32] to-[#1E88E5] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-aquevent-primary via-biobot-primary to-aquevent-secondary bg-clip-text text-transparent">
             Integration Ecosysteme Global
           </span>
         </h1>
@@ -28,9 +28,9 @@ export default function Ecosystem() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-gradient-to-br from-[#8B2C5A]/10 to-[#8B2C5A]/5 rounded-2xl p-6 border border-[#8B2C5A]/20"
+                className="bg-gradient-to-br from-aquevent-primary/10 to-aquevent-primary/5 rounded-2xl p-6 border border-aquevent-primary/20"
               >
-                <h3 className="font-bold text-lg text-[#8B2C5A] mb-4">Production Revolutionnaire</h3>
+                <h3 className="font-bold text-lg text-aquevent-primary mb-4">Production Revolutionnaire</h3>
                 <div className="space-y-2 text-sm text-gray-600">
                   <p>&#8226; HealthBot produit AquaVent cartouches terrain</p>
                   <p>&#8226; Matieres premieres: spirulina + myrtilles optimales</p>
@@ -44,9 +44,9 @@ export default function Ecosystem() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="bg-gradient-to-br from-[#2E7D32]/10 to-[#2E7D32]/5 rounded-2xl p-6 border border-[#2E7D32]/20"
+                className="bg-gradient-to-br from-biobot-primary/10 to-biobot-primary/5 rounded-2xl p-6 border border-biobot-primary/20"
               >
-                <h3 className="font-bold text-lg text-[#2E7D32] mb-4">Data Ecosystem</h3>
+                <h3 className="font-bold text-lg text-biobot-primary mb-4">Data Ecosystem</h3>
                 <div className="space-y-2 text-sm text-gray-600">
                   <p>&#8226; Health monitoring: individual + population</p>
                   <p>&#8226; Environmental: air + water + soil quality</p>
@@ -60,9 +60,9 @@ export default function Ecosystem() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="bg-gradient-to-br from-[#1E88E5]/10 to-[#1E88E5]/5 rounded-2xl p-6 border border-[#1E88E5]/20"
+                className="bg-gradient-to-br from-aquevent-secondary/10 to-aquevent-secondary/5 rounded-2xl p-6 border border-aquevent-secondary/20"
               >
-                <h3 className="font-bold text-lg text-[#1E88E5] mb-4">Business Synergies</h3>
+                <h3 className="font-bold text-lg text-aquevent-secondary mb-4">Business Synergies</h3>
                 <div className="space-y-2 text-sm text-gray-600">
                   <p>&#8226; Revenue: AquaVent (10Md&#8364;) + BioBot (500Md&#8364;)</p>
                   <p>&#8226; Platform effects: 1+1 = 10 (exponential)</p>
@@ -147,7 +147,7 @@ export default function Ecosystem() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="bg-gradient-to-r from-[#2E7D32] to-[#00897B] rounded-2xl p-8 text-white text-center mb-8">
+            <div className="bg-gradient-to-r from-biobot-primary to-biobot-secondary rounded-2xl p-8 text-white text-center mb-8">
               <h2 className="text-2xl font-bold mb-4">Conclusion Revolutionnaire</h2>
               <p className="text-lg mb-4">
                 BioBot PhytoTech&#8482; n'est pas science-fiction — c'est l'evolution inevitable
@@ -161,7 +161,7 @@ export default function Ecosystem() {
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
                   to="/aquevent"
-                  className="px-6 py-3 rounded-full bg-white text-[#8B2C5A] font-semibold hover:bg-white/90 transition-colors"
+                  className="px-6 py-3 rounded-full bg-white text-aquevent-primary font-semibold hover:bg-white/90 transition-colors"
                 >
                   AquaVent UNLIMITED&#8482;
                 </Link>

@@ -60,7 +60,7 @@ export default function SafetyCalculator() {
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             <div className="bg-white rounded-2xl shadow-md p-6">
               <label className="text-sm font-medium text-gray-700 mb-3 block">
-                Poids (kg): <span className="font-mono font-bold text-[#8B2C5A]">{weight}</span>
+                Poids (kg): <span className="font-mono font-bold text-aquevent-primary">{weight}</span>
               </label>
               <input
                 type="range"
@@ -68,7 +68,7 @@ export default function SafetyCalculator() {
                 max={150}
                 value={weight}
                 onChange={(e) => { setWeight(Number(e.target.value)); handleCalculate(); }}
-                className="w-full accent-[#8B2C5A]"
+                className="w-full accent-aquevent-primary"
               />
               <div className="flex justify-between text-xs text-gray-400 mt-1">
                 <span>40kg</span><span>150kg</span>
@@ -77,7 +77,7 @@ export default function SafetyCalculator() {
 
             <div className="bg-white rounded-2xl shadow-md p-6">
               <label className="text-sm font-medium text-gray-700 mb-3 block">
-                Doses/jour: <span className="font-mono font-bold text-[#8B2C5A]">{dailyUsage}</span>
+                Doses/jour: <span className="font-mono font-bold text-aquevent-primary">{dailyUsage}</span>
               </label>
               <input
                 type="range"
@@ -85,17 +85,17 @@ export default function SafetyCalculator() {
                 max={200}
                 value={dailyUsage}
                 onChange={(e) => { setDailyUsage(Number(e.target.value)); handleCalculate(); }}
-                className="w-full accent-[#8B2C5A]"
+                className="w-full accent-aquevent-primary"
               />
               <div className="flex justify-between text-xs text-gray-400 mt-1">
                 <span>1</span><span>200 (extreme)</span>
               </div>
-              <p className="text-xs text-[#43A047] mt-2 font-medium">Testez meme un usage extreme</p>
+              <p className="text-xs text-aquevent-success mt-2 font-medium">Testez meme un usage extreme</p>
             </div>
 
             <div className="bg-white rounded-2xl shadow-md p-6">
               <label className="text-sm font-medium text-gray-700 mb-3 block">
-                Duree (jours): <span className="font-mono font-bold text-[#8B2C5A]">{duration}</span>
+                Duree (jours): <span className="font-mono font-bold text-aquevent-primary">{duration}</span>
               </label>
               <input
                 type="range"
@@ -103,7 +103,7 @@ export default function SafetyCalculator() {
                 max={365}
                 value={duration}
                 onChange={(e) => setDuration(Number(e.target.value))}
-                className="w-full accent-[#8B2C5A]"
+                className="w-full accent-aquevent-primary"
               />
               <div className="flex justify-between text-xs text-gray-400 mt-1">
                 <span>1 jour</span><span>365 jours</span>
@@ -129,13 +129,13 @@ export default function SafetyCalculator() {
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             {/* Spirulina */}
             <motion.div
-              className="bg-white rounded-2xl shadow-md p-6 border-t-4 border-[#1E88E5]"
+              className="bg-white rounded-2xl shadow-md p-6 border-t-4 border-aquevent-secondary"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
             >
               <div className="flex items-center justify-between mb-4">
-                <h5 className="font-bold text-[#1E88E5]">Spirulina Extract</h5>
+                <h5 className="font-bold text-aquevent-secondary">Spirulina Extract</h5>
                 <span className="text-xs px-2 py-1 rounded-full bg-green-100 text-green-700 font-bold">
                   ULTRA SAFE
                 </span>
@@ -160,13 +160,13 @@ export default function SafetyCalculator() {
 
             {/* Anthocyanes */}
             <motion.div
-              className="bg-white rounded-2xl shadow-md p-6 border-t-4 border-[#8B2C5A]"
+              className="bg-white rounded-2xl shadow-md p-6 border-t-4 border-aquevent-primary"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
               <div className="flex items-center justify-between mb-4">
-                <h5 className="font-bold text-[#8B2C5A]">Anthocyanes Myrtille</h5>
+                <h5 className="font-bold text-aquevent-primary">Anthocyanes Myrtille</h5>
                 <span className="text-xs px-2 py-1 rounded-full bg-blue-100 text-blue-700 font-bold">
                   UNLIMITED
                 </span>
@@ -222,7 +222,7 @@ export default function SafetyCalculator() {
           </div>
 
           {/* Revolutionary Message */}
-          <div className="text-center p-8 bg-gradient-to-r from-[#8B2C5A] to-[#1E88E5] rounded-2xl text-white">
+          <div className="text-center p-8 bg-gradient-to-r from-aquevent-primary to-aquevent-secondary rounded-2xl text-white">
             <h4 className="text-2xl font-bold mb-3">REVOLUTION MONDIALE</h4>
             <p className="text-lg mb-2">
               Premier produit inhalation MONDE scientifiquement valide pour usage illimite

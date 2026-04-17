@@ -72,7 +72,7 @@ export default function InvestmentDashboard() {
               onClick={() => setActiveScenario(i)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 activeScenario === i
-                  ? 'bg-[#8B2C5A] text-white shadow-md'
+                  ? 'bg-aquevent-primary text-white shadow-md'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
@@ -85,7 +85,7 @@ export default function InvestmentDashboard() {
           {years.map((year, i) => (
             <div key={year} className="bg-white rounded-xl shadow-sm p-4 text-center border border-gray-100">
               <p className="text-sm font-mono text-gray-400">{year}</p>
-              <p className="text-xl font-bold font-mono text-[#8B2C5A]">{scenarioData.revenue[i]}M&#8364;</p>
+              <p className="text-xl font-bold font-mono text-aquevent-primary">{scenarioData.revenue[i]}M&#8364;</p>
               <p className="text-xs text-gray-500">Revenue</p>
               <p className={`text-sm font-bold font-mono mt-1 ${scenarioData.ebitda[i] >= 0 ? 'text-green-600' : 'text-red-500'}`}>
                 {scenarioData.ebitda[i]}M&#8364;
@@ -181,12 +181,12 @@ export default function InvestmentDashboard() {
             return (
               <div
                 key={key}
-                className={`p-6 rounded-2xl bg-white shadow-md border-2 ${isUnlimited ? 'ring-2 ring-[#FFB300]/20' : ''}`}
+                className={`p-6 rounded-2xl bg-white shadow-md border-2 ${isUnlimited ? 'ring-2 ring-aquevent-accent/20' : ''}`}
                 style={{ borderColor: color }}
               >
                 <h5 className="font-bold text-lg mb-4" style={{ color }}>
                   {isUnlimited ? 'UNLIMITED\u2122' : key === 'wellnessDevice' ? 'Wellness' : 'Medical'}
-                  {isUnlimited && <span className="text-xs ml-2 bg-[#FFB300]/10 text-[#FFB300] px-2 py-0.5 rounded-full">STAR</span>}
+                  {isUnlimited && <span className="text-xs ml-2 bg-aquevent-accent/10 text-aquevent-accent px-2 py-0.5 rounded-full">STAR</span>}
                 </h5>
                 <div className="space-y-3">
                   {[

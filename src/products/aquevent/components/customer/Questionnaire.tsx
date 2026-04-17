@@ -94,10 +94,10 @@ export default function Questionnaire() {
         <div className="text-5xl mb-4">\uD83C\uDFAF</div>
         <h3 className="text-2xl font-bold mb-2">Votre Recommandation Personnalisee</h3>
 
-        <div className="mt-8 p-8 rounded-2xl bg-gradient-to-br from-[#8B2C5A]/5 to-[#1E88E5]/5 text-left space-y-4">
+        <div className="mt-8 p-8 rounded-2xl bg-gradient-to-br from-aquevent-primary/5 to-aquevent-secondary/5 text-left space-y-4">
           <div>
             <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Version recommandee</span>
-            <p className="text-lg font-bold text-[#FFB300]">
+            <p className="text-lg font-bold text-aquevent-accent">
               AquaVent UNLIMITED™
             </p>
           </div>
@@ -111,7 +111,7 @@ export default function Questionnaire() {
           </div>
           <div>
             <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Benefice attendu</span>
-            <p className="text-[#43A047] font-medium">{recommendation.estimatedBenefit}</p>
+            <p className="text-aquevent-success font-medium">{recommendation.estimatedBenefit}</p>
           </div>
           <div className="bg-green-50 rounded-lg p-3">
             <p className="text-sm text-green-700 font-medium">
@@ -120,7 +120,7 @@ export default function Questionnaire() {
           </div>
           <div>
             <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Budget mensuel</span>
-            <p className="text-xl font-bold font-mono text-[#8B2C5A]">{recommendation.monthlyBudget}</p>
+            <p className="text-xl font-bold font-mono text-aquevent-primary">{recommendation.monthlyBudget}</p>
           </div>
         </div>
 
@@ -175,8 +175,8 @@ export default function Questionnaire() {
                 onClick={() => handleAnswer(option.value)}
                 className={`p-5 rounded-2xl border-2 text-left transition-all hover:shadow-md ${
                   answers[step.id] === option.value
-                    ? 'border-[#8B2C5A] bg-[#8B2C5A]/5'
-                    : 'border-gray-200 hover:border-[#8B2C5A]/30'
+                    ? 'border-aquevent-primary bg-aquevent-primary/5'
+                    : 'border-gray-200 hover:border-aquevent-primary/30'
                 }`}
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}

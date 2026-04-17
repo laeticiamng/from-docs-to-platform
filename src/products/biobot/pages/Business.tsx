@@ -9,7 +9,7 @@ export default function Business() {
       <SEOHead title="Business Model — BioBot" description="Platform PhytoTech Ecosystem — secteur trillion €." path="/biobot/business" />
       <div className="pt-8">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-2">
-          <span className="bg-gradient-to-r from-[#2E7D32] to-[#00897B] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-biobot-primary to-biobot-secondary bg-clip-text text-transparent">
             Business Model Revolutionnaire
           </span>
         </h1>
@@ -31,7 +31,7 @@ export default function Business() {
                 transition={{ delay: i * 0.1 }}
                 className="bg-white rounded-2xl shadow-md p-6 border border-gray-100"
               >
-                <h3 className="font-bold text-lg text-[#2E7D32] mb-4">{stream.name}</h3>
+                <h3 className="font-bold text-lg text-biobot-primary mb-4">{stream.name}</h3>
                 <div className="space-y-2">
                   {stream.streams.map((s, j) => (
                     <div key={j} className="flex justify-between items-center text-sm py-1 border-b border-gray-50 last:border-0">
@@ -51,7 +51,7 @@ export default function Business() {
       </section>
 
       {/* Financial Projections */}
-      <section className="py-12 bg-gradient-to-r from-[#2E7D32] to-[#00897B]">
+      <section className="py-12 bg-gradient-to-r from-biobot-primary to-biobot-secondary">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold text-white text-center mb-10">Projections Financieres Revolutionnaires</h2>
           <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
@@ -146,7 +146,7 @@ export default function Business() {
               ].map((v) => (
                 <div key={v.label} className="flex justify-between items-center p-3 bg-white/10 rounded-lg">
                   <span className="text-white/70">{v.label}</span>
-                  <span className="font-mono font-bold text-[#FFB300] text-xl">{v.value}</span>
+                  <span className="font-mono font-bold text-aquevent-accent text-xl">{v.value}</span>
                 </div>
               ))}
             </div>

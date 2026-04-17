@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Shield, Inbox, ShoppingCart, AlertTriangle, Mail } from "lucide-react";
+import { ArrowLeft, Shield, Inbox, ShoppingCart, AlertTriangle, Mail, FileText } from "lucide-react";
 import EmailDeliveryPanel from "@/components/admin/EmailDeliveryPanel";
+import ChangelogTimeline from "@/components/admin/ChangelogTimeline";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -127,6 +128,9 @@ const AdminAudit = () => {
             <TabsTrigger value="emails" className="gap-2">
               <Mail className="w-4 h-4" /> Email Delivery
             </TabsTrigger>
+            <TabsTrigger value="changelog" className="gap-2">
+              <FileText className="w-4 h-4" /> Changelog
+            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="ratelimits" className="mt-4">
@@ -241,6 +245,10 @@ const AdminAudit = () => {
 
           <TabsContent value="emails" className="mt-4">
             <EmailDeliveryPanel />
+          </TabsContent>
+
+          <TabsContent value="changelog" className="mt-4">
+            <ChangelogTimeline />
           </TabsContent>
         </Tabs>
       </div>

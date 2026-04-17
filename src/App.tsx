@@ -19,6 +19,9 @@ import Afrique from "./pages/Afrique.tsx";
 import APropos from "./pages/APropos.tsx";
 import Precommande from "./pages/Precommande.tsx";
 import Contact from "./pages/Contact.tsx";
+import Faq from "./pages/Faq.tsx";
+import Pricing from "./pages/Pricing.tsx";
+import Features from "./pages/Features.tsx";
 import MentionsLegales from "./pages/MentionsLegales.tsx";
 import CGV from "./pages/CGV.tsx";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite.tsx";
@@ -99,6 +102,9 @@ const App = () => (
               <Route path="/a-propos" element={<APropos />} />
               <Route path="/precommande" element={<Precommande />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/faq" element={<Faq />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/features" element={<Features />} />
               <Route path="/mentions-legales" element={<MentionsLegales />} />
               <Route path="/cgv" element={<CGV />} />
               <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />

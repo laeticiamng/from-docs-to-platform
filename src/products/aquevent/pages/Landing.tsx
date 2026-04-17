@@ -237,60 +237,67 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Competition Comparison */}
+      {/* Positionnement vs cigarette électronique */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">AquaVent vs Le Monde</h2>
+          <h2 className="text-4xl font-bold text-center mb-4">Positionnement</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            AquaVent ne se compare pas aux dispositifs médicaux ni aux thérapies de sevrage validées.
+            Voici ce qui distingue son approche d'une cigarette électronique classique.
+          </p>
 
           <div className="max-w-4xl mx-auto overflow-x-auto">
             <table className="w-full">
               <thead>
                 <tr className="border-b-2 border-gray-200">
-                  <th className="text-left py-4 px-4 text-sm font-semibold text-gray-500">Categorie</th>
-                  <th className="text-center py-4 px-4 text-sm font-semibold text-gray-500">Concurrents</th>
-                  <th className="text-center py-4 px-4 text-sm font-semibold text-[#8B2C5A]">AquaVent UNLIMITED™</th>
+                  <th className="text-left py-4 px-4 text-sm font-semibold text-gray-500">Critère</th>
+                  <th className="text-center py-4 px-4 text-sm font-semibold text-gray-500">Cig. électronique classique</th>
+                  <th className="text-center py-4 px-4 text-sm font-semibold text-[#8B2C5A]">AquaVent (projet)</th>
                 </tr>
               </thead>
               <tbody>
                 {[
                   {
-                    category: 'Usage Quotidien',
-                    competitors: 'Limite (restrictions doses)',
-                    aquevent: 'ILLIMITE (premiere mondiale)',
+                    category: 'Nicotine',
+                    competitors: 'Présente (selon e-liquide)',
+                    aquevent: 'Aucune',
                   },
                   {
-                    category: 'Composants',
-                    competitors: 'Chimiques (PG/VG, conservateurs)',
-                    aquevent: '100% Naturels valides',
+                    category: 'Solvant principal',
+                    competitors: 'Propylène glycol / glycérine',
+                    aquevent: 'Eau filtrée',
                   },
                   {
-                    category: 'Securite',
-                    competitors: 'Warnings, limitations',
-                    aquevent: 'Securite absolue toute dose',
+                    category: 'Ingrédients actifs',
+                    competitors: 'Arômes, additifs',
+                    aquevent: 'Extraits végétaux (spiruline, anthocyanes, phycocyanine)',
                   },
                   {
-                    category: 'Benefices sante',
-                    competitors: 'Aucun / dommages documentes',
-                    aquevent: 'Prouves scientifiquement',
+                    category: 'Statut réglementaire',
+                    competitors: 'Produit du tabac (TPD)',
+                    aquevent: 'En cours de qualification',
                   },
                   {
-                    category: 'Validation',
-                    competitors: 'Partielle / contestee',
-                    aquevent: '15+ etudes inhalation',
+                    category: 'Statut produit',
+                    competitors: 'Commercialisé',
+                    aquevent: 'Phase pré-commerciale',
                   },
                 ].map((row, i) => (
                   <tr key={row.category} className={i % 2 === 0 ? 'bg-white' : ''}>
                     <td className="py-4 px-4 text-sm font-medium text-gray-700">{row.category}</td>
                     <td className="py-4 px-4 text-center">
-                      <span className="text-sm text-red-500">{row.competitors}</span>
+                      <span className="text-sm text-gray-600">{row.competitors}</span>
                     </td>
                     <td className="py-4 px-4 text-center">
-                      <span className="text-sm font-bold text-green-600">{row.aquevent}</span>
+                      <span className="text-sm font-bold text-[#8B2C5A]">{row.aquevent}</span>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
+            <p className="text-xs text-gray-400 mt-4 text-center">
+              Comparatif indicatif. AquaVent ne prétend pas être un substitut nicotinique ni un dispositif médical.
+            </p>
           </div>
         </div>
       </section>

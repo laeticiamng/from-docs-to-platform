@@ -46,26 +46,6 @@ const formulation = [
   },
 ];
 
-const testimonials = [
-  {
-    name: 'Sophie L.',
-    role: 'Ex-fumeuse, 38 ans',
-    text: "J'ai arrete de fumer en 6 semaines avec AquaVent. Le geste est la, mais sans la dependance. C'est revolutionnaire.",
-    rating: 5,
-  },
-  {
-    name: 'Dr. Thomas R.',
-    role: 'Pneumologue',
-    text: "Pour la premiere fois, je vois une alternative vraiment naturelle et scientifiquement validee au vapotage nicotine. L'usage illimite change tout.",
-    rating: 5,
-  },
-  {
-    name: 'Marc D.',
-    role: 'Utilisateur Wellness, 45 ans',
-    text: "J'utilise AquaVent quotidiennement sans aucune restriction. La qualite de ma respiration s'est nettement amelioree.",
-    rating: 5,
-  },
-];
 
 export default function Landing() {
   return (
@@ -338,33 +318,20 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Validation scientifique en cours */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">Ils en parlent</h2>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {testimonials.map((t, i) => (
-              <motion.div
-                key={t.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="p-6 rounded-2xl bg-white shadow-md border border-gray-100"
-              >
-                <div className="flex gap-0.5 mb-4">
-                  {Array.from({ length: t.rating }).map((_, j) => (
-                    <span key={j} className="text-yellow-400">&#9733;</span>
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-4 italic">"{t.text}"</p>
-                <div>
-                  <p className="font-bold text-sm">{t.name}</p>
-                  <p className="text-xs text-gray-400">{t.role}</p>
-                </div>
-              </motion.div>
-            ))}
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-6">Validation en cours</h2>
+            <p className="text-lg text-gray-600 mb-4">
+              AquaVent UNLIMITED™ est actuellement en phase de validation pré-commerciale.
+              Nous publierons les retours utilisateurs et les avis cliniques au fur et à mesure
+              de leur obtention.
+            </p>
+            <p className="text-sm text-gray-500">
+              Les inscriptions sur la liste d'attente nous permettent d'identifier
+              les premiers beta-testeurs et professionnels de santé partenaires.
+            </p>
           </div>
         </div>
       </section>
@@ -376,23 +343,10 @@ export default function Landing() {
             <h2 className="text-4xl font-bold mb-4">
               Rejoignez La Revolution
             </h2>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 mb-10">
               Soyez parmi les premiers a respirer l'avenir avec AquaVent PhytoTech UNLIMITED™.
+              Inscription gratuite, sans engagement.
             </p>
-            <div className="flex justify-center gap-8 mb-10">
-              <div className="text-center">
-                <p className="text-2xl font-bold text-[#8B2C5A] font-mono">2,547</p>
-                <p className="text-xs text-gray-500">Early adopters</p>
-              </div>
-              <div className="text-center">
-                <p className="text-2xl font-bold text-[#1E88E5] font-mono">156</p>
-                <p className="text-xs text-gray-500">Medecins interesses</p>
-              </div>
-              <div className="text-center">
-                <p className="text-2xl font-bold text-[#43A047] font-mono">89%</p>
-                <p className="text-xs text-gray-500">Recommandation</p>
-              </div>
-            </div>
             <WaitlistSignup />
           </div>
         </div>

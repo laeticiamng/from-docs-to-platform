@@ -7,7 +7,11 @@ const corsHeaders = {
 
 const RATE_WINDOW_MIN = 60;
 const RATE_MAX = 5;
-const PACKS = new Set(["decouverte", "habitat", "autonomie", "autre"]);
+const PACKS = new Set([
+  "decouverte", "habitat", "autonomie", "autre",
+  // AquaVent waitlist (interest-based)
+  "aquevent-wellness", "aquevent-medical", "aquevent-investor", "aquevent-beta", "aquevent-autre",
+]);
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
@@ -69,6 +73,11 @@ Deno.serve(async (req) => {
       habitat: "Pack Habitat",
       autonomie: "Pack Autonomie",
       autre: "Configuration sur mesure",
+      "aquevent-wellness": "AquaVent — Bien-être & Relaxation",
+      "aquevent-medical": "AquaVent — Sevrage Tabagique",
+      "aquevent-investor": "AquaVent — Investisseur",
+      "aquevent-beta": "AquaVent — Beta Testeur",
+      "aquevent-autre": "AquaVent — Autre intérêt",
     };
     const packLabel = PACK_LABELS[pack] ?? pack;
 

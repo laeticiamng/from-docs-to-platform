@@ -355,6 +355,12 @@ const Domaines = () => (
           <p className="text-center text-xs text-muted-foreground mt-4">
             ● = Application directe identifiée &nbsp; ◐ = Applicable avec adaptation &nbsp; · = Pas d'application identifiée
           </p>
+          <p className="text-center text-xs text-muted-foreground mt-3">
+            Hypothèses, sources et limites des estimations chiffrées :{" "}
+            <a href="/methodologie" className="underline text-primary hover:text-primary/80">
+              voir /methodologie
+            </a>.
+          </p>
         </div>
       </section>
       <CommentSection pageSlug="domaines" />

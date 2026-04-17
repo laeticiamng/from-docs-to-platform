@@ -8,36 +8,39 @@ import {
   Container,
   Head,
   Heading,
+  Hr,
   Html,
+  Link,
   Preview,
   Text,
 } from 'npm:@react-email/components@0.0.22'
 
 interface RecoveryEmailProps {
   siteName: string
+  siteUrl?: string
   confirmationUrl: string
 }
 
-export const RecoveryEmail = ({
-  siteName,
-  confirmationUrl,
-}: RecoveryEmailProps) => (
-  <Html lang="en" dir="ltr">
+export const RecoveryEmail = ({ siteName, siteUrl, confirmationUrl }: RecoveryEmailProps) => (
+  <Html lang="fr" dir="ltr">
     <Head />
-    <Preview>Reset your password for {siteName}</Preview>
+    <Preview>Réinitialisez votre mot de passe PHYTOTECH</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Heading style={h1}>Reset your password</Heading>
+        <Heading style={brand}>PHYTOTECH</Heading>
+        <Hr style={hr} />
+        <Heading style={h1}>Réinitialisez votre mot de passe</Heading>
         <Text style={text}>
-          We received a request to reset your password for {siteName}. Click
-          the button below to choose a new password.
+          Nous avons reçu une demande de réinitialisation pour votre compte {siteName}. Cliquez ci-dessous pour choisir un nouveau mot de passe.
         </Text>
-        <Button style={button} href={confirmationUrl}>
-          Reset Password
-        </Button>
+        <Button style={button} href={confirmationUrl}>Choisir un nouveau mot de passe</Button>
+        <Text style={muted}>
+          Si vous n'êtes pas à l'origine de cette demande, ignorez cet email — votre mot de passe restera inchangé.
+        </Text>
+        <Hr style={hr} />
         <Text style={footer}>
-          If you didn't request a password reset, you can safely ignore this
-          email. Your password will not be changed.
+          PHYTOTECH — édité par EmotionsCare SASU<br />
+          {siteUrl ? <Link href={siteUrl} style={footerLink}>{siteName}</Link> : siteName}
         </Text>
       </Container>
     </Body>
@@ -46,26 +49,13 @@ export const RecoveryEmail = ({
 
 export default RecoveryEmail
 
-const main = { backgroundColor: '#ffffff', fontFamily: 'Arial, sans-serif' }
-const container = { padding: '20px 25px' }
-const h1 = {
-  fontSize: '22px',
-  fontWeight: 'bold' as const,
-  color: '#000000',
-  margin: '0 0 20px',
-}
-const text = {
-  fontSize: '14px',
-  color: '#55575d',
-  lineHeight: '1.5',
-  margin: '0 0 25px',
-}
-const button = {
-  backgroundColor: '#000000',
-  color: '#ffffff',
-  fontSize: '14px',
-  borderRadius: '8px',
-  padding: '12px 20px',
-  textDecoration: 'none',
-}
-const footer = { fontSize: '12px', color: '#999999', margin: '30px 0 0' }
+const main = { backgroundColor: '#ffffff', fontFamily: "'DM Sans', Arial, sans-serif" }
+const container = { padding: '32px 28px', maxWidth: '560px' }
+const brand = { fontFamily: "'Instrument Serif', Georgia, serif", fontSize: '26px', fontWeight: 'normal' as const, color: '#16a34a', letterSpacing: '0.05em', margin: '0 0 8px' }
+const h1 = { fontFamily: "'Instrument Serif', Georgia, serif", fontSize: '24px', fontWeight: 'normal' as const, color: '#14532d', margin: '0 0 20px' }
+const text = { fontSize: '15px', color: '#374151', lineHeight: '1.6', margin: '0 0 16px' }
+const muted = { fontSize: '13px', color: '#6b7280', lineHeight: '1.5', margin: '24px 0 0' }
+const button = { backgroundColor: '#16a34a', color: '#ffffff', fontSize: '15px', fontWeight: 'bold' as const, borderRadius: '12px', padding: '14px 28px', textDecoration: 'none', display: 'inline-block', margin: '8px 0 16px' }
+const hr = { borderColor: '#e5e7eb', margin: '24px 0' }
+const footer = { fontSize: '12px', color: '#9ca3af', lineHeight: '1.6', margin: '0' }
+const footerLink = { color: '#16a34a', textDecoration: 'none' }

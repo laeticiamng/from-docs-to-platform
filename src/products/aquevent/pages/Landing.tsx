@@ -356,11 +356,11 @@ export default function Landing() {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-4">
-              Rejoignez La Revolution
+              Rejoignez la liste d'attente
             </h2>
             <p className="text-gray-600 mb-10">
-              Soyez parmi les premiers a respirer l'avenir avec AquaVent PhytoTech UNLIMITED™.
-              Inscription gratuite, sans engagement.
+              Soyez informé en priorité de l'avancée du projet AquaVent et des prochaines phases
+              de test. Inscription gratuite, sans engagement, désinscription à tout moment.
             </p>
             <WaitlistSignup />
           </div>

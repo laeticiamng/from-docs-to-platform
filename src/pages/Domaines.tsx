@@ -159,7 +159,7 @@ const domains: Domain[] = [
     subtitle: "La première révolution tech dont les ingrédients sont gratuits et partout.",
     apps: [
       { tag: "ÉNERGIE", title: "Feuilles artificielles pour H₂ en zone rurale", desc: "Conçu pour fonctionner dans l'eau impure — pensé pour les pays en développement." },
-      { tag: "EAU", title: "Purification d'eau par PMFC + algues", desc: "Biofiltres algaux éliminent 94% de la DBO sans électricité." },
+      { tag: "EAU", title: "Purification d'eau par PMFC + algues", desc: "Biofiltres algaux à fort taux d'abattement de la DBO sans électricité (estimation indicative — voir /methodologie)." },
       { tag: "SANTÉ", title: "AquaMR Mobile — imagerie portable", desc: "IRM bas champ + BBCA betterave + pile H₂. Station d'imagerie solaire." },
       { tag: "ÉCLAIRAGE", title: "Éclairage bioluminescent sans réseau", desc: "Capsules bactériennes pour villages sans électricité." },
       { tag: "ALIMENTATION", title: "Fermes à spiruline", desc: "Protéine complète, cultivable partout, indépendante du sol et du climat." },
@@ -171,7 +171,7 @@ const domains: Domain[] = [
     title: "Tourisme & Hôtellerie",
     subtitle: "L'éco-luxe vivant.",
     apps: [
-      { tag: "EAU", title: "Douches cycliques dans chaque chambre", desc: "Économie de 70-90% d'eau par douche × centaines de chambres." },
+      { tag: "EAU", title: "Douches cycliques dans chaque chambre", desc: "Estimation indicative ~70-90 % d'eau économisée par douche, à multiplier par le nombre de chambres (voir /methodologie)." },
       { tag: "AMBIANCE", title: "Jardins et couloirs bioluminescents", desc: "Éclairage vivant — zéro pollution lumineuse, expérience immersive." },
       { tag: "FAÇADE", title: "Spa-resort à façade algale", desc: "Murs photobioréacteurs — purification air, régulation thermique." },
       { tag: "PACKAGING", title: "Amenities en bioplastique algal", desc: "Flacons, emballages, couverts en PHA compostable." },

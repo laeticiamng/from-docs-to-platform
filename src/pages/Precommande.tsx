@@ -26,6 +26,7 @@ const Precommande = () => {
     pack: "",
     message: "",
   });
+  const [website, setWebsite] = useState(""); // honeypot anti-bot
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,7 +43,7 @@ const Precommande = () => {
       setLoading(false);
       return;
     }
-    const { data, error } = await supabase.functions.invoke("submit-preorder", { body: trimmed });
+    const { data, error } = await supabase.functions.invoke("submit-preorder", { body: { ...trimmed, website } });
 
     if (error || (data as { error?: string })?.error) {
       const msg = (data as { error?: string })?.error ?? "Erreur lors de l'envoi. Réessayez.";
@@ -77,6 +78,11 @@ const Precommande = () => {
         <section className="py-16">
           <div className="container mx-auto px-4 max-w-lg">
             <form onSubmit={handleSubmit} className="space-y-6 bg-card border rounded-2xl p-8 shadow-sm">
+              {/* Honeypot anti-bot : ne doit jamais être rempli par un humain */}
+              <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", width: "1px", height: "1px", overflow: "hidden" }}>
+                <label htmlFor="p-website">Website (laissez vide)</label>
+                <input id="p-website" type="text" name="website" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
+              </div>
               <div className="space-y-2">
                 <Label htmlFor="name">Nom complet</Label>
                 <Input

@@ -144,6 +144,12 @@ export default function AquaVentLayout({ children }: { children: React.ReactNode
               <p className="text-xs text-muted-foreground/80 mt-2">
                 Aucune allégation thérapeutique. Validation en cours.
               </p>
+              <Link
+                to="/aquevent/mentions"
+                className="inline-block text-xs text-aquevent-primary hover:underline mt-2 font-medium"
+              >
+                → Statut du projet & mentions
+              </Link>
             </div>
 
             <div>

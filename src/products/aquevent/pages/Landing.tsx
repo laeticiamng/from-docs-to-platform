@@ -9,39 +9,40 @@ import SEOHead from '@/components/SEOHead';
 import { Infinity as InfinityIcon, Leaf, Shield, Rocket } from 'lucide-react';
 
 const revolutionaryClaims: { icon: React.ReactNode; title: string; subtitle: string }[] = [
-  { icon: <InfinityIcon className="w-6 h-6" />, title: 'Usage Illimite', subtitle: 'Premiere mondiale' },
-  { icon: <Leaf className="w-6 h-6" />, title: '100% Naturel', subtitle: 'Valide scientifiquement' },
-  { icon: <Shield className="w-6 h-6" />, title: 'Securite Absolue', subtitle: 'Zero toxicite' },
-  { icon: <Rocket className="w-6 h-6" />, title: 'Innovation Breakthrough', subtitle: 'PhytoTech revolution' },
+  { icon: <InfinityIcon className="w-6 h-6" />, title: 'Sans cartouche', subtitle: 'Conception sans dose limite imposée' },
+  { icon: <Leaf className="w-6 h-6" />, title: 'Ingrédients végétaux', subtitle: 'Spiruline, anthocyanes, phycocyanine' },
+  { icon: <Shield className="w-6 h-6" />, title: 'Sans nicotine', subtitle: 'Ni propylène glycol, ni glycérine végétale' },
+  { icon: <Rocket className="w-6 h-6" />, title: 'Phase pré-commerciale', subtitle: 'Inscription liste d\'attente ouverte' },
 ];
 
+// Indicateurs internes — non audités, présentés comme estimations.
 const stats = [
-  { value: '28M', label: 'Marche addressable Europe' },
-  { value: '900M\u20AC', label: 'Revenue projection An 5' },
-  { value: '0%', label: 'Toxicite confirmee' },
-  { value: '15+', label: 'Etudes inhalation validees' },
+  { value: 'Pré-série', label: 'Phase actuelle du produit' },
+  { value: 'EU', label: 'Marché cible initial' },
+  { value: 'Sans nicotine', label: 'Composition' },
+  { value: 'En cours', label: 'Validation scientifique' },
 ];
 
 const formulation = [
   {
-    name: 'Spirulina Extract',
-    concentration: '1.2mg/ml',
-    safety: 'Marge securite: 2500x sous seuil toxique',
-    benefits: 'Detox metaux lourds - Immunite respiratoire',
+    name: 'Extrait de spiruline',
+    concentration: '~1.2 mg/ml',
+    safety: 'Spiruline reconnue comme aliment (EFSA, ANSES). Tolérance par voie inhalée à confirmer par nos études.',
+    benefits: 'Source de protéines, fer et antioxydants par voie orale.',
     color: '#1E88E5',
   },
   {
-    name: 'Anthocyanes Myrtille',
-    concentration: '2.5mg/ml',
-    safety: "EFSA: 'No safety concern any level'",
-    benefits: 'Antioxydant ultra-puissant - Conservation naturelle',
+    name: 'Anthocyanes (myrtille)',
+    concentration: '~2.5 mg/ml',
+    safety: "Polyphénols largement consommés dans l'alimentation. Données d'inhalation spécifiques limitées.",
+    benefits: 'Activité antioxydante documentée par voie orale.',
     color: '#8B2C5A',
   },
   {
     name: 'Phycocyanine',
-    concentration: '0.8mg/ml',
-    safety: '20+ ans usage sans incident',
-    benefits: 'Performance respiratoire - Anti-inflammatoire',
+    concentration: '~0.8 mg/ml',
+    safety: 'Pigment de spiruline, utilisé comme colorant alimentaire. Profil inhalation en cours d\'évaluation interne.',
+    benefits: 'Pigment bleu naturel, antioxydant étudié par voie orale.',
     color: '#7B1FA2',
   },
 ];

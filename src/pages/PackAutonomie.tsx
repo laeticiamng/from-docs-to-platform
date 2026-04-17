@@ -77,8 +77,8 @@ const tiers = [
       "Panneau mural microalgues (60×90 cm, salon ou cuisine)",
       "Le panneau capte le CO₂ intérieur → rejette de l'O₂",
       "La biomasse algale alimente le digesteur (boucle fermée)",
-      "Économie eau : ~54 000 L/an pour un couple",
-      "Économie facture eau : ~150-250€/an",
+      "Économie eau estimée : ~35 000-45 000 L/an pour un couple [1]",
+      "Économie facture eau estimée : ~150-250€/an [1]",
     ],
   },
 ];
@@ -105,7 +105,7 @@ const readiness = [
 const profiles = [
   { icon: <Sprout className="w-10 h-10" />, title: "Le Curieux", desc: "Veut comprendre et commencer. Achète Le Pot Vivant (49€). Alimente une LED et un capteur.", price: "49€" },
   { icon: <Home className="w-10 h-10" />, title: "L'Éco-Conscient", desc: "Veut réduire sa facture et son impact. Achète le Module Maison (1 490€). Économise l'eau, purifie l'air.", price: "1 490€" },
-  { icon: <Zap className="w-10 h-10" />, title: "L'Autonomiste", desc: "Veut quitter EDF. Achète le Pack Autonomie Totale (9 000€). ROI en 4,6 ans. Zéro facture ensuite.", price: "9 000€" },
+  { icon: <Zap className="w-10 h-10" />, title: "L'Autonomiste", desc: "Vise l'autonomie énergétique progressive. Pack Autonomie Totale (~9 000€, projection). ROI estimé ~4-6 ans selon usage et hypothèses.", price: "~9 000€" },
   { icon: <Globe className="w-10 h-10" />, title: "Le Bâtisseur", desc: "Veut équiper un village. Achète l'Autonomie Village (12 000€). Éclairage, eau, nourriture pour 50 personnes.", price: "12 000€" },
 ];
 
@@ -113,7 +113,7 @@ const PackAutonomie = () => (
   <div className="min-h-screen">
     <Navbar />
     <main>
-      <SEOHead title="Pack Autonomie Totale — PhytoTech" description="Vivre 100% PhytoTech dans un appartement parisien. ~9 000€, ROI en 4,6 ans. Les vrais chiffres, la vraie stratégie." path="/pack-autonomie" />
+      <SEOHead title="Pack Autonomie Totale — PhytoTech" description="Vivre 100% PhytoTech dans un appartement parisien. Coût estimé ~9 000€, ROI projeté ~4-6 ans. Chiffres indicatifs basés sur la littérature scientifique." path="/pack-autonomie" />
       {/* Hero */}
       <section className="bg-foreground text-background py-20">
         <div className="container mx-auto px-4 text-center space-y-6 max-w-3xl">
@@ -124,7 +124,10 @@ const PackAutonomie = () => (
             Peut-on vivre <span className="text-primary italic">100% PhytoTech</span> dans un appartement à Paris ?
           </h1>
           <p className="text-lg opacity-70">
-            La réponse honnête, les vrais chiffres, et exactement ce qu'il faut pour y arriver.
+            La réponse honnête, les ordres de grandeur, et le chemin technique pour y arriver.
+          </p>
+          <p className="text-xs opacity-60 max-w-2xl mx-auto">
+            Tous les chiffres affichés sur cette page sont des <strong>estimations indicatives</strong> issues de la littérature scientifique et de calculs internes. Le système intégré n'est pas encore commercialisé (voir tableau de maturité plus bas).
           </p>
         </div>
       </section>
@@ -184,7 +187,7 @@ const PackAutonomie = () => (
                 <AlertTriangle className="w-5 h-5 inline mr-1" /> Soyons honnêtes — le problème de puissance
               </h3>
               <p className="text-sm text-muted-foreground">
-                Un pot de fleurs PMFC produit ~23 mW/m². Pour produire les 6 600 kWh/an, il faudrait <strong className="text-foreground">32 000 m²</strong> — soit 3,2 hectares. Trois terrains de foot. Les pots seuls ne suffisent pas. Point.
+                Un pot PMFC produit typiquement <strong className="text-foreground">~10-80 mW/m²</strong> en conditions réelles, l'état de l'art en laboratoire atteignant ~440 mW/m² [2]. Même avec une moyenne optimiste de 23 mW/m², couvrir 6 600 kWh/an demanderait plusieurs milliers de m² de pots. <strong className="text-foreground">Les pots seuls ne suffisent pas</strong> : c'est pourquoi le pack mixe PMFC, biogaz d'algues, hydrogène et solaire thermique.
               </p>
             </CardContent>
           </Card>
@@ -367,10 +370,10 @@ const PackAutonomie = () => (
                 </TableHeader>
                 <TableBody>
                   {[
-                    ["Électricité (plus d'EDF)", "~1 200 €", "Facture moyenne française T3"],
-                    ["Gaz / cuisson", "~400 €", "Remplacé par H₂ biologique"],
-                    ["Eau", "~200 €", "Douche cyclique : -90% consommation"],
-                    ["Spiruline produite", "~150 €", "Spiruline auto-produite dans le PBR"],
+                    ["Électricité", "~1 200 €", "Ordre de grandeur facture moyenne foyer FR [3]"],
+                    ["Gaz / cuisson", "~400 €", "Hypothèse : remplacement par H₂ biologique"],
+                    ["Eau", "~150-250 €", "Hypothèse douche cyclique [1]"],
+                    ["Spiruline", "~100-150 €", "Production estimative dans le PBR"],
                   ].map(([a, b, c]) => (
                     <TableRow key={a}>
                       <TableCell className="text-sm font-semibold">{a}</TableCell>
@@ -379,17 +382,38 @@ const PackAutonomie = () => (
                     </TableRow>
                   ))}
                   <TableRow className="bg-primary/10 font-bold">
-                    <TableCell>Total économies/an</TableCell>
-                    <TableCell className="text-primary font-mono">~1 950 €</TableCell>
-                    <TableCell className="text-primary">ROI en 4,6 ans</TableCell>
+                    <TableCell>Économies estimées/an</TableCell>
+                    <TableCell className="text-primary font-mono">~1 850-2 000 €</TableCell>
+                    <TableCell className="text-primary">ROI projeté ~4-6 ans</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
             </CardContent>
           </Card>
           <p className="text-sm text-muted-foreground mt-4 text-center">
-            Après 4,6 ans, l'énergie est gratuite. Pas de hausse de tarif. Pas de compteur Linky. Pas d'abonnement.
+            <strong>Projection sous hypothèses</strong> : système intégré non encore commercialisé, hypothèses de rendement basées sur les composants individuels existants (TRL 6-8 pour plusieurs briques, voir tableau de maturité). Les économies réelles dépendront du tarif énergie au moment de la commercialisation, du climat et du profil d'usage.
           </p>
+        </div>
+      </section>
+
+      {/* Sources & méthodologie */}
+      <section className="py-12 border-t">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-lg font-semibold text-foreground mb-4">Sources & méthodologie</h2>
+          <ol className="text-xs text-muted-foreground space-y-2 list-decimal list-inside">
+            <li>
+              <strong className="text-foreground">[1] Consommation eau couple France</strong> : ~100-120 m³/an (≈300 L/jour), part hygiène ~40%. Une douche cyclique type ILYA recycle l'eau de la douche pour atteindre une réduction significative de la consommation. Sources : Centre d'information sur l'eau, espace-cocon.com, ilya-tech.fr. L'estimation 35-45 000 L/an correspond à une réduction d'environ 80-90 % sur la part douche d'un couple, à conditions d'usage similaires.
+            </li>
+            <li>
+              <strong className="text-foreground">[2] Densité de puissance PMFC</strong> : Les Plant Microbial Fuel Cells produisent typiquement 10 à 80 mW/m² en conditions réelles. L'état de l'art en laboratoire atteint ~440 mW/m² (Helder et al., 2012, <em>Biotechnology for Biofuels</em>). Plant-e (Pays-Bas) commercialise des prototypes basés sur ce principe.
+            </li>
+            <li>
+              <strong className="text-foreground">[3] Facture électricité moyenne foyer français</strong> : ~1 200 €/an pour un foyer de 2 personnes au tarif réglementé EDF (option Base, 6 kVA). Sources : EDF, picbleu.fr, jechange.fr. Variable selon zone climatique et type de chauffage.
+            </li>
+            <li>
+              <strong className="text-foreground">Maturité technologique</strong> : voir tableau "Ce qui existe déjà vs ce qui arrive" plus haut. Plusieurs briques (batteries quinone, biogaz d'algues domestique, biofiltre douche) sont encore au stade prototype (TRL 6-8). Les chiffres présentés sont donc des <strong>projections</strong>, pas des engagements de résultat.
+            </li>
+          </ol>
         </div>
       </section>
 

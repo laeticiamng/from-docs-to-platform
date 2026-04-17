@@ -19,6 +19,8 @@ const Footer = () => (
           <div className="space-y-2">
             <h4 className="text-sm font-mono font-semibold mb-3">Navigation</h4>
             <Link to="/" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Accueil</Link>
+            <Link to="/features" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Fonctionnalités</Link>
+            <Link to="/pricing" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Tarifs</Link>
             <Link to="/pack-autonomie" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Autonomie Totale</Link>
             <Link to="/afrique" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Afrique & Territoires</Link>
             <Link to="/domaines" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Domaines</Link>
@@ -32,7 +34,8 @@ const Footer = () => (
             <Link to="/platform" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Toutes les plateformes</Link>
           </div>
           <div className="space-y-2">
-            <h4 className="text-sm font-mono font-semibold mb-3">Contact & Légal</h4>
+            <h4 className="text-sm font-mono font-semibold mb-3">Aide & Légal</h4>
+            <Link to="/faq" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">FAQ</Link>
             <Link to="/contact" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Nous contacter</Link>
             <a href="mailto:contact@emotionscare.fr" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">contact@emotionscare.fr</a>
             <Link to="/mentions-legales" className="block text-sm opacity-70 hover:opacity-100 transition-opacity">Mentions légales</Link>

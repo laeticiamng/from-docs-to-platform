@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { hasConsent } from "@/lib/consent";
+import { capturePostHog } from "@/lib/posthog";
 
 const getSessionId = (): string => {
   if (typeof window === "undefined") return "ssr";
@@ -40,6 +41,8 @@ export const useTracking = (category = "site") => {
           page_path: typeof window !== "undefined" ? window.location.pathname : null,
           user_agent: typeof navigator !== "undefined" ? navigator.userAgent : null,
         });
+        // Mirror vers PostHog (no-op si pas configuré ou pas de consentement)
+        capturePostHog(eventName, { category, ...properties });
       } catch (err) {
         if (import.meta.env.DEV) console.warn("[Tracking] insert failed", err);
       }

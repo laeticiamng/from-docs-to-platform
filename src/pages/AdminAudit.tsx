@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Shield, Inbox, ShoppingCart, AlertTriangle, Mail } from "lucide-react";
+import { ArrowLeft, Shield, Inbox, ShoppingCart, AlertTriangle, Mail, FileText, ExternalLink, BarChart3 } from "lucide-react";
 import EmailDeliveryPanel from "@/components/admin/EmailDeliveryPanel";
+import ChangelogTimeline from "@/components/admin/ChangelogTimeline";
+import { isPostHogConfigured } from "@/lib/posthog";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -85,11 +87,20 @@ const AdminAudit = () => {
             </h1>
             <p className="text-sm text-muted-foreground">Surveillance opérationnelle — accès admin uniquement</p>
           </div>
-          {suspicious.length > 0 && (
-            <Badge variant="destructive" className="gap-1">
-              <AlertTriangle className="w-3 h-3" /> {suspicious.length} alerte(s) abus
-            </Badge>
-          )}
+          <div className="flex items-center gap-2 flex-wrap">
+            {isPostHogConfigured() && (
+              <Button variant="outline" size="sm" asChild>
+                <a href="https://eu.posthog.com" target="_blank" rel="noopener noreferrer">
+                  <BarChart3 className="w-4 h-4 mr-1.5" /> PostHog <ExternalLink className="w-3 h-3 ml-1" />
+                </a>
+              </Button>
+            )}
+            {suspicious.length > 0 && (
+              <Badge variant="destructive" className="gap-1">
+                <AlertTriangle className="w-3 h-3" /> {suspicious.length} alerte(s) abus
+              </Badge>
+            )}
+          </div>
         </div>
 
         {suspicious.length > 0 && (
@@ -126,6 +137,9 @@ const AdminAudit = () => {
             </TabsTrigger>
             <TabsTrigger value="emails" className="gap-2">
               <Mail className="w-4 h-4" /> Email Delivery
+            </TabsTrigger>
+            <TabsTrigger value="changelog" className="gap-2">
+              <FileText className="w-4 h-4" /> Changelog
             </TabsTrigger>
           </TabsList>
 
@@ -241,6 +255,10 @@ const AdminAudit = () => {
 
           <TabsContent value="emails" className="mt-4">
             <EmailDeliveryPanel />
+          </TabsContent>
+
+          <TabsContent value="changelog" className="mt-4">
+            <ChangelogTimeline />
           </TabsContent>
         </Tabs>
       </div>

@@ -59,12 +59,12 @@ const AuthDialog = () => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline" size="sm" className="gap-2 rounded-full font-mono text-xs">
+        <Button variant="outline" size="sm" className="gap-2 rounded-full font-mono text-xs" data-testid="auth-open">
           <LogIn className="h-3.5 w-3.5" />
           Connexion
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md" data-testid="auth-dialog">
         <DialogHeader>
           <DialogTitle className="font-mono">
             {isSignUp ? "Créer un compte" : "Se connecter"}
@@ -126,7 +126,7 @@ const AuthDialog = () => {
               placeholder="••••••"
             />
           </div>
-          <Button type="submit" className="w-full rounded-full" disabled={loading}>
+          <Button type="submit" className="w-full rounded-full" disabled={loading} data-testid="auth-submit">
             {loading ? "..." : isSignUp ? "S'inscrire" : "Se connecter"}
           </Button>
           {!isSignUp && (

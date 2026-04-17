@@ -1,52 +1,41 @@
 
 
-## Audit gouvernance — État actuel & prochaines briques
+## Audit gouvernance v4 — Cadrage final
 
-### Ce qui est déjà en place (v1 → v3)
-- **Identité & rôles** : `user_roles` + `has_role()` security definer, `RequireAdmin` ✓
-- **RGPD** : Bandeau cookies granulaire, `/preferences` (export JSON Art.20, suppression compte Art.17 via edge function) ✓
-- **Sécurité serveur** : Edge functions `submit-contact`, `submit-preorder`, `delete-account` avec rate-limiting (5 req/h/IP) ✓
-- **Observabilité** : `analytics_events` + `useTracking` respectant le consentement ✓
-- **Dashboard admin** : KPIs Recharts ✓
-- **Design tokens HSL** : AquaVent + BioBot tokenisés ✓
+### État actuel (v1 → v3 livrés)
+- **Identité/RGPD/Sécurité serveur/Observabilité** : tous opérationnels ✓
+- **Email infrastructure** : domaine `notify.emotionscare.com` configuré, queue pgmq + cron, 3 templates (`contact-ack`, `preorder-confirm`, `admin-alert`), edge functions de send/unsubscribe/suppression branchées sur `submit-contact` et `submit-preorder` ✓
+- **Admin** : dashboard KPI + page `/admin/audit` (rate-limits, contacts, précommandes) ✓
 
-### Ce qui manque pour fermer la boucle de gouvernance
+### Gaps restants pour fermer la gouvernance
 
-**A. Sécurité Auth (critique, 2 min)**
-- Activer **Leaked Password Protection** (HIBP) via `configure_auth` — bloque les mots de passe compromis lors signup/changement.
+**A. Monitoring email (gouvernance opérationnelle critique)**
+La table `email_send_log` enregistre tous les envois (status, message_id, template, erreurs) mais **aucune UI ne l'expose**. Sans visibilité, impossible de détecter un email qui échoue silencieusement (DKIM, suppression, rate-limit Resend).
+→ Nouvel onglet dans `/admin/audit` : **Email Delivery** avec stats dédupliquées par `message_id` (Total/Sent/Failed/Suppressed), filtres (template, statut, période 24h/7j/30j), table paginée des 50 derniers envois avec badges colorés et détail d'erreur.
 
-**B. Audit & monitoring admin (gouvernance opérationnelle)**
-- Nouvelle page `/admin/audit` accessible aux admins :
-  - Tableau des `rate_limits` récents (IP, action, timestamp) — détecter spam/abus
-  - Tableau des `contact_messages` reçus (lecture seule, déjà en RLS admin)
-  - Tableau des `preorders` reçus (lecture seule)
-- Onglet de navigation dans `/admin` pour basculer Dashboard ↔ Audit.
+**B. Refactor `Admin.tsx` (dette technique, 410 lignes)**
+Découpage en sous-composants : `AdminStats`, `AdminCharts`, `AdminPreordersTable`, `AdminMessagesTable`, `AdminEventsTable` dans `src/components/admin/`. Améliore maintenabilité + permet réutilisation dans `/admin/audit`.
 
-**C. Notifications transactionnelles (boucle de feedback)**
-- Edge function `send-transactional-email` via **Resend** :
-  - Confirmation précommande → utilisateur
-  - Accusé contact → utilisateur  
-  - Alerte admin → `m.laeticia@hotmail.fr` sur nouveau contact/précommande
-- Branchement dans `submit-contact` et `submit-preorder` (non-bloquant).
-- Requiert secret `RESEND_API_KEY` — sera demandé après approbation.
+**C. Cohérence design tokens (dette restante)**
+Pages internes AquaVent (`WaitlistSignup`, `FinancialCalculators`, `InvestmentDashboard`, `MarketAnalysis`, `Questionnaire`, `ParticleBackground`) utilisent encore `#8B2C5A` etc. → migration mécanique vers classes `text-aquevent-*` / `bg-aquevent-*` / `ring-aquevent-*`. Idem pour pages internes BioBot si présent.
 
-**D. Cohérence design (dette technique restante)**
-- Pages internes AquaVent (`FinancialCalculators`, `InvestmentDashboard`, `MarketAnalysis`, `Questionnaire`, `WaitlistSignup`, `ParticleBackground`) utilisent encore des hex codes → migration vers classes `aquevent-*`.
-- Idem pour pages internes BioBot.
+**D. Auth emails brandés (cohérence expérience)**
+Les emails Auth Supabase (mot de passe oublié, vérification) utilisent encore les templates par défaut. Brander avec PHYTOTECH (logo, couleurs, signature EmotionsCare SASU) via scaffold auth-email-templates.
 
-### Ordre d'exécution proposé
+### Ordre d'exécution
+
 ```text
-1. HIBP (instant, gain sécurité majeur)
-2. Page /admin/audit (gouvernance opérationnelle)
-3. Notifications email Resend (boucle feedback) — nécessite secret
-4. Refactor design tokens pages internes (dette propre)
+1. Email monitoring dashboard       (visibilité critique sur la prod)
+2. Refactor Admin.tsx               (dette tech avant d'ajouter du code)
+3. Auth emails brandés              (cohérence UX)
+4. Refactor design tokens internes  (dette propre)
 ```
 
 ### Détails techniques
-- **HIBP** : `configure_auth({password_hibp_enabled: true})`
-- **Audit page** : nouvelle route `/admin/audit` protégée par `RequireAdmin`, queries `rate_limits` / `contact_messages` / `preorders` via Supabase client (RLS déjà admin-only). Composants `Table` shadcn + filtres date.
-- **Resend** : edge function unique `send-transactional-email` avec types `preorder_confirm | contact_ack | admin_alert`, appelée en fire-and-forget depuis les edge functions existantes.
-- **Refactor tokens** : remplacement mécanique des `#xxxxxx` par classes `text-aquevent-*` / `bg-biobot-*`.
+- **Email dashboard** : 3e onglet dans `/admin/audit`. Query déduplication via `DISTINCT ON (message_id) ORDER BY message_id, created_at DESC`. Composants `Tabs` + `Table` shadcn. Filtres locaux React state.
+- **Refactor Admin** : extraction sans changement de comportement, props typés, queries inchangées.
+- **Auth emails** : `scaffold_auth_email_templates` puis personnalisation des `.tsx` avec brand tokens HSL.
+- **Tokens** : `sed`-like remplacement `#8B2C5A` → `text-aquevent-primary` (déjà mappé dans `tailwind.config.ts`).
 
-### Aucune migration DB requise pour A, C, D. B utilise les tables existantes.
+### Aucune migration DB requise. `email_send_log` déjà en place avec RLS admin.
 

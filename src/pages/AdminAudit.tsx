@@ -87,11 +87,20 @@ const AdminAudit = () => {
             </h1>
             <p className="text-sm text-muted-foreground">Surveillance opérationnelle — accès admin uniquement</p>
           </div>
-          {suspicious.length > 0 && (
-            <Badge variant="destructive" className="gap-1">
-              <AlertTriangle className="w-3 h-3" /> {suspicious.length} alerte(s) abus
-            </Badge>
-          )}
+          <div className="flex items-center gap-2 flex-wrap">
+            {isPostHogConfigured() && (
+              <Button variant="outline" size="sm" asChild>
+                <a href="https://eu.posthog.com" target="_blank" rel="noopener noreferrer">
+                  <BarChart3 className="w-4 h-4 mr-1.5" /> PostHog <ExternalLink className="w-3 h-3 ml-1" />
+                </a>
+              </Button>
+            )}
+            {suspicious.length > 0 && (
+              <Badge variant="destructive" className="gap-1">
+                <AlertTriangle className="w-3 h-3" /> {suspicious.length} alerte(s) abus
+              </Badge>
+            )}
+          </div>
         </div>
 
         {suspicious.length > 0 && (

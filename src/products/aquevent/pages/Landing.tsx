@@ -140,7 +140,7 @@ export default function Landing() {
             transition={{ duration: 2, repeat: Infinity }}
             className="text-gray-400 text-sm"
           >
-            Scroll pour la revolution
+            Pour explorer le projet
           </motion.div>
         </div>
       </section>

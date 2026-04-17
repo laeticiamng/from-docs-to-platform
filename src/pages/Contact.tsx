@@ -23,6 +23,7 @@ const subjects = [
 const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [website, setWebsite] = useState(""); // honeypot anti-bot
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,7 +39,7 @@ const Contact = () => {
       setLoading(false);
       return;
     }
-    const { data, error } = await supabase.functions.invoke("submit-contact", { body: trimmed });
+    const { data, error } = await supabase.functions.invoke("submit-contact", { body: { ...trimmed, website } });
     if (error || (data as { error?: string })?.error) {
       const msg = (data as { error?: string })?.error ?? "Erreur lors de l'envoi. Réessayez.";
       toast.error(msg);
@@ -68,6 +69,11 @@ const Contact = () => {
           <div className="container mx-auto px-4 max-w-2xl grid md:grid-cols-5 gap-8">
             <div className="md:col-span-3">
               <form onSubmit={handleSubmit} className="space-y-5 bg-card border rounded-2xl p-8 shadow-sm">
+                {/* Honeypot anti-bot : ne doit jamais être rempli par un humain */}
+                <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", width: "1px", height: "1px", overflow: "hidden" }}>
+                  <label htmlFor="c-website">Website (laissez vide)</label>
+                  <input id="c-website" type="text" name="website" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
+                </div>
                 <div className="space-y-2">
                   <Label htmlFor="c-name">Nom complet</Label>
                   <Input id="c-name" required placeholder="Votre nom" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />

@@ -14,6 +14,7 @@ interface WaitlistSignupProps {
 
 const WaitlistSignup = forwardRef<HTMLDivElement, WaitlistSignupProps>(({ variant = 'full' }, _ref) => {
   const [submitted, setSubmitted] = useState(false);
+  const [website, setWebsite] = useState(""); // honeypot anti-bot
   const { trackEvent } = useAnalytics();
 
   const {
@@ -32,6 +33,7 @@ const WaitlistSignup = forwardRef<HTMLDivElement, WaitlistSignupProps>(({ varian
         email: data.email.trim().slice(0, 255),
         pack: `aquevent-${data.interest || 'autre'}`,
         message: data.newsletter ? 'Newsletter: oui' : 'Newsletter: non',
+        website,
       },
     });
 
@@ -69,6 +71,11 @@ const WaitlistSignup = forwardRef<HTMLDivElement, WaitlistSignupProps>(({ varian
   return (
     <div className={variant === 'full' ? 'max-w-lg mx-auto' : ''}>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        {/* Honeypot anti-bot : ne doit jamais être rempli par un humain */}
+        <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", width: "1px", height: "1px", overflow: "hidden" }}>
+          <label htmlFor="aqv-website">Website (laissez vide)</label>
+          <input id="aqv-website" type="text" name="website" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
+        </div>
         <div className="grid grid-cols-2 gap-4">
           <div>
             <input

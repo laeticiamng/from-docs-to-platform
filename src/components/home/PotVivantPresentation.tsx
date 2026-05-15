@@ -30,7 +30,43 @@ const chapters = [
   },
 ];
 
-const PotVivantPresentation = () => {
+type ChapterData = (typeof chapters)[number];
+
+const Chapter = ({
+  chapter,
+  index,
+  total,
+  progress,
+  reduce,
+}: {
+  chapter: ChapterData;
+  index: number;
+  total: number;
+  progress: MotionValue<number>;
+  reduce: boolean;
+}) => {
+  const start = index / total;
+  const end = (index + 1) / total;
+  const opacity = useTransform(
+    progress,
+    [Math.max(0, start - 0.05), start + 0.05, end - 0.05, Math.min(1, end + 0.05)],
+    reduce ? [1, 1, 1, 1] : [0, 1, 1, 0]
+  );
+  const y = useTransform(progress, [start, end], reduce ? ["0%", "0%"] : ["10%", "-10%"]);
+
+  return (
+    <motion.div
+      className="absolute inset-0 flex flex-col justify-center space-y-5"
+      style={reduce ? undefined : { opacity, y }}
+    >
+      <span className="font-mono text-xs tracking-[0.3em] uppercase text-accent">
+        {chapter.eyebrow}
+      </span>
+      <h2 className="text-4xl md:text-6xl leading-[1.05] font-serif">{chapter.title}</h2>
+      <p className="text-lg md:text-xl opacity-70 max-w-md">{chapter.body}</p>
+    </motion.div>
+  );
+};
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
 

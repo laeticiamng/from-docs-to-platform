@@ -280,37 +280,39 @@ const PackAutonomie = () => (
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-2xl md:text-4xl text-foreground mb-8">L'équipement exact — Pack Autonomie Totale</h2>
           <div className="space-y-6">
-            {tiers.map((t) => (
-              <Card key={t.title} className={`${t.color} border-2`}>
-                <CardContent className="p-6 space-y-4">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                    <div>
-                      <h3 className="text-xl font-semibold text-foreground flex items-center gap-2">
-                        <span className="text-primary">{t.icon}</span> {t.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground">{t.subtitle}</p>
-                    </div>
-                    <span className="text-2xl font-bold text-primary font-mono">{t.price}</span>
-                  </div>
-                  <div className="grid md:grid-cols-2 gap-2">
-                    {t.specs.map((s) => (
-                      <div key={s} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <span className="text-primary mt-0.5">→</span>
-                        {s}
+            {tiers.map((t, idx) => (
+              <Reveal key={t.title} delay={idx * 0.08}>
+                <Card className={`${t.color} border-2 hover:-translate-y-0.5 transition-transform duration-300`}>
+                  <CardContent className="p-6 space-y-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                      <div>
+                        <h3 className="text-xl font-semibold text-foreground flex items-center gap-2">
+                          <span className="text-primary">{t.icon}</span> {t.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground">{t.subtitle}</p>
                       </div>
-                    ))}
-                  </div>
-                  {howToGuides[t.title] && (
-                    <HowToGuide
-                      title={t.title}
-                      steps={howToGuides[t.title].steps}
-                      materials={howToGuides[t.title].materials}
-                      difficulty={howToGuides[t.title].difficulty}
-                      cost={howToGuides[t.title].cost}
-                    />
-                  )}
-                </CardContent>
-              </Card>
+                      <span className="text-2xl font-bold text-primary font-mono">{t.price}</span>
+                    </div>
+                    <div className="grid md:grid-cols-2 gap-2">
+                      {t.specs.map((s) => (
+                        <div key={s} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <span className="text-primary mt-0.5">→</span>
+                          {s}
+                        </div>
+                      ))}
+                    </div>
+                    {howToGuides[t.title] && (
+                      <HowToGuide
+                        title={t.title}
+                        steps={howToGuides[t.title].steps}
+                        materials={howToGuides[t.title].materials}
+                        difficulty={howToGuides[t.title].difficulty}
+                        cost={howToGuides[t.title].cost}
+                      />
+                    )}
+                  </CardContent>
+                </Card>
+              </Reveal>
             ))}
           </div>
 
@@ -503,14 +505,16 @@ const PackAutonomie = () => (
             Commencez par un pot. Finissez par l'autonomie totale.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Link to="/">
-              <Button size="lg" variant="secondary" className="rounded-full text-base px-8">
-                ← Retour aux kits
+            <MagneticHover>
+              <Button size="lg" variant="secondary" className="rounded-full text-base px-8" asChild>
+                <Link to="/">← Retour aux kits</Link>
               </Button>
-            </Link>
-            <Button size="lg" variant="outline" className="rounded-full text-base px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10" asChild>
-              <Link to="/precommande">Rejoindre la liste d'attente →</Link>
-            </Button>
+            </MagneticHover>
+            <MagneticHover>
+              <Button size="lg" variant="outline" className="rounded-full text-base px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10" asChild>
+                <Link to="/precommande">Rejoindre la liste d'attente →</Link>
+              </Button>
+            </MagneticHover>
           </div>
         </div>
       </section>

@@ -67,6 +67,8 @@ const Chapter = ({
     </motion.div>
   );
 };
+
+const PotVivantPresentation = () => {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
 

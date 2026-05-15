@@ -4,6 +4,7 @@ import CommentSection from "@/components/CommentSection";
 import Footer from "@/components/Footer";
 import HowToGuide from "@/components/HowToGuide";
 import EnBrefSection from "@/components/home/EnBrefSection";
+import PotVivantPresentation from "@/components/home/PotVivantPresentation";
 import FaqSection, { homeFaqItems } from "@/components/home/FaqSection";
 import UseCasesSection from "@/components/home/UseCasesSection";
 import TrustLinksSection from "@/components/home/TrustLinksSection";
@@ -624,6 +625,7 @@ const Index = () => (
         faqItems={homeFaqItems}
       />
       <HeroSection />
+      <PotVivantPresentation />
       <EnBrefSection />
       {/* Manifesto déplacé sur /a-propos */}
       <HonestySection />

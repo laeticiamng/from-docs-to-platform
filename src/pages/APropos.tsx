@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
   Microscope, Sprout, Handshake, Globe, Recycle, Zap,
-  UserRound, Dna, Factory,
+  UserRound, Dna, Factory, Quote, Heart, Leaf,
 } from "lucide-react";
 
 const milestones = [

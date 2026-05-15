@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/hooks/useAuth";
 import ScrollToTop from "@/components/ScrollToTop";
+import SmoothScroll from "@/components/SmoothScroll";
 import CookieConsent from "@/components/CookieConsent";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import RequireAdmin from "@/components/RequireAdmin";
@@ -72,6 +73,7 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter>
+          <SmoothScroll />
           <ScrollToTop />
           <TrackingProvider />
           <Suspense fallback={<LoadingFallback />}>

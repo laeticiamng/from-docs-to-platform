@@ -25,6 +25,7 @@ import {
   Recycle, Globe, Home, FlaskConical, Factory, Package, ShoppingCart, School, Building,
   Flower2, Bug, AlertTriangle,
 } from "lucide-react";
+import potVivantHero from "@/assets/pot-vivant-hero.jpg";
 
 const IconBox = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
   <div className={`w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary ${className}`}>

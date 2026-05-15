@@ -98,10 +98,11 @@ const PotVivantPresentation = () => {
           style={reduce ? undefined : { opacity: glow }}
         />
 
-        <div className="container mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-          {/* Colonne visuelle — pot sculptural */}
+        <div className="container mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
+          {/* Colonne visuelle — pot sculptural (devient fond sur mobile) */}
           <motion.div
-            className="relative aspect-square max-w-md mx-auto w-full"
+            className="relative aspect-square w-48 sm:w-64 lg:max-w-md lg:w-full mx-auto lg:mx-0
+                       absolute lg:relative inset-0 lg:inset-auto m-auto opacity-20 lg:opacity-100 pointer-events-none lg:pointer-events-auto"
             style={reduce ? undefined : { scale: potScale, rotate: potRotate, y: potY }}
           >
             <div className="absolute -inset-12 bg-gradient-to-tr from-primary/40 via-accent/20 to-transparent rounded-full blur-3xl" />
@@ -110,10 +111,11 @@ const PotVivantPresentation = () => {
               alt="Le Pot Vivant — sculpture céramique avec fougère et électrodes cuivre"
               className="relative w-full h-full object-cover rounded-[3rem] shadow-2xl"
               loading="lazy"
+              decoding="async"
             />
-            {/* Annotations sculpturales */}
+            {/* Annotations sculpturales — desktop uniquement */}
             <motion.div
-              className="absolute top-1/4 -left-8 hidden md:flex items-center gap-2"
+              className="absolute top-1/4 -left-8 hidden lg:flex items-center gap-2"
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -123,7 +125,7 @@ const PotVivantPresentation = () => {
               <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-accent">Cuivre</span>
             </motion.div>
             <motion.div
-              className="absolute bottom-1/3 -right-8 hidden md:flex items-center gap-2"
+              className="absolute bottom-1/3 -right-8 hidden lg:flex items-center gap-2"
               initial={{ opacity: 0, x: 10 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -135,7 +137,7 @@ const PotVivantPresentation = () => {
           </motion.div>
 
           {/* Colonne texte — chapitres défilants */}
-          <div className="relative h-[60vh] flex items-center">
+          <div className="relative h-[55vh] lg:h-[60vh] flex items-center z-10">
             {chapters.map((c, i) => (
               <Chapter
                 key={i}

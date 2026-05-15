@@ -13,6 +13,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import Reveal from "@/components/motion/Reveal";
+import MagneticHover from "@/components/motion/MagneticHover";
 import {
   Table,
   TableBody,
@@ -50,12 +52,16 @@ const HeroSection = () => (
             PhytoTech conçoit des kits domestiques bio-inspirés (piles à plante, microalgues, biofiltres) qui complètent votre installation existante. Premier kit à partir de <strong className="text-foreground">49 €</strong>. Livraisons estimées fin 2026.
           </p>
           <div className="flex gap-3 flex-wrap">
-            <Button size="lg" className="rounded-full text-base px-8" asChild>
-              <Link to="/pricing">Voir les kits → 49 € — 2 490 €</Link>
-            </Button>
-            <Button size="lg" variant="outline" className="rounded-full text-base px-8" asChild>
-              <a href="#comment-ca-marche">Comment ça marche</a>
-            </Button>
+            <MagneticHover>
+              <Button size="lg" className="rounded-full text-base px-8" asChild>
+                <Link to="/pricing">Voir les kits → 49 € — 2 490 €</Link>
+              </Button>
+            </MagneticHover>
+            <MagneticHover>
+              <Button size="lg" variant="outline" className="rounded-full text-base px-8" asChild>
+                <a href="#comment-ca-marche">Comment ça marche</a>
+              </Button>
+            </MagneticHover>
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-2 pt-4 text-sm text-muted-foreground">
             <span className="inline-flex items-center gap-2"><Zap className="w-4 h-4 text-primary" /> IoT & veilleuses sans piles</span>
@@ -268,35 +274,36 @@ const CompareSection = () => (
         </p>
       </div>
       <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        {compareData.map((c) => (
-          <Card
-            key={c.title}
-            className={`relative overflow-hidden transition-all hover:shadow-lg ${
-              c.highlight
-                ? "border-primary ring-2 ring-primary/20 shadow-xl scale-[1.02]"
-                : ""
-            }`}
-          >
-            {c.highlight && (
-              <div className="absolute top-0 left-0 right-0 h-1 bg-primary" />
-            )}
-            <CardContent className="p-6 space-y-4">
-              <div className="text-muted-foreground">{c.icon}</div>
-              <h3 className="text-xl font-semibold text-foreground">{c.title}</h3>
-              <p className="font-mono text-lg text-primary font-semibold">{c.price}</p>
-              <Badge variant="secondary" className="text-xs">{c.role}</Badge>
-              <ul className="space-y-2">
-                {c.points.map((p) => (
-                  <li key={p.text} className="flex items-start gap-2 text-sm">
-                    <span className={p.bad ? "text-destructive" : "text-primary"}>
-                      {p.bad ? "✗" : "✓"}
-                    </span>
-                    <span className="text-muted-foreground">{p.text}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
+        {compareData.map((c, idx) => (
+          <Reveal key={c.title} delay={idx * 0.08}>
+            <Card
+              className={`relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+                c.highlight
+                  ? "border-primary ring-2 ring-primary/20 shadow-xl scale-[1.02]"
+                  : ""
+              }`}
+            >
+              {c.highlight && (
+                <div className="absolute top-0 left-0 right-0 h-1 bg-primary" />
+              )}
+              <CardContent className="p-6 space-y-4">
+                <div className="text-muted-foreground">{c.icon}</div>
+                <h3 className="text-xl font-semibold text-foreground">{c.title}</h3>
+                <p className="font-mono text-lg text-primary font-semibold">{c.price}</p>
+                <Badge variant="secondary" className="text-xs">{c.role}</Badge>
+                <ul className="space-y-2">
+                  {c.points.map((p) => (
+                    <li key={p.text} className="flex items-start gap-2 text-sm">
+                      <span className={p.bad ? "text-destructive" : "text-primary"}>
+                        {p.bad ? "✗" : "✓"}
+                      </span>
+                      <span className="text-muted-foreground">{p.text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </Reveal>
         ))}
       </div>
     </div>
@@ -361,31 +368,35 @@ const ProductsSection = () => (
         <h2 className="text-3xl md:text-5xl text-foreground">Trois niveaux d'autonomie</h2>
       </div>
       <div className="grid lg:grid-cols-3 gap-8">
-        {products.map((p) => (
-          <Card key={p.title} className="overflow-hidden hover:shadow-xl transition-all group">
-            <CardContent className="p-8 space-y-5">
-              <div className="flex items-center justify-between">
-                <Badge variant="secondary" className="font-mono text-xs tracking-wider">
-                  {p.level}
-                </Badge>
-                {p.icon}
-              </div>
-              <h3 className="text-2xl md:text-3xl text-foreground">{p.title}</h3>
-              <p className="font-mono text-2xl text-primary font-bold">{p.price}</p>
-              <p className="text-sm text-muted-foreground">{p.desc}</p>
-              <ul className="space-y-2">
-                {p.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <span className="text-primary mt-0.5">●</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <Button className="w-full rounded-full group-hover:shadow-md transition-shadow" asChild>
-                <Link to="/precommande">{p.cta}</Link>
-              </Button>
-            </CardContent>
-          </Card>
+        {products.map((p, idx) => (
+          <Reveal key={p.title} delay={idx * 0.1}>
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group h-full">
+              <CardContent className="p-8 space-y-5">
+                <div className="flex items-center justify-between">
+                  <Badge variant="secondary" className="font-mono text-xs tracking-wider">
+                    {p.level}
+                  </Badge>
+                  {p.icon}
+                </div>
+                <h3 className="text-2xl md:text-3xl text-foreground">{p.title}</h3>
+                <p className="font-mono text-2xl text-primary font-bold">{p.price}</p>
+                <p className="text-sm text-muted-foreground">{p.desc}</p>
+                <ul className="space-y-2">
+                  {p.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <span className="text-primary mt-0.5">●</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <MagneticHover>
+                  <Button className="w-full rounded-full group-hover:shadow-md transition-shadow" asChild>
+                    <Link to="/precommande">{p.cta}</Link>
+                  </Button>
+                </MagneticHover>
+              </CardContent>
+            </Card>
+          </Reveal>
         ))}
       </div>
 
@@ -455,14 +466,16 @@ const ImpactSection = () => (
         <h2 className="text-3xl md:text-5xl text-foreground">Ce qu'un seul Module Maison change concrètement</h2>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12">
-        {impacts.map((i) => (
-          <Card key={i.title} className="hover:shadow-lg transition-all">
-            <CardContent className="p-6 text-center space-y-3">
-              <div className="flex justify-center text-primary">{i.icon}</div>
-              <h3 className="text-lg font-semibold text-foreground">{i.title}</h3>
-              <p className="text-sm text-muted-foreground">{i.desc}</p>
-            </CardContent>
-          </Card>
+        {impacts.map((i, idx) => (
+          <Reveal key={i.title} delay={idx * 0.08}>
+            <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full">
+              <CardContent className="p-6 text-center space-y-3">
+                <div className="flex justify-center text-primary">{i.icon}</div>
+                <h3 className="text-lg font-semibold text-foreground">{i.title}</h3>
+                <p className="text-sm text-muted-foreground">{i.desc}</p>
+              </CardContent>
+            </Card>
+          </Reveal>
         ))}
       </div>
       <Card className="bg-primary text-primary-foreground max-w-3xl mx-auto overflow-hidden">
@@ -603,12 +616,16 @@ const CTASection = () => (
         Soleil, eau, plantes. Trois ingrédients. Zéro abonnement. Autonomie totale.
       </p>
       <div className="flex gap-4 justify-center flex-wrap">
-        <Button size="lg" variant="secondary" className="rounded-full text-base px-8" asChild>
-          <Link to="/precommande">Rejoindre la liste d'attente →</Link>
-        </Button>
-        <Button size="lg" variant="outline" className="rounded-full text-base px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10" asChild>
-          <Link to="/contact">Devenir partenaire</Link>
-        </Button>
+        <MagneticHover>
+          <Button size="lg" variant="secondary" className="rounded-full text-base px-8" asChild>
+            <Link to="/precommande">Rejoindre la liste d'attente →</Link>
+          </Button>
+        </MagneticHover>
+        <MagneticHover>
+          <Button size="lg" variant="outline" className="rounded-full text-base px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10" asChild>
+            <Link to="/contact">Devenir partenaire</Link>
+          </Button>
+        </MagneticHover>
       </div>
     </div>
   </section>

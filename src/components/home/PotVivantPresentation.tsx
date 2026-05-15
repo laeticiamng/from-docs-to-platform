@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion, MotionValue } from "framer-motion";
 import potVivantHero from "@/assets/pot-vivant-hero.jpg";
 
 /**
@@ -98,37 +98,16 @@ const PotVivantPresentation = () => {
 
           {/* Colonne texte — chapitres défilants */}
           <div className="relative h-[60vh] flex items-center">
-            {chapters.map((c, i) => {
-              const start = i / chapters.length;
-              const end = (i + 1) / chapters.length;
-              // Chaque chapitre apparaît dans sa fenêtre de scroll
-              const opacity = useTransform(
-                scrollYProgress,
-                [Math.max(0, start - 0.05), start + 0.05, end - 0.05, Math.min(1, end + 0.05)],
-                reduce ? [1, 1, 1, 1] : [0, 1, 1, 0]
-              );
-              const y = useTransform(
-                scrollYProgress,
-                [start, end],
-                reduce ? ["0%", "0%"] : ["10%", "-10%"]
-              );
-
-              return (
-                <motion.div
-                  key={i}
-                  className="absolute inset-0 flex flex-col justify-center space-y-5"
-                  style={reduce ? undefined : { opacity, y }}
-                >
-                  <span className="font-mono text-xs tracking-[0.3em] uppercase text-accent">
-                    {c.eyebrow}
-                  </span>
-                  <h2 className="text-4xl md:text-6xl leading-[1.05] font-serif">
-                    {c.title}
-                  </h2>
-                  <p className="text-lg md:text-xl opacity-70 max-w-md">{c.body}</p>
-                </motion.div>
-              );
-            })}
+            {chapters.map((c, i) => (
+              <Chapter
+                key={i}
+                chapter={c}
+                index={i}
+                total={chapters.length}
+                progress={scrollYProgress}
+                reduce={!!reduce}
+              />
+            ))}
           </div>
         </div>
 

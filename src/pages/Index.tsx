@@ -625,7 +625,7 @@ const Index = () => (
       />
       <HeroSection />
       <EnBrefSection />
-      <ManifestoSection />
+      {/* Manifesto déplacé sur /a-propos */}
       <HonestySection />
       <CompareSection />
       <ProductsSection />

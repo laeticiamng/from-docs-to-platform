@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
   Microscope, Sprout, Handshake, Globe, Recycle, Zap,
-  UserRound, Dna, Factory,
+  UserRound, Dna, Factory, Quote, Heart, Leaf,
 } from "lucide-react";
 
 const milestones = [
@@ -54,7 +54,102 @@ const APropos = () => (
         </div>
       </section>
 
-      {/* Histoire */}
+      {/* Manifeste — repris de la home */}
+      <section className="bg-foreground text-background py-24">
+        <div className="container mx-auto px-4 max-w-3xl text-center space-y-6">
+          <p className="font-mono text-sm text-primary tracking-widest uppercase">Manifeste</p>
+          <h2 className="text-3xl md:text-5xl leading-tight">
+            Et si votre prochaine source d'énergie n'était pas un panneau sur le toit, mais une plante dans le salon&nbsp;?
+          </h2>
+          <p className="text-lg opacity-70">
+            La photosynthèse alimente la vie sur Terre depuis 3,5 milliards d'années. On a enfin appris à brancher nos appareils dessus. Trois ingrédients suffisent : du soleil, de l'eau, et du vivant.
+          </p>
+          <p className="text-sm opacity-60 max-w-2xl mx-auto">
+            Ce manifeste n'est pas une promesse de remplacer le réseau. C'est une invitation à reconsidérer ce qu'on appelle « infrastructure » : et si une partie de nos besoins pouvait être couverte par ce qui pousse déjà&nbsp;?
+          </p>
+        </div>
+      </section>
+
+      {/* L'origine — Laeticia Motongane */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-12 space-y-3">
+            <p className="font-mono text-sm text-primary tracking-widest uppercase">L'origine</p>
+            <h2 className="text-3xl md:text-4xl text-foreground">
+              Pourquoi Laeticia Motongane a fondé EmotionsCare
+            </h2>
+          </div>
+
+          <Card className="border-primary/20 overflow-hidden">
+            <CardContent className="p-8 md:p-12 space-y-6">
+              <Quote className="w-10 h-10 text-primary/40" />
+              <div className="space-y-4 text-foreground leading-relaxed">
+                <p>
+                  EmotionsCare est née d'un constat simple, posé entre deux mondes&nbsp;: celui d'une France
+                  qui cherche à sortir de sa dépendance énergétique, et celui de territoires africains où
+                  les ressources biologiques abondent mais restent déconnectées des technologies qui
+                  pourraient les valoriser.
+                </p>
+                <p>
+                  La société a été <strong>immatriculée le 6 mai 2025 à Amiens</strong> sous le statut de
+                  SASU, avec Laeticia Motongane comme présidente et fondatrice. Le projet ne prétend pas
+                  réinventer la science — la plupart des briques (PMFC, photobioréacteurs, batteries
+                  quinone, feuilles artificielles) existent déjà dans des laboratoires universitaires.
+                </p>
+                <p>
+                  Ce qui manquait, c'était un acteur qui assume de <strong>les assembler en kits domestiques
+                  honnêtes</strong>, sans survendre, sans cacher les limites, et sans oublier qu'une
+                  technologie verte n'a de sens que si elle est accessible aux territoires qui en ont
+                  le plus besoin.
+                </p>
+                <p className="text-muted-foreground italic">
+                  « On ne vend pas un rêve d'autonomie totale. On propose un chemin. Le premier pas
+                  coûte 49 €. Le dernier libère un foyer du réseau. Entre les deux, on documente
+                  chaque étape&nbsp;: ce qui marche, ce qui ne marche pas encore, et ce qu'on cherche
+                  encore à valider. »
+                </p>
+              </div>
+
+              <div className="grid sm:grid-cols-3 gap-4 pt-6 border-t border-border">
+                <div className="flex items-start gap-3">
+                  <Leaf className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Ancrage français</p>
+                    <p className="text-xs text-muted-foreground">Siège à Amiens, R&D en France</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Globe className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Vision panafricaine</p>
+                    <p className="text-xs text-muted-foreground">Adapter aux contextes locaux</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Heart className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Modèle 1=1</p>
+                    <p className="text-xs text-muted-foreground">Un kit vendu, un kit offert</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-3 pt-4">
+                <Button variant="outline" size="sm" className="rounded-full" asChild>
+                  <Link to="/methodologie">Notre méthodologie →</Link>
+                </Button>
+                <Button variant="outline" size="sm" className="rounded-full" asChild>
+                  <Link to="/afrique">L'approche Afrique →</Link>
+                </Button>
+                <Button variant="ghost" size="sm" className="rounded-full" asChild>
+                  <Link to="/investisseurs">Espace investisseurs →</Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-16 space-y-3">

@@ -25,6 +25,7 @@ import {
   Recycle, Globe, Home, FlaskConical, Factory, Package, ShoppingCart, School, Building,
   Flower2, Bug, AlertTriangle,
 } from "lucide-react";
+import potVivantHero from "@/assets/pot-vivant-hero.jpg";
 
 const IconBox = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
   <div className={`w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary ${className}`}>
@@ -35,29 +36,54 @@ const IconBox = ({ children, className = "" }: { children: React.ReactNode; clas
 const HeroSection = () => (
   <section className="min-h-[80vh] flex items-center relative overflow-hidden py-16">
     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
-    <div className="container mx-auto px-4 relative z-10 max-w-4xl">
-      <div className="space-y-6">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-mono">
-          <Leaf className="w-4 h-4" /> Pré-série · Liste d'attente ouverte
+    <div className="container mx-auto px-4 relative z-10">
+      <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="space-y-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-mono">
+            <Leaf className="w-4 h-4" /> Pré-série · Liste d'attente ouverte
+          </div>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl leading-tight text-foreground">
+            Le pot de fleurs qui alimente vos capteurs <span className="text-primary">— sans piles</span>.
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-2xl">
+            PhytoTech conçoit des kits domestiques bio-inspirés (piles à plante, microalgues, biofiltres) qui complètent votre installation existante. Premier kit à partir de <strong className="text-foreground">49 €</strong>. Livraisons estimées fin 2026.
+          </p>
+          <div className="flex gap-3 flex-wrap">
+            <Button size="lg" className="rounded-full text-base px-8" asChild>
+              <Link to="/pricing">Voir les kits → 49 € — 2 490 €</Link>
+            </Button>
+            <Button size="lg" variant="outline" className="rounded-full text-base px-8" asChild>
+              <a href="#comment-ca-marche">Comment ça marche</a>
+            </Button>
+          </div>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 pt-4 text-sm text-muted-foreground">
+            <span className="inline-flex items-center gap-2"><Zap className="w-4 h-4 text-primary" /> IoT & veilleuses sans piles</span>
+            <span className="inline-flex items-center gap-2"><Droplets className="w-4 h-4 text-primary" /> Jusqu'à ~35-45 000 L d'eau/an économisés</span>
+            <span className="inline-flex items-center gap-2"><Recycle className="w-4 h-4 text-primary" /> 100 % biodégradable</span>
+          </div>
         </div>
-        <h1 className="text-4xl md:text-6xl lg:text-7xl leading-tight text-foreground">
-          Le pot de fleurs qui alimente vos capteurs <span className="text-primary">— sans piles</span>.
-        </h1>
-        <p className="text-lg text-muted-foreground max-w-2xl">
-          PhytoTech conçoit des kits domestiques bio-inspirés (piles à plante, microalgues, biofiltres) qui complètent votre installation existante. Premier kit à partir de <strong className="text-foreground">49 €</strong>. Livraisons estimées fin 2026.
-        </p>
-        <div className="flex gap-3 flex-wrap">
-          <Button size="lg" className="rounded-full text-base px-8" asChild>
-            <Link to="/pricing">Voir les kits → 49 € — 2 490 €</Link>
-          </Button>
-          <Button size="lg" variant="outline" className="rounded-full text-base px-8" asChild>
-            <a href="#comment-ca-marche">Comment ça marche</a>
-          </Button>
-        </div>
-        <div className="flex flex-wrap gap-x-6 gap-y-2 pt-4 text-sm text-muted-foreground">
-          <span className="inline-flex items-center gap-2"><Zap className="w-4 h-4 text-primary" /> IoT & veilleuses sans piles</span>
-          <span className="inline-flex items-center gap-2"><Droplets className="w-4 h-4 text-primary" /> Jusqu'à ~35-45 000 L d'eau/an économisés</span>
-          <span className="inline-flex items-center gap-2"><Recycle className="w-4 h-4 text-primary" /> 100 % biodégradable</span>
+
+        {/* Hero visual — Le Pot Vivant */}
+        <div className="relative">
+          <div className="absolute -inset-8 bg-gradient-to-tr from-primary/20 via-transparent to-accent/20 rounded-full blur-3xl opacity-60" aria-hidden="true" />
+          <div className="relative aspect-square max-w-lg mx-auto">
+            <img
+              src={potVivantHero}
+              alt="Le Pot Vivant — pot bio-électrique avec fougère, électrodes cuivre et LED alimentée par la plante"
+              width={1024}
+              height={1024}
+              fetchPriority="high"
+              className="w-full h-full object-cover rounded-[2.5rem] shadow-2xl"
+            />
+            <div className="absolute -bottom-4 -left-4 bg-background/95 backdrop-blur border border-border rounded-2xl px-4 py-3 shadow-lg">
+              <p className="font-mono text-[10px] tracking-widest text-primary uppercase">Niveau 1 · Découverte</p>
+              <p className="text-sm font-semibold text-foreground">Le Pot Vivant — dès 49 €</p>
+            </div>
+            <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground rounded-full px-4 py-2 shadow-lg flex items-center gap-2">
+              <Zap className="w-4 h-4" />
+              <span className="text-xs font-mono">Render concept</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
